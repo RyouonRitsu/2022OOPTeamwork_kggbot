@@ -38,7 +38,7 @@ object PluginMain : KotlinPlugin(
         author("RyouonRitsu")
         info(
             """
-            这是一个qq群聊插件, 
+            这是一个QQ群聊插件, 
             在这里描述插件的功能和用法等.
         """.trimIndent()
         )
