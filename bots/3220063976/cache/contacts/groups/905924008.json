@@ -1,0 +1,44 @@
+{
+    "troopMemberNumSeq": 245,
+    "list": [
+        {
+            "uin": 347372855,
+            "nick": "白川 翎",
+            "permission": "MEMBER",
+            "remark": "白川 翎",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1650471662,
+            "lastSpeakTimestamp": 1650471662,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1780645196,
+            "nick": "橙原 凯",
+            "permission": "OWNER",
+            "remark": "白狼",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1650471661,
+            "lastSpeakTimestamp": 1650471661,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 3220063976,
+            "nick": "イカサマライフゲ",
+            "permission": "MEMBER",
+            "remark": "イカサマライフゲ",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1650471662,
+            "lastSpeakTimestamp": 1650471662,
+            "isOfficialBot": false
+        }
+    ]
+}

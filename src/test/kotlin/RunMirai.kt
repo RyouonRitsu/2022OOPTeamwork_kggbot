@@ -5,6 +5,7 @@ import net.mamoe.mirai.console.MiraiConsole
 import net.mamoe.mirai.console.plugin.PluginManager.INSTANCE.enable
 import net.mamoe.mirai.console.plugin.PluginManager.INSTANCE.load
 import net.mamoe.mirai.console.terminal.MiraiConsoleTerminalLoader
+import net.mamoe.mirai.utils.BotConfiguration
 
 suspend fun main() {
     MiraiConsoleTerminalLoader.startAsDaemon()
@@ -18,6 +19,9 @@ suspend fun main() {
 
     val bot = MiraiConsole.addBot(3220063976, "zhx&LQS09071003") {
         fileBasedDeviceInfo()
+        heartbeatStrategy = BotConfiguration.HeartbeatStrategy.REGISTER
+        // 开启所有列表缓存
+        enableContactCache()
     }.alsoLogin()
 
     MiraiConsole.job.join()
