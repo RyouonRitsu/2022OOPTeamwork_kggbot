@@ -31,14 +31,14 @@ import net.mamoe.mirai.utils.info
 
 object PluginMain : KotlinPlugin(
     JvmPluginDescription(
-        id = "org.example.mirai-example",
-        name = "插件示例",
+        id = "org.ritsu.mirai-ritsu",
+        name = "mirai-ritsu",
         version = "0.1.0"
     ) {
-        author("作者名称或联系方式")
+        author("RyouonRitsu")
         info(
             """
-            这是一个测试插件, 
+            这是一个qq群聊插件, 
             在这里描述插件的功能和用法等.
         """.trimIndent()
         )
