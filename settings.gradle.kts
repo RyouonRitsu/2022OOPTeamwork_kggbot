@@ -1,1 +1,1 @@
-rootProject.name = "mirai-console-plugin-template"
+rootProject.name = "2022OOP"

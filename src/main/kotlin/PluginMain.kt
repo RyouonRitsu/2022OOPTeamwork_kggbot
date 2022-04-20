@@ -1,4 +1,4 @@
-package org.example.mirai.plugin
+package org.ritsu.mirai.plugin
 
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
 import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
