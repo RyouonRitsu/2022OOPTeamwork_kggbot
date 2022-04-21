@@ -1,7 +1,7 @@
 package org.ritsu.mirai.plugin
 
 object Help {
-    val func: List<String> = listOf("help", "抽卡")
+    private val func: List<String> = listOf("抽卡")
     override fun toString(): String {
         var usage = "Usage:\n"
         for (it in func) {
