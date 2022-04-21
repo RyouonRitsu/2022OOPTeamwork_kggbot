@@ -2,7 +2,6 @@ package org.ritsu.mirai.plugin
 
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
 import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
-import net.mamoe.mirai.contact.Member
 import net.mamoe.mirai.event.EventChannel
 import net.mamoe.mirai.event.GlobalEventChannel
 import net.mamoe.mirai.event.events.BotInvitedJoinGroupRequestEvent
@@ -12,10 +11,8 @@ import net.mamoe.mirai.event.events.NewFriendRequestEvent
 import net.mamoe.mirai.event.globalEventChannel
 import net.mamoe.mirai.message.data.Image
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
-import net.mamoe.mirai.message.data.MarketFace
 import net.mamoe.mirai.message.data.PlainText
 import net.mamoe.mirai.utils.info
-import java.util.Calendar
 
 /**
  * 使用 kotlin 版请把
@@ -52,24 +49,12 @@ object PluginMain : KotlinPlugin(
         logger.info { "Plugin loaded" }
         //配置文件目录 "${dataFolder.absolutePath}/"
         val eventChannel = GlobalEventChannel.parentScope(this)
-        eventChannel.subscribeAlways<GroupMessageEvent> {
+        eventChannel.subscribeAlways<GroupMessageEvent>{
             //群消息
             //复读示例
             if (message.contentToString().startsWith("复读")) {
                 group.sendMessage(message.contentToString().replace("复读", ""))
             }
-            if (message.contentToString().startsWith("kgg")) {
-                if (message.contentToString().replace("kgg", "") == "抽卡") {
-                    val user = User.getUser(sender)
-                    if (user.luckyValueAcquisitionDate != Calendar.getInstance().get(Calendar.DATE) || user.luckyValue == -1) {
-                        user.luckyValue = (0..100).random()
-                    }
-                    group.sendMessage("${if (user.account.nameCard != "") user.account.nameCard else user.account.id}今天的幸运值是: ${user.luckyValue}")
-                } else {
-                    group.sendMessage(Help.toString().trim())
-                }
-            }
-            /*
             if (message.contentToString() == "hi") {
                 //群内发送
                 group.sendMessage("hi")
@@ -78,10 +63,7 @@ object PluginMain : KotlinPlugin(
                 //不继续处理
                 return@subscribeAlways
             }
-            */
-            //if (message.contentToString() == "111") group.sendMessage("All ready!");
             //分类示例
-            /*
             message.forEach {
                 //循环每个元素在消息里
                 if (it is Image) {
@@ -93,29 +75,19 @@ object PluginMain : KotlinPlugin(
                     //如果消息这一部分是纯文本
                     group.sendMessage("纯文本，内容:${it.content}")
                 }
-                if (it is MarketFace) {
-                    //如果消息这一部分是商城表情
-                    group.sendMessage("表情，名称:${it.name}")
-                }
             }
-            */
         }
-        eventChannel.subscribeAlways<FriendMessageEvent> {
+        eventChannel.subscribeAlways<FriendMessageEvent>{
             //好友信息
-            /*
-            if (message.contentToString().startsWith("复读")) {
-                sender.sendMessage(message.contentToString().replace("复读", ""))
-            }
-            */
-            sender.sendMessage("暂不支持私聊功能哦！")
+            sender.sendMessage("hi")
         }
-        eventChannel.subscribeAlways<NewFriendRequestEvent> {
+        eventChannel.subscribeAlways<NewFriendRequestEvent>{
             //自动同意好友申请
-            //accept()
+            accept()
         }
-        eventChannel.subscribeAlways<BotInvitedJoinGroupRequestEvent> {
+        eventChannel.subscribeAlways<BotInvitedJoinGroupRequestEvent>{
             //自动同意加群申请
-            //accept()
+            accept()
         }
     }
 }
