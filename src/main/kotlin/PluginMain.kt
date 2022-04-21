@@ -65,8 +65,10 @@ object PluginMain : KotlinPlugin(
                         user.luckyValue = (0..100).random()
                     }
                     group.sendMessage("${if (user.account.nameCard != "") user.account.nameCard else user.account.id}今天的幸运值是: ${user.luckyValue}")
-                } else {
+                } else if (message.contentToString().replace("kgg", "") == "help") {
                     group.sendMessage(Help.toString().trim())
+                } else {
+                    group.sendMessage("不知道要做什么的话请说kgghelp！")
                 }
             }
             /*
