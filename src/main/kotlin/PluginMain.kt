@@ -47,6 +47,7 @@ object PluginMain : KotlinPlugin(
         val eventChannel = GlobalEventChannel.parentScope(this)
         eventChannel.subscribeAlways<GroupMessageEvent> {
             //群消息
+            //普通命令
             //复读示例
             if (message.contentToString().startsWith("复读")) {
                 group.sendMessage(message.contentToString().replace("复读", ""))
