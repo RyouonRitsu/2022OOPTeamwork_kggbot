@@ -79,7 +79,7 @@ object PluginMain : KotlinPlugin(
                             //如果用户数据存在就读取数据
                             if (jsonObj.getLongValue("id") == user.account.id) {
                                 user.luckyValueAcquisitionDate = jsonObj.getString("luckyValueAcquisitionDate")
-                                if (!user.luckyValueAcquisitionDate.equals(SimpleDateFormat("yyyy/MM/dd").format(Date()))) {
+                                if (user.luckyValueAcquisitionDate != SimpleDateFormat("yyyy/MM/dd").format(Date())) {
                                     //如果还没抽过卡就抽卡
                                     user.luckyValue = (0..100).random()
                                     user.luckyValueAcquisitionDate = SimpleDateFormat("yyyy/MM/dd").format(Date())
