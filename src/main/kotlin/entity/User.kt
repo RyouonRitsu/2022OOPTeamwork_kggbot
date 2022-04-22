@@ -1,4 +1,4 @@
-package org.ritsu.mirai.plugin
+package org.ritsu.mirai.plugin.entity
 
 import net.mamoe.mirai.contact.Member
 import java.text.SimpleDateFormat
