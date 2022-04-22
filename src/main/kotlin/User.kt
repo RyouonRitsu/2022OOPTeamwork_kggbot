@@ -1,6 +1,7 @@
 package org.ritsu.mirai.plugin
 
 import net.mamoe.mirai.contact.Member
+import java.text.SimpleDateFormat
 import java.util.*
 
 class User(val account: Member) {
@@ -13,5 +14,5 @@ class User(val account: Member) {
     }
 
     var luckyValue: Int = -1
-    var luckyValueAcquisitionDate = Calendar.getInstance().get(Calendar.DATE)
+    var luckyValueAcquisitionDate = SimpleDateFormat("yyyy/MM/dd").format(Date())
 }

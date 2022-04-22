@@ -9,6 +9,10 @@ plugins {
 group = "org.example"
 version = "0.1.0"
 
+dependencies {
+    implementation("com.alibaba:fastjson:1.2.80")
+}
+
 repositories {
     maven("https://maven.aliyun.com/repository/public") // 阿里云国内代理仓库
     mavenCentral()
