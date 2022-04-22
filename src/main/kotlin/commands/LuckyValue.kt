@@ -11,7 +11,7 @@ import java.util.*
 fun luckyValue(sender: Member): String {
     val user = User.getUser(sender)
     //读取json文件
-    val file = File("./data/LuckyValuesData.json")
+    val file = File("./data/UsersData.json")
     var jsonString = file.readText()
     //转为JSONArray对象
     var jsonArr = JSONArray.parseArray(jsonString)

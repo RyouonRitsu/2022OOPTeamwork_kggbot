@@ -51,6 +51,7 @@ object PluginMain : KotlinPlugin(
             if (message.contentToString().startsWith("复读")) {
                 group.sendMessage(message.contentToString().replace("复读", ""))
             }
+            //kgg命令
             if (message.contentToString().startsWith("kgg")) {
                 if (message.contentToString().replace("kgg", "") == "抽卡") {
                     //发送消息
