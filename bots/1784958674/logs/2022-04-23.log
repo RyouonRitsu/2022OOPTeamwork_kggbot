@@ -1,0 +1,437 @@
+[0m2022-04-23 13:33:28 V/Net 1784958674: No server list cached.[0m
+[92m2022-04-23 13:33:28 I/Net 1784958674: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[92m2022-04-23 13:33:29 I/Net 1784958674: Successfully fetched ecdh public key from server.[0m
+[0m2022-04-23 13:33:29 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:33:29 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:33:52 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:33:52 V/Net 1784958674: Recv: wtlogin.login[0m
+[91m2022-04-23 13:33:52 W/Net 1784958674: net.mamoe.mirai.network.WrongPasswordException: Error(bot=Bot(1784958674), code=237, title=安全提醒, message=当前登录存在安全风险，请使用常用设备或通过手机号登录。, errorInfo=)
+net.mamoe.mirai.network.WrongPasswordException: Error(bot=Bot(1784958674), code=237, title=安全提醒, message=当前登录存在安全风险，请使用常用设备或通过手机号登录。, errorInfo=)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl$SlowLoginImpl.doLogin(SsoProcessor.kt:265)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl$SlowLoginImpl$doLogin$1.invokeSuspend(SsoProcessor.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.internal.ScopeCoroutine.afterResume(Scopes.kt:33)
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:102)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:46)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:571)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:678)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:665)
+[0m
+[0m2022-04-23 13:34:16 V/Net 1784958674: No server list cached.[0m
+[92m2022-04-23 13:34:16 I/Net 1784958674: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[92m2022-04-23 13:34:17 I/Net 1784958674: Successfully fetched ecdh public key from server.[0m
+[0m2022-04-23 13:34:17 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:34:17 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:35:20 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:35:20 V/Net 1784958674: Recv: wtlogin.login[0m
+[91m2022-04-23 13:35:20 W/Net 1784958674: net.mamoe.mirai.network.WrongPasswordException: Error(bot=Bot(1784958674), code=237, title=安全提醒, message=当前登录存在安全风险，请使用常用设备或通过手机号登录。, errorInfo=)
+net.mamoe.mirai.network.WrongPasswordException: Error(bot=Bot(1784958674), code=237, title=安全提醒, message=当前登录存在安全风险，请使用常用设备或通过手机号登录。, errorInfo=)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl$SlowLoginImpl.doLogin(SsoProcessor.kt:265)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl$SlowLoginImpl$doLogin$1.invokeSuspend(SsoProcessor.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.internal.ScopeCoroutine.afterResume(Scopes.kt:33)
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:102)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:46)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:571)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:678)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:665)
+[0m
+[0m2022-04-23 13:35:53 V/Net 1784958674: No server list cached.[0m
+[92m2022-04-23 13:35:53 I/Net 1784958674: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[92m2022-04-23 13:35:53 I/Net 1784958674: Successfully fetched ecdh public key from server.[0m
+[0m2022-04-23 13:35:54 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:35:54 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:40:03 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:40:03 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:40:04 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:40:04 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:40:05 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:40:05 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:40:24 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:40:24 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:40:27 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:40:27 V/Net 1784958674: Recv: wtlogin.login[0m
+[91m2022-04-23 13:40:27 W/Net 1784958674: net.mamoe.mirai.network.WrongPasswordException: Error(bot=Bot(1784958674), code=237, title=安全提醒, message=当前登录存在安全风险，请使用常用设备或通过手机号登录。, errorInfo=)
+net.mamoe.mirai.network.WrongPasswordException: Error(bot=Bot(1784958674), code=237, title=安全提醒, message=当前登录存在安全风险，请使用常用设备或通过手机号登录。, errorInfo=)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl$SlowLoginImpl.doLogin(SsoProcessor.kt:265)
+	at net.mamoe.mirai.internal.network.components.SsoProcessorImpl$SlowLoginImpl$doLogin$1.invokeSuspend(SsoProcessor.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.internal.ScopeCoroutine.afterResume(Scopes.kt:33)
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:102)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:46)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:571)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:678)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:665)
+[0m
+[0m2022-04-23 13:44:41 V/Net 1784958674: No server list cached.[0m
+[92m2022-04-23 13:44:42 I/Net 1784958674: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[92m2022-04-23 13:44:42 I/Net 1784958674: Successfully fetched ecdh public key from server.[0m
+[0m2022-04-23 13:44:42 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:44:42 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:46:51 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:46:51 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:49:28 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Send: StatSvc.register(online)[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Server time updated, serverTime: 1650692967, diff: -2ms=-0.002s[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Recv: StatSvc.register[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: No BdhSession cache[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Syncing friend message history...[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Start loading stranger list...[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Send: StatSvc.GetDevLoginInfo(StatSvc.GetDevLoginInfo)[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Start loading friend list...[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Send: OidbSvc.0x496(OidbSvc.0x496)[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Send: OidbSvc.0x5d2_0(OidbSvc.0x5d2_0)[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Send: friendlist.getFriendGroupList(friendlist.getFriendGroupList)[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Recv: StatSvc.GetDevLoginInfo[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Online OtherClients: 橙原凯的iPhone(MOBILE)[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Successfully loaded stranger list: 0 in total[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Recv: OidbSvc.0x5d2_0[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Recv: StatSvc.SvcReqMSFLoginNotify[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Recv: OidbSvc.0x496[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Start loading group list...[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Send: friendlist.GetTroopListReqV2(friendlist.GetTroopListReqV2)[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Syncing friend message history: Success.[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Recv: friendlist.getFriendGroupList[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Loading friend list: 3/3[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Successfully loaded friend list: 3 in total[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Saved 3 friends to local cache.[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Recv: friendlist.GetTroopListReqV2[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2022-04-23 13:49:29 V/Net 1784958674: Recv: friendlist.GetTroopMemberListReq[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Successfully loaded group list: 1 in total.[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Saved 1 groups to local cache.[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Scheduled key refresh in 23h 55min 0.0s.[0m
+[92m2022-04-23 13:49:29 I/Net 1784958674: Scheduled refresh login session in 19d 23h 55min 0.0s.[0m
+[92m2022-04-23 13:49:32 I/Net 1784958674: Server list: 183.47.98.77:443, 49.7.253.252:80, msfwifi.3g.qq.com:8080, 114.222.112.229:80, 49.7.253.220:8080, 42.81.193.250:80, 183.47.102.218:8080, 183.47.106.14:443, 101.91.40.21:14000.[0m
+[0m2022-04-23 13:49:32 V/Net 1784958674: No BdhSession to save to cache[0m
+[0m2022-04-23 13:49:32 V/Net 1784958674: Saving server list to cache[0m
+[0m2022-04-23 13:49:32 V/Net 1784958674: Send: ConfigPushSvc.PushResp(ConfigPushSvc.PushResp)[0m
+[0m2022-04-23 13:49:32 V/Net 1784958674: Recv: ConfigPushSvc.PushReq[0m
+[0m2022-04-23 13:49:32 V/Net 1784958674: Saving bdh session to cache[0m
+[0m2022-04-23 13:49:32 V/Net 1784958674: Send: ConfigPushSvc.PushResp(ConfigPushSvc.PushResp)[0m
+[0m2022-04-23 13:49:32 V/Net 1784958674: Recv: ConfigPushSvc.PushReq[0m
+[0m2022-04-23 13:49:51 V/Net 1784958674: Send: StatSvc.register(offline)[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Loading server list from cache.[0m
+[92m2022-04-23 13:50:24 I/Net 1784958674: Server list: 183.47.98.77:443, 49.7.253.252:80, msfwifi.3g.qq.com:8080, 114.222.112.229:80, 49.7.253.220:8080, 42.81.193.250:80, 183.47.102.218:8080, 183.47.106.14:443, 101.91.40.21:14000.[0m
+[92m2022-04-23 13:50:24 I/Net 1784958674: ECDH key is valid.[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Send: wtlogin.exchange_emp[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Recv: wtlogin.exchange_emp[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Send: StatSvc.register(online)[0m
+[92m2022-04-23 13:50:24 I/Net 1784958674: Server time updated, serverTime: 1650693022, diff: -2ms=-0.002s[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Recv: StatSvc.register[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Loading BdhSession from cache file[0m
+[92m2022-04-23 13:50:24 I/Net 1784958674: Syncing friend message history...[0m
+[92m2022-04-23 13:50:24 I/Net 1784958674: Start loading friend list...[0m
+[92m2022-04-23 13:50:24 I/Net 1784958674: Start loading stranger list...[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Send: StatSvc.GetDevLoginInfo(StatSvc.GetDevLoginInfo)[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Send: OidbSvc.0x496(OidbSvc.0x496)[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Send: OidbSvc.0x5d2_0(OidbSvc.0x5d2_0)[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Send: friendlist.getFriendGroupList(friendlist.getFriendGroupList)[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Recv: MessageSvc.PushForceOffline[0m
+[31m2022-04-23 13:50:24 E/Net 1784958674: Exception in coroutine 'unnamed'
+net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.MessageSvcPushForceOffline.handle(MessageSvc.PushForceOffline.kt:35)
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.MessageSvcPushForceOffline.handle(MessageSvc.PushForceOffline.kt:25)
+	at net.mamoe.mirai.internal.network.components.CallPacketFactoryPacketHandler.handlePacket(PacketHandler.kt:110)
+	at net.mamoe.mirai.internal.network.components.PacketHandlerChain.handlePacket(PacketHandler.kt:42)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invokeSuspend(NetworkHandlerSupport.kt:84)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:55)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:112)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:126)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:56)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:47)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.collectReceived$mirai_core(NetworkHandlerSupport.kt:82)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$PacketDecodePipeline$send$1.invokeSuspend(NettyNetworkHandler.kt:178)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+	Suppressed: java.util.concurrent.CancellationException: NetworkHandler closed
+		at kotlinx.coroutines.ExceptionsKt.CancellationException(Exceptions.kt:22)
+		at kotlinx.coroutines.JobKt__JobKt.cancel(Job.kt:602)
+		at kotlinx.coroutines.JobKt.cancel(Unknown Source)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.close(NetworkHandlerSupport.kt:55)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.close(NettyNetworkHandler.kt:191)
+		at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:79)
+		... 25 more
+	Caused by: [CIRCULAR REFERENCE: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。]
+[0m
+[91m2022-04-23 13:50:24 W/Net 1784958674: An exception was thrown during initialization process of Bot 1784958674. Trying to ignore the error and continue logging in...
+StateSwitchingException(old=StateLoading, new=StateClosed, cause=net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:261)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.close(NettyNetworkHandler.kt:409)
+	at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:79)
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.MessageSvcPushForceOffline.handle(MessageSvc.PushForceOffline.kt:35)
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.MessageSvcPushForceOffline.handle(MessageSvc.PushForceOffline.kt:25)
+	at net.mamoe.mirai.internal.network.components.CallPacketFactoryPacketHandler.handlePacket(PacketHandler.kt:110)
+	at net.mamoe.mirai.internal.network.components.PacketHandlerChain.handlePacket(PacketHandler.kt:42)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invokeSuspend(NetworkHandlerSupport.kt:84)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:55)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:112)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:126)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:56)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:47)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.collectReceived$mirai_core(NetworkHandlerSupport.kt:82)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$PacketDecodePipeline$send$1.invokeSuspend(NettyNetworkHandler.kt:178)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。
+	... 25 more
+	Suppressed: java.util.concurrent.CancellationException: NetworkHandler closed
+		at kotlinx.coroutines.ExceptionsKt.CancellationException(Exceptions.kt:22)
+		at kotlinx.coroutines.JobKt__JobKt.cancel(Job.kt:602)
+		at kotlinx.coroutines.JobKt.cancel(Unknown Source)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.close(NetworkHandlerSupport.kt:55)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.close(NettyNetworkHandler.kt:191)
+		at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:79)
+		... 25 more
+	Caused by: [CIRCULAR REFERENCE: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。]
+[0m
+[91m2022-04-23 13:50:24 W/Net 1784958674: An exception was thrown during initialization process of Bot 1784958674. Trying to ignore the error and continue logging in...
+StateSwitchingException(old=StateLoading, new=StateClosed, cause=net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:261)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.close(NettyNetworkHandler.kt:409)
+	at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:79)
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.MessageSvcPushForceOffline.handle(MessageSvc.PushForceOffline.kt:35)
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.MessageSvcPushForceOffline.handle(MessageSvc.PushForceOffline.kt:25)
+	at net.mamoe.mirai.internal.network.components.CallPacketFactoryPacketHandler.handlePacket(PacketHandler.kt:110)
+	at net.mamoe.mirai.internal.network.components.PacketHandlerChain.handlePacket(PacketHandler.kt:42)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invokeSuspend(NetworkHandlerSupport.kt:84)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:55)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:112)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:126)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:56)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:47)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.collectReceived$mirai_core(NetworkHandlerSupport.kt:82)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$PacketDecodePipeline$send$1.invokeSuspend(NettyNetworkHandler.kt:178)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。
+	... 25 more
+	Suppressed: java.util.concurrent.CancellationException: NetworkHandler closed
+		at kotlinx.coroutines.ExceptionsKt.CancellationException(Exceptions.kt:22)
+		at kotlinx.coroutines.JobKt__JobKt.cancel(Job.kt:602)
+		at kotlinx.coroutines.JobKt.cancel(Unknown Source)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.close(NetworkHandlerSupport.kt:55)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.close(NettyNetworkHandler.kt:191)
+		at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:79)
+		... 25 more
+	Caused by: [CIRCULAR REFERENCE: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。]
+[0m
+[31m2022-04-23 13:50:24 E/Net 1784958674: Exception in coroutine 'BotInitProcessor.init'
+java.lang.IllegalStateException: Exception in attached Job 'BotInitProcessor.init'
+	at net.mamoe.mirai.internal.network.handler.state.JobAttachStateObserver$stateChanged0$1.invokeSuspend(JobAttachStateObserver.kt:40)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:571)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:678)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:665)
+Caused by: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.MessageSvcPushForceOffline.handle(MessageSvc.PushForceOffline.kt:35)
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.MessageSvcPushForceOffline.handle(MessageSvc.PushForceOffline.kt:25)
+	at net.mamoe.mirai.internal.network.components.CallPacketFactoryPacketHandler.handlePacket(PacketHandler.kt:110)
+	at net.mamoe.mirai.internal.network.components.PacketHandlerChain.handlePacket(PacketHandler.kt:42)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invokeSuspend(NetworkHandlerSupport.kt:84)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:55)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:112)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:126)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:56)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:47)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.collectReceived$mirai_core(NetworkHandlerSupport.kt:82)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$PacketDecodePipeline$send$1.invokeSuspend(NettyNetworkHandler.kt:178)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+	Suppressed: java.util.concurrent.CancellationException: NetworkHandler closed
+		at kotlinx.coroutines.ExceptionsKt.CancellationException(Exceptions.kt:22)
+		at kotlinx.coroutines.JobKt__JobKt.cancel(Job.kt:602)
+		at kotlinx.coroutines.JobKt.cancel(Unknown Source)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.close(NetworkHandlerSupport.kt:55)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.close(NettyNetworkHandler.kt:191)
+		at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:79)
+		... 25 more
+	Caused by: [CIRCULAR REFERENCE: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。]
+	Suppressed: StateSwitchingException(old=StateLoading, new=StateClosed, cause=net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:261)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.close(NettyNetworkHandler.kt:409)
+		at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:79)
+		... 25 more
+	Caused by: [CIRCULAR REFERENCE: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。]
+[0m
+[91m2022-04-23 13:50:24 W/Net 1784958674: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。
+net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.MessageSvcPushForceOffline.handle(MessageSvc.PushForceOffline.kt:35)
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.MessageSvcPushForceOffline.handle(MessageSvc.PushForceOffline.kt:25)
+	at net.mamoe.mirai.internal.network.components.CallPacketFactoryPacketHandler.handlePacket(PacketHandler.kt:110)
+	at net.mamoe.mirai.internal.network.components.PacketHandlerChain.handlePacket(PacketHandler.kt:42)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invokeSuspend(NetworkHandlerSupport.kt:84)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:55)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:112)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:126)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:56)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:47)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.collectReceived$mirai_core(NetworkHandlerSupport.kt:82)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$PacketDecodePipeline$send$1.invokeSuspend(NettyNetworkHandler.kt:178)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+	Suppressed: java.util.concurrent.CancellationException: NetworkHandler closed
+		at kotlinx.coroutines.ExceptionsKt.CancellationException(Exceptions.kt:22)
+		at kotlinx.coroutines.JobKt__JobKt.cancel(Job.kt:602)
+		at kotlinx.coroutines.JobKt.cancel(Unknown Source)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.close(NetworkHandlerSupport.kt:55)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.close(NettyNetworkHandler.kt:191)
+		at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:79)
+		... 25 more
+	Caused by: [CIRCULAR REFERENCE: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。]
+	Suppressed: StateSwitchingException(old=StateLoading, new=StateClosed, cause=net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。)
+		at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.setStateImpl$mirai_core(NetworkHandlerSupport.kt:261)
+		at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.close(NettyNetworkHandler.kt:409)
+		at net.mamoe.mirai.internal.network.handler.selector.SelectorNetworkHandler.close(SelectorNetworkHandler.kt:79)
+		... 25 more
+	Caused by: [CIRCULAR REFERENCE: net.mamoe.mirai.internal.network.impl.netty.ForceOfflineException: 你的帐号于13:49在另一台iPhone手机登录了QQ。如非本人操作，则密码可能已泄露，建议前往http://aq.qq.com/修改密码或紧急冻结帐号。]
+[0m
+[0m2022-04-23 13:50:24 V/Net 1784958674: Loading server list from cache.[0m
+[92m2022-04-23 13:50:24 I/Net 1784958674: Server list: 183.47.98.77:443, 49.7.253.252:80, msfwifi.3g.qq.com:8080, 114.222.112.229:80, 49.7.253.220:8080, 42.81.193.250:80, 183.47.102.218:8080, 183.47.106.14:443, 101.91.40.21:14000.[0m
+[92m2022-04-23 13:50:24 I/Net 1784958674: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Successfully fetched ecdh public key from server.[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Send: wtlogin.login[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Recv: wtlogin.login[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Send: StatSvc.register(online)[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Server time updated, serverTime: 1650693023, diff: -2ms=-0.002s[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Loading BdhSession from cache file[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Syncing friend message history...[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Recv: StatSvc.register[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Loaded 3 friends from local cache.[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Start loading stranger list...[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Send: OidbSvc.0x496(OidbSvc.0x496)[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Send: StatSvc.GetDevLoginInfo(StatSvc.GetDevLoginInfo)[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Send: OidbSvc.0x5d2_0(OidbSvc.0x5d2_0)[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Send: friendlist.getFriendGroupList(friendlist.getFriendGroupList)[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Recv: OidbSvc.0x5d2_0[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Successfully loaded stranger list: 0 in total[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Recv: StatSvc.GetDevLoginInfo[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Syncing friend message history: Success.[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Online OtherClients: 橙原凯的iPhone(MOBILE)[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Recv: OidbSvc.0x496[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Start loading group list...[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Recv: StatSvc.SvcReqMSFLoginNotify[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Send: friendlist.GetTroopListReqV2(friendlist.GetTroopListReqV2)[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Recv: friendlist.getFriendGroupList[0m
+[0m2022-04-23 13:50:25 V/Net 1784958674: Recv: friendlist.GetTroopListReqV2[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Loaded 4 members from local cache for group OOP小组 (772304437)[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Successfully loaded group list: 1 in total.[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Scheduled refresh login session in 19d 23h 55min 0.0s.[0m
+[92m2022-04-23 13:50:25 I/Net 1784958674: Scheduled key refresh in 23h 55min 0.0s.[0m
+[92m2022-04-23 13:50:28 I/Net 1784958674: Server list: 49.7.253.141:80, 49.7.253.123:8080, 180.102.191.95:80, msfwifi.3g.qq.com:8080, 114.222.113.249:14000, 183.47.102.213:443, 183.2.144.33:8080, 49.7.253.123:80, 183.47.99.24:443.[0m
+[0m2022-04-23 13:50:28 V/Net 1784958674: Saving bdh session to cache[0m
+[0m2022-04-23 13:50:28 V/Net 1784958674: Saving server list to cache[0m
+[0m2022-04-23 13:50:28 V/Net 1784958674: Send: ConfigPushSvc.PushResp(ConfigPushSvc.PushResp)[0m
+[0m2022-04-23 13:50:28 V/Net 1784958674: Recv: ConfigPushSvc.PushReq[0m
+[0m2022-04-23 13:50:28 V/Net 1784958674: Saving bdh session to cache[0m
+[0m2022-04-23 13:50:28 V/Net 1784958674: Send: ConfigPushSvc.PushResp(ConfigPushSvc.PushResp)[0m
+[0m2022-04-23 13:50:28 V/Net 1784958674: Recv: ConfigPushSvc.PushReq[0m
+[0m2022-04-23 13:50:38 V/Net 1784958674: Send: StatSvc.register(offline)[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Loading server list from cache.[0m
+[92m2022-04-23 13:51:45 I/Net 1784958674: Server list: 49.7.253.141:80, 49.7.253.123:8080, 180.102.191.95:80, msfwifi.3g.qq.com:8080, 114.222.113.249:14000, 183.47.102.213:443, 183.2.144.33:8080, 49.7.253.123:80, 183.47.99.24:443.[0m
+[92m2022-04-23 13:51:45 I/Net 1784958674: ECDH key is valid.[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Send: wtlogin.exchange_emp[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Recv: wtlogin.exchange_emp[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Send: StatSvc.register(online)[0m
+[92m2022-04-23 13:51:45 I/Net 1784958674: Server time updated, serverTime: 1650693104, diff: -1ms=-0.001s[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Recv: StatSvc.register[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Loading BdhSession from cache file[0m
+[92m2022-04-23 13:51:45 I/Net 1784958674: Syncing friend message history...[0m
+[92m2022-04-23 13:51:45 I/Net 1784958674: Loaded 3 friends from local cache.[0m
+[92m2022-04-23 13:51:45 I/Net 1784958674: Start loading stranger list...[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Send: StatSvc.GetDevLoginInfo(StatSvc.GetDevLoginInfo)[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Send: OidbSvc.0x496(OidbSvc.0x496)[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Send: OidbSvc.0x5d2_0(OidbSvc.0x5d2_0)[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Send: friendlist.getFriendGroupList(friendlist.getFriendGroupList)[0m
+[0m2022-04-23 13:51:45 V/Net 1784958674: Recv: StatSvc.GetDevLoginInfo[0m
+[92m2022-04-23 13:51:45 I/Net 1784958674: No OtherClient online.[0m
+[0m2022-04-23 13:51:46 V/Net 1784958674: Recv: OidbSvc.0x5d2_0[0m
+[92m2022-04-23 13:51:46 I/Net 1784958674: Successfully loaded stranger list: 0 in total[0m
+[0m2022-04-23 13:51:46 V/Net 1784958674: Recv: OidbSvc.0x496[0m
+[92m2022-04-23 13:51:46 I/Net 1784958674: Start loading group list...[0m
+[0m2022-04-23 13:51:46 V/Net 1784958674: Send: friendlist.GetTroopListReqV2(friendlist.GetTroopListReqV2)[0m
+[0m2022-04-23 13:51:46 V/Net 1784958674: Recv: friendlist.getFriendGroupList[0m
+[92m2022-04-23 13:51:46 I/Net 1784958674: Syncing friend message history: Success.[0m
+[0m2022-04-23 13:51:46 V/Net 1784958674: Recv: friendlist.GetTroopListReqV2[0m
+[92m2022-04-23 13:51:46 I/Net 1784958674: Loaded 4 members from local cache for group OOP小组 (772304437)[0m
+[92m2022-04-23 13:51:46 I/Net 1784958674: Successfully loaded group list: 1 in total.[0m
+[92m2022-04-23 13:51:46 I/Net 1784958674: Scheduled key refresh in 23h 55min 0.0s.[0m
+[92m2022-04-23 13:51:46 I/Net 1784958674: Scheduled refresh login session in 19d 23h 55min 0.0s.[0m
+[0m2022-04-23 13:51:48 V/Net 1784958674: Saving bdh session to cache[0m
+[0m2022-04-23 13:51:48 V/Net 1784958674: Send: ConfigPushSvc.PushResp(ConfigPushSvc.PushResp)[0m
+[0m2022-04-23 13:51:48 V/Net 1784958674: Recv: ConfigPushSvc.PushReq[0m
+[0m2022-04-23 13:51:51 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-04-23 13:51:51 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-04-23 13:51:57 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-04-23 13:51:58 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-04-23 13:52:04 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-04-23 13:52:04 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-04-23 13:52:21 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-04-23 13:52:21 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-04-23 13:52:37 V/Net 1784958674: Send: StatSvc.register(offline)[0m
