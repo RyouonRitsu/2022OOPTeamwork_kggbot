@@ -93,7 +93,7 @@ object PluginMain : KotlinPlugin(
                         var string = ""
                         for (i in 1..n) {
                             val t = randomEat(type)
-                            if (t == "不知道这种类型哦! 可以使用kgg吃的类型来查询可供选择的类型名称!") {
+                            if (t == "不知道这种类型哦! 可以使用\"kgg吃的类型\"来查询可供选择的类型名称!") {
                                 string += t
                                 break
                             }

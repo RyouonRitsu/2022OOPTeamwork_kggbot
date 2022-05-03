@@ -382,7 +382,7 @@ fun emojiMix(emojis: String): String {
             fos.close()
             "./data/Image/${emoji1 + emoji2}.png"
         } else result
-    } else "格式错误, 请检查是否包含+号"
+    } else "格式错误, 请检查是否包含\"+\"号"
 }
 
 fun createUrl(emoji1: Emoji, emoji2: Emoji): String {
