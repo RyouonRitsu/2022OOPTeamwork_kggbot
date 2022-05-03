@@ -7,6 +7,7 @@ import org.ritsu.mirai.plugin.entity.User
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.nextDown
 
 fun luckyValue(sender: Member): String {
     val user = User.getUser(sender)
@@ -20,7 +21,7 @@ fun luckyValue(sender: Member): String {
     //如果JSONArray为空
     if (jsonArr == null) {
         //直接新建数据
-        user.luckyValue = (0..100).random()
+        user.luckyValue = Math.random() / 1.0.nextDown()
         user.luckyValueAcquisitionDate = SimpleDateFormat("yyyy/MM/dd").format(Date())
     } else {
         //否则查找用户数据
@@ -30,14 +31,16 @@ fun luckyValue(sender: Member): String {
             val jsonObj = iterator.next() as JSONObject
             //如果用户数据存在就读取数据
             if (jsonObj.getLongValue("id") == user.account.id) {
-                user.luckyValueAcquisitionDate = jsonObj.getString("luckyValueAcquisitionDate")
+                if (jsonObj.containsKey("luckyValueAcquisitionDate")) user.luckyValueAcquisitionDate =
+                    jsonObj.getString("luckyValueAcquisitionDate")
+                else user.luckyValueAcquisitionDate = ""
                 if (user.luckyValueAcquisitionDate != SimpleDateFormat("yyyy/MM/dd").format(Date())) {
                     //如果还没抽过卡就抽卡
-                    user.luckyValue = (0..100).random()
+                    user.luckyValue = Math.random() / 1.0.nextDown()
                     user.luckyValueAcquisitionDate = SimpleDateFormat("yyyy/MM/dd").format(Date())
                 } else {
                     //如果已经抽过了就继续使用原来的数据
-                    user.luckyValue = jsonObj.getIntValue("luckyValue")
+                    user.luckyValue = jsonObj.getDoubleValue("luckyValue")
                 }
                 flag = true
                 jsonObject = jsonObj
@@ -46,7 +49,7 @@ fun luckyValue(sender: Member): String {
         }
         //不存在就新建数据
         if (!flag) {
-            user.luckyValue = (0..100).random()
+            user.luckyValue = Math.random() / 1.0.nextDown()
             user.luckyValueAcquisitionDate = SimpleDateFormat("yyyy/MM/dd").format(Date())
         }
     }
@@ -62,14 +65,13 @@ fun luckyValue(sender: Member): String {
         jsonObject["luckyValue"] = user.luckyValue
         jsonObject["luckyValueAcquisitionDate"] = user.luckyValueAcquisitionDate
         //JSONObject添加到JSONArray中
-        if (jsonArr == null) {
-            jsonArr = JSONArray()
-        }
+        if (jsonArr == null) jsonArr = JSONArray()
         jsonArr.add(jsonObject)
     }
     //JSONArray转为JSONString
     jsonString = jsonArr.toJSONString()
     //写入文件
     file.writeText(jsonString)
-    return "${if (user.account.nameCard != "") user.account.nameCard else user.account.id}今天的幸运值是: ${user.luckyValue}"
+    val luckyValue = String.format("%.2f", user.luckyValue * 100)
+    return "今天的幸运指数是$luckyValue%!"
 }

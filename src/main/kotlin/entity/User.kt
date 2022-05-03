@@ -13,6 +13,6 @@ class User(val account: Member) {
         }
     }
 
-    var luckyValue: Int = -1
+    var luckyValue: Double = -1.0
     var luckyValueAcquisitionDate: String = SimpleDateFormat("yyyy/MM/dd").format(Date())
 }
