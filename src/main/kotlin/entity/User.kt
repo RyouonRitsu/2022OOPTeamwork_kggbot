@@ -1,0 +1,18 @@
+package org.ritsu.mirai.plugin.entity
+
+import net.mamoe.mirai.contact.Member
+import java.text.SimpleDateFormat
+import java.util.*
+
+class User(val account: Member) {
+    companion object {
+        private val users = HashMap<Long, User>()
+
+        fun getUser(account: Member): User {
+            return users.getOrPut(account.id) { User(account) }
+        }
+    }
+
+    var luckyValue: Double = -1.0
+    var luckyValueAcquisitionDate: String = SimpleDateFormat("yyyy/MM/dd").format(Date())
+}

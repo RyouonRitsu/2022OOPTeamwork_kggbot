@@ -1,18 +1,19 @@
 package org.ritsu.mirai.plugin
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
 import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
-import net.mamoe.mirai.event.EventChannel
+import net.mamoe.mirai.contact.nameCardOrNick
 import net.mamoe.mirai.event.GlobalEventChannel
-import net.mamoe.mirai.event.events.BotInvitedJoinGroupRequestEvent
-import net.mamoe.mirai.event.events.FriendMessageEvent
-import net.mamoe.mirai.event.events.GroupMessageEvent
-import net.mamoe.mirai.event.events.NewFriendRequestEvent
-import net.mamoe.mirai.event.globalEventChannel
+import net.mamoe.mirai.event.events.*
+import net.mamoe.mirai.message.data.At
 import net.mamoe.mirai.message.data.Image
-import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.PlainText
+import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
 import net.mamoe.mirai.utils.info
+import org.ritsu.mirai.plugin.commands.*
+import java.io.File
 
 /**
  * 使用 kotlin 版请把
@@ -31,14 +32,14 @@ import net.mamoe.mirai.utils.info
 
 object PluginMain : KotlinPlugin(
     JvmPluginDescription(
-        id = "org.ritsu.mirai-ritsu",
-        name = "mirai-ritsu",
+        id = "org.OOP.mirai",
+        name = "kggbot",
         version = "0.1.0"
     ) {
         author("RyouonRitsu")
         info(
             """
-            这是一个QQ群聊插件, 
+            这是一个kggbot插件, 
             在这里描述插件的功能和用法等.
         """.trimIndent()
         )
@@ -49,12 +50,74 @@ object PluginMain : KotlinPlugin(
         logger.info { "Plugin loaded" }
         //配置文件目录 "${dataFolder.absolutePath}/"
         val eventChannel = GlobalEventChannel.parentScope(this)
-        eventChannel.subscribeAlways<GroupMessageEvent>{
+        //监听新加群消息并欢迎
+        eventChannel.subscribeAlways<MemberJoinEvent> {
+            group.sendMessage(
+                PlainText("欢迎") + At(member).followedBy(
+                    PlainText(
+                        "加入${group.name}! 请先仔细阅读群内公告及注意事项, " +
+                            "如果可以的话也请修改一下群名片, 之后就可以和大家一起愉快的玩耍啦! 有任何需要的话都可以随时找我! 不知道该干什么的话就说\"kgghelp\"!"
+                    )
+                )
+            )
+        }
+        eventChannel.subscribeAlways<GroupMessageEvent> {
             //群消息
+            //普通命令
             //复读示例
             if (message.contentToString().startsWith("复读")) {
                 group.sendMessage(message.contentToString().replace("复读", ""))
             }
+            //kgg命令
+            if (message.contentToString().startsWith("kgg")) {
+                val cmd = message.contentToString().replace("kgg", "")
+                if (cmd == "抽卡") {
+                    //发送消息
+                    group.sendMessage(sender.nameCardOrNick + luckyValue(sender))
+                } else if (cmd == "help") {
+                    group.sendMessage(Help.toString().trim())
+                } else if (cmd.startsWith("我今天") && cmd.contains("吃什么")) {
+                    var type = cmd.replace("我今天", "")
+                        .replaceAfter("吃什么", "").replace("吃什么", "")
+                    var n: Int? = 1
+                    var temp = cmd.replaceBefore("吃什么", "").replace("吃什么", "")
+                    if (cmd.contains("x")) {
+                        n = cmd.replaceBefore("x", "").replace("x", "").toIntOrNull()
+                        temp = temp.replaceAfter("x", "").replace("x", "")
+                    }
+                    if (type == "" || temp != "") {
+                        type = temp
+                    }
+                    if (n == 1) group.sendMessage(randomEat(type))
+                    else if (n != null && n in 2..10) {
+                        var string = ""
+                        for (i in 1..n) {
+                            val t = randomEat(type)
+                            if (t == "不知道这种类型哦! 可以使用kgg吃的类型来查询可供选择的类型名称!") {
+                                string += t
+                                break
+                            }
+                            string += "${i}. $t${if (t in string) " [重复]\n" else "\n"}"
+                        }
+                        group.sendMessage(string)
+                    } else group.sendMessage("重复抽取命令格式错误! 请尝试2-10的整数!")
+                } else if (cmd == "吃的类型") {
+                    group.sendMessage(dishLs())
+                } else if (cmd.startsWith("mix")) {
+                    val result = emojiMix(cmd.replace("mix", ""))
+                    if (result.startsWith("./data/Image/")) {
+                        val inputStream = File(result).toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        group.sendMessage(Image(id))
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                    } else group.sendMessage(result)
+                } else {
+                    group.sendMessage("不知道要做什么的话请说\"kgghelp\"!")
+                }
+            }
+            /*
             if (message.contentToString() == "hi") {
                 //群内发送
                 group.sendMessage("hi")
@@ -76,18 +139,19 @@ object PluginMain : KotlinPlugin(
                     group.sendMessage("纯文本，内容:${it.content}")
                 }
             }
+            */
         }
-        eventChannel.subscribeAlways<FriendMessageEvent>{
+        eventChannel.subscribeAlways<FriendMessageEvent> {
             //好友信息
-            sender.sendMessage("hi")
+            sender.sendMessage("暂不支持私聊功能哦!")
         }
-        eventChannel.subscribeAlways<NewFriendRequestEvent>{
+        eventChannel.subscribeAlways<NewFriendRequestEvent> {
             //自动同意好友申请
-            accept()
+            //accept()
         }
-        eventChannel.subscribeAlways<BotInvitedJoinGroupRequestEvent>{
+        eventChannel.subscribeAlways<BotInvitedJoinGroupRequestEvent> {
             //自动同意加群申请
-            accept()
+            //accept()
         }
     }
 }

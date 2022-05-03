@@ -1,0 +1,21 @@
+{
+    "friendListSeq": 6,
+    "timeStamp": 4,
+    "list": [
+        {
+            "uin": 66600000,
+            "nick": "babyQ",
+            "remark": "babyQ"
+        },
+        {
+            "uin": 1780645196,
+            "nick": "橙原 凯",
+            "remark": "橙原 凯"
+        },
+        {
+            "uin": 1784958674,
+            "nick": "OOP",
+            "remark": "OOP"
+        }
+    ]
+}
