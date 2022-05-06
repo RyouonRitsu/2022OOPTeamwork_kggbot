@@ -1,6 +1,6 @@
 package org.ritsu.mirai.plugin.commands
 
-import com.vdurmont.emoji.EmojiParser
+import com.github.binarywang.java.emoji.EmojiConverter
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.File
@@ -364,10 +364,11 @@ data class Emoji(val code: List<Int>, val str: String, val info: List<String>) {
 
 fun emojiMix(emojis: String): String {
     return if (emojis.contains("+")) {
-        val emojiCollection = EmojiParser.extractEmojis(emojis)
-        if (emojiCollection.size != 2) return "识别错误, 可能不支持这个iOS版本的emoji, 或者mix超过或少于两个emoji, 亦或是你使用的是QQ的emoji, 此功能仅支持系统原生的emoji"
-        val emoji1 = EmojiParser.parseToHtmlDecimal(emojiCollection[0]).replace("&#", "").replace(";", "").toInt()
-        val emoji2 = EmojiParser.parseToHtmlDecimal(emojiCollection[1]).replace("&#", "").replace(";", "").toInt()
+        val emojiCollection =
+            Regex("&#\\d+;").findAll(EmojiConverter.getInstance().toHtml(emojis)).map { it.value }.toList()
+        if (emojiCollection.size != 2) return "识别错误, 你不能mix${emojiCollection.size}个emoji, 可能不支持这个iOS版本的emoji, 亦或是你使用的是QQ的emoji, 此功能仅支持系统原生的emoji"
+        val emoji1 = emojiCollection[0].replace("&#", "").replace(";", "").toInt()
+        val emoji2 = emojiCollection[1].replace("&#", "").replace(";", "").toInt()
         val result = mixEmoji(emoji1, emoji2)
         if (result.startsWith("http")) {
             val client = OkHttpClient()
@@ -382,7 +383,7 @@ fun emojiMix(emojis: String): String {
             fos.close()
             "./data/Image/${emoji1 + emoji2}.png"
         } else result
-    } else "格式错误, 请检查是否包含+号"
+    } else "格式错误, 请检查是否包含\"+\"号"
 }
 
 fun createUrl(emoji1: Emoji, emoji2: Emoji): String {
@@ -411,8 +412,8 @@ fun findEmoji(emojiNum: Int): Emoji? {
 fun mixEmoji(emojiNum1: Int, emojiNum2: Int): String {
     val emoji1 = findEmoji(emojiNum1)
     val emoji2 = findEmoji(emojiNum2)
-    if (emoji1 == null) return "不支持的emoji: ${EmojiParser.parseToUnicode("&#$emojiNum1;")}"
-    if (emoji2 == null) return "不支持的emoji: ${EmojiParser.parseToUnicode("&#$emojiNum2;")}"
+    if (emoji1 == null) return "不支持的emoji: ${EmojiConverter.getInstance().toUnicode("&#$emojiNum1;")}"
+    if (emoji2 == null) return "不支持的emoji: ${EmojiConverter.getInstance().toUnicode("&#$emojiNum2;")}"
 
     val url1 = createUrl(emoji1, emoji2)
     val url2 = createUrl(emoji2, emoji1)

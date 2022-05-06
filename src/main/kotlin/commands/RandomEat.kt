@@ -140,7 +140,7 @@ fun randomEat(type: String): String {
     //随机食物，可选根据类型随机
     if (type != "") {
         return if (Dish.dishMap.containsKey(type)) Dish.dishMap[type]!!.random()
-        else "不知道这种类型哦! 可以使用kgg吃的类型来查询可供选择的类型名称!"
+        else "不知道这种类型哦! 可以使用\"kgg吃的类型\"来查询可供选择的类型名称!"
     }
     return Dish.dishMap[Dish.dishMap.keys.random()]!!.random()
 }

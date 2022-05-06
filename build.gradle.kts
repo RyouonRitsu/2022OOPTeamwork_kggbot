@@ -20,7 +20,7 @@ dependencies {
     implementation("org.slf4j:slf4j-api:1.7.36")
     //implementation("org.slf4j:slf4j-simple:1.7.36")
     //implementation("org.apache.logging.log4j:log4j-web:2.17.2")
-    implementation("com.vdurmont:emoji-java:5.1.1")
+    implementation("com.github.binarywang:java-emoji-converter:1.0.2")
 }
 
 repositories {
