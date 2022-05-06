@@ -13,6 +13,10 @@ import net.mamoe.mirai.message.data.PlainText
 import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
 import net.mamoe.mirai.utils.info
 import org.ritsu.mirai.plugin.commands.*
+import org.ritsu.mirai.plugin.entity.Administrator
+import org.ritsu.mirai.plugin.entity.Reply
+import org.ritsu.mirai.plugin.entity.User
+import org.ritsu.mirai.plugin.kernel.addEnergy
 import java.io.File
 
 /**
@@ -63,19 +67,55 @@ object PluginMain : KotlinPlugin(
         }
         eventChannel.subscribeAlways<GroupMessageEvent> {
             //群消息
+            //管理员命令
+            if (sender.id in Administrator.administrators && message.contentToString().startsWith("**")) {
+                if (message.contentToString().contains("能量值")) {
+                    var target: Long? = null
+                    val amount: Int?
+                    val energy: Int?
+                    message.forEach {
+                        if (it is At) target = it.target
+                    }
+                    if (target != null) {
+                        energy = User.users[target]?.energyValue
+                        if (energy != null) {
+                            amount = message.contentToString().replaceBefore("能量值", "").replace("能量值", "").toIntOrNull()
+                            if (amount != null) {
+                                addEnergy(User.users[target]!!.account, amount)
+                                group.sendMessage("${User.users[target]!!.account.nameCardOrNick}的能量值从${energy}修改为${User.users[target]!!.energyValue}")
+                            } else group.sendMessage("无法识别输入的数字")
+                        } else group.sendMessage("该用户的能量值无效")
+                    } else group.sendMessage("无法识别该用户")
+                } else if (message.contentToString().contains("查询")) {
+                    var target: Long? = null
+                    message.forEach {
+                        if (it is At) target = it.target
+                    }
+                    if (target != null) group.sendMessage("${User.users[target]!!.account.nameCardOrNick}的能量值是${User.users[target]!!.energyValue}")
+                    else group.sendMessage("无法识别该用户")
+                }
+            }
             //普通命令
             //复读示例
             if (message.contentToString().startsWith("复读")) {
                 group.sendMessage(message.contentToString().replace("复读", ""))
             }
             //kgg命令
-            if (message.contentToString().startsWith("kgg")) {
+            if (
+                message.contentToString() == "kgg"
+            ) {
+                val result: String = sign(sender, 1.0)
+                group.sendMessage(Reply.replies[message.contentToString()]!!.random())
+                if (result != "") sender.sendMessage(result)
+            } else if (message.contentToString().startsWith("kgg")) {
                 val cmd = message.contentToString().replace("kgg", "")
                 if (cmd == "抽卡") {
                     //发送消息
                     group.sendMessage(sender.nameCardOrNick + luckyValue(sender))
+                    val result = sign(sender, User.getUser(sender).luckyValue + 1)
+                    if (result != "") sender.sendMessage(result)
                 } else if (cmd == "help") {
-                    group.sendMessage(Help.toString().trim())
+                    sender.sendMessage(Help.toString(Help.funcGroup).trim())
                 } else if (cmd.startsWith("我今天") && cmd.contains("吃什么")) {
                     var type = cmd.replace("我今天", "")
                         .replaceAfter("吃什么", "").replace("吃什么", "")
@@ -88,18 +128,11 @@ object PluginMain : KotlinPlugin(
                     if (type == "" || temp != "") {
                         type = temp
                     }
-                    if (n == 1) group.sendMessage(randomEat(type))
-                    else if (n != null && n in 2..10) {
-                        var string = ""
-                        for (i in 1..n) {
-                            val t = randomEat(type)
-                            if (t == "不知道这种类型哦! 可以使用\"kgg吃的类型\"来查询可供选择的类型名称!") {
-                                string += t
-                                break
-                            }
-                            string += "${i}. $t${if (t in string) " [重复]\n" else "\n"}"
-                        }
-                        group.sendMessage(string)
+                    if (n == 1) {
+                        group.sendMessage(At(sender).followedBy(PlainText("\n${randomEat(type)}")))
+                    } else if (n != null && n in 2..10) {
+                        val string = multiplePrint(n, type)
+                        group.sendMessage(At(sender).followedBy(PlainText("\n$string")))
                     } else group.sendMessage("重复抽取命令格式错误! 请尝试2-10的整数!")
                 } else if (cmd == "吃的类型") {
                     group.sendMessage(dishLs())
@@ -113,6 +146,10 @@ object PluginMain : KotlinPlugin(
                             inputStream.close()
                         }
                     } else group.sendMessage(result)
+                } else if (cmd.startsWith("dice")) {
+                    val n = cmd.replace("dice", "").toIntOrNull()
+                    if (n != null && n > 0) group.sendMessage(At(sender).followedBy(PlainText("你roll出了${(1..n).random()}")))
+                    else group.sendMessage(At(sender).followedBy(PlainText("看不懂你要抽到多少哦, 请尝试大于1的整数!")))
                 } else {
                     group.sendMessage("不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -143,15 +180,52 @@ object PluginMain : KotlinPlugin(
         }
         eventChannel.subscribeAlways<FriendMessageEvent> {
             //好友信息
-            sender.sendMessage("暂不支持私聊功能哦!")
+            //管理员命令
+            if (sender.id in Administrator.administrators && message.contentToString().startsWith("**")) {
+                if (message.contentToString().replace("**", "").startsWith("ad")) {
+                    for (group in bot.groups) group.sendMessage(
+                        message.contentToString().replaceBefore("ad", "").replace("ad", "")
+                    )
+                    sender.sendMessage("公告已发送成功")
+                }
+            }
+            val result = sign(sender, 1.0)
+            if (result != "") sender.sendMessage(result)
+            if (message.contentToString() == "查询状态") {
+                sender.sendMessage(queryStatus(sender))
+            } else if (message.contentToString() == "help") {
+                sender.sendMessage(Help.toString(Help.funcFriend).trim())
+            } else if (message.contentToString().startsWith("dice")) {
+                val n = message.contentToString().replace("dice", "").toIntOrNull()
+                if (n != null && n > 0) sender.sendMessage("你roll出了${(1..n).random()}")
+                else sender.sendMessage("看不懂你要抽到多少哦, 请尝试大于1的整数!")
+            } else {
+                sender.sendMessage("不知道要做什么的话请说\"help\"!")
+            }
         }
         eventChannel.subscribeAlways<NewFriendRequestEvent> {
             //自动同意好友申请
-            //accept()
+            accept()
         }
         eventChannel.subscribeAlways<BotInvitedJoinGroupRequestEvent> {
             //自动同意加群申请
             //accept()
         }
+    }
+
+    private fun multiplePrint(
+        n: Int,
+        type: String
+    ): String {
+        var string = ""
+        for (i in 1..n) {
+            val t = randomEat(type)
+            if (t == "不知道这种类型哦! 可以使用\"kgg吃的类型\"来查询可供选择的类型名称!") {
+                string += t
+                break
+            }
+            string += "${i}. $t${if (t in string) " [重复]\n" else "\n"}"
+        }
+        return string
     }
 }
