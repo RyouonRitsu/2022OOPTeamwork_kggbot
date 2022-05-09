@@ -13,6 +13,9 @@ import net.mamoe.mirai.message.data.PlainText
 import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
 import net.mamoe.mirai.utils.info
 import org.ritsu.mirai.plugin.commands.*
+import org.ritsu.mirai.plugin.commands.translate.NotAvailable
+import org.ritsu.mirai.plugin.commands.translate.languageType
+import org.ritsu.mirai.plugin.commands.translate.translate
 import org.ritsu.mirai.plugin.entity.Administrator
 import org.ritsu.mirai.plugin.entity.Reply
 import org.ritsu.mirai.plugin.entity.User
@@ -120,10 +123,10 @@ object PluginMain : KotlinPlugin(
                     var type = cmd.replace("我今天", "")
                         .replaceAfter("吃什么", "").replace("吃什么", "")
                     var n: Int? = 1
-                    var temp = cmd.replaceBefore("吃什么", "").replace("吃什么", "")
+                    var temp = cmd.replaceBefore("吃什么", "").replaceFirst("吃什么", "")
                     if (cmd.contains("x")) {
                         n = cmd.replaceBefore("x", "").replace("x", "").toIntOrNull()
-                        temp = temp.replaceAfter("x", "").replace("x", "")
+                        temp = temp.replaceAfterLast("x", "").substringBeforeLast("x")
                     }
                     if (type == "" || temp != "") {
                         type = temp
@@ -150,6 +153,41 @@ object PluginMain : KotlinPlugin(
                     val n = cmd.replace("dice", "").toIntOrNull()
                     if (n != null && n > 0) group.sendMessage(At(sender).followedBy(PlainText("你roll出了${(1..n).random()}")))
                     else group.sendMessage(At(sender).followedBy(PlainText("看不懂你要抽到多少哦, 请尝试大于1的整数!")))
+                } else if (cmd.startsWith("占卜一下")) {
+                    if (cmd.replaceFirst("占卜一下", "") == "") group.sendMessage(("不写内容就来占卜吗?"))
+                    else group.sendMessage(divination(sender, cmd.replaceFirst("占卜一下", "")))
+                } else if (cmd.startsWith("t")) {
+                    if (group.id in NotAvailable.groups) group.sendMessage("此功能在该群不可用!")
+                    else if (cmd.length > 300) group.sendMessage("你要翻译的内容太长啦, 弄少一点再来吧!")
+                    else if ("\n" in cmd) group.sendMessage("你要翻译的内容不能包含换行哦!")
+                    else if ("->" in cmd) group.sendMessage(
+                        At(sender).followedBy(
+                            PlainText(
+                                "\n${
+                                    translate(
+                                        cmd.replaceFirst("t", "").replaceAfterLast("->", "").substringBeforeLast("->"),
+                                        cmd.substringAfterLast("->").replaceFirst("->", "")
+                                    )
+                                }"
+                            )
+                        )
+                    )
+                    else group.sendMessage(
+                        At(sender).followedBy(
+                            PlainText(
+                                "\n${
+                                    translate(
+                                        cmd.replaceFirst(
+                                            "t",
+                                            ""
+                                        )
+                                    )
+                                }"
+                            )
+                        )
+                    )
+                } else if (cmd == "支持语言") {
+                    group.sendMessage("目前支持的语言有: " + languageType())
                 } else {
                     group.sendMessage("不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -179,28 +217,31 @@ object PluginMain : KotlinPlugin(
             */
         }
         eventChannel.subscribeAlways<FriendMessageEvent> {
-            //好友信息
-            //管理员命令
-            if (sender.id in Administrator.administrators && message.contentToString().startsWith("**")) {
-                if (message.contentToString().replace("**", "").startsWith("ad")) {
-                    for (group in bot.groups) group.sendMessage(
-                        message.contentToString().replaceBefore("ad", "").replace("ad", "")
-                    )
-                    sender.sendMessage("公告已发送成功")
+            //屏蔽机器人本人消息无限循环
+            if (sender.id != bot.id) {
+                //好友信息
+                //管理员命令
+                if (sender.id in Administrator.administrators && message.contentToString().startsWith("**")) {
+                    if (message.contentToString().replaceFirst("**", "").startsWith("ad")) {
+                        for (group in bot.groups) group.sendMessage(
+                            message.contentToString().replaceBefore("ad", "").replace("ad", "")
+                        )
+                        sender.sendMessage("公告已发送成功")
+                    }
                 }
-            }
-            val result = sign(sender, 1.0)
-            if (result != "") sender.sendMessage(result)
-            if (message.contentToString() == "查询状态") {
-                sender.sendMessage(queryStatus(sender))
-            } else if (message.contentToString() == "help") {
-                sender.sendMessage(Help.toString(Help.funcFriend).trim())
-            } else if (message.contentToString().startsWith("dice")) {
-                val n = message.contentToString().replace("dice", "").toIntOrNull()
-                if (n != null && n > 0) sender.sendMessage("你roll出了${(1..n).random()}")
-                else sender.sendMessage("看不懂你要抽到多少哦, 请尝试大于1的整数!")
-            } else {
-                sender.sendMessage("不知道要做什么的话请说\"help\"!")
+                val result = sign(sender, 1.0)
+                if (result != "") sender.sendMessage(result)
+                if (message.contentToString() == "查询状态") {
+                    sender.sendMessage(queryStatus(sender))
+                } else if (message.contentToString() == "help") {
+                    sender.sendMessage(Help.toString(Help.funcFriend).trim())
+                } else if (message.contentToString().startsWith("dice")) {
+                    val n = message.contentToString().replace("dice", "").toIntOrNull()
+                    if (n != null && n > 0) sender.sendMessage("你roll出了${(1..n).random()}")
+                    else sender.sendMessage("看不懂你要抽到多少哦, 请尝试大于1的整数!")
+                } else {
+                    sender.sendMessage("不知道要做什么的话请说\"help\"!")
+                }
             }
         }
         eventChannel.subscribeAlways<NewFriendRequestEvent> {
