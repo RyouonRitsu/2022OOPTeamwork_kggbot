@@ -388,11 +388,7 @@ fun emojiMix(emojis: String): String {
 
 fun createUrl(emoji1: Emoji, emoji2: Emoji): String {
     fun emojiCode(emoji: Emoji): String {
-        var str = ""
-        for (it in emoji.code) {
-            str += String.format("u%x ", it)
-        }
-        return str.trim().replace(" ", "-")
+        return emoji.code.joinToString("-") { String.format("u%x", it) }
     }
 
     val u1 = emojiCode(emoji1)
