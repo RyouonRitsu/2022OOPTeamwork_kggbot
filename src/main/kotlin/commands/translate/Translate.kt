@@ -19,7 +19,7 @@ enum class Lang(val code: String, val desc: String) {
 
 object NotAvailable {
     val groups = listOf(
-        761365602L, 115971189L
+        1L
     )
 }
 

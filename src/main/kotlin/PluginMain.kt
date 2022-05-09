@@ -154,7 +154,7 @@ object PluginMain : KotlinPlugin(
                     if (n != null && n > 0) group.sendMessage(At(sender).followedBy(PlainText("你roll出了${(1..n).random()}")))
                     else group.sendMessage(At(sender).followedBy(PlainText("看不懂你要抽到多少哦, 请尝试大于1的整数!")))
                 } else if (cmd.startsWith("占卜一下")) {
-                    if (cmd.replace("占卜一下", "") == "") group.sendMessage(("不写内容就来占卜, 你占卜个鸡儿, 贱奴!"))
+                    if (cmd.replace("占卜一下", "") == "") group.sendMessage(("不写内容就来占卜吗?"))
                     else group.sendMessage(divination(sender, cmd.replace("占卜一下", "")))
                 } else if (cmd.startsWith("t")) {
                     if (group.id in NotAvailable.groups) group.sendMessage("此功能在该群不可用!")
