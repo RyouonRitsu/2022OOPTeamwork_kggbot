@@ -123,10 +123,10 @@ object PluginMain : KotlinPlugin(
                     var type = cmd.replace("我今天", "")
                         .replaceAfter("吃什么", "").replace("吃什么", "")
                     var n: Int? = 1
-                    var temp = cmd.replaceBefore("吃什么", "").replace("吃什么", "")
+                    var temp = cmd.replaceBefore("吃什么", "").replaceFirst("吃什么", "")
                     if (cmd.contains("x")) {
                         n = cmd.replaceBefore("x", "").replace("x", "").toIntOrNull()
-                        temp = temp.replaceAfter("x", "").replace("x", "")
+                        temp = temp.replaceAfterLast("x", "").substringBeforeLast("x")
                     }
                     if (type == "" || temp != "") {
                         type = temp
