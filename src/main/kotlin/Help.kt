@@ -3,7 +3,7 @@ package org.ritsu.mirai.plugin
 object Help {
     val funcGroup: List<String> = listOf(
         "help", "抽卡", "我今天[<类型>?]吃什么[<类型>?][(x<2-10>)?]", "吃的类型", "mix(+)[<emoji>](+)[<emoji>](+)",
-        "dice[<大于1的整数>]", "占卜一下[<事件>]", "t[<内容>][(-><语言>)?]", "支持语言"
+        "dice[<大于1的整数>]", "占卜一下[<事件>]", "t[<内容>][(-><语言>)?]", "支持语言", "搜图[<一张或多张图片>?]"
     )
 
     val funcFriend = listOf(

@@ -1,10 +1,6 @@
 package org.ritsu.mirai.plugin.commands
 
 import com.github.binarywang.java.emoji.EmojiConverter
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import java.io.File
-import java.io.FileOutputStream
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -371,17 +367,8 @@ fun emojiMix(emojis: String): String {
         val emoji2 = emojiCollection[1].replace("&#", "").replace(";", "").toInt()
         val result = mixEmoji(emoji1, emoji2)
         if (result.startsWith("http")) {
-            val client = OkHttpClient()
-            val request = Request.Builder().get().url(result).build()
-            val response = client.newCall(request).execute()
-            val inputStream = response.body!!.byteStream()
-            val fos: FileOutputStream
-            val file = File("./data/Image/${emoji1 + emoji2}.png")
-            fos = FileOutputStream(file)
-            fos.write(inputStream.readBytes())
-            fos.flush()
-            fos.close()
-            "./data/Image/${emoji1 + emoji2}.png"
+            val (code, msg) = downloadPicture(result, "./data/Image/${emoji1 + emoji2}.png")
+            if (code == 200 && msg == null) "./data/Image/${emoji1 + emoji2}.png" else msg!!
         } else result
     } else "格式错误, 请检查是否包含\"+\"号"
 }

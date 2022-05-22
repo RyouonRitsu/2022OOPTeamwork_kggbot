@@ -3,14 +3,14 @@ plugins {
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
 
-    id("net.mamoe.mirai-console") version "2.10.3"
+    id("net.mamoe.mirai-console") version "2.11.0"
 }
 
 group = "org.example"
 version = "0.1.0"
 
 dependencies {
-    implementation("com.alibaba:fastjson:1.2.80")
+    implementation("com.alibaba.fastjson2:fastjson2:2.0.4")
     implementation("ch.qos.logback:logback-core:1.2.11")
     implementation("ch.qos.logback:logback-classic:1.2.11")
     //implementation("org.apache.logging.log4j:log4j-api:2.17.2")

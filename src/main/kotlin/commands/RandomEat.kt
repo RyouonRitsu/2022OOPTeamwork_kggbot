@@ -145,6 +145,19 @@ fun randomEat(type: String): String {
     return Dish.dishMap[Dish.dishMap.keys.random()]!!.random()
 }
 
+fun randomEat(type: String, n: Int): String {
+    var string = ""
+    for (i in 1..n) {
+        val t = randomEat(type)
+        if (t == "不知道这种类型哦! 可以使用\"kgg吃的类型\"来查询可供选择的类型名称!") {
+            string += t
+            break
+        }
+        string += "${i}. $t${if (t in string) " [重复]\n" else "\n"}"
+    }
+    return string
+}
+
 fun dishLs(): String {
     //显示所有类别
     var s = ""

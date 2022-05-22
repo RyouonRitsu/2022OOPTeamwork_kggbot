@@ -10,6 +10,7 @@ accounts:
     # "protocol": "ANDROID_PHONE" / "ANDROID_PAD" / "ANDROID_WATCH" /"MAC" / "IPAD"
     # "device": "device.json"
     # "enable": true
+    # "heartbeatStrategy": "STAT_HB" / "REGISTER" / "NONE"
     configuration: 
       protocol: ANDROID_PHONE
       device: device.json

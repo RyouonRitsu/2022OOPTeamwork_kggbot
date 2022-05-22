@@ -1,7 +1,8 @@
 package org.ritsu.mirai.plugin.entity
 
-import com.alibaba.fastjson.JSONArray
-import com.alibaba.fastjson.JSONObject
+import com.alibaba.fastjson2.JSON
+import com.alibaba.fastjson2.JSONArray
+import com.alibaba.fastjson2.JSONObject
 import java.io.File
 
 class User(val account: net.mamoe.mirai.contact.User) {
@@ -24,7 +25,7 @@ class User(val account: net.mamoe.mirai.contact.User) {
         val file = File("./data/UsersData.json")
         var jsonString = file.readText()
         //转为JSONArray对象
-        var jsonArr = JSONArray.parseArray(jsonString)
+        var jsonArr = JSON.parseArray(jsonString)
         var jsonObject: JSONObject? = null
         //如果JSONArray不为空
         if (jsonArr != null) {
