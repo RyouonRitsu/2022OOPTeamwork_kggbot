@@ -1,7 +1,7 @@
 package org.ritsu.mirai.plugin.kernel
 
-import com.alibaba.fastjson.JSONArray
-import com.alibaba.fastjson.JSONObject
+import com.alibaba.fastjson2.JSON
+import com.alibaba.fastjson2.JSONObject
 import net.mamoe.mirai.contact.ContactList
 import net.mamoe.mirai.contact.Group
 import org.ritsu.mirai.plugin.entity.User
@@ -17,7 +17,7 @@ fun loadData(groups: ContactList<Group>) {
     val file = File("./data/UsersData.json")
     val jsonString = file.readText()
     //转为JSONArray对象
-    val jsonArr = JSONArray.parseArray(jsonString) ?: return
+    val jsonArr = JSON.parseArray(jsonString) ?: return
     //遍历JSONArray
     for (it in jsonArr) {
         val jsonObj = it as JSONObject

@@ -7,3 +7,8 @@ fun addEnergy(sender: User, energy: Int) {
     user.energyValue += energy
     user.save()
 }
+
+fun addEnergy(user: org.ritsu.mirai.plugin.entity.User, energy: Int) {
+    user.energyValue += energy
+    user.save()
+}

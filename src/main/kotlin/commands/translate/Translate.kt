@@ -1,6 +1,6 @@
 package org.ritsu.mirai.plugin.commands.translate
 
-import com.alibaba.fastjson.JSONObject
+import com.alibaba.fastjson2.*
 
 enum class Lang(val code: String, val desc: String) {
     AUTO("auto", "自动检测"),
@@ -35,7 +35,7 @@ fun translate(query: String, lang: String = Lang.AUTO.desc): String {
     val result = api.getTransResult(query, "auto", dstLang)
     return if (result == null) "翻译失败!"
     else {
-        val jsonObject = JSONObject.parseObject(result)
+        val jsonObject = JSON.parseObject(result)
         if (jsonObject.containsKey("trans_result")) {
             val jsonArr = jsonObject.getJSONArray("trans_result")
             return jsonArr.getJSONObject(0).getString("dst")

@@ -7,8 +7,11 @@ import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
 import net.mamoe.mirai.contact.nameCardOrNick
 import net.mamoe.mirai.event.GlobalEventChannel
 import net.mamoe.mirai.event.events.*
+import net.mamoe.mirai.event.selectMessages
 import net.mamoe.mirai.message.data.At
 import net.mamoe.mirai.message.data.Image
+import net.mamoe.mirai.message.data.Image.Key.queryUrl
+import net.mamoe.mirai.message.data.MessageSource.Key.quote
 import net.mamoe.mirai.message.data.PlainText
 import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
 import net.mamoe.mirai.utils.info
@@ -16,10 +19,8 @@ import org.ritsu.mirai.plugin.commands.*
 import org.ritsu.mirai.plugin.commands.translate.NotAvailable
 import org.ritsu.mirai.plugin.commands.translate.languageType
 import org.ritsu.mirai.plugin.commands.translate.translate
-import org.ritsu.mirai.plugin.entity.Administrator
-import org.ritsu.mirai.plugin.entity.Reply
-import org.ritsu.mirai.plugin.entity.User
-import org.ritsu.mirai.plugin.kernel.addEnergy
+import org.ritsu.mirai.plugin.entity.*
+import org.ritsu.mirai.plugin.kernel.searchUserByAt
 import java.io.File
 
 /**
@@ -73,29 +74,14 @@ object PluginMain : KotlinPlugin(
             //管理员命令
             if (sender.id in Administrator.administrators && message.contentToString().startsWith("**")) {
                 if (message.contentToString().contains("能量值")) {
-                    var target: Long? = null
-                    val amount: Int?
-                    val energy: Int?
-                    message.forEach {
-                        if (it is At) target = it.target
-                    }
-                    if (target != null) {
-                        energy = User.users[target]?.energyValue
-                        if (energy != null) {
-                            amount = message.contentToString().replaceBefore("能量值", "").replace("能量值", "").toIntOrNull()
-                            if (amount != null) {
-                                addEnergy(User.users[target]!!.account, amount)
-                                group.sendMessage("${User.users[target]!!.account.nameCardOrNick}的能量值从${energy}修改为${User.users[target]!!.energyValue}")
-                            } else group.sendMessage("无法识别输入的数字")
-                        } else group.sendMessage("该用户的能量值无效")
-                    } else group.sendMessage("无法识别该用户")
+                    group.sendMessage(
+                        adjustUserEnergy(
+                            searchUserByAt(message),
+                            message.contentToString().replaceBefore("能量值", "").replace("能量值", "").toIntOrNull()
+                        )
+                    )
                 } else if (message.contentToString().contains("查询")) {
-                    var target: Long? = null
-                    message.forEach {
-                        if (it is At) target = it.target
-                    }
-                    if (target != null) group.sendMessage("${User.users[target]!!.account.nameCardOrNick}的能量值是${User.users[target]!!.energyValue}")
-                    else group.sendMessage("无法识别该用户")
+                    group.sendMessage(queryUserEnergy(searchUserByAt(message)))
                 }
             }
             //普通命令
@@ -111,7 +97,7 @@ object PluginMain : KotlinPlugin(
                 group.sendMessage(Reply.replies[message.contentToString()]!!.random())
                 if (result != "") sender.sendMessage(result)
             } else if (message.contentToString().startsWith("kgg")) {
-                val cmd = message.contentToString().replace("kgg", "")
+                val cmd = message.contentToString().replaceFirst("kgg", "")
                 if (cmd == "抽卡") {
                     //发送消息
                     group.sendMessage(sender.nameCardOrNick + luckyValue(sender))
@@ -132,11 +118,10 @@ object PluginMain : KotlinPlugin(
                         type = temp
                     }
                     if (n == 1) {
-                        group.sendMessage(At(sender).followedBy(PlainText("\n${randomEat(type)}")))
+                        group.sendMessage(message.quote() + randomEat(type))
                     } else if (n != null && n in 2..10) {
-                        val string = multiplePrint(n, type)
-                        group.sendMessage(At(sender).followedBy(PlainText("\n$string")))
-                    } else group.sendMessage("重复抽取命令格式错误! 请尝试2-10的整数!")
+                        group.sendMessage(message.quote() + randomEat(type, n))
+                    } else group.sendMessage(message.quote() + "重复抽取命令格式错误! 请尝试2-10的整数!")
                 } else if (cmd == "吃的类型") {
                     group.sendMessage(dishLs())
                 } else if (cmd.startsWith("mix")) {
@@ -151,45 +136,65 @@ object PluginMain : KotlinPlugin(
                     } else group.sendMessage(result)
                 } else if (cmd.startsWith("dice")) {
                     val n = cmd.replace("dice", "").toIntOrNull()
-                    if (n != null && n > 0) group.sendMessage(At(sender).followedBy(PlainText("你roll出了${(1..n).random()}")))
-                    else group.sendMessage(At(sender).followedBy(PlainText("看不懂你要抽到多少哦, 请尝试大于1的整数!")))
+                    if (n != null && n > 0) group.sendMessage(message.quote() + "你roll出了${(1..n).random()}")
+                    else group.sendMessage(message.quote() + "看不懂你要抽到多少哦, 请尝试大于1的整数!")
                 } else if (cmd.startsWith("占卜一下")) {
-                    if (cmd.replaceFirst("占卜一下", "") == "") group.sendMessage(("不写内容就来占卜吗?"))
+                    if (cmd.replaceFirst("占卜一下", "") == "") group.sendMessage(message.quote() + "不写内容就来占卜吗?")
                     else group.sendMessage(divination(sender, cmd.replaceFirst("占卜一下", "")))
                 } else if (cmd.startsWith("t")) {
-                    if (group.id in NotAvailable.groups) group.sendMessage("此功能在该群不可用!")
-                    else if (cmd.length > 300) group.sendMessage("你要翻译的内容太长啦, 弄少一点再来吧!")
-                    else if ("\n" in cmd) group.sendMessage("你要翻译的内容不能包含换行哦!")
+                    if (group.id in NotAvailable.groups) group.sendMessage(message.quote() + "此功能在该群不可用!")
+                    else if (cmd.length > 300) group.sendMessage(message.quote() + "你要翻译的内容太长啦, 弄少一点再来吧!")
+                    else if ("\n" in cmd) group.sendMessage(message.quote() + "你要翻译的内容不能包含换行哦!")
                     else if ("->" in cmd) group.sendMessage(
-                        At(sender).followedBy(
-                            PlainText(
-                                "\n${
-                                    translate(
-                                        cmd.replaceFirst("t", "").replaceAfterLast("->", "").substringBeforeLast("->"),
-                                        cmd.substringAfterLast("->").replaceFirst("->", "")
-                                    )
-                                }"
+                        message.quote() +
+                            translate(
+                                cmd.replaceFirst("t", "").replaceAfterLast("->", "").substringBeforeLast("->"),
+                                cmd.substringAfterLast("->").replaceFirst("->", "")
                             )
-                        )
                     )
-                    else group.sendMessage(
-                        At(sender).followedBy(
-                            PlainText(
-                                "\n${
-                                    translate(
-                                        cmd.replaceFirst(
-                                            "t",
-                                            ""
-                                        )
-                                    )
-                                }"
-                            )
-                        )
-                    )
+                    else group.sendMessage(message.quote() + translate(cmd.replaceFirst("t", "")))
                 } else if (cmd == "支持语言") {
-                    group.sendMessage("目前支持的语言有: " + languageType())
+                    group.sendMessage(message.quote() + "目前支持的语言有: " + languageType())
+                } else if ("搜图" in cmd) {
+                    var flag = true
+                    var id: String? = null
+                    message.filterIsInstance<Image>().forEach {
+                        val (result, msg) = searchImageSource(it.queryUrl())
+                        if (msg == "./data/Image/temp_thumbnail.png") {
+                            val inputStream = File(msg).toExternalResource()
+                            id = group.uploadImage(inputStream).imageId
+                            withContext(Dispatchers.IO) {
+                                inputStream.close()
+                            }
+                        }
+                        if (id != null) group.sendMessage(message.quote() + Image(id!!) + "\n$result")
+                        else group.sendMessage(message.quote() + "找到如下结果:\n$result")
+                        flag = false
+                    }
+                    if (flag) {
+                        group.sendMessage(message.quote() + "请在30秒内发送图片或图片链接!")
+                        val imageUrl = selectMessages {
+                            has<Image> { it.queryUrl() }
+                            has<PlainText> { it.content }
+                            default { "请发送图片或图片链接!" }
+                            timeout(30_000) { "timeout" }
+                        }
+                        if (imageUrl == "timeout") group.sendMessage(At(sender).followedBy(PlainText("超时了, 请重试!")))
+                        else if (imageUrl.startsWith("http")) {
+                            val (result, msg) = searchImageSource(imageUrl)
+                            if (msg == "./data/Image/temp_thumbnail.png") {
+                                val inputStream = File(msg).toExternalResource()
+                                id = group.uploadImage(inputStream).imageId
+                                withContext(Dispatchers.IO) {
+                                    inputStream.close()
+                                }
+                            }
+                            if (id != null) group.sendMessage(At(sender).followedBy(Image(id!!) + PlainText("\n$result")))
+                            else group.sendMessage(At(sender).followedBy(PlainText("找到如下结果:\n$result")))
+                        } else group.sendMessage(At(sender).followedBy(PlainText(imageUrl)))
+                    }
                 } else {
-                    group.sendMessage("不知道要做什么的话请说\"kgghelp\"!")
+                    group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
             }
             /*
@@ -252,21 +257,5 @@ object PluginMain : KotlinPlugin(
             //自动同意加群申请
             //accept()
         }
-    }
-
-    private fun multiplePrint(
-        n: Int,
-        type: String
-    ): String {
-        var string = ""
-        for (i in 1..n) {
-            val t = randomEat(type)
-            if (t == "不知道这种类型哦! 可以使用\"kgg吃的类型\"来查询可供选择的类型名称!") {
-                string += t
-                break
-            }
-            string += "${i}. $t${if (t in string) " [重复]\n" else "\n"}"
-        }
-        return string
     }
 }
