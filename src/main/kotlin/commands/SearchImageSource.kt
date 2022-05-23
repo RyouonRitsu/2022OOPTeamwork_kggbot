@@ -1,6 +1,6 @@
 package org.ritsu.mirai.plugin.commands
 
-import com.alibaba.fastjson2.*
+import com.alibaba.fastjson2.JSON
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.File
@@ -34,7 +34,10 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
                             }\n"
                         }
                     }
-                    Pair("相似度: $similarity%\n$string", if (code == 200 && msg == null) "./data/Image/temp_thumbnail.png" else msg)
+                    Pair(
+                        "相似度: $similarity%\n$string",
+                        if (code == 200 && msg == null) "./data/Image/temp_thumbnail.png" else msg
+                    )
                 } else Pair("no results... QAQ", null)
             } catch (e: Exception) {
                 Pair("解析错误: ${e.message}", null)

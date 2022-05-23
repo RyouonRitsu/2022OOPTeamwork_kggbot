@@ -24,7 +24,8 @@ fun loadData(groups: ContactList<Group>) {
         val user = User.users[jsonObj.getLongValue("id")]
         user?.let {
             if (jsonObj.containsKey("luckyValue")) it.luckyValue = jsonObj.getDoubleValue("luckyValue")
-            if (jsonObj.containsKey("luckyValueAcquisitionDate")) it.luckyValueAcquisitionDate = jsonObj.getString("luckyValueAcquisitionDate")
+            if (jsonObj.containsKey("luckyValueAcquisitionDate")) it.luckyValueAcquisitionDate =
+                jsonObj.getString("luckyValueAcquisitionDate")
             if (jsonObj.containsKey("signedCount")) it.signedCount = jsonObj.getIntValue("signedCount")
             if (jsonObj.containsKey("signedDate")) it.signedDate = jsonObj.getString("signedDate")
             if (jsonObj.containsKey("energyValue")) it.energyValue = jsonObj.getIntValue("energyValue")
