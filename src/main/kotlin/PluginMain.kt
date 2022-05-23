@@ -200,7 +200,7 @@ object PluginMain : KotlinPlugin(
                                 if (id != null) group.sendMessage(At(sender).followedBy(Image(id!!) + PlainText("\n$result\n*你还剩余${user.energyValue}点能量值!")))
                                 else group.sendMessage(At(sender).followedBy(PlainText("找到如下结果:\n$result\n*你还剩余${user.energyValue}点能量值!")))
                             } else group.sendMessage(At(sender).followedBy(PlainText(if (imageUrl == "default") "请发送图片或图片链接!" else "识别失败, 请重试!")))
-                        } else group.sendMessage(At(sender).followedBy(PlainText("你的能量值不足200, 无法搜图!")))
+                        } else group.sendMessage(message.quote() + "你的能量值不足200, 无法搜图!")
                     }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
