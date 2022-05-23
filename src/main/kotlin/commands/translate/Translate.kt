@@ -1,6 +1,6 @@
 package org.ritsu.mirai.plugin.commands.translate
 
-import com.alibaba.fastjson2.*
+import com.alibaba.fastjson2.JSON
 
 enum class Lang(val code: String, val desc: String) {
     AUTO("auto", "自动检测"),
