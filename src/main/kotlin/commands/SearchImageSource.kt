@@ -17,7 +17,7 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
     return when (response.code) {
         200 -> {
             try {
-                val body = response.body?.string() ?: return Pair("无法获取body!", null)
+                val body = response.body?.string() ?: return Pair("无法获取body!\n", null)
                 val jsonObject = JSON.parseObject(body)
                 if (jsonObject.getJSONObject("header").getInteger("results_returned") > 0) {
                     val result = jsonObject.getJSONArray("results").getJSONObject(0)
@@ -38,13 +38,13 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
                         "相似度: $similarity%\n$string",
                         if (code == 200 && msg == null) "./data/Image/temp_thumbnail.png" else msg
                     )
-                } else Pair("no results... QAQ", null)
+                } else Pair("no results... QAQ\n", null)
             } catch (e: Exception) {
-                Pair("解析错误: ${e.message}", null)
+                Pair("解析错误: ${e.message}\n", null)
             }
         }
-        403 -> Pair("Incorrect or Invalid API Key! Please Edit Script to Configure...", null)
-        else -> Pair("Error: ${response.code}", null)
+        403 -> Pair("Incorrect or Invalid API Key! Please Edit Script to Configure...\n", null)
+        else -> Pair("Error: ${response.code}\n", null)
     }
 }
 
