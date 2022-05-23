@@ -9,6 +9,7 @@ import net.mamoe.mirai.event.GlobalEventChannel
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.selectMessages
 import net.mamoe.mirai.message.data.At
+import net.mamoe.mirai.message.data.FlashImage
 import net.mamoe.mirai.message.data.Image
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.MessageSource.Key.quote
@@ -20,6 +21,7 @@ import org.ritsu.mirai.plugin.commands.translate.NotAvailable
 import org.ritsu.mirai.plugin.commands.translate.languageType
 import org.ritsu.mirai.plugin.commands.translate.translate
 import org.ritsu.mirai.plugin.entity.*
+import org.ritsu.mirai.plugin.kernel.addEnergy
 import org.ritsu.mirai.plugin.kernel.searchUserByAt
 import java.io.File
 
@@ -156,32 +158,12 @@ object PluginMain : KotlinPlugin(
                 } else if (cmd == "支持语言") {
                     group.sendMessage(message.quote() + "目前支持的语言有: " + languageType())
                 } else if ("搜图" in cmd) {
+                    val user = User.getUser(sender)
                     var flag = true
                     var id: String? = null
                     message.filterIsInstance<Image>().forEach {
-                        val (result, msg) = searchImageSource(it.queryUrl())
-                        if (msg == "./data/Image/temp_thumbnail.png") {
-                            val inputStream = File(msg).toExternalResource()
-                            id = group.uploadImage(inputStream).imageId
-                            withContext(Dispatchers.IO) {
-                                inputStream.close()
-                            }
-                        }
-                        if (id != null) group.sendMessage(message.quote() + Image(id!!) + "\n$result")
-                        else group.sendMessage(message.quote() + "找到如下结果:\n$result")
-                        flag = false
-                    }
-                    if (flag) {
-                        group.sendMessage(message.quote() + "请在30秒内发送图片或图片链接!")
-                        val imageUrl = selectMessages {
-                            has<Image> { it.queryUrl() }
-                            has<PlainText> { it.content }
-                            default { "请发送图片或图片链接!" }
-                            timeout(30_000) { "timeout" }
-                        }
-                        if (imageUrl == "timeout") group.sendMessage(At(sender).followedBy(PlainText("超时了, 请重试!")))
-                        else if (imageUrl.startsWith("http")) {
-                            val (result, msg) = searchImageSource(imageUrl)
+                        if (user.energyValue >= 200) {
+                            val (result, msg) = searchImageSource(it.queryUrl())
                             if (msg == "./data/Image/temp_thumbnail.png") {
                                 val inputStream = File(msg).toExternalResource()
                                 id = group.uploadImage(inputStream).imageId
@@ -189,13 +171,44 @@ object PluginMain : KotlinPlugin(
                                     inputStream.close()
                                 }
                             }
-                            if (id != null) group.sendMessage(At(sender).followedBy(Image(id!!) + PlainText("\n$result")))
-                            else group.sendMessage(At(sender).followedBy(PlainText("找到如下结果:\n$result")))
-                        } else group.sendMessage(At(sender).followedBy(PlainText(imageUrl)))
+                            addEnergy(user, -200)
+                            if (id != null) group.sendMessage(message.quote() + Image(id!!) + "\n$result\n*你还剩余${user.energyValue}点精液值!")
+                            else group.sendMessage(message.quote() + "找到如下结果:\n$result\n*你还剩余${user.energyValue}点精液值!")
+                        } else group.sendMessage(message.quote() + "你的精液值不足200, 无法搜图!")
+                        flag = false
+                    }
+                    if (flag) {
+                        if (user.energyValue >= 200) {
+                            group.sendMessage(message.quote() + "请在30秒内发送图片或图片链接!")
+                            val imageUrl = selectMessages {
+                                has<Image> { it.queryUrl() }
+                                has<PlainText> { it.content }
+                                default { "default" }
+                                timeout(30_000) { "timeout" }
+                            }
+                            if (imageUrl == "timeout") group.sendMessage(At(sender).followedBy(PlainText("超时了, 或者没有收到你的图片, 请重试!")))
+                            else if (imageUrl.startsWith("http")) {
+                                val (result, msg) = searchImageSource(imageUrl)
+                                if (msg == "./data/Image/temp_thumbnail.png") {
+                                    val inputStream = File(msg).toExternalResource()
+                                    id = group.uploadImage(inputStream).imageId
+                                    withContext(Dispatchers.IO) {
+                                        inputStream.close()
+                                    }
+                                }
+                                addEnergy(user, -200)
+                                if (id != null) group.sendMessage(At(sender).followedBy(Image(id!!) + PlainText("\n$result\n*你还剩余${user.energyValue}点精液值!")))
+                                else group.sendMessage(At(sender).followedBy(PlainText("找到如下结果:\n$result\n*你还剩余${user.energyValue}点精液值!")))
+                            } else group.sendMessage(At(sender).followedBy(PlainText(if (imageUrl == "default") "请发送图片或图片链接!" else "识别失败, 请重试!")))
+                        } else group.sendMessage(At(sender).followedBy(PlainText("你的精液值不足200, 无法搜图!")))
                     }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
+            }
+            //处理闪照
+            message.filterIsInstance<FlashImage>().forEach {
+                group.sendMessage(it.image + PlainText("\n下载地址: ${it.image.queryUrl()}"))
             }
             /*
             if (message.contentToString() == "hi") {
