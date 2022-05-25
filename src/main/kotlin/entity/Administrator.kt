@@ -5,7 +5,8 @@ import org.ritsu.mirai.plugin.kernel.addEnergy
 
 object Administrator {
     val administrators: List<Long> = listOf(
-        1780645196L
+        1780645196L,
+        75046675L
     )
     val blacklist = ArrayList<Long>()
 }

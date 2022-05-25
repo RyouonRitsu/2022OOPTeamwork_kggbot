@@ -1,11 +1,16 @@
 {
-    "friendListSeq": 12,
-    "timeStamp": 8,
+    "friendListSeq": 16,
+    "timeStamp": 11,
     "list": [
         {
             "uin": 66600000,
             "nick": "babyQ",
             "remark": "babyQ"
+        },
+        {
+            "uin": 75046675,
+            "nick": "Hide on bush",
+            "remark": "Hide on bush"
         },
         {
             "uin": 1780645196,
