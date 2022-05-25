@@ -8,12 +8,9 @@ import net.mamoe.mirai.contact.nameCardOrNick
 import net.mamoe.mirai.event.GlobalEventChannel
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.selectMessages
-import net.mamoe.mirai.message.data.At
-import net.mamoe.mirai.message.data.FlashImage
-import net.mamoe.mirai.message.data.Image
+import net.mamoe.mirai.message.data.*
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.MessageSource.Key.quote
-import net.mamoe.mirai.message.data.PlainText
 import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
 import net.mamoe.mirai.utils.info
 import org.ritsu.mirai.plugin.commands.*
@@ -24,6 +21,8 @@ import org.ritsu.mirai.plugin.entity.*
 import org.ritsu.mirai.plugin.kernel.addEnergy
 import org.ritsu.mirai.plugin.kernel.searchUserByAt
 import java.io.File
+import java.nio.charset.Charset
+import java.util.concurrent.TimeUnit
 
 /**
  * 使用 kotlin 版请把
@@ -72,6 +71,7 @@ object PluginMain : KotlinPlugin(
             )
         }
         eventChannel.subscribeAlways<GroupMessageEvent> {
+            if (sender.id in Administrator.blacklist || User.conversationLock[sender.id] == true) return@subscribeAlways
             //群消息
             //管理员命令
             if (sender.id in Administrator.administrators && message.contentToString().startsWith("**")) {
@@ -84,6 +84,20 @@ object PluginMain : KotlinPlugin(
                     )
                 } else if (message.contentToString().contains("查询")) {
                     group.sendMessage(queryUserEnergy(searchUserByAt(message)))
+                } else if ("小黑屋" in message.content) {
+                    val userId = searchUserByAt(message)
+                    if (userId != null && userId !in Administrator.blacklist) {
+                        Administrator.blacklist.add(userId)
+                        group.sendMessage("操作成功!")
+                    } else if (userId != null) group.sendMessage("操作失败! 该用户已在小黑屋里!")
+                    else group.sendMessage("操作失败! 请检查命令是否正确!")
+                } else if ("解除" in message.content) {
+                    val userId = searchUserByAt(message)
+                    if (userId != null && userId in Administrator.blacklist) {
+                        Administrator.blacklist.remove(userId)
+                        group.sendMessage("操作成功!")
+                    } else if (userId != null) group.sendMessage("操作失败! 该用户不在小黑屋里!")
+                    else group.sendMessage("操作失败! 请检查命令是否正确!")
                 }
             }
             //普通命令
@@ -158,6 +172,7 @@ object PluginMain : KotlinPlugin(
                 } else if (cmd == "支持语言") {
                     group.sendMessage(message.quote() + "目前支持的语言有: " + languageType())
                 } else if ("搜图" in cmd) {
+                    User.conversationLock[sender.id] = true
                     val user = User.getUser(sender)
                     var flag = true
                     var id: String? = null
@@ -202,6 +217,49 @@ object PluginMain : KotlinPlugin(
                             } else group.sendMessage(At(sender).followedBy(PlainText(if (imageUrl == "default") "请发送图片或图片链接!" else "识别失败, 请重试!")))
                         } else group.sendMessage(message.quote() + "你的能量值不足200, 无法搜图!")
                     }
+                } else if (cmd.startsWith("Python")) {
+                    val code = cmd.replaceFirst("Python", "")
+                        .replace("exec", "")
+                        .replace("eval", "")
+                        .replace("__import__", "")
+                        .replace("sys", "")
+                        .replace("os", "")
+                        .replace("argparse", "")
+                        .replace("threading", "")
+                        .replace("multiprocessing", "")
+                        .replace("subprocess", "")
+                        .replace("input", "")
+                    val file = File("./data/cmd.py")
+                    file.writeText(code)
+                    var error: String? = null
+                    val result = kotlin.runCatching {
+                        ProcessBuilder(listOf("python", "./cmd.py"))
+                            .directory(File("./data"))
+                            .redirectErrorStream(true)
+                            .start().also {
+                                if (!it.waitFor(20L, TimeUnit.SECONDS)) {
+                                    it.destroyForcibly()
+                                    if (it.isAlive) throw Exception("运行超时了, 但没杀掉进程!")
+                                    throw Exception("运行超时了!")
+                                }
+                            }
+                            .inputStream.bufferedReader(Charset.forName("GBK")).readText()
+                    }.onFailure { throwable -> throwable.message?.let { error = it } }.getOrNull()
+                    try {
+                        if (result != null && result != "") group.sendMessage(
+                            message.quote() + PlainText(
+                                result.replace(
+                                    Regex(".:\\\\.*\\..."),
+                                    "**此为机密领域, 妄图窥探的话是会被关小黑屋的**"
+                                )
+                            )
+                        )
+                        else if (result != null) group.sendMessage(message.quote() + PlainText("运行结果为空!"))
+                        else group.sendMessage(message.quote() + PlainText("Error: TLE"))
+                    } catch (e: Exception) {
+                        group.sendMessage(message.quote() + PlainText(e.message ?: "Error: RE"))
+                    }
+                    if (error != null) group.sendMessage(At(User.users[1780645196L]!!.account).followedBy(PlainText("主人! ${sender.nameCardOrNick}玩弄我!\n${error!!}")))
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -233,6 +291,7 @@ object PluginMain : KotlinPlugin(
                 }
             }
             */
+            User.conversationLock[sender.id] = false
         }
         eventChannel.subscribeAlways<FriendMessageEvent> {
             //屏蔽机器人本人消息无限循环
