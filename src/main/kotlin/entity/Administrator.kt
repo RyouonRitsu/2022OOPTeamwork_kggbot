@@ -7,6 +7,7 @@ object Administrator {
     val administrators: List<Long> = listOf(
         1780645196L
     )
+    val blacklist = ArrayList<Long>()
 }
 
 fun adjustUserEnergy(target: Long?, amount: Int?): String {
