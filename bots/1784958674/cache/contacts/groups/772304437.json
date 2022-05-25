@@ -1,17 +1,30 @@
 {
-    "troopMemberNumSeq": 116,
+    "troopMemberNumSeq": 118,
     "list": [
         {
-            "uin": 1780645196,
-            "nick": "橙原 凯",
-            "permission": "OWNER",
-            "remark": "橙原 凯",
+            "uin": 75046675,
+            "nick": "Hide on bush",
+            "permission": "MEMBER",
+            "remark": "Hide on bush",
             "nameCard": "",
             "specialTitle": "",
             "muteTimestamp": 0,
             "anonymousId": null,
+            "joinTimestamp": 1653469849,
+            "lastSpeakTimestamp": 1653479953,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1780645196,
+            "nick": "橙原 凯",
+            "permission": "OWNER",
+            "remark": "",
+            "nameCard": "周洪熙",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
             "joinTimestamp": 1650686585,
-            "lastSpeakTimestamp": 1650688562,
+            "lastSpeakTimestamp": 1653480062,
             "isOfficialBot": false
         },
         {
@@ -24,7 +37,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1650690449,
-            "lastSpeakTimestamp": 1650690449,
+            "lastSpeakTimestamp": 1653480062,
             "isOfficialBot": false
         },
         {
@@ -37,20 +50,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1650686586,
-            "lastSpeakTimestamp": 1650686586,
-            "isOfficialBot": false
-        },
-        {
-            "uin": 3339267546,
-            "nick": "SpartAce",
-            "permission": "ADMINISTRATOR",
-            "remark": "SpartAce",
-            "nameCard": "",
-            "specialTitle": "",
-            "muteTimestamp": 0,
-            "anonymousId": null,
-            "joinTimestamp": 1650686586,
-            "lastSpeakTimestamp": 1650688322,
+            "lastSpeakTimestamp": 1653231866,
             "isOfficialBot": false
         }
     ]
