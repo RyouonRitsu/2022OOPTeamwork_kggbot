@@ -21,8 +21,6 @@ import org.ritsu.mirai.plugin.entity.*
 import org.ritsu.mirai.plugin.kernel.addEnergy
 import org.ritsu.mirai.plugin.kernel.searchUserByAt
 import java.io.File
-import java.nio.charset.Charset
-import java.util.concurrent.TimeUnit
 
 /**
  * 使用 kotlin 版请把
@@ -218,33 +216,7 @@ object PluginMain : KotlinPlugin(
                         } else group.sendMessage(message.quote() + "你的能量值不足200, 无法搜图!")
                     }
                 } else if (cmd.startsWith("Python")) {
-                    val code = cmd.replaceFirst("Python", "")
-                        .replace("exec", "")
-                        .replace("eval", "")
-                        .replace("__import__", "")
-                        .replace("sys", "")
-                        .replace("os", "")
-                        .replace("argparse", "")
-                        .replace("threading", "")
-                        .replace("multiprocessing", "")
-                        .replace("subprocess", "")
-                        .replace("input", "")
-                    val file = File("./data/cmd.py")
-                    file.writeText(code)
-                    var error: String? = null
-                    val result = kotlin.runCatching {
-                        ProcessBuilder(listOf("python", "./cmd.py"))
-                            .directory(File("./data"))
-                            .redirectErrorStream(true)
-                            .start().also {
-                                if (!it.waitFor(20L, TimeUnit.SECONDS)) {
-                                    it.destroyForcibly()
-                                    if (it.isAlive) throw Exception("运行超时了, 但没杀掉进程!")
-                                    throw Exception("运行超时了!")
-                                }
-                            }
-                            .inputStream.bufferedReader(Charset.forName("GBK")).readText()
-                    }.onFailure { throwable -> throwable.message?.let { error = it } }.getOrNull()
+                    val (result, error) = runPython(cmd)
                     try {
                         if (result != null && result != "") group.sendMessage(
                             message.quote() + PlainText(
@@ -259,7 +231,7 @@ object PluginMain : KotlinPlugin(
                     } catch (e: Exception) {
                         group.sendMessage(message.quote() + PlainText(e.message ?: "Error: RE"))
                     }
-                    if (error != null) group.sendMessage(At(User.users[1780645196L]!!.account).followedBy(PlainText("主人! ${sender.nameCardOrNick}玩弄我!\n${error!!}")))
+                    if (error != null) group.sendMessage(At(User.users[1780645196L]!!.account).followedBy(PlainText("主人! ${sender.nameCardOrNick}玩弄我!\n${error}")))
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
