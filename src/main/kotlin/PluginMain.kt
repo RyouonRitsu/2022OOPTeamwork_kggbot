@@ -253,6 +253,8 @@ object PluginMain : KotlinPlugin(
                         val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
                         group.sendMessage(At(sender).followedBy(PlainText(getWeather(loc))))
                     }
+                } else if (cmd.startsWith("metar")) {
+                    group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
