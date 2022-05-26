@@ -1,5 +1,6 @@
 package org.ritsu.mirai.plugin
 
+import io.ktor.util.reflect.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
