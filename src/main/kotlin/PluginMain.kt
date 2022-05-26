@@ -14,6 +14,7 @@ import net.mamoe.mirai.message.data.*
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.MessageSource.Key.quote
 import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
+import net.mamoe.mirai.utils.MiraiExperimentalApi
 import net.mamoe.mirai.utils.info
 import org.ritsu.mirai.plugin.commands.*
 import org.ritsu.mirai.plugin.commands.translate.NotAvailable
@@ -55,6 +56,7 @@ object PluginMain : KotlinPlugin(
         // author 和 info 可以删除.
     }
 ) {
+    @OptIn(MiraiExperimentalApi::class)
     override fun onEnable() {
         logger.info { "Plugin loaded" }
         //配置文件目录 "${dataFolder.absolutePath}/"
@@ -238,6 +240,26 @@ object PluginMain : KotlinPlugin(
                         group.sendMessage(message.quote() + PlainText(e.message ?: "Error: RE"))
                     }
                     if (error != null) group.sendMessage(At(User.users[1780645196L]!!.account).followedBy(PlainText("主人! ${sender.nameCardOrNick}玩弄我!\n${error}")))
+                } else if (cmd.startsWith("天气")) {
+                    User.conversationLock[sender.id] = true
+                    group.sendMessage(message.quote() + "请在30秒内发送定位!")
+                    val location = selectMessages {
+                        has<Image> { it.queryUrl() }
+                        has<SimpleServiceMessage> { it.content }
+                        default { "default" }
+                        timeout(30_000) { "timeout" }
+                    }
+                    if (location == "timeout") group.sendMessage(At(sender).followedBy(PlainText("超时了, 或者没有收到你的定位, 请重试!")))
+                    else if (location.indexOf("lon=") == -1 || location.indexOf("lat=") == -1)
+                        group.sendMessage(At(sender).followedBy(PlainText("这不是一个定位, 请重试!")))
+                    else {
+                        val lon = location.indexOf("lon=") + 4
+                        val lat = location.indexOf("lat=") + 4
+                        val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
+                        group.sendMessage(At(sender).followedBy(PlainText(getWeather(loc))))
+                    }
+                } else if (cmd.startsWith("metar")) {
+                    group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
