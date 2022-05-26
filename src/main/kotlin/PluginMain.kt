@@ -7,7 +7,6 @@ import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
 import net.mamoe.mirai.contact.MemberPermission
 import net.mamoe.mirai.contact.nameCardOrNick
 import net.mamoe.mirai.event.GlobalEventChannel
-import net.mamoe.mirai.event.broadcast
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.selectMessages
 import net.mamoe.mirai.message.data.*
@@ -108,8 +107,9 @@ object PluginMain : KotlinPlugin(
                 group.sendMessage(message.contentToString().replace("复读", ""))
             }
             if ((sender.permission == MemberPermission.OWNER || sender.permission == MemberPermission.ADMINISTRATOR)
-                && message.contentToString().startsWith("!!!")) {
-                AtMember(message , group)
+                && message.contentToString().startsWith("!!!")
+            ) {
+                atMember(message, group)
             }
             //kgg命令
             if (
