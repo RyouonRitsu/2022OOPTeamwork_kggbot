@@ -254,6 +254,17 @@ object PluginMain : KotlinPlugin(
                     }
                 } else if (cmd.startsWith("metar")) {
                     group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
+                } else if (cmd == "来点") {
+                    val id: String
+                    val (msg, result) = getRandomPixivPic()
+                    if (result == "./data/Image/temp_pixiv.jpg") {
+                        val inputStream = File(result).toExternalResource()
+                        id = group.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        group.sendMessage(Image(id))
+                    } else group.sendMessage(message.quote() + msg)
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
