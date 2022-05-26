@@ -14,9 +14,9 @@ suspend fun AtMember(message:Message, group:Group){
         .split(',');
     mess_add_At = messageChainOf(PlainText("!!!"))
     for(userinfo in mem){
-        group.sendMessage(PlainText(userinfo))
+        //group.sendMessage(PlainText(userinfo))
         for(user in group.members){
-            group.sendMessage(PlainText(user.nameCardOrNick))
+            //group.sendMessage(PlainText(user.nameCardOrNick))
             var uname = user.nameCardOrNick
             if(uname.contains(userinfo)) mess_add_At += At(user)
         }
