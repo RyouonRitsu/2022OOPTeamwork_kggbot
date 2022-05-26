@@ -1,6 +1,6 @@
 {
-    "friendListSeq": 16,
-    "timeStamp": 11,
+    "friendListSeq": 20,
+    "timeStamp": 13,
     "list": [
         {
             "uin": 66600000,
@@ -26,6 +26,11 @@
             "uin": 2287941423,
             "nick": "zing",
             "remark": "zing"
+        },
+        {
+            "uin": 2864194418,
+            "nick": "一朵白云☁️",
+            "remark": "一朵白云☁️"
         }
     ]
 }

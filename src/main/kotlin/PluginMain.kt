@@ -4,8 +4,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
 import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
+import net.mamoe.mirai.contact.MemberPermission
 import net.mamoe.mirai.contact.nameCardOrNick
 import net.mamoe.mirai.event.GlobalEventChannel
+import net.mamoe.mirai.event.broadcast
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.selectMessages
 import net.mamoe.mirai.message.data.*
@@ -102,6 +104,10 @@ object PluginMain : KotlinPlugin(
             //复读示例
             if (message.contentToString().startsWith("复读")) {
                 group.sendMessage(message.contentToString().replace("复读", ""))
+            }
+            if ((sender.permission == MemberPermission.OWNER || sender.permission == MemberPermission.ADMINISTRATOR)
+                && message.contentToString().startsWith("!!!")) {
+                AtMember(message , group)
             }
             //kgg命令
             if (
@@ -300,6 +306,10 @@ object PluginMain : KotlinPlugin(
         eventChannel.subscribeAlways<BotInvitedJoinGroupRequestEvent> {
             //自动同意加群申请
             //accept()
+        }
+        eventChannel.subscribeAlways<MemberCardChangeEvent> {
+            member.nameCard = new
+            //group.sendMessage(PlainText("群成员名片变更为")+PlainText(member.nameCard))
         }
     }
 }
