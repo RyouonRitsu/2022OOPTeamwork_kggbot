@@ -17,7 +17,7 @@ fun getRandomPixivPic(): Pair<String, String?> {
             val original = data.getJSONObject("urls").getString("original")
             val (code, msg) = downloadPicture(original, "./data/Image/temp_pixiv.jpg")
             if (code == 200 && msg == null) Pair("Success!", "./data/Image/temp_pixiv.jpg")
-            else Pair("Error: $code, $msg", null)
+            else Pair("Error: $code, $msg", original)
         }
         else -> Pair("Error: ${response.code}\n", null)
     }

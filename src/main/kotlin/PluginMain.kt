@@ -270,7 +270,8 @@ object PluginMain : KotlinPlugin(
                             inputStream.close()
                         }
                         group.sendMessage(Image(id))
-                    } else group.sendMessage(message.quote() + msg)
+                    } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
+                    else group.sendMessage(message.quote() + msg)
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
