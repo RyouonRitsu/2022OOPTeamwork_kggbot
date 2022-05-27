@@ -824,3 +824,16 @@ PermList=[net.mamoe.mirai.internal.network.protocol.data.proto.TroopTips0x857$Te
 [0m2022-05-27 21:54:06 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
 [0m2022-05-27 21:54:06 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
 [0m2022-05-27 21:54:07 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:56:56 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
+[0m2022-05-27 21:56:56 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
+[0m2022-05-27 21:56:56 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:56:56 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:56:56 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:56:57 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:56:57 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:56:57 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:57:32 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
+[0m2022-05-27 21:57:33 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
+[0m2022-05-27 21:57:33 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:57:33 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:57:48 V/Net 1784958674: Send: StatSvc.register(offline)[0m
