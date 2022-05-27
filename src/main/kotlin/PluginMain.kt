@@ -262,7 +262,7 @@ object PluginMain : KotlinPlugin(
                     group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
                 } else if (cmd == "来点") {
                     val id: String
-                    val (msg, result) = getRandomPixivPic()
+                    val (msg, result) = getRandomPixivPic(sender.id)
                     if (result == "./data/Image/temp_pixiv.jpg") {
                         val inputStream = File(result).toExternalResource()
                         id = group.uploadImage(inputStream).imageId
