@@ -731,3 +731,48 @@
 [0m2022-05-27 21:44:12 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
 [0m2022-05-27 21:44:12 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
 [0m2022-05-27 21:44:12 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:45:01 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
+[0m2022-05-27 21:45:01 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
+[0m2022-05-27 21:45:01 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:45:02 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:45:21 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
+[0m2022-05-27 21:45:21 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
+[0m2022-05-27 21:45:21 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:45:21 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:45:46 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
+[0m2022-05-27 21:45:46 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
+[0m2022-05-27 21:45:46 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:45:46 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:45:47 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
+[0m2022-05-27 21:45:47 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
+[0m2022-05-27 21:45:47 V/Net 1784958674: [Highway] Uploading group image to 42.81.184.140:443, size=2355.14 KiB[0m
+[0m2022-05-27 21:45:48 V/Net 1784958674: [Highway] Uploading group image: succeed at 1827 KiB/s[0m
+[0m2022-05-27 21:45:48 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:45:48 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:46:17 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
+[0m2022-05-27 21:46:17 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
+[0m2022-05-27 21:46:17 V/Net 1784958674: [Highway] Uploading group image to 42.81.184.140:443, size=30312.94 KiB[0m
+[0m2022-05-27 21:46:17 V/Net 1784958674: [Highway] Uploading group image to 42.81.184.140:443, size=30312.94 KiB failed: java.lang.IllegalStateException: highway transfer failed, error 70[0m
+[0m2022-05-27 21:46:17 V/Net 1784958674: [Highway] Uploading group image to 183.47.102.211:8080, size=30312.94 KiB[0m
+[0m2022-05-27 21:46:23 V/Net 1784958674: [Highway] Uploading group image: succeed at 4989 KiB/s[0m
+[0m2022-05-27 21:46:23 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:46:24 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:46:38 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
+[0m2022-05-27 21:46:38 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
+[0m2022-05-27 21:46:38 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:46:39 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:47:20 V/Net 1784958674: Send: StatSvc.register(online)[0m
+[92m2022-05-27 21:47:20 I/Net 1784958674: Server time updated, serverTime: 1653659240, diff: 0ms=0.0s[0m
+[0m2022-05-27 21:47:20 V/Net 1784958674: Recv: StatSvc.register[0m
+[0m2022-05-27 21:47:25 V/Net 1784958674: Send: friendlist.GetTroopListReqV2(friendlist.GetTroopListReqV2)[0m
+[0m2022-05-27 21:47:25 V/Net 1784958674: Recv: friendlist.GetTroopListReqV2[0m
+[0m2022-05-27 21:47:25 V/Net 1784958674: Send: friendlist.GetTroopMemberListReq(friendlist.GetTroopMemberListReq)[0m
+[0m2022-05-27 21:47:25 V/Net 1784958674: Recv: friendlist.GetTroopMemberListReq[0m
+[0m2022-05-27 21:47:25 V/Net 1784958674: Send: ProfileService.Pb.ReqSystemMsgNew.Group(ProfileService.Pb.ReqSystemMsgNew.Group)[0m
+[0m2022-05-27 21:47:25 V/Net 1784958674: Recv: ProfileService.Pb.ReqSystemMsgNew.Group[0m
+[96m2022-05-27 21:47:25 D/Net 1784958674: Unknown Transformers528 0x14 template
+templId=10063
+PermList=[net.mamoe.mirai.internal.network.protocol.data.proto.TroopTips0x857$TemplParam@51fd3f93][0m
+[0m2022-05-27 21:47:59 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 21:47:59 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 21:48:08 V/Net 1784958674: Send: StatSvc.register(offline)[0m

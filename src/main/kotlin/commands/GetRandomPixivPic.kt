@@ -3,9 +3,11 @@ package org.ritsu.mirai.plugin.commands
 import com.alibaba.fastjson2.JSON
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import org.ritsu.mirai.plugin.entity.Administrator
 import java.net.InetSocketAddress
 
-fun getRandomPixivPic(): Pair<String, String?> {
+fun getRandomPixivPic(id: Long): Pair<String, String?> {
+    if (id !in Administrator.administrators) return Pair("你不是管理员, 无法使用此命令", null)
     val url = "https://api.lolicon.app/setu/v2"
     val client = OkHttpClient()
     val request = Request.Builder().get().url(url).build()
