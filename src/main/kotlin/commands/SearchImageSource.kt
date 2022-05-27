@@ -5,6 +5,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.File
 import java.io.FileOutputStream
+import java.util.concurrent.TimeUnit
 
 fun searchImageSource(imageUrl: String): Pair<String, String?> {
     val apiKey = "d9c7172f1cf935901106e36af76f3c469505f225"
@@ -49,24 +50,36 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
 }
 
 fun downloadPicture(url: String, path: String): Pair<Int, String?> {
-    val client = OkHttpClient()
-    val request = Request.Builder().get().url(url).build()
-    val response = client.newCall(request).execute()
-    when (response.code) {
-        200 -> {
-            val inputStream = response.body?.byteStream() ?: return Pair(response.code, "无法获取body!")
-            return try {
-                val fos: FileOutputStream
-                val file = File(path)
-                fos = FileOutputStream(file)
-                fos.write(inputStream.readBytes())
-                fos.flush()
-                fos.close()
-                Pair(response.code, null)
-            } catch (e: Exception) {
-                Pair(response.code, "写入文件错误: ${e.message}")
-            }
+    val client = OkHttpClient().also {
+        it.newBuilder().apply {
+            connectTimeout(20, TimeUnit.SECONDS)
+            readTimeout(20, TimeUnit.SECONDS)
+            writeTimeout(20, TimeUnit.SECONDS)
         }
-        else -> return Pair(response.code, "Error: ${response.code}")
+    }
+    val request = Request.Builder().get().url(url).build()
+    try {
+        val response = client.newCall(request).execute()
+        when (response.code) {
+            200 -> {
+                val inputStream = response.body?.byteStream() ?: return Pair(response.code, "无法获取body!")
+                return try {
+                    val fos: FileOutputStream
+                    val file = File(path)
+                    fos = FileOutputStream(file)
+                    fos.write(inputStream.readBytes())
+                    fos.flush()
+                    fos.close()
+                    Pair(response.code, null)
+                } catch (e: Exception) {
+                    Pair(response.code, "写入文件错误: ${e.message}")
+                }
+            }
+            else -> return Pair(response.code, "Error: ${response.code}")
+        }
+    } catch (e: java.net.SocketTimeoutException) {
+        return Pair(408, "连接超时")
+    } catch (e: Exception) {
+        return Pair(500, "未知错误: ${e.message}")
     }
 }

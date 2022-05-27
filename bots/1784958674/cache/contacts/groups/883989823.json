@@ -1,0 +1,83 @@
+{
+    "troopMemberNumSeq": 132,
+    "list": [
+        {
+            "uin": 75046675,
+            "nick": "Hide on bush",
+            "permission": "OWNER",
+            "remark": "Hide on bush",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1647759172,
+            "lastSpeakTimestamp": 1653577081,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 627037656,
+            "nick": "Nikiss",
+            "permission": "MEMBER",
+            "remark": "Nikiss",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1647766672,
+            "lastSpeakTimestamp": 1647766672,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 895069386,
+            "nick": "👻",
+            "permission": "MEMBER",
+            "remark": "👻",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1647759173,
+            "lastSpeakTimestamp": 1653559358,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1258460207,
+            "nick": "丿祎一*✨",
+            "permission": "MEMBER",
+            "remark": "丿祎一*✨",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1647762438,
+            "lastSpeakTimestamp": 1647762438,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1412660661,
+            "nick": "云之彼端",
+            "permission": "MEMBER",
+            "remark": "云之彼端",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1647759173,
+            "lastSpeakTimestamp": 1653575596,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1784958674,
+            "nick": "OOP",
+            "permission": "MEMBER",
+            "remark": "OOP",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653485034,
+            "lastSpeakTimestamp": 1653577082,
+            "isOfficialBot": false
+        }
+    ]
+}

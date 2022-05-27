@@ -1,0 +1,57 @@
+{
+    "troopMemberNumSeq": 67,
+    "list": [
+        {
+            "uin": 1784958674,
+            "nick": "OOP",
+            "permission": "ADMINISTRATOR",
+            "remark": "OOP",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653400047,
+            "lastSpeakTimestamp": 1653580493,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 2287941423,
+            "nick": "zing",
+            "permission": "OWNER",
+            "remark": "",
+            "nameCard": "打分",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653310058,
+            "lastSpeakTimestamp": 1653580493,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 2485664840,
+            "nick": "Qwerty",
+            "permission": "MEMBER",
+            "remark": "",
+            "nameCard": "对对对",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653447052,
+            "lastSpeakTimestamp": 1653580486,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 2534745181,
+            "nick": "金栗",
+            "permission": "MEMBER",
+            "remark": "",
+            "nameCard": "12345678",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653310058,
+            "lastSpeakTimestamp": 1653310058,
+            "isOfficialBot": false
+        }
+    ]
+}
