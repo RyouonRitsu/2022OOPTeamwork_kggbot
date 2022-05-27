@@ -5,6 +5,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.File
 import java.io.FileOutputStream
+import java.util.concurrent.TimeUnit
 
 fun searchImageSource(imageUrl: String): Pair<String, String?> {
     val apiKey = "d9c7172f1cf935901106e36af76f3c469505f225"
@@ -49,7 +50,13 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
 }
 
 fun downloadPicture(url: String, path: String): Pair<Int, String?> {
-    val client = OkHttpClient()
+    val client = OkHttpClient().also {
+        it.newBuilder().apply {
+            connectTimeout(20, TimeUnit.SECONDS)
+            readTimeout(20, TimeUnit.SECONDS)
+            writeTimeout(20, TimeUnit.SECONDS)
+        }
+    }
     val request = Request.Builder().get().url(url).build()
     try {
         val response = client.newCall(request).execute()
