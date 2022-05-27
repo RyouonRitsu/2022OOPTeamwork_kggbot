@@ -824,16 +824,116 @@ PermList=[net.mamoe.mirai.internal.network.protocol.data.proto.TroopTips0x857$Te
 [0m2022-05-27 21:54:06 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
 [0m2022-05-27 21:54:06 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
 [0m2022-05-27 21:54:07 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
-[0m2022-05-27 21:56:56 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
-[0m2022-05-27 21:56:56 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
-[0m2022-05-27 21:56:56 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
-[0m2022-05-27 21:56:56 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
-[0m2022-05-27 21:56:56 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
-[0m2022-05-27 21:56:57 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
-[0m2022-05-27 21:56:57 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
-[0m2022-05-27 21:56:57 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
-[0m2022-05-27 21:57:32 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
-[0m2022-05-27 21:57:33 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
-[0m2022-05-27 21:57:33 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
-[0m2022-05-27 21:57:33 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
-[0m2022-05-27 21:57:48 V/Net 1784958674: Send: StatSvc.register(offline)[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Loading server list from cache.[0m
+[92m2022-05-27 23:00:17 I/Net 1784958674: Server list: 183.47.98.11:8080, 101.91.40.60:14000, msfwifi.3g.qq.com:8080, 183.2.144.33:443, 113.96.18.205:443, 42.81.192.181:80, 180.102.191.97:80, 49.7.253.124:8080, 49.7.253.189:80.[0m
+[92m2022-05-27 23:00:17 I/Net 1784958674: ECDH key is valid.[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Send: wtlogin.exchange_emp[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Recv: wtlogin.exchange_emp[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Send: StatSvc.register(online)[0m
+[92m2022-05-27 23:00:17 I/Net 1784958674: Server time updated, serverTime: 1653663618, diff: 1ms=0.001s[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Recv: StatSvc.register[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Loading BdhSession from cache file[0m
+[92m2022-05-27 23:00:17 I/Net 1784958674: Syncing friend message history...[0m
+[92m2022-05-27 23:00:17 I/Net 1784958674: Loaded 6 friends from local cache.[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Send: StatSvc.GetDevLoginInfo(StatSvc.GetDevLoginInfo)[0m
+[92m2022-05-27 23:00:17 I/Net 1784958674: Start loading stranger list...[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Send: OidbSvc.0x496(OidbSvc.0x496)[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Send: friendlist.getFriendGroupList(friendlist.getFriendGroupList)[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Send: OidbSvc.0x5d2_0(OidbSvc.0x5d2_0)[0m
+[0m2022-05-27 23:00:17 V/Net 1784958674: Recv: OidbSvc.0x5d2_0[0m
+[92m2022-05-27 23:00:17 I/Net 1784958674: Successfully loaded stranger list: 0 in total[0m
+[0m2022-05-27 23:00:18 V/Net 1784958674: Recv: StatSvc.GetDevLoginInfo[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: No OtherClient online.[0m
+[0m2022-05-27 23:00:18 V/Net 1784958674: Recv: OidbSvc.0x496[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Start loading group list...[0m
+[0m2022-05-27 23:00:18 V/Net 1784958674: Send: friendlist.GetTroopListReqV2(friendlist.GetTroopListReqV2)[0m
+[0m2022-05-27 23:00:18 V/Net 1784958674: Recv: friendlist.getFriendGroupList[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Syncing friend message history: Success.[0m
+[0m2022-05-27 23:00:18 V/Net 1784958674: Recv: friendlist.GetTroopListReqV2[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Loaded 3 members from local cache for group Hide on bu...、OOP、橙原  (604712224)[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Loaded 3 members from local cache for group OOP、一朵白云☁️、Hid (870745666)[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Loaded 4 members from local cache for group OOP小组 (772304437)[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Loaded 6 members from local cache for group 云之彼端、👻、Hide on  (883989823)[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Loaded 4 members from local cache for group OOP、zing、金栗 (947121973)[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Loaded 121 members from local cache for group BUAA-民航飞友联合 (1001093960)[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Loaded 3 members from local cache for group OOP、MERCY、Hide on bush (961171732)[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Successfully loaded group list: 7 in total.[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Scheduled key refresh in 23h 55min 0.0s.[0m
+[92m2022-05-27 23:00:18 I/Net 1784958674: Scheduled refresh login session in 19d 23h 55min 0.0s.[0m
+[92m2022-05-27 23:00:20 I/Net 1784958674: Server list: 111.206.99.79:80, 157.148.32.167:80, 112.86.231.163:443, 220.194.118.230:80, 123.125.0.158:80, 157.148.54.92:14000, 111.206.99.88:8080, msfwifi.3g.qq.com:8080, 112.80.130.236:80.[0m
+[0m2022-05-27 23:00:20 V/Net 1784958674: Saving bdh session to cache[0m
+[0m2022-05-27 23:00:20 V/Net 1784958674: Saving server list to cache[0m
+[0m2022-05-27 23:00:20 V/Net 1784958674: Send: ConfigPushSvc.PushResp(ConfigPushSvc.PushResp)[0m
+[0m2022-05-27 23:00:20 V/Net 1784958674: Recv: ConfigPushSvc.PushReq[0m
+[0m2022-05-27 23:00:20 V/Net 1784958674: Saving bdh session to cache[0m
+[0m2022-05-27 23:00:20 V/Net 1784958674: Send: ConfigPushSvc.PushResp(ConfigPushSvc.PushResp)[0m
+[0m2022-05-27 23:00:20 V/Net 1784958674: Recv: ConfigPushSvc.PushReq[0m
+[0m2022-05-27 23:00:24 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:00:24 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:00:24 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:00:25 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:00:46 V/Net 1784958674: Send: ImgStore.GroupPicUp(ImgStore.GroupPicUp)[0m
+[0m2022-05-27 23:00:46 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:00:46 V/Net 1784958674: Recv: ImgStore.GroupPicUp[0m
+[0m2022-05-27 23:00:46 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:00:47 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:00:47 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:01:35 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:01:35 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:01:50 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:01:50 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:02:32 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:02:33 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:02:54 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:02:54 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:03:13 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:03:13 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:03:21 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:03:22 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:03:29 V/Net 1784958674: Send: StatSvc.register(offline)[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Loading server list from cache.[0m
+[92m2022-05-27 23:03:44 I/Net 1784958674: Server list: 111.206.99.79:80, 157.148.32.167:80, 112.86.231.163:443, 220.194.118.230:80, 123.125.0.158:80, 157.148.54.92:14000, 111.206.99.88:8080, msfwifi.3g.qq.com:8080, 112.80.130.236:80.[0m
+[92m2022-05-27 23:03:44 I/Net 1784958674: ECDH key is valid.[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Send: wtlogin.exchange_emp[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Recv: wtlogin.exchange_emp[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Send: StatSvc.register(online)[0m
+[92m2022-05-27 23:03:44 I/Net 1784958674: Server time updated, serverTime: 1653663825, diff: 1ms=0.001s[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Recv: StatSvc.register[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Loading BdhSession from cache file[0m
+[92m2022-05-27 23:03:44 I/Net 1784958674: Syncing friend message history...[0m
+[92m2022-05-27 23:03:44 I/Net 1784958674: Start loading stranger list...[0m
+[92m2022-05-27 23:03:44 I/Net 1784958674: Loaded 6 friends from local cache.[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Send: StatSvc.GetDevLoginInfo(StatSvc.GetDevLoginInfo)[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Send: OidbSvc.0x496(OidbSvc.0x496)[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Send: friendlist.getFriendGroupList(friendlist.getFriendGroupList)[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Send: OidbSvc.0x5d2_0(OidbSvc.0x5d2_0)[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Recv: StatSvc.GetDevLoginInfo[0m
+[92m2022-05-27 23:03:44 I/Net 1784958674: No OtherClient online.[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Recv: OidbSvc.0x5d2_0[0m
+[92m2022-05-27 23:03:44 I/Net 1784958674: Successfully loaded stranger list: 0 in total[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Recv: OidbSvc.0x496[0m
+[92m2022-05-27 23:03:44 I/Net 1784958674: Start loading group list...[0m
+[0m2022-05-27 23:03:44 V/Net 1784958674: Send: friendlist.GetTroopListReqV2(friendlist.GetTroopListReqV2)[0m
+[0m2022-05-27 23:03:45 V/Net 1784958674: Recv: friendlist.getFriendGroupList[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Syncing friend message history: Success.[0m
+[0m2022-05-27 23:03:45 V/Net 1784958674: Recv: friendlist.GetTroopListReqV2[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Loaded 3 members from local cache for group OOP、一朵白云☁️、Hid (870745666)[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Loaded 4 members from local cache for group OOP小组 (772304437)[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Loaded 3 members from local cache for group Hide on bu...、OOP、橙原  (604712224)[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Loaded 6 members from local cache for group 云之彼端、👻、Hide on  (883989823)[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Loaded 4 members from local cache for group OOP、zing、金栗 (947121973)[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Loaded 121 members from local cache for group BUAA-民航飞友联合 (1001093960)[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Loaded 3 members from local cache for group OOP、MERCY、Hide on bush (961171732)[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Successfully loaded group list: 7 in total.[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Scheduled key refresh in 23h 55min 0.0s.[0m
+[92m2022-05-27 23:03:45 I/Net 1784958674: Scheduled refresh login session in 19d 23h 55min 0.0s.[0m
+[0m2022-05-27 23:03:47 V/Net 1784958674: Saving bdh session to cache[0m
+[0m2022-05-27 23:03:47 V/Net 1784958674: Send: ConfigPushSvc.PushResp(ConfigPushSvc.PushResp)[0m
+[0m2022-05-27 23:03:47 V/Net 1784958674: Recv: ConfigPushSvc.PushReq[0m
+[0m2022-05-27 23:03:53 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:03:53 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:04:04 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:04:05 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:04:16 V/Net 1784958674: Send: MessageSvc.PbSendMsg(MessageSvc.PbSendMsg)[0m
+[0m2022-05-27 23:04:17 V/Net 1784958674: Recv: MessageSvc.PbSendMsg[0m
+[0m2022-05-27 23:04:34 V/Net 1784958674: Send: StatSvc.register(offline)[0m
