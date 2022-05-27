@@ -5,6 +5,8 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.File
 import java.io.FileOutputStream
+import java.net.InetSocketAddress
+import java.net.Proxy
 import java.util.concurrent.TimeUnit
 
 fun searchImageSource(imageUrl: String): Pair<String, String?> {
@@ -49,12 +51,14 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
     }
 }
 
-fun downloadPicture(url: String, path: String): Pair<Int, String?> {
+fun downloadPicture(url: String, path: String, sa: InetSocketAddress? = null): Pair<Int, String?> {
     val client = OkHttpClient().also {
         it.newBuilder().apply {
-            connectTimeout(20, TimeUnit.SECONDS)
-            readTimeout(20, TimeUnit.SECONDS)
-            writeTimeout(20, TimeUnit.SECONDS)
+            connectTimeout(10, TimeUnit.SECONDS)
+            readTimeout(10, TimeUnit.SECONDS)
+            writeTimeout(10, TimeUnit.SECONDS)
+            if (sa != null) proxy(Proxy(Proxy.Type.HTTP, sa))
+            else proxy(Proxy.NO_PROXY)
         }
     }
     val request = Request.Builder().get().url(url).build()
