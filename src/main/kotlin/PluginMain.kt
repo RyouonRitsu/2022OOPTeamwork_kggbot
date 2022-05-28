@@ -272,6 +272,10 @@ object PluginMain : KotlinPlugin(
                         group.sendMessage(Image(id))
                     } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
                     else group.sendMessage(message.quote() + msg)
+                } else if (cmd.contains("油价")) {
+                    val (msg, result) = getOil(cmd.replaceFirst("油价", ""))
+                    if (result != null) group.sendMessage(message.quote() + result)
+                    else group.sendMessage(message.quote() + msg)
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
