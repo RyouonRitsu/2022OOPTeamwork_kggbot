@@ -276,6 +276,18 @@ object PluginMain : KotlinPlugin(
                     val (msg, result) = getOil(cmd.replaceFirst("油价", ""))
                     if (result != null) group.sendMessage(message.quote() + result)
                     else group.sendMessage(message.quote() + msg)
+                } else if (cmd.startsWith("舔")) {
+                    var m = message.serializeToMiraiCode()
+                    if (m.indexOf("[mirai:at:") == -1)
+                        group.sendMessage(message.quote() + "请告诉我你要舔谁！")
+                    else {
+                        m = m.substring(m.indexOf("[mirai:at:") + 10, m.length)
+                        m = m.substring(0, m.indexOf("]"))
+                        val user = m.toLong()
+                        val (msg, result) = lick()
+                        if (result == null) group.sendMessage(message.quote() + msg)
+                        else group.sendMessage(At(user).followedBy(PlainText(result)))
+                    }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
