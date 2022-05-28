@@ -1,5 +1,5 @@
 {
-    "troopMemberNumSeq": 2184,
+    "troopMemberNumSeq": 2183,
     "list": [
         {
             "uin": 23656613,
@@ -115,7 +115,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598361832,
-            "lastSpeakTimestamp": 1653753590,
+            "lastSpeakTimestamp": 1653750906,
             "isOfficialBot": false
         },
         {
@@ -245,7 +245,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1621050134,
-            "lastSpeakTimestamp": 1653753593,
+            "lastSpeakTimestamp": 1653751159,
             "isOfficialBot": false
         },
         {
@@ -466,7 +466,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598362929,
-            "lastSpeakTimestamp": 1653751465,
+            "lastSpeakTimestamp": 1653750677,
             "isOfficialBot": false
         },
         {
@@ -480,19 +480,6 @@
             "anonymousId": null,
             "joinTimestamp": 1650083415,
             "lastSpeakTimestamp": 1653730247,
-            "isOfficialBot": false
-        },
-        {
-            "uin": 963341690,
-            "nick": "Char·Aznable",
-            "permission": "MEMBER",
-            "remark": "Char·Aznable",
-            "nameCard": "",
-            "specialTitle": "",
-            "muteTimestamp": 0,
-            "anonymousId": null,
-            "joinTimestamp": 1653753523,
-            "lastSpeakTimestamp": 1653753571,
             "isOfficialBot": false
         },
         {
@@ -544,7 +531,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598362929,
-            "lastSpeakTimestamp": 1653753545,
+            "lastSpeakTimestamp": 1653750832,
             "isOfficialBot": false
         },
         {
@@ -648,7 +635,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598414353,
-            "lastSpeakTimestamp": 1653752651,
+            "lastSpeakTimestamp": 1653749531,
             "isOfficialBot": false
         },
         {
@@ -661,7 +648,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598414353,
-            "lastSpeakTimestamp": 1653752698,
+            "lastSpeakTimestamp": 1653750941,
             "isOfficialBot": false
         },
         {
@@ -778,7 +765,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1611327332,
-            "lastSpeakTimestamp": 1653753542,
+            "lastSpeakTimestamp": 1653748823,
             "isOfficialBot": false
         },
         {
@@ -960,7 +947,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1620633744,
-            "lastSpeakTimestamp": 1653753589,
+            "lastSpeakTimestamp": 1653751416,
             "isOfficialBot": false
         },
         {
@@ -999,7 +986,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1651581304,
-            "lastSpeakTimestamp": 1653753578,
+            "lastSpeakTimestamp": 1653578534,
             "isOfficialBot": false
         },
         {
@@ -1038,7 +1025,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1628344966,
-            "lastSpeakTimestamp": 1653752339,
+            "lastSpeakTimestamp": 1653331237,
             "isOfficialBot": false
         },
         {
@@ -1181,7 +1168,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1631948752,
-            "lastSpeakTimestamp": 1653752557,
+            "lastSpeakTimestamp": 1653751411,
             "isOfficialBot": false
         },
         {
@@ -1441,7 +1428,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1653668202,
-            "lastSpeakTimestamp": 1653753582,
+            "lastSpeakTimestamp": 1653750703,
             "isOfficialBot": false
         },
         {
@@ -1467,7 +1454,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1626745289,
-            "lastSpeakTimestamp": 1653751980,
+            "lastSpeakTimestamp": 1653750721,
             "isOfficialBot": false
         },
         {

@@ -11,7 +11,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1653659244,
-            "lastSpeakTimestamp": 1653659273,
+            "lastSpeakTimestamp": 1653668413,
             "isOfficialBot": false
         },
         {
@@ -24,12 +24,12 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1653659245,
-            "lastSpeakTimestamp": 1653659258,
+            "lastSpeakTimestamp": 1653668428,
             "isOfficialBot": false
         },
         {
             "uin": 1784958674,
-            "nick": "OOP",
+            "nick": "kggbot",
             "permission": "MEMBER",
             "remark": "OOP",
             "nameCard": "",
@@ -37,7 +37,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1653659245,
-            "lastSpeakTimestamp": 1653659279,
+            "lastSpeakTimestamp": 1653668363,
             "isOfficialBot": false
         }
     ]
