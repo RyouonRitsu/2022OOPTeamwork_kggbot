@@ -19,10 +19,14 @@ import org.ritsu.mirai.plugin.commands.*
 import org.ritsu.mirai.plugin.commands.translate.NotAvailable
 import org.ritsu.mirai.plugin.commands.translate.languageType
 import org.ritsu.mirai.plugin.commands.translate.translate
+import org.ritsu.mirai.plugin.commands.wordcloud.getGroupWordCloud
 import org.ritsu.mirai.plugin.entity.*
 import org.ritsu.mirai.plugin.kernel.addEnergy
 import org.ritsu.mirai.plugin.kernel.searchFirstUserByAt
 import java.io.File
+import java.time.Instant
+import java.time.LocalDate
+import java.time.ZoneId
 
 /**
  * 使用 kotlin 版请把
@@ -72,6 +76,12 @@ object PluginMain : KotlinPlugin(
             )
         }
         eventChannel.subscribeAlways<GroupMessageEvent> {
+            val groupMessagesRecord = File("./data/${group.id}")
+            //如果文件上次修改时间不为今天，则覆盖写入
+            if (!groupMessagesRecord.exists() || !Instant.ofEpochMilli(groupMessagesRecord.lastModified())
+                    .atZone(ZoneId.of("Asia/Shanghai")).toLocalDate().isEqual(LocalDate.now())
+            ) groupMessagesRecord.writeText("${message.content}，", Charsets.UTF_8)
+            else groupMessagesRecord.appendText("${message.content}，", Charsets.UTF_8)
             if (sender.id in Administrator.blacklist || User.conversationLock[sender.id] == true) return@subscribeAlways
             //群消息
             //管理员命令
@@ -293,6 +303,21 @@ object PluginMain : KotlinPlugin(
                         if (result == null) group.sendMessage(message.quote() + msg)
                         else group.sendMessage(At(user).followedBy(PlainText(result)))
                     }
+                } else if (cmd == "今日词云") {
+                    val result = getGroupWordCloud(group.id)
+                    if (result == "Success") {
+                        val inputStream = File("./data/${group.id}.png").toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        group.sendMessage(Image(id))
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                    } else group.sendMessage(
+                        message.quote() + result.replace(
+                            Regex(".:\\\\.*\\..."),
+                            "***"
+                        )
+                    )
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
