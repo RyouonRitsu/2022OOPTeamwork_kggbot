@@ -1,6 +1,6 @@
 {
-    "friendListSeq": 24,
-    "timeStamp": 15,
+    "friendListSeq": 25,
+    "timeStamp": 16,
     "list": [
         {
             "uin": 66600000,
@@ -19,8 +19,8 @@
         },
         {
             "uin": 1784958674,
-            "nick": "OOP",
-            "remark": "OOP"
+            "nick": "kggbot",
+            "remark": "kggbot"
         },
         {
             "uin": 2287941423,

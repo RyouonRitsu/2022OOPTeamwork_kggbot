@@ -23,14 +23,18 @@ fun getOil(loc: String): Pair<String, String?> {
                 var i = 0
                 var flag = false
                 while (i < 31) {
-                    val region = jsonObject.getJSONArray("data").getJSONObject(i).getString("地区")
-                    if (region == loc) {
-                        flag = true
-                        break
+                    try {
+                        val region = jsonObject.getJSONArray("data").getJSONObject(i).getString("地区")
+                        if (region == loc) {
+                            flag = true
+                            break
+                        }
+                        i++
+                    } catch (e: Exception) {
+                        return Pair("地区不正确，请输入中国内地省级行政区！\n", null)
                     }
-                    i++
                 }
-                if (!flag) Pair("地区不正确，请输入中国内地省级行政区！\n", null)
+                if (!flag) return Pair("地区不正确，请输入中国内地省级行政区！\n", null)
                 val obj = jsonObject.getJSONArray("data").getJSONObject(i)
                 val o89: String? = obj.getString("89号汽油")
                 val o92: String? = obj.getString("92号汽油")
