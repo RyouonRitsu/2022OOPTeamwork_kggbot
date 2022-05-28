@@ -14,7 +14,7 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
     val minsim = "80!"
     val url =
         "https://saucenao.com/search.php?output_type=2&numres=1&testmode=1&minsim=$minsim&db=999&api_key=$apiKey&url=$imageUrl"
-    val client = OkHttpClient()
+    val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
     val response = client.newCall(request).execute()
     return when (response.code) {
@@ -26,7 +26,7 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
                     val result = jsonObject.getJSONArray("results").getJSONObject(0)
                     val similarity = result.getJSONObject("header").getDouble("similarity")
                     val thumbnail = result.getJSONObject("header").getString("thumbnail")
-                    val (code, msg) = downloadPicture(thumbnail, "./data/Image/temp_thumbnail.png")
+                    val (code, msg) = download(thumbnail, "./data/Image/temp_thumbnail.png")
                     var string = ""
                     result.getJSONObject("data").forEach {
                         if (it.value != null) {
@@ -51,7 +51,7 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
     }
 }
 
-fun downloadPicture(url: String, path: String, sa: InetSocketAddress? = null): Pair<Int, String?> {
+fun download(url: String, path: String, sa: InetSocketAddress? = null): Pair<Int, String?> {
     val client = OkHttpClient().also {
         it.newBuilder().apply {
             connectTimeout(10, TimeUnit.SECONDS)

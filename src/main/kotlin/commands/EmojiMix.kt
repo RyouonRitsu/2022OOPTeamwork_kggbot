@@ -367,7 +367,7 @@ fun emojiMix(emojis: String): String {
         val emoji2 = emojiCollection[1].replace("&#", "").replace(";", "").toInt()
         val result = mixEmoji(emoji1, emoji2)
         if (result.startsWith("http")) {
-            val (code, msg) = downloadPicture(result, "./data/Image/${emoji1 + emoji2}.png")
+            val (code, msg) = download(result, "./data/Image/${emoji1 + emoji2}.png")
             if (code == 200 && msg == null) "./data/Image/${emoji1 + emoji2}.png" else msg!!
         } else result
     } else "格式错误, 请检查是否包含\"+\"号"
