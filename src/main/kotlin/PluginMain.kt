@@ -21,7 +21,7 @@ import org.ritsu.mirai.plugin.commands.translate.languageType
 import org.ritsu.mirai.plugin.commands.translate.translate
 import org.ritsu.mirai.plugin.entity.*
 import org.ritsu.mirai.plugin.kernel.addEnergy
-import org.ritsu.mirai.plugin.kernel.searchUserByAt
+import org.ritsu.mirai.plugin.kernel.searchFirstUserByAt
 import java.io.File
 
 /**
@@ -79,21 +79,21 @@ object PluginMain : KotlinPlugin(
                 if (message.contentToString().contains("能量值")) {
                     group.sendMessage(
                         adjustUserEnergy(
-                            searchUserByAt(message),
+                            searchFirstUserByAt(message),
                             message.contentToString().replaceBefore("能量值", "").replace("能量值", "").toIntOrNull()
                         )
                     )
                 } else if (message.contentToString().contains("查询")) {
-                    group.sendMessage(queryUserEnergy(searchUserByAt(message)))
+                    group.sendMessage(queryUserEnergy(searchFirstUserByAt(message)))
                 } else if ("小黑屋" in message.content) {
-                    val userId = searchUserByAt(message)
+                    val userId = searchFirstUserByAt(message)
                     if (userId != null && userId !in Administrator.blacklist) {
                         Administrator.blacklist.add(userId)
                         group.sendMessage("操作成功!")
                     } else if (userId != null) group.sendMessage("操作失败! 该用户已在小黑屋里!")
                     else group.sendMessage("操作失败! 请检查命令是否正确!")
                 } else if ("解除" in message.content) {
-                    val userId = searchUserByAt(message)
+                    val userId = searchFirstUserByAt(message)
                     if (userId != null && userId in Administrator.blacklist) {
                         Administrator.blacklist.remove(userId)
                         group.sendMessage("操作成功!")
@@ -112,10 +112,9 @@ object PluginMain : KotlinPlugin(
                 atMember(message, group)
             }
             //与kgg聊天
-            if (searchUserByAt(message) == 1784958674L) {
-                val msg = message.serializeToMiraiCode().replace("[mirai:at:1784958674]", "")
-                if (msg == "") group.sendMessage("你要说什么？")
-                else group.sendMessage(chat(msg))
+            if (searchFirstUserByAt(message) == 1784958674L) {
+                val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }.getOrNull()
+                group.sendMessage(if (msg == null || msg == "") "哥哥你说话呀！" else chat(msg.replace(Regex("\\s"), "")))
             }
             //kgg命令
             else if (

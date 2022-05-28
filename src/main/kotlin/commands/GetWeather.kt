@@ -3,11 +3,14 @@ package org.ritsu.mirai.plugin.commands
 import com.alibaba.fastjson2.JSON
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import java.net.Proxy
 
 fun getWeather(location: String): String {
     val key = "a3d192c29b9e448fabec91c966658079"
     val url = "https://devapi.qweather.com/v7/weather/now?key=$key&location=$location"
-    val client = OkHttpClient()
+    val client = OkHttpClient().also {
+        it.newBuilder().proxy(Proxy.NO_PROXY)
+    }
     val request = Request.Builder().get().url(url).build()
     val response = client.newCall(request).execute()
     return when (response.code) {

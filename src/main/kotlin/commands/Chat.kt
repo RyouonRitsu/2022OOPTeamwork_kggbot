@@ -3,6 +3,7 @@ package org.ritsu.mirai.plugin.commands
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
+import java.nio.charset.Charset
 
 fun chat(hi: String): String {
     val url = "https://api.iyk0.com/liaotian/?msg=$hi"
@@ -15,7 +16,7 @@ fun chat(hi: String): String {
     try {
         val response = client.newCall(request).execute()
         val inputStream = response.body?.byteStream() ?: return "无法获取body!\n"
-        return inputStream.bufferedReader().readText()
+        return inputStream.bufferedReader(Charset.forName("UTF-8")).readText()
     } catch (e: java.net.SocketTimeoutException) {
         return "连接超时！\n"
     } catch (e: Exception) {
