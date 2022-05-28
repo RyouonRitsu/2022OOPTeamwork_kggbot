@@ -1,258 +1,261 @@
-[92m2022-05-28 23:06:55 I/main: Starting mirai-console...[0m[m
-[92m2022-05-28 23:06:55 I/main: Backend: version 2.11.1, built on 2022-05-26 04:43:10.[0m[m
-[92m2022-05-28 23:06:55 I/main: Frontend Terminal: version 2.11.1, provided by Mamoe Technologies[0m[m
-[92m2022-05-28 23:06:55 I/main: Welcome to visit https://mirai.mamoe.net/[0m[m
-[92m2022-05-28 23:06:56 I/main: Prepared built-in commands: autoLogin, help, login, logout, permission, status, stop[0m[m
-[92m2022-05-28 23:06:56 I/main: 0 plugin(s) enabled.[0m[m
-[92m2022-05-28 23:06:56 I/main: mirai-console started successfully.[0m[m
-[92m2022-05-28 23:06:56 I/kggbot: Plugin loaded[0m[m
-[92m2022-05-28 23:06:56 I/WindowHelperJvm: Mirai 正在使用桌面环境. 如遇到验证码将会弹出对话框. 可添加 JVM 属性 `mirai.no-desktop` 以关闭.[0m[m
-[92m2022-05-28 23:06:56 I/WindowHelperJvm: Mirai is using desktop. Captcha will be thrown by window popup. You can add `mirai.no-desktop` to JVM properties (-Dmirai.no-desktop) to disable it.[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.358 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.364 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 12[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.382 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.383 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.390 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.391 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.408 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.410 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.410 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 11[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.413 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.414 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.415 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.418 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable[0m[m
-[92m2022-05-28 23:06:56 I/stdout: java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.internal.PlatformDependent0$4.run(PlatformDependent0.java:239)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at java.base/java.security.AccessController.doPrivileged(Native Method)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:233)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:294)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:93)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:279)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:150)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:52)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:96)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:91)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:72)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:52)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:44)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection$suspendImpl(NettyNetworkHandler.kt:138)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection(NettyNetworkHandler.kt)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$StateConnecting$startState$1.invokeSuspend(NettyNetworkHandler.kt:269)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:749)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.424 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.425 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable[0m[m
-[92m2022-05-28 23:06:56 I/stdout: java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$6 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @40616d16[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at java.base/java.lang.reflect.Method.invoke(Method.java:558)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.internal.PlatformDependent0$6.run(PlatformDependent0.java:353)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at java.base/java.security.AccessController.doPrivileged(Native Method)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:344)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:294)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:93)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:279)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:150)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:52)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:96)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:91)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:72)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:52)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:44)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection$suspendImpl(NettyNetworkHandler.kt:138)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection(NettyNetworkHandler.kt)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$StateConnecting$startState$1.invokeSuspend(NettyNetworkHandler.kt:269)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:749)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.431 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): unavailable[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.432 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.433 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - maxDirectMemory: 8573157376 bytes (maybe)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.434 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\Faker\AppData\Local\Temp (java.io.tmpdir)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.435 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.436 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: -1 bytes[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.436 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.438 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.CleanerJava9 - java.nio.ByteBuffer.cleaner(): available[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.438 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:56 I/stdout: 23:06:56.448 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available[0m[m
-[92m2022-05-28 23:06:56 I/stdout: [0m[m
-[92m2022-05-28 23:06:57 I/stdout: 23:06:57.237 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.processId: 31024 (auto-detected)[0m[m
-[92m2022-05-28 23:06:57 I/stdout: [0m[m
-[92m2022-05-28 23:06:57 I/stdout: 23:06:57.240 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv4Stack: false[0m[m
-[92m2022-05-28 23:06:57 I/stdout: [0m[m
-[92m2022-05-28 23:06:57 I/stdout: 23:06:57.240 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv6Addresses: false[0m[m
-[92m2022-05-28 23:06:57 I/stdout: [0m[m
-[92m2022-05-28 23:06:57 I/stdout: 23:06:57.853 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtilInitializations - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)[0m[m
-[92m2022-05-28 23:06:57 I/stdout: [0m[m
-[92m2022-05-28 23:06:57 I/stdout: 23:06:57.854 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtil - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200[0m[m
-[92m2022-05-28 23:06:57 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.651 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.machineId: a8:7e:ea:ff:fe:be:4e:b1 (auto-detected)[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.662 [DefaultDispatcher-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.663 [DefaultDispatcher-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.689 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 12[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.690 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 12[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.691 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.692 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.693 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.694 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.694 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.695 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.695 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.696 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimIntervalMillis: 0[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.697 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.useCacheForAllThreads: true[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.697 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.709 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: pooled[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.709 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 0[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:58 I/stdout: 23:06:58.709 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.maxThreadLocalCharBufferSize: 16384[0m[m
-[92m2022-05-28 23:06:58 I/stdout: [0m[m
-[92m2022-05-28 23:06:59 I/Bot.1784958674: Loaded account secrets from local cache.[0m[m
-[92m2022-05-28 23:06:59 I/stdout: 23:06:59.674 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacityPerThread: 4096[0m[m
-[92m2022-05-28 23:06:59 I/stdout: [0m[m
-[92m2022-05-28 23:06:59 I/stdout: 23:06:59.675 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxSharedCapacityFactor: 2[0m[m
-[92m2022-05-28 23:06:59 I/stdout: [0m[m
-[92m2022-05-28 23:06:59 I/stdout: 23:06:59.675 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.linkCapacity: 16[0m[m
-[92m2022-05-28 23:06:59 I/stdout: [0m[m
-[92m2022-05-28 23:06:59 I/stdout: 23:06:59.675 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8[0m[m
-[92m2022-05-28 23:06:59 I/stdout: [0m[m
-[92m2022-05-28 23:06:59 I/stdout: 23:06:59.675 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.delayedQueue.ratio: 8[0m[m
-[92m2022-05-28 23:06:59 I/stdout: [0m[m
-[92m2022-05-28 23:06:59 I/stdout: 23:06:59.688 [nioEventLoopGroup-2-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true[0m[m
-[92m2022-05-28 23:06:59 I/stdout: [0m[m
-[92m2022-05-28 23:06:59 I/stdout: 23:06:59.689 [nioEventLoopGroup-2-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true[0m[m
-[92m2022-05-28 23:06:59 I/stdout: [0m[m
-[92m2022-05-28 23:06:59 I/stdout: 23:06:59.690 [nioEventLoopGroup-2-1] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@2809de74[0m[m
-[92m2022-05-28 23:06:59 I/stdout: [0m[m
-[92m2022-05-28 23:06:59 I/Bot.1784958674: Saved account secrets to local cache for fast login.[0m[m
-[92m2022-05-28 23:07:00 I/Bot.1784958674: Login successful.[0m[m
-[0m2022-05-28 23:07:00 V/Bot.1784958674: Event: BotOnlineEvent(bot=Bot(1784958674))[0m[m
-[92m2022-05-28 23:07:00 I/Bot.1784958674: Bot login successful.[0m[m
-[0m2022-05-28 23:07:01 V/Bot.1784958674: [OOP、一朵白云☁️、Hid(870745666)] Hide on bush(75046675) -> kgg舔[0m[m
-[0m2022-05-28 23:07:01 V/Bot.1784958674: Group(870745666) <- [mirai:quote:[4830],[-741997275]]请告诉我你要舔谁！[0m[m
-[0m2022-05-28 23:07:06 V/Bot.1784958674: [OOP、一朵白云☁️、Hid(870745666)] Hide on bush(75046675) -> kgg舔[mirai:at:2864194418][0m[m
-[0m2022-05-28 23:07:06 V/Bot.1784958674: Group(870745666) <- [mirai:at:2864194418] 你其有点像天上的月亮，也像那闪烁的星星，可惜我不是诗人，否则当写一万首诗来形容你的美丽[0m[m
-[0m2022-05-28 23:07:08 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 看见快门遥控了[0m[m
-[0m2022-05-28 23:07:11 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 乐[0m[m
-[0m2022-05-28 23:07:17 V/Bot.1784958674: [9社会主义新农村(157284173)] 王晨宇(75046675) -> kgg舔[mirai:at:2864194418][0m[m
-[0m2022-05-28 23:07:18 V/Bot.1784958674: Group(157284173) <- [mirai:at:2864194418] 遇见你之前，我没考虑过结婚；\n遇见你之后，我没考虑过别人[0m[m
-[0m2022-05-28 23:07:32 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 21 Faker(75046675) -> kgg舔[mirai:at:2680678616][0m[m
-[0m2022-05-28 23:07:32 V/Bot.1784958674: Group(1001093960) <- [mirai:at:2680678616] 还是想跑很远的路去看你，被你迎面跑来一把深拥的感觉，真好。[0m[m
-[0m2022-05-28 23:07:47 V/Bot.1784958674: [OOP小组(772304437)] Hide on bush(75046675) -> kgg舔[mirai:at:1780645196][0m[m
-[0m2022-05-28 23:07:48 V/Bot.1784958674: Group(772304437) <- [mirai:at:1780645196] 想和你一起在晚风里，说些可爱的废话数星星，直到月亮也悄悄凑过来听。[0m[m
-[0m2022-05-28 23:08:02 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 。。。。。。。[0m[m
-[0m2022-05-28 23:08:08 V/Bot.1784958674: [9社会主义新农村(157284173)] 王晨宇(75046675) -> kgg舔[mirai:at:63201290][0m[m
-[0m2022-05-28 23:08:08 V/Bot.1784958674: Group(157284173) <- [mirai:at:63201290] 黑夜滑向黎明，我奔向你。[0m[m
-[0m2022-05-28 23:08:25 V/Bot.1784958674: [OOP小组(772304437)] 周洪熙(1780645196) -> ？[0m[m
-[0m2022-05-28 23:08:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 苏星瑶(2578321762) -> 不要ヽ(≧Д≦)ノ[0m[m
-[0m2022-05-28 23:08:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 21 Faker(75046675) -> kgg舔[mirai:at:2578321762][0m[m
-[0m2022-05-28 23:08:28 V/Bot.1784958674: Group(1001093960) <- [mirai:at:2578321762] 我做事十拿九稳，现在只差你一吻。[0m[m
-[0m2022-05-28 23:08:33 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 苏星瑶(2578321762) -> 我不是大便，我的粉丝也不是苍蝇[0m[m
-[0m2022-05-28 23:08:33 V/Bot.1784958674: [OOP小组(772304437)] 周洪熙(1780645196) -> 這是什麼qqgg的功能[0m[m
-[0m2022-05-28 23:08:35 V/Bot.1784958674: [OOP小组(772304437)] 周洪熙(1780645196) -> 操[0m[m
-[0m2022-05-28 23:08:39 V/Bot.1784958674: [OOP小组(772304437)] Hide on bush(75046675) -> 哈哈哈哈哈[0m[m
-[0m2022-05-28 23:08:45 V/Bot.1784958674: [OOP小组(772304437)] Hide on bush(75046675) -> 费了我半天劲[0m[m
-[0m2022-05-28 23:09:02 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815-Dendrobium#二刺螈提督czun(1484912497) -> ？[0m[m
-[0m2022-05-28 23:09:19 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> [mirai:image:{F9A58AB8-813C-C9EA-62DF-94BDB6321B8D}.jpg][0m[m
-[0m2022-05-28 23:09:22 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 21 Faker(75046675) -> kgg舔[mirai:at:1076079235][0m[m
-[0m2022-05-28 23:09:23 V/Bot.1784958674: Group(1001093960) <- [mirai:at:1076079235] 见到你，我的占有欲就超标了[0m[m
-[0m2022-05-28 23:09:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> 所以这是俩bot对线?[0m[m
-[0m2022-05-28 23:09:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> ？[0m[m
-[0m2022-05-28 23:09:31 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> 你们搁着测图灵呢?[0m[m
-[0m2022-05-28 23:09:46 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2021一般通过白给教徒#通辽选帝侯(1076079235) -> ？[0m[m
-[0m2022-05-28 23:09:49 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815-Dendrobium#二刺螈提督czun(1484912497) -> 隔壁群有四个bot对线[0m[m
-[0m2022-05-28 23:09:58 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 不是成循环了吗[0m[m
-[0m2022-05-28 23:10:08 V/Bot.1784958674: [OOP小组(772304437)] 周洪熙(1780645196) -> 你看wx[0m[m
-[0m2022-05-28 23:10:10 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> [mirai:quote:[286212],[789224287]]这逼给大班拍照的开价是200软/h[0m[m
-[0m2022-05-28 23:10:12 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2021一般通过白给教徒#通辽选帝侯(1076079235) -> .搓[mirai:at:1784958674] [0m[m
-[0m2022-05-28 23:10:12 V/Bot.1784958674: [OOP小组(772304437)] 周洪熙(1780645196) -> [捂脸][捂脸][捂脸][0m[m
-[0m2022-05-28 23:10:14 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 苏星瑶(2578321762) -> [mirai:image:{7FA164C2-7E43-CA70-F92D-A484034E0214}.png][0m[m
-[0m2022-05-28 23:10:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> 哪来的自信啊[0m[m
-[0m2022-05-28 23:10:17 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> [mirai:image:{F9A58AB8-813C-C9EA-62DF-94BDB6321B8D}.jpg][0m[m
-[0m2022-05-28 23:10:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1623#白给王10#群边缘人小透明铁废物净瞎添乱(957196212) -> 草[0m[m
-[0m2022-05-28 23:10:30 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2021一般通过白给教徒#通辽选帝侯(1076079235) -> [mirai:quote:[286254],[320019703]][mirai:at:244553015] 草[0m[m
-[0m2022-05-28 23:10:33 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> [mirai:quote:[286254],[320019703]][mirai:at:244553015] ？？？？？[0m[m
-[0m2022-05-28 23:10:34 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 21 Faker(75046675) -> [mirai:quote:[286255],[1936608790]][mirai:at:1076079235] 这个好nb[0m[m
-[0m2022-05-28 23:10:37 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1623#白给王10#群边缘人小透明铁废物净瞎添乱(957196212) -> 番茄找我我都没想过要钱这事[0m[m
-[0m2022-05-28 23:10:47 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1623#白给王10#群边缘人小透明铁废物净瞎添乱(957196212) -> 怪不得俺穷[0m[m
-[0m2022-05-28 23:10:50 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1623#白给王10#群边缘人小透明铁废物净瞎添乱(957196212) -> [佛系][0m[m
-[0m2022-05-28 23:10:55 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 时间好宝贵（）[0m[m
-[0m2022-05-28 23:11:07 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 我一直打白工哈[0m[m
-[0m2022-05-28 23:11:10 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 今天跟半主席半日游[0m[m
-[0m2022-05-28 23:11:12 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> [mirai:image:{09623FD6-3C2B-3059-9691-C01A8A70B329}.jpg][0m[m
-[0m2022-05-28 23:11:13 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 从给五系[0m[m
-[0m2022-05-28 23:11:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> [mirai:quote:[286263],[2136954475]]这开价给faq差点气死[0m[m
-[0m2022-05-28 23:11:15 V/Bot.1784958674: Event: GroupRecall(bot=Bot(1784958674), authorId=2680678616, messageIds=[286270], messageInternalIds=[1330035811], messageTime=1653750674, operator=NormalMember(2680678616), group=Group(1001093960), author=NormalMember(2680678616))[0m[m
-[0m2022-05-28 23:11:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1623#白给王10#群边缘人小透明铁废物净瞎添乱(957196212) -> [mirai:quote:[286266],[1271007750]]那到确实，这几天忙的要死[0m[m
-[0m2022-05-28 23:11:30 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 呜呜呜10[0m[m
-[0m2022-05-28 23:11:31 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> [mirai:image:{ED16AE9D-C22C-B145-ED34-B81960757B61}.gif][0m[m
-[0m2022-05-28 23:11:37 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 主要是要忙不拍不就行了（）[0m[m
-[0m2022-05-28 23:11:40 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> .搓[mirai:at:463945807] [0m[m
-[0m2022-05-28 23:11:41 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 苏星瑶(2578321762) -> [mirai:image:{5BCEF26E-9A8F-C394-1192-13757DB41D7C}.png][0m[m
-[0m2022-05-28 23:11:43 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 我还是那个言论哈[0m[m
-[0m2022-05-28 23:11:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 要要钱之前说好[0m[m
-[0m2022-05-28 23:11:50 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 靠摄影挣钱的都是傻逼[0m[m
-[0m2022-05-28 23:11:56 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kgg北京油价[0m[m
-[0m2022-05-28 23:11:56 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3756],[-1724772208]]北京油价：\n89号汽油：8.18元/升\n92号汽油：8.69元/升\n95号汽油：9.25元/升\n98号汽油：10.23元/升\n0号柴油：8.43元/升\n更新日期：2022-5-24 18:40:47\n[0m[m
-[0m2022-05-28 23:11:56 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 要太贵.......[0m[m
-[0m2022-05-28 23:11:59 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 我不好说[0m[m
-[0m2022-05-28 23:12:03 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kgg舔[mirai:at:627037656][0m[m
-[0m2022-05-28 23:12:03 V/Bot.1784958674: Group(883989823) <- [mirai:at:627037656] 你对我来说，就像天上的星星，然后你从天上掉了下来，掉到了我怀里。我想把你藏进我的心里，不知道你愿意不愿意？[0m[m
-[92m2022-05-28 23:12:18 I/Bot.1784958674: Bot cancelled: Job was cancelled[0m[m
+[92m2022-05-29 00:22:47 I/main: Starting mirai-console...[0m[m
+[92m2022-05-29 00:22:47 I/main: Backend: version 2.11.1, built on 2022-05-26 04:43:10.[0m[m
+[92m2022-05-29 00:22:47 I/main: Frontend Terminal: version 2.11.1, provided by Mamoe Technologies[0m[m
+[92m2022-05-29 00:22:47 I/main: Welcome to visit https://mirai.mamoe.net/[0m[m
+[92m2022-05-29 00:22:48 I/main: Prepared built-in commands: autoLogin, help, login, logout, permission, status, stop[0m[m
+[92m2022-05-29 00:22:48 I/main: 0 plugin(s) enabled.[0m[m
+[92m2022-05-29 00:22:48 I/main: mirai-console started successfully.[0m[m
+[92m2022-05-29 00:22:48 I/kggbot: Plugin loaded[0m[m
+[92m2022-05-29 00:22:48 I/WindowHelperJvm: Mirai 正在使用桌面环境. 如遇到验证码将会弹出对话框. 可添加 JVM 属性 `mirai.no-desktop` 以关闭.[0m[m
+[92m2022-05-29 00:22:48 I/WindowHelperJvm: Mirai is using desktop. Captcha will be thrown by window popup. You can add `mirai.no-desktop` to JVM properties (-Dmirai.no-desktop) to disable it.[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.621 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.627 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 12[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.645 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.645 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.652 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.652 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.668 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.670 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.670 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 11[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.672 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.672 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.673 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.675 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable[0m[m
+[92m2022-05-29 00:22:48 I/stdout: java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.internal.PlatformDependent0$4.run(PlatformDependent0.java:239)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at java.base/java.security.AccessController.doPrivileged(Native Method)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:233)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:294)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:93)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:279)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:150)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:52)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:96)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:91)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:72)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:52)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:44)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection$suspendImpl(NettyNetworkHandler.kt:138)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection(NettyNetworkHandler.kt)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$StateConnecting$startState$1.invokeSuspend(NettyNetworkHandler.kt:269)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:749)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.680 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.681 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable[0m[m
+[92m2022-05-29 00:22:48 I/stdout: java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$6 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @191ad379[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at java.base/java.lang.reflect.Method.invoke(Method.java:558)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.internal.PlatformDependent0$6.run(PlatformDependent0.java:353)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at java.base/java.security.AccessController.doPrivileged(Native Method)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:344)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:294)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:93)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:279)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:150)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:52)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:96)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:91)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:72)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:52)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:44)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection$suspendImpl(NettyNetworkHandler.kt:138)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection(NettyNetworkHandler.kt)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$StateConnecting$startState$1.invokeSuspend(NettyNetworkHandler.kt:269)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:749)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.686 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): unavailable[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.686 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.688 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - maxDirectMemory: 8573157376 bytes (maybe)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.688 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\Faker\AppData\Local\Temp (java.io.tmpdir)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.689 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.690 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: -1 bytes[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.690 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.691 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.CleanerJava9 - java.nio.ByteBuffer.cleaner(): available[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.692 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:48 I/stdout: 00:22:48.700 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available[0m[m
+[92m2022-05-29 00:22:48 I/stdout: [0m[m
+[92m2022-05-29 00:22:49 I/stdout: 00:22:49.506 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.processId: 33464 (auto-detected)[0m[m
+[92m2022-05-29 00:22:49 I/stdout: [0m[m
+[92m2022-05-29 00:22:49 I/stdout: 00:22:49.509 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv4Stack: false[0m[m
+[92m2022-05-29 00:22:49 I/stdout: [0m[m
+[92m2022-05-29 00:22:49 I/stdout: 00:22:49.510 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv6Addresses: false[0m[m
+[92m2022-05-29 00:22:49 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.234 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtilInitializations - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.235 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtil - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.940 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.machineId: a8:7e:ea:ff:fe:be:4e:b1 (auto-detected)[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.951 [DefaultDispatcher-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.951 [DefaultDispatcher-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.972 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 12[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.972 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 12[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.973 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.973 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.973 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.973 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.974 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.974 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.974 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.974 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimIntervalMillis: 0[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.974 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.useCacheForAllThreads: true[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.975 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.984 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: pooled[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.984 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 0[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:50 I/stdout: 00:22:50.984 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.maxThreadLocalCharBufferSize: 16384[0m[m
+[92m2022-05-29 00:22:50 I/stdout: [0m[m
+[92m2022-05-29 00:22:51 I/Bot.1784958674: Loaded account secrets from local cache.[0m[m
+[92m2022-05-29 00:22:51 I/stdout: 00:22:51.666 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacityPerThread: 4096[0m[m
+[92m2022-05-29 00:22:51 I/stdout: [0m[m
+[92m2022-05-29 00:22:51 I/stdout: 00:22:51.666 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxSharedCapacityFactor: 2[0m[m
+[92m2022-05-29 00:22:51 I/stdout: [0m[m
+[92m2022-05-29 00:22:51 I/stdout: 00:22:51.667 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.linkCapacity: 16[0m[m
+[92m2022-05-29 00:22:51 I/stdout: [0m[m
+[92m2022-05-29 00:22:51 I/stdout: 00:22:51.667 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8[0m[m
+[92m2022-05-29 00:22:51 I/stdout: [0m[m
+[92m2022-05-29 00:22:51 I/stdout: 00:22:51.667 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.delayedQueue.ratio: 8[0m[m
+[92m2022-05-29 00:22:51 I/stdout: [0m[m
+[92m2022-05-29 00:22:51 I/stdout: 00:22:51.677 [nioEventLoopGroup-2-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true[0m[m
+[92m2022-05-29 00:22:51 I/stdout: [0m[m
+[92m2022-05-29 00:22:51 I/stdout: 00:22:51.678 [nioEventLoopGroup-2-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true[0m[m
+[92m2022-05-29 00:22:51 I/stdout: [0m[m
+[92m2022-05-29 00:22:51 I/stdout: 00:22:51.679 [nioEventLoopGroup-2-1] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@96a0efd[0m[m
+[92m2022-05-29 00:22:51 I/stdout: [0m[m
+[92m2022-05-29 00:22:51 I/Bot.1784958674: Saved account secrets to local cache for fast login.[0m[m
+[92m2022-05-29 00:22:51 I/Bot.1784958674: Login successful.[0m[m
+[0m2022-05-29 00:22:52 V/Bot.1784958674: Event: BotOnlineEvent(bot=Bot(1784958674))[0m[m
+[92m2022-05-29 00:22:52 I/Bot.1784958674: Bot login successful.[0m[m
+[31m2022-05-29 00:22:56 E/kggbot: Exception in coroutine Plugin org.OOP.mirai of kggbot
+java.lang.IllegalArgumentException: message is empty
+	at net.mamoe.mirai.internal.contact.GroupImpl.sendMessage(GroupImpl.kt:179)
+	at net.mamoe.mirai.contact.Group.sendMessage$suspendImpl(Group.kt:192)
+	at net.mamoe.mirai.contact.Group.sendMessage(Group.kt)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$3.invokeSuspend(PluginMain.kt:118)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$3.invoke(PluginMain.kt)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$3.invoke(PluginMain.kt)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invokeSuspend(EventChannel.kt:455)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invoke(EventChannel.kt)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invoke(EventChannel.kt)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invokeSuspend(InternalEventListeners.kt:50)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invoke(InternalEventListeners.kt)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invoke(InternalEventListeners.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at net.mamoe.mirai.internal.event.Handler.onEvent(InternalEventListeners.kt:50)
+	at net.mamoe.mirai.internal.event.InternalEventListenersKt.process(InternalEventListeners.kt:166)
+	at net.mamoe.mirai.internal.event.InternalEventListenersKt.callAndRemoveIfRequired(InternalEventListeners.kt:115)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastImpl(Event.kt:174)
+	at net.mamoe.mirai.IMirai.broadcastEvent$suspendImpl(IMirai.kt:319)
+	at net.mamoe.mirai.IMirai.broadcastEvent(IMirai.kt)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent$suspendImpl(MiraiImpl.kt:303)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent(MiraiImpl.kt)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic$suspendImpl(Event.kt:161)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic(Event.kt)
+	at net.mamoe.mirai.event.EventKt.broadcast(Event.kt:146)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invokeSuspend(EventDispatcher.kt:90)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invoke(EventDispatcher.kt)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invoke(EventDispatcher.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl.broadcast$suspendImpl(EventDispatcher.kt:89)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl.broadcast(EventDispatcher.kt)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcastAsync$job$1.invokeSuspend(EventDispatcher.kt:105)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcastAsync$job$1.invoke(EventDispatcher.kt)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcastAsync$job$1.invoke(EventDispatcher.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:55)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:112)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:126)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:56)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl.broadcastAsync-kKe4JaQ(EventDispatcher.kt:102)
+	at net.mamoe.mirai.internal.network.components.EventDispatcher.broadcastAsync-kKe4JaQ$default(EventDispatcher.kt:35)
+	at net.mamoe.mirai.internal.network.components.EventBroadcasterPacketHandler.impl(PacketHandler.kt:87)
+	at net.mamoe.mirai.internal.network.components.EventBroadcasterPacketHandler.handlePacket(PacketHandler.kt:73)
+	at net.mamoe.mirai.internal.network.components.PacketHandlerChain.handlePacket(PacketHandler.kt:42)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invokeSuspend(NetworkHandlerSupport.kt:85)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport$collectReceived$3.invoke(NetworkHandlerSupport.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:55)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:112)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:126)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:56)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:47)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at net.mamoe.mirai.internal.network.handler.NetworkHandlerSupport.collectReceived$mirai_core(NetworkHandlerSupport.kt:83)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$PacketDecodePipeline$send$1.invokeSuspend(NettyNetworkHandler.kt:193)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:497)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[0m[m
+[0m2022-05-29 00:22:56 V/Bot.1784958674: [OOP、一朵白云☁️、Hid(870745666)] Hide on bush(75046675) -> [mirai:at:1784958674] 你在干什么[0m[m
+[0m2022-05-29 00:23:42 V/Bot.1784958674: Event: BotOfflineEvent.Active(bot=Bot(1784958674), cause=kotlinx.coroutines.JobCancellationException: Job was cancelled; job=SupervisorJobImpl{Cancelling}@68e4fea6, reconnect=false)[0m[m
+[92m2022-05-29 00:23:42 I/Bot.1784958674: Bot cancelled: Job was cancelled[0m[m

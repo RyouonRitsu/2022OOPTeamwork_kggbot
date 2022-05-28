@@ -111,8 +111,14 @@ object PluginMain : KotlinPlugin(
             ) {
                 atMember(message, group)
             }
+            //与kgg聊天
+            if (searchUserByAt(message) == 1784958674L) {
+                val msg = message.serializeToMiraiCode().replace("[mirai:at:1784958674]", "")
+                if (msg == "") group.sendMessage("你要说什么？")
+                else group.sendMessage(chat(msg))
+            }
             //kgg命令
-            if (
+            else if (
                 message.contentToString() == "kgg"
             ) {
                 val result: String = sign(sender, 1.0)

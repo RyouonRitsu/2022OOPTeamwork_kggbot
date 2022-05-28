@@ -1,5 +1,5 @@
 {
-    "troopMemberNumSeq": 2183,
+    "troopMemberNumSeq": 2184,
     "list": [
         {
             "uin": 23656613,
@@ -24,7 +24,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1615886089,
-            "lastSpeakTimestamp": 1653737223,
+            "lastSpeakTimestamp": 1653750636,
             "isOfficialBot": false
         },
         {
@@ -37,7 +37,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1632827832,
-            "lastSpeakTimestamp": 1653737577,
+            "lastSpeakTimestamp": 1653750840,
             "isOfficialBot": false
         },
         {
@@ -115,7 +115,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598361832,
-            "lastSpeakTimestamp": 1653738394,
+            "lastSpeakTimestamp": 1653753590,
             "isOfficialBot": false
         },
         {
@@ -245,7 +245,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1621050134,
-            "lastSpeakTimestamp": 1653740027,
+            "lastSpeakTimestamp": 1653753593,
             "isOfficialBot": false
         },
         {
@@ -258,7 +258,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1623921285,
-            "lastSpeakTimestamp": 1653740007,
+            "lastSpeakTimestamp": 1653750701,
             "isOfficialBot": false
         },
         {
@@ -362,7 +362,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598367737,
-            "lastSpeakTimestamp": 1653738895,
+            "lastSpeakTimestamp": 1653743133,
             "isOfficialBot": false
         },
         {
@@ -466,7 +466,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598362929,
-            "lastSpeakTimestamp": 1653697398,
+            "lastSpeakTimestamp": 1653751465,
             "isOfficialBot": false
         },
         {
@@ -483,6 +483,19 @@
             "isOfficialBot": false
         },
         {
+            "uin": 963341690,
+            "nick": "Char·Aznable",
+            "permission": "MEMBER",
+            "remark": "Char·Aznable",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653753523,
+            "lastSpeakTimestamp": 1653753571,
+            "isOfficialBot": false
+        },
+        {
             "uin": 963425360,
             "nick": "塘厦站站长",
             "permission": "ADMINISTRATOR",
@@ -492,7 +505,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598396605,
-            "lastSpeakTimestamp": 1653732147,
+            "lastSpeakTimestamp": 1653749243,
             "isOfficialBot": false
         },
         {
@@ -531,7 +544,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598362929,
-            "lastSpeakTimestamp": 1653740393,
+            "lastSpeakTimestamp": 1653753545,
             "isOfficialBot": false
         },
         {
@@ -622,7 +635,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598436481,
-            "lastSpeakTimestamp": 1653735457,
+            "lastSpeakTimestamp": 1653750307,
             "isOfficialBot": false
         },
         {
@@ -635,7 +648,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598414353,
-            "lastSpeakTimestamp": 1653741029,
+            "lastSpeakTimestamp": 1653752651,
             "isOfficialBot": false
         },
         {
@@ -648,7 +661,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598414353,
-            "lastSpeakTimestamp": 1653731410,
+            "lastSpeakTimestamp": 1653752698,
             "isOfficialBot": false
         },
         {
@@ -765,7 +778,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1611327332,
-            "lastSpeakTimestamp": 1653739019,
+            "lastSpeakTimestamp": 1653753542,
             "isOfficialBot": false
         },
         {
@@ -830,7 +843,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1598799784,
-            "lastSpeakTimestamp": 1653734165,
+            "lastSpeakTimestamp": 1653742091,
             "isOfficialBot": false
         },
         {
@@ -947,7 +960,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1620633744,
-            "lastSpeakTimestamp": 1653738491,
+            "lastSpeakTimestamp": 1653753589,
             "isOfficialBot": false
         },
         {
@@ -986,7 +999,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1651581304,
-            "lastSpeakTimestamp": 1653578534,
+            "lastSpeakTimestamp": 1653753578,
             "isOfficialBot": false
         },
         {
@@ -1025,7 +1038,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1628344966,
-            "lastSpeakTimestamp": 1653331237,
+            "lastSpeakTimestamp": 1653752339,
             "isOfficialBot": false
         },
         {
@@ -1121,7 +1134,7 @@
         },
         {
             "uin": 1784958674,
-            "nick": "OOP",
+            "nick": "kggbot",
             "permission": "MEMBER",
             "remark": "OOP",
             "nameCard": "",
@@ -1129,7 +1142,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1653569149,
-            "lastSpeakTimestamp": 1653737224,
+            "lastSpeakTimestamp": 1653750564,
             "isOfficialBot": false
         },
         {
@@ -1168,7 +1181,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1631948752,
-            "lastSpeakTimestamp": 1653737137,
+            "lastSpeakTimestamp": 1653752557,
             "isOfficialBot": false
         },
         {
@@ -1259,7 +1272,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1634473776,
-            "lastSpeakTimestamp": 1653536496,
+            "lastSpeakTimestamp": 1653749280,
             "isOfficialBot": false
         },
         {
@@ -1337,7 +1350,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1623810800,
-            "lastSpeakTimestamp": 1653739925,
+            "lastSpeakTimestamp": 1653750569,
             "isOfficialBot": false
         },
         {
@@ -1428,7 +1441,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1653668202,
-            "lastSpeakTimestamp": 1653726538,
+            "lastSpeakTimestamp": 1653753582,
             "isOfficialBot": false
         },
         {
@@ -1441,7 +1454,7 @@
             "muteTimestamp": 1652975311,
             "anonymousId": null,
             "joinTimestamp": 1598362567,
-            "lastSpeakTimestamp": 1653740968,
+            "lastSpeakTimestamp": 1653751447,
             "isOfficialBot": false
         },
         {
@@ -1454,7 +1467,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1626745289,
-            "lastSpeakTimestamp": 1653729786,
+            "lastSpeakTimestamp": 1653751980,
             "isOfficialBot": false
         },
         {
