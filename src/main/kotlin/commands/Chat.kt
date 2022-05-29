@@ -19,11 +19,11 @@ fun chat(msg: String): String {
     val request = Request.Builder().get().url(url).build()
     try {
         val response = client.newCall(request).execute()
-        val inputStream = response.body?.byteStream() ?: return "无法获取body!"
+        val inputStream = response.body?.byteStream() ?: return "呜呜呜！不知道该说什么了！"
         return inputStream.bufferedReader(Charset.forName("UTF-8")).readText().replace("菲菲", "kgg")
     } catch (e: java.net.SocketTimeoutException) {
-        return "连接超时!"
+        return "呜呜呜！暂时不知道该说什么了！"
     } catch (e: Exception) {
-        return "未知错误!"
+        return "kgg出错了，重试一下吧！"
     }
 }
