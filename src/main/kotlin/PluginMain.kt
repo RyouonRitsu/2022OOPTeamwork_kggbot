@@ -207,7 +207,7 @@ object PluginMain : KotlinPlugin(
                     var flag = true
                     var id: String? = null
                     message.filterIsInstance<Image>().forEach {
-                        if (user.energyValue >= 200) {
+                        if (user.energyValue >= 120) {
                             val (result, msg) = searchImageSource(it.queryUrl())
                             if (msg == "./data/Image/temp_thumbnail.png") {
                                 val inputStream = File(msg).toExternalResource()
@@ -216,14 +216,14 @@ object PluginMain : KotlinPlugin(
                                     inputStream.close()
                                 }
                             }
-                            addEnergy(user, -200)
+                            addEnergy(user, -120)
                             if (id != null) group.sendMessage(message.quote() + Image(id!!) + "\n${result}*你还剩余${user.energyValue}点能量值!")
                             else group.sendMessage(message.quote() + "${result}*你还剩余${user.energyValue}点能量值!")
-                        } else group.sendMessage(message.quote() + "你的能量值不足200, 无法搜图!")
+                        } else group.sendMessage(message.quote() + "你的能量值不足120, 无法搜图!")
                         flag = false
                     }
                     if (flag) {
-                        if (user.energyValue >= 200) {
+                        if (user.energyValue >= 120) {
                             group.sendMessage(message.quote() + "请在30秒内发送图片或图片链接!")
                             val imageUrl = selectMessages {
                                 has<Image> { it.queryUrl() }
@@ -241,11 +241,11 @@ object PluginMain : KotlinPlugin(
                                         inputStream.close()
                                     }
                                 }
-                                addEnergy(user, -200)
+                                addEnergy(user, -120)
                                 if (id != null) group.sendMessage(At(sender).followedBy(Image(id!!) + PlainText("\n${result}*你还剩余${user.energyValue}点能量值!")))
                                 else group.sendMessage(At(sender).followedBy(PlainText("${result}*你还剩余${user.energyValue}点能量值!")))
                             } else group.sendMessage(At(sender).followedBy(PlainText(if (imageUrl == "default") "请发送图片或图片链接!" else "识别失败, 请重试!")))
-                        } else group.sendMessage(message.quote() + "你的能量值不足200, 无法搜图!")
+                        } else group.sendMessage(message.quote() + "你的能量值不足120, 无法搜图!")
                     }
                 } else if (cmd.startsWith("Python")) {
                     val (result, error) = runPython(cmd)
@@ -468,10 +468,10 @@ object PluginMain : KotlinPlugin(
                         }
                     }
                 } else if (message.contentToString() == "news") {
-                    val (msg, result) = getNews()
-                    if (result == null) sender.sendMessage(message.quote() + msg)
+                    val (msg, r) = getNews()
+                    if (r == null) sender.sendMessage(message.quote() + msg)
                     else {
-                        val inputStream = File(result).toExternalResource()
+                        val inputStream = File(r).toExternalResource()
                         val id = sender.uploadImage(inputStream).imageId
                         withContext(Dispatchers.IO) {
                             inputStream.close()
