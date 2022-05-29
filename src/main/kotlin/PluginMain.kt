@@ -80,8 +80,14 @@ object PluginMain : KotlinPlugin(
             //如果文件上次修改时间不为今天，则覆盖写入
             if (!groupMessagesRecord.exists() || !Instant.ofEpochMilli(groupMessagesRecord.lastModified())
                     .atZone(ZoneId.of("Asia/Shanghai")).toLocalDate().isEqual(LocalDate.now())
-            ) groupMessagesRecord.writeText("${message.content}，", Charsets.UTF_8)
-            else groupMessagesRecord.appendText("${message.content}，", Charsets.UTF_8)
+            ) groupMessagesRecord.writeText(
+                "${message.filterIsInstance<PlainText>().joinToString("，")}，",
+                Charsets.UTF_8
+            )
+            else groupMessagesRecord.appendText(
+                "${message.filterIsInstance<PlainText>().joinToString("，")}，",
+                Charsets.UTF_8
+            )
             if (sender.id in Administrator.blacklist || User.conversationLock[sender.id] == true) return@subscribeAlways
             //群消息
             //管理员命令
