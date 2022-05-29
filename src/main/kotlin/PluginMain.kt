@@ -22,7 +22,6 @@ import org.ritsu.mirai.plugin.commands.translate.translate
 import org.ritsu.mirai.plugin.commands.wordcloud.getGroupWordCloud
 import org.ritsu.mirai.plugin.entity.*
 import org.ritsu.mirai.plugin.kernel.addEnergy
-import org.ritsu.mirai.plugin.kernel.searchAllUsersByAt
 import org.ritsu.mirai.plugin.kernel.searchFirstUserByAt
 import java.io.File
 import java.time.Instant
@@ -257,7 +256,7 @@ object PluginMain : KotlinPlugin(
                         group.sendMessage(message.quote() + PlainText(e.message ?: "Error: RE"))
                     }
                     if (error != null) group.sendMessage(At(User.users[1780645196L]!!.account).followedBy(PlainText("主人! ${sender.nameCardOrNick}玩弄我!\n${error}")))
-                } else if (cmd.startsWith("天气")) {
+                } else if (cmd == "天气") {
                     User.conversationLock[sender.id] = true
                     group.sendMessage(message.quote() + "请在30秒内发送定位!")
                     val location = selectMessages {
