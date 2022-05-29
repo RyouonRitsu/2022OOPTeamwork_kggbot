@@ -4,11 +4,12 @@ object Help {
     val funcGroup: List<String> = listOf(
         "help", "抽卡", "我今天[<类型>?]吃什么[<类型>?][(x<2~10>)?]", "吃的类型", "mix(+)[<emoji>](+)[<emoji>](+)",
         "dice[<大于1的整数>]", "占卜一下[<事件>]", "t[<内容>][(-><语言>)?]", "支持语言", "搜图[<一张或多张图片>?]", "Python",
-        "今日词云", "舔[<@一位用户>]", "metar[<机场ICAO代码>]", "天气[<定位>]", "[<中国内地省级行政区>]油价", "[<@kggbot>][<你想说的话>]"
+        "今日词云", "舔[<@一位用户>]", "metar[<机场ICAO代码>]", "天气[<定位>]", "[<中国内地省级行政区>]油价", "[<@kggbot>][<你想说的话>]",
+        "cos"
     )
 
     val funcFriend = listOf(
-        "help", "查询状态", "dice[<大于1的整数>]"
+        "help", "查询状态", "dice[<大于1的整数>]", "cos"
     )
 
     fun toString(list: List<String>): String {

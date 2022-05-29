@@ -321,6 +321,17 @@ object PluginMain : KotlinPlugin(
                             "***"
                         )
                     )
+                } else if (cmd == "cos") {
+                    val (msg, result) = getCoser()
+                    if (result == null) group.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(result).toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        group.sendMessage(Image(id))
+                    }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -377,6 +388,17 @@ object PluginMain : KotlinPlugin(
                     val n = message.contentToString().replace("dice", "").toIntOrNull()
                     if (n != null && n > 0) sender.sendMessage("你roll出了${(1..n).random()}")
                     else sender.sendMessage("看不懂你要抽到多少哦, 请尝试大于1的整数!")
+                } else if (message.contentToString() == "cos") {
+                    val (msg, result) = getCoser()
+                    if (result == null) sender.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(result).toExternalResource()
+                        val id = sender.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        sender.sendMessage(Image(id))
+                    }
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
