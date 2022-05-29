@@ -332,6 +332,17 @@ object PluginMain : KotlinPlugin(
                         }
                         group.sendMessage(Image(id))
                     }
+                } else if (cmd == "cat") {
+                    val (msg, result) = getCat()
+                    if (result == null) group.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(result).toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        group.sendMessage(Image(id))
+                    }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -390,6 +401,17 @@ object PluginMain : KotlinPlugin(
                     else sender.sendMessage("看不懂你要抽到多少哦, 请尝试大于1的整数!")
                 } else if (message.contentToString() == "cos") {
                     val (msg, r) = getCoser()
+                    if (r == null) sender.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(r).toExternalResource()
+                        val id = sender.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        sender.sendMessage(Image(id))
+                    }
+                } else if (message.contentToString() == "cat") {
+                    val (msg, r) = getCat()
                     if (r == null) sender.sendMessage(message.quote() + msg)
                     else {
                         val inputStream = File(r).toExternalResource()
