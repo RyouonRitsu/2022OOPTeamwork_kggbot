@@ -9,6 +9,7 @@ import net.mamoe.mirai.contact.nameCardOrNick
 import net.mamoe.mirai.event.GlobalEventChannel
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.selectMessages
+import net.mamoe.mirai.event.whileSelectMessages
 import net.mamoe.mirai.message.data.*
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.MessageSource.Key.quote
@@ -126,12 +127,6 @@ object PluginMain : KotlinPlugin(
                 && message.contentToString().startsWith("!!!")
             ) {
                 atMember(message, group)
-            }
-            //与kgg聊天
-            if (searchFirstUserByAt(message) == 1784958674L) {
-                val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }.getOrNull()
-                    ?.replace(Regex("\\s"), "")
-                group.sendMessage(if (msg == null || msg == "") "哥哥你说话呀！" else chat(msg))
             }
             //kgg命令
             else if (
@@ -342,6 +337,21 @@ object PluginMain : KotlinPlugin(
                             inputStream.close()
                         }
                         group.sendMessage(Image(id))
+                    }
+                } else if (cmd == "陪我聊天") {
+                    User.conversationLock[sender.id] = true
+                    group.sendMessage(message.quote() + "好的哦！当你不想跟我聊天的时候跟我说“不聊了”就可以了！")
+                    whileSelectMessages {
+                        "不聊了" {
+                            group.sendMessage(message.quote() + "好~下次再说！")
+                            false
+                        }
+                        default {
+                            val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }.getOrNull()
+                                ?.replace(Regex("\\s"), "")
+                            group.sendMessage(message.quote() + if (msg == null || msg == "") "哥哥你说句话呀！" else chat(msg))
+                            true
+                        }
                     }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
