@@ -124,7 +124,8 @@ object PluginMain : KotlinPlugin(
             //与kgg聊天
             if (searchFirstUserByAt(message) == 1784958674L) {
                 val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }.getOrNull()
-                group.sendMessage(if (msg == null || msg == "") "哥哥你说话呀！" else chat(msg.replace(Regex("\\s"), "")))
+                    ?.replace(Regex("\\s"), "")
+                group.sendMessage(if (msg == null || msg == "") "哥哥你说话呀！" else chat(msg))
             }
             //kgg命令
             else if (
