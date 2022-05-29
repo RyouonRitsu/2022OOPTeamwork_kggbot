@@ -361,6 +361,17 @@ object PluginMain : KotlinPlugin(
                             true
                         }
                     }
+                } else if (cmd == "news") {
+                    val (msg, result) = getNews()
+                    if (result == null) group.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(result).toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        group.sendMessage(Image(id))
+                    }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -455,6 +466,17 @@ object PluginMain : KotlinPlugin(
                             sender.sendMessage(if (msg == null || msg == "") "哥哥你说句话呀！" else chat(msg))
                             true
                         }
+                    }
+                } else if (message.contentToString() == "news") {
+                    val (msg, result) = getNews()
+                    if (result == null) sender.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(result).toExternalResource()
+                        val id = sender.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        sender.sendMessage(Image(id))
                     }
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
