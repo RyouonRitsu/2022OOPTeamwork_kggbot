@@ -347,7 +347,8 @@ object PluginMain : KotlinPlugin(
                             false
                         }
                         default {
-                            val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }.getOrNull()
+                            val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }
+                                .getOrNull()
                                 ?.replace(Regex("\\s"), "")
                             group.sendMessage(message.quote() + if (msg == null || msg == "") "哥哥你说句话呀！" else chat(msg))
                             true
