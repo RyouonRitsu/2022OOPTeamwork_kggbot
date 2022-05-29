@@ -133,7 +133,7 @@ object PluginMain : KotlinPlugin(
                 val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }
                     .getOrNull()
                     ?.replace(Regex("\\s"), "")
-                group.sendMessage(message.quote() + if (msg == null || msg == "") "哥哥你说话呀！" else chat(msg))
+                group.sendMessage(message.quote() + if (msg == null || msg == "") "哥哥你说句话呀！" else chat(msg))
             }
             //kgg命令
             else if (
