@@ -389,10 +389,10 @@ object PluginMain : KotlinPlugin(
                     if (n != null && n > 0) sender.sendMessage("你roll出了${(1..n).random()}")
                     else sender.sendMessage("看不懂你要抽到多少哦, 请尝试大于1的整数!")
                 } else if (message.contentToString() == "cos") {
-                    val (msg, result) = getCoser()
-                    if (result == null) sender.sendMessage(message.quote() + msg)
+                    val (msg, r) = getCoser()
+                    if (r == null) sender.sendMessage(message.quote() + msg)
                     else {
-                        val inputStream = File(result).toExternalResource()
+                        val inputStream = File(r).toExternalResource()
                         val id = sender.uploadImage(inputStream).imageId
                         withContext(Dispatchers.IO) {
                             inputStream.close()
