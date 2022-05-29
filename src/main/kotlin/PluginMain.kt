@@ -128,6 +128,13 @@ object PluginMain : KotlinPlugin(
             ) {
                 atMember(message, group)
             }
+            //与kgg聊天
+            else if (searchFirstUserByAt(message) == 1784958674L) {
+                val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }
+                    .getOrNull()
+                    ?.replace(Regex("\\s"), "")
+                group.sendMessage(if (msg == null || msg == "") "哥哥你说话呀！" else chat(msg))
+            }
             //kgg命令
             else if (
                 message.contentToString() == "kgg"
@@ -388,6 +395,7 @@ object PluginMain : KotlinPlugin(
             User.conversationLock[sender.id] = false
         }
         eventChannel.subscribeAlways<FriendMessageEvent> {
+            if (sender.id in Administrator.blacklist || User.conversationLock[sender.id] == true) return@subscribeAlways
             //屏蔽机器人本人消息无限循环
             if (sender.id != bot.id) {
                 //好友信息
@@ -432,10 +440,27 @@ object PluginMain : KotlinPlugin(
                         }
                         sender.sendMessage(Image(id))
                     }
+                } else if (message.contentToString() == "陪我聊天") {
+                    User.conversationLock[sender.id] = true
+                    sender.sendMessage("好的哦！当你不想跟我聊天的时候跟我说“不聊了”就可以了！")
+                    whileSelectMessages {
+                        "不聊了" {
+                            sender.sendMessage("好~下次再说！")
+                            false
+                        }
+                        default {
+                            val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }
+                                .getOrNull()
+                                ?.replace(Regex("\\s"), "")
+                            sender.sendMessage(if (msg == null || msg == "") "哥哥你说句话呀！" else chat(msg))
+                            true
+                        }
+                    }
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
             }
+            User.conversationLock[sender.id] = false
         }
         eventChannel.subscribeAlways<NewFriendRequestEvent> {
             //自动同意好友申请

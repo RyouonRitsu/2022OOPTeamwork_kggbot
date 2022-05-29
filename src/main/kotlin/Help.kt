@@ -9,7 +9,7 @@ object Help {
     )
 
     val funcFriend = listOf(
-        "help", "查询状态", "dice[<大于1的整数>]", "cos", "cat"
+        "help", "查询状态", "dice[<大于1的整数>]", "cos", "cat", "陪我聊天"
     )
 
     fun toString(list: List<String>): String {
