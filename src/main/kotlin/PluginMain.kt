@@ -283,7 +283,10 @@ object PluginMain : KotlinPlugin(
                         group.sendMessage(At(sender).followedBy(PlainText(getWeather(loc))))
                     }
                 } else if (cmd.startsWith("metar")) {
-                    group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
+                    if (cmd == "metar")
+                        group.sendMessage(message.quote() + "你要查询哪个机场呢，在后面加上它的ICAO代码吧~")
+                    else
+                        group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
                 } else if (cmd == "来点") {
                     val id: String
                     val (msg, result) = getRandomPixivPic(sender.id)
@@ -489,6 +492,37 @@ object PluginMain : KotlinPlugin(
                         }
                         sender.sendMessage(Image(id))
                     } else if (result != null) sender.sendMessage(message.quote() + "$msg\n$result")
+                    else sender.sendMessage(message.quote() + msg)
+                } else if (message.contentToString().startsWith("metar")) {
+                    if (message.contentToString() == "metar")
+                        sender.sendMessage(message.quote() + "你要查询哪个机场呢，在后面加上它的ICAO代码吧~")
+                    else
+                        sender.sendMessage(
+                            message.quote() + getMetar(
+                                message.contentToString().replaceFirst("metar", "")
+                            )
+                        )
+                } else if (message.contentToString() == "天气") {
+                    User.conversationLock[sender.id] = true
+                    sender.sendMessage(message.quote() + "请在30秒内发送定位!")
+                    val location = selectMessages {
+                        has<Image> { it.queryUrl() }
+                        has<SimpleServiceMessage> { it.content }
+                        default { "default" }
+                        timeout(30_000) { "timeout" }
+                    }
+                    if (location == "timeout") sender.sendMessage("超时了, 或者没有收到你的定位, 请重试!")
+                    else if (location.indexOf("lon=") == -1 || location.indexOf("lat=") == -1)
+                        sender.sendMessage("这不是一个定位, 请重试!")
+                    else {
+                        val lon = location.indexOf("lon=") + 4
+                        val lat = location.indexOf("lat=") + 4
+                        val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
+                        sender.sendMessage(getWeather(loc))
+                    }
+                } else if (message.contentToString().contains("油价")) {
+                    val (msg, result) = getOil(message.contentToString().replaceFirst("油价", ""))
+                    if (result != null) sender.sendMessage(message.quote() + result)
                     else sender.sendMessage(message.quote() + msg)
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")

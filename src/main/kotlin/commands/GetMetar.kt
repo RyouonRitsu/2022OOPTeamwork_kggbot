@@ -4,8 +4,9 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
 
-fun getMetar(airport: String): String {
-    val url = "https://aviationweather.gov/metar/data?ids=$airport&format=raw&date=&hours=0"
+fun getMetar(loc: String): String {
+    val airport = loc.uppercase()
+    val url = "https://aviationweather.gov/metar/data?ids=$airport&format=raw&date=&hours=0&taf=on&layout=on"
     val client = OkHttpClient().also {
         it.newBuilder().apply {
             proxy(Proxy.NO_PROXY)
@@ -20,7 +21,12 @@ fun getMetar(airport: String): String {
                 try {
                     if (body.indexOf(">$airport") == -1) return "No METAR found"
                     body = body.substring(body.indexOf(">$airport") + 1, body.length)
-                    body.substring(0, body.indexOf("</code>"))
+                    val metar = body.substring(0, body.indexOf("</code>"))
+                    body = body.substring(body.indexOf("<br/>"), body.length)
+                    var taf = body.substring(body.indexOf("<code>") + 6, body.indexOf("</code>"))
+                        .replace("<br/>&nbsp;&nbsp;", "")
+                    if (!taf.contains("TAF")) taf = "TAF $taf"
+                    metar + "\n" + taf + "\n"
                 } catch (e: Exception) {
                     "解析错误: ${e.message}\n"
                 }
