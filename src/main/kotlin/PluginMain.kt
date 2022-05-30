@@ -483,15 +483,15 @@ object PluginMain : KotlinPlugin(
                     }
                 } else if (message.contentToString() == "来点") {
                     val id: String
-                    val (msg, result) = getRandomPixivPic(75046675)
-                    if (result == "./data/Image/temp_pixiv.jpg") {
-                        val inputStream = File(result).toExternalResource()
+                    val (msg, r) = getRandomPixivPic(75046675)
+                    if (r == "./data/Image/temp_pixiv.jpg") {
+                        val inputStream = File(r).toExternalResource()
                         id = sender.uploadImage(inputStream).imageId
                         withContext(Dispatchers.IO) {
                             inputStream.close()
                         }
                         sender.sendMessage(Image(id))
-                    } else if (result != null) sender.sendMessage(message.quote() + "$msg\n$result")
+                    } else if (r != null) sender.sendMessage(message.quote() + "$msg\n$r")
                     else sender.sendMessage(message.quote() + msg)
                 } else if (message.contentToString().startsWith("metar")) {
                     if (message.contentToString() == "metar")
@@ -521,8 +521,8 @@ object PluginMain : KotlinPlugin(
                         sender.sendMessage(getWeather(loc))
                     }
                 } else if (message.contentToString().contains("油价")) {
-                    val (msg, result) = getOil(message.contentToString().replaceFirst("油价", ""))
-                    if (result != null) sender.sendMessage(message.quote() + result)
+                    val (msg, r) = getOil(message.contentToString().replaceFirst("油价", ""))
+                    if (r != null) sender.sendMessage(message.quote() + r)
                     else sender.sendMessage(message.quote() + msg)
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")

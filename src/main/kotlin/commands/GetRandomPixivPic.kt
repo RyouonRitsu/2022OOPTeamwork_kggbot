@@ -4,6 +4,7 @@ import com.alibaba.fastjson2.JSON
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.ritsu.mirai.plugin.entity.Administrator
+import java.net.InetAddress
 import java.net.InetSocketAddress
 import java.net.Proxy
 
@@ -19,8 +20,8 @@ fun getRandomPixivPic(id: Long): Pair<String, String?> {
             val jsonObject = JSON.parseObject(body)
             val data = jsonObject.getJSONArray("data").getJSONObject(0)
             val original = data.getJSONObject("urls").getString("original")
-            val sa = InetSocketAddress("127.0.0.1:64195", 7890)
-            val (code, msg) = download(original, "./data/Image/temp_pixiv.jpg")
+            val sa = InetSocketAddress(InetAddress.getLocalHost(), 7890)
+            val (code, msg) = download(original, "./data/Image/temp_pixiv.jpg", sa)
             if (code == 200 && msg == null) Pair("Success!", "./data/Image/temp_pixiv.jpg")
             else Pair("Error: $code, $msg", original)
         }
