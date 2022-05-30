@@ -20,8 +20,7 @@ fun getRandomPixivPic(id: Long): Pair<String, String?> {
             val jsonObject = JSON.parseObject(body)
             val data = jsonObject.getJSONArray("data").getJSONObject(0)
             val original = data.getJSONObject("urls").getString("original")
-            val sa = InetSocketAddress(InetAddress.getLocalHost(), 7890)
-            val (code, msg) = download(original, "./data/Image/temp_pixiv.jpg", sa)
+            val (code, msg) = download(original, "./data/Image/temp_pixiv.jpg")
             if (code == 200 && msg == null) Pair("Success!", "./data/Image/temp_pixiv.jpg")
             else Pair("Error: $code, $msg", original)
         }
