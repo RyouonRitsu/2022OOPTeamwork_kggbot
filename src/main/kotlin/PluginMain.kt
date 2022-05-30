@@ -478,6 +478,18 @@ object PluginMain : KotlinPlugin(
                         }
                         sender.sendMessage(Image(id))
                     }
+                } else if (message.contentToString() == "来点") {
+                    val id: String
+                    val (msg, result) = getRandomPixivPic(75046675)
+                    if (result == "./data/Image/temp_pixiv.jpg") {
+                        val inputStream = File(result).toExternalResource()
+                        id = sender.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        sender.sendMessage(Image(id))
+                    } else if (result != null) sender.sendMessage(message.quote() + "$msg\n$result")
+                    else sender.sendMessage(message.quote() + msg)
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
