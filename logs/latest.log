@@ -1,212 +1,869 @@
-[92m2022-05-30 11:18:10 I/main: Starting mirai-console...[0m[m
-[92m2022-05-30 11:18:10 I/main: Backend: version 2.11.1, built on 2022-05-26 04:43:10.[0m[m
-[92m2022-05-30 11:18:10 I/main: Frontend Terminal: version 2.11.1, provided by Mamoe Technologies[0m[m
-[92m2022-05-30 11:18:10 I/main: Welcome to visit https://mirai.mamoe.net/[0m[m
-[92m2022-05-30 11:18:10 I/main: Prepared built-in commands: autoLogin, help, login, logout, permission, status, stop[0m[m
-[92m2022-05-30 11:18:10 I/main: 0 plugin(s) enabled.[0m[m
-[92m2022-05-30 11:18:10 I/main: mirai-console started successfully.[0m[m
-[92m2022-05-30 11:18:10 I/kggbot: Plugin loaded[0m[m
-[92m2022-05-30 11:18:10 I/WindowHelperJvm: Mirai 正在使用桌面环境. 如遇到验证码将会弹出对话框. 可添加 JVM 属性 `mirai.no-desktop` 以关闭.[0m[m
-[92m2022-05-30 11:18:10 I/WindowHelperJvm: Mirai is using desktop. Captcha will be thrown by window popup. You can add `mirai.no-desktop` to JVM properties (-Dmirai.no-desktop) to disable it.[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.933 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.939 [DefaultDispatcher-worker-3] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 12[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.956 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.956 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.963 [DefaultDispatcher-worker-3] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.963 [DefaultDispatcher-worker-3] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.979 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.980 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.981 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 11[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.982 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.983 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.984 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.986 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable[0m[m
-[92m2022-05-30 11:18:10 I/stdout: java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.internal.PlatformDependent0$4.run(PlatformDependent0.java:239)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at java.base/java.security.AccessController.doPrivileged(Native Method)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:233)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:294)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:93)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:279)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:150)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:52)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:96)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:91)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:72)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:52)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:44)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection$suspendImpl(NettyNetworkHandler.kt:138)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection(NettyNetworkHandler.kt)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$StateConnecting$startState$1.invokeSuspend(NettyNetworkHandler.kt:269)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:749)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.991 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.992 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable[0m[m
-[92m2022-05-30 11:18:10 I/stdout: java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$6 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @127edf8e[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at java.base/java.lang.reflect.Method.invoke(Method.java:558)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.internal.PlatformDependent0$6.run(PlatformDependent0.java:353)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at java.base/java.security.AccessController.doPrivileged(Native Method)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:344)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:294)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:93)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:279)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:150)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:52)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:96)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:91)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:72)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:52)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:44)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection$suspendImpl(NettyNetworkHandler.kt:138)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection(NettyNetworkHandler.kt)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$StateConnecting$startState$1.invokeSuspend(NettyNetworkHandler.kt:269)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:749)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.997 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): unavailable[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.997 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.999 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent - maxDirectMemory: 8573157376 bytes (maybe)[0m[m
-[92m2022-05-30 11:18:10 I/stdout: [0m[m
-[92m2022-05-30 11:18:10 I/stdout: 11:18:10.999 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\Faker\AppData\Local\Temp (java.io.tmpdir)[0m[m
-[92m2022-05-30 11:18:11 I/stdout: [0m[m
-[92m2022-05-30 11:18:11 I/stdout: 11:18:11.000 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)[0m[m
-[92m2022-05-30 11:18:11 I/stdout: [0m[m
-[92m2022-05-30 11:18:11 I/stdout: 11:18:11.001 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: -1 bytes[0m[m
-[92m2022-05-30 11:18:11 I/stdout: [0m[m
-[92m2022-05-30 11:18:11 I/stdout: 11:18:11.001 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1[0m[m
-[92m2022-05-30 11:18:11 I/stdout: [0m[m
-[92m2022-05-30 11:18:11 I/stdout: 11:18:11.002 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.CleanerJava9 - java.nio.ByteBuffer.cleaner(): available[0m[m
-[92m2022-05-30 11:18:11 I/stdout: [0m[m
-[92m2022-05-30 11:18:11 I/stdout: 11:18:11.003 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false[0m[m
-[92m2022-05-30 11:18:11 I/stdout: [0m[m
-[92m2022-05-30 11:18:11 I/stdout: 11:18:11.011 [DefaultDispatcher-worker-3] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available[0m[m
-[92m2022-05-30 11:18:11 I/stdout: [0m[m
-[92m2022-05-30 11:18:11 I/stdout: 11:18:11.868 [DefaultDispatcher-worker-3] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.processId: 11288 (auto-detected)[0m[m
-[92m2022-05-30 11:18:11 I/stdout: [0m[m
-[92m2022-05-30 11:18:11 I/stdout: 11:18:11.870 [DefaultDispatcher-worker-3] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv4Stack: false[0m[m
-[92m2022-05-30 11:18:11 I/stdout: [0m[m
-[92m2022-05-30 11:18:11 I/stdout: 11:18:11.870 [DefaultDispatcher-worker-3] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv6Addresses: false[0m[m
-[92m2022-05-30 11:18:11 I/stdout: [0m[m
-[92m2022-05-30 11:18:12 I/stdout: 11:18:12.640 [DefaultDispatcher-worker-3] DEBUG io.netty.util.NetUtilInitializations - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)[0m[m
-[92m2022-05-30 11:18:12 I/stdout: [0m[m
-[92m2022-05-30 11:18:12 I/stdout: 11:18:12.642 [DefaultDispatcher-worker-3] DEBUG io.netty.util.NetUtil - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200[0m[m
-[92m2022-05-30 11:18:12 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.378 [DefaultDispatcher-worker-3] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.machineId: a8:7e:ea:ff:fe:be:4e:b1 (auto-detected)[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.389 [DefaultDispatcher-worker-3] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.390 [DefaultDispatcher-worker-3] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.412 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 12[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.413 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 12[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.413 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.413 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.413 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.414 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.414 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.414 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.415 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.415 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimIntervalMillis: 0[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.415 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.useCacheForAllThreads: true[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.415 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.425 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: pooled[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.425 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 0[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:13 I/stdout: 11:18:13.425 [DefaultDispatcher-worker-3] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.maxThreadLocalCharBufferSize: 16384[0m[m
-[92m2022-05-30 11:18:13 I/stdout: [0m[m
-[92m2022-05-30 11:18:14 I/Bot.1784958674: Loaded account secrets from local cache.[0m[m
-[92m2022-05-30 11:18:14 I/stdout: 11:18:14.090 [DefaultDispatcher-worker-3] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacityPerThread: 4096[0m[m
-[92m2022-05-30 11:18:14 I/stdout: [0m[m
-[92m2022-05-30 11:18:14 I/stdout: 11:18:14.090 [DefaultDispatcher-worker-3] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxSharedCapacityFactor: 2[0m[m
-[92m2022-05-30 11:18:14 I/stdout: [0m[m
-[92m2022-05-30 11:18:14 I/stdout: 11:18:14.091 [DefaultDispatcher-worker-3] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.linkCapacity: 16[0m[m
-[92m2022-05-30 11:18:14 I/stdout: [0m[m
-[92m2022-05-30 11:18:14 I/stdout: 11:18:14.091 [DefaultDispatcher-worker-3] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8[0m[m
-[92m2022-05-30 11:18:14 I/stdout: [0m[m
-[92m2022-05-30 11:18:14 I/stdout: 11:18:14.091 [DefaultDispatcher-worker-3] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.delayedQueue.ratio: 8[0m[m
-[92m2022-05-30 11:18:14 I/stdout: [0m[m
-[92m2022-05-30 11:18:14 I/stdout: 11:18:14.101 [nioEventLoopGroup-2-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true[0m[m
-[92m2022-05-30 11:18:14 I/stdout: [0m[m
-[92m2022-05-30 11:18:14 I/stdout: 11:18:14.102 [nioEventLoopGroup-2-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true[0m[m
-[92m2022-05-30 11:18:14 I/stdout: [0m[m
-[92m2022-05-30 11:18:14 I/stdout: 11:18:14.103 [nioEventLoopGroup-2-1] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@421c0ac2[0m[m
-[92m2022-05-30 11:18:14 I/stdout: [0m[m
-[92m2022-05-30 11:18:14 I/Bot.1784958674: Saved account secrets to local cache for fast login.[0m[m
-[92m2022-05-30 11:18:14 I/Bot.1784958674: Login successful.[0m[m
-[0m2022-05-30 11:18:15 V/Bot.1784958674: Event: BotOnlineEvent(bot=Bot(1784958674))[0m[m
-[92m2022-05-30 11:18:15 I/Bot.1784958674: Bot login successful.[0m[m
-[0m2022-05-30 11:19:20 V/Bot.1784958674: Event: BotOfflineEvent.Dropped(bot=Bot(1784958674), cause=HeartbeatFailedException: 1784958674.AliveHeartbeat, recoverable=true, cause=PacketTimeoutException(message=1784958674.AliveHeartbeat Scheduler: Timeout receiving action response, cause=kotlinx.coroutines.TimeoutCancellationException: Timed out waiting for 5000 ms), reconnect=true)[0m[m
-[91m2022-05-30 11:19:20 W/Bot.1784958674: Connection lost, reconnecting... (HeartbeatFailedException: 1784958674.AliveHeartbeat, recoverable=true, cause=PacketTimeoutException(message=1784958674.AliveHeartbeat Scheduler: Timeout receiving action response, cause=kotlinx.coroutines.TimeoutCancellationException: Timed out waiting for 5000 ms))[0m[m
-[92m2022-05-30 11:19:20 I/Bot.1784958674: Saved account secrets to local cache for fast login.[0m[m
-[92m2022-05-30 11:19:20 I/Bot.1784958674: Login successful.[0m[m
-[0m2022-05-30 11:19:20 V/Bot.1784958674: Event: BotOnlineEvent(bot=Bot(1784958674))[0m[m
-[0m2022-05-30 11:19:20 V/Bot.1784958674: Event: BotReloginEvent(bot=Bot(1784958674), cause=null)[0m[m
-[92m2022-05-30 11:19:20 I/Bot.1784958674: Reconnected successfully in 0.474s.[0m[m
-[0m2022-05-30 11:19:22 V/Bot.1784958674: Hide on bush(75046675) -> 油价[0m[m
-[0m2022-05-30 11:19:22 V/Bot.1784958674: Friend(75046675) <- [mirai:quote:[5944],[1897474722]]请输入中国内地省级行政区！\n[0m[m
-[0m2022-05-30 11:19:34 V/Bot.1784958674: Hide on bush(75046675) -> 天气[0m[m
-[0m2022-05-30 11:19:34 V/Bot.1784958674: Friend(75046675) <- [mirai:quote:[5945],[341459483]]请在30秒内发送定位![0m[m
-[92m2022-05-30 11:19:36 I/stdout: 11:19:36.773 [nioEventLoopGroup-2-1] DEBUG io.netty.buffer.PoolThreadCache - Freed 8 thread-local buffer(s) from thread: nioEventLoopGroup-2-1[0m[m
-[92m2022-05-30 11:19:36 I/stdout: [0m[m
-[0m2022-05-30 11:19:46 V/Bot.1784958674: Hide on bush(75046675) -> [mirai:service:32,<?xml version="1.0" encoding="utf-8"?>    <msg action="plugin"     actionData="mqqapi://app/action?type=sharedmap&amp;pkg=com.tencent.mobileqq&amp;cmp=com.tencent.biz.PoiMapActivity&amp;lat=43.877912&amp;lon=125.300423&amp;title=位置分享&amp;loc=吉林省长春市朝阳区解放大路&amp;dpid="     brief="[位置] 吉林省长春市朝阳区解放大路"     serviceID="32"     templateID="12345">    <item layout="2">    <picture cover="http://pub.idqqimg.com/pc/misc/lbsshare_icon.jpg"/>    <title>位置分享</title>    <summary>吉林省长春市朝阳区解放大路</summary>    </item>    </msg>][0m[m
-[0m2022-05-30 11:19:47 V/Bot.1784958674: Friend(75046675) <- 现在多云，气温17°C，体感温度12°C，风向270°，西风5级，风速29km/h，相对湿度58%，当前小时累计降水量0.0毫米，大气压974hPa，能见度21km，云量91%，露点3°C[0m[m
-[0m2022-05-30 11:19:52 V/Bot.1784958674: Event: MemberUnmuteEvent(member=NormalMember(1284994403), operator=NormalMember(2287941423))[0m[m
-[0m2022-05-30 11:19:58 V/Bot.1784958674: Hide on bush(75046675) -> 天气[0m[m
-[0m2022-05-30 11:19:58 V/Bot.1784958674: Friend(75046675) <- [mirai:quote:[5947],[278960461]]请在30秒内发送定位![0m[m
-[0m2022-05-30 11:20:11 V/Bot.1784958674: Hide on bush(75046675) -> [mirai:service:32,<?xml version="1.0" encoding="utf-8"?>    <msg action="plugin"     actionData="mqqapi://app/action?type=sharedmap&amp;pkg=com.tencent.mobileqq&amp;cmp=com.tencent.biz.PoiMapActivity&amp;lat=39.902802&amp;lon=116.427048&amp;title=北京站&amp;loc=北京市东城区毛家湾胡同甲13号&amp;dpid=16988376946936065547"     brief="[位置] 北京站"     serviceID="32"     templateID="12345">    <item layout="2">    <picture cover="http://pub.idqqimg.com/pc/misc/lbsshare_icon.jpg"/>    <title>北京站</title>    <summary>北京市东城区毛家湾胡同甲13号</summary>    </item>    </msg>][0m[m
-[0m2022-05-30 11:20:11 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2115-鱼头人，但是是海狼鱼(1062597472) -> 轰轰轰[0m[m
-[0m2022-05-30 11:20:11 V/Bot.1784958674: Friend(75046675) <- 现在晴，气温27°C，体感温度22°C，风向270°，西风4级，风速24km/h，相对湿度17%，当前小时累计降水量0.0毫米，大气压1001hPa，能见度30km，云量0%，露点-4°C[0m[m
-[0m2022-05-30 11:20:19 V/Bot.1784958674: [OOP、zing、金栗(947121973)] 卢嘉美-20373814(2287941423) -> 禁言群成员 \d{8}[0m[m
-[0m2022-05-30 11:20:40 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2115-鱼头人，但是是海狼鱼(1062597472) -> 感觉是降落，一会还得更低绕回来[0m[m
-[0m2022-05-30 11:21:00 V/Bot.1784958674: Event: BotOfflineEvent.Active(bot=Bot(1784958674), cause=kotlinx.coroutines.JobCancellationException: Job was cancelled; job=SupervisorJobImpl{Cancelling}@304bcef4, reconnect=false)[0m[m
-[92m2022-05-30 11:21:00 I/Bot.1784958674: Bot cancelled: Job was cancelled[0m[m
+[92m2022-05-30 11:21:48 I/main: Starting mirai-console...[0m[m
+[92m2022-05-30 11:21:48 I/main: Backend: version 2.11.1, built on 2022-05-26 04:43:10.[0m[m
+[92m2022-05-30 11:21:48 I/main: Frontend Terminal: version 2.11.1, provided by Mamoe Technologies[0m[m
+[92m2022-05-30 11:21:48 I/main: Welcome to visit https://mirai.mamoe.net/[0m[m
+[92m2022-05-30 11:21:49 I/main: Prepared built-in commands: autoLogin, help, login, logout, permission, status, stop[0m[m
+[92m2022-05-30 11:21:49 I/main: 0 plugin(s) enabled.[0m[m
+[92m2022-05-30 11:21:49 I/main: mirai-console started successfully.[0m[m
+[92m2022-05-30 11:21:49 I/kggbot: Plugin loaded[0m[m
+[92m2022-05-30 11:21:50 I/WindowHelperJvm: Mirai 正在使用桌面环境. 如遇到验证码将会弹出对话框. 可添加 JVM 属性 `mirai.no-desktop` 以关闭.[0m[m
+[92m2022-05-30 11:21:50 I/WindowHelperJvm: Mirai is using desktop. Captcha will be thrown by window popup. You can add `mirai.no-desktop` to JVM properties (-Dmirai.no-desktop) to disable it.[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.358 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.375 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 12[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.401 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.402 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.416 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.417 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.435 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.437 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.438 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 11[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.440 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.441 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.442 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.445 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable[0m[m
+[92m2022-05-30 11:21:50 I/stdout: java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.internal.PlatformDependent0$4.run(PlatformDependent0.java:239)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at java.base/java.security.AccessController.doPrivileged(Native Method)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:233)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:294)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:93)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:279)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:150)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:52)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:96)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:91)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:72)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:52)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:44)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection$suspendImpl(NettyNetworkHandler.kt:138)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection(NettyNetworkHandler.kt)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$StateConnecting$startState$1.invokeSuspend(NettyNetworkHandler.kt:269)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:749)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.451 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.453 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable[0m[m
+[92m2022-05-30 11:21:50 I/stdout: java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$6 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @2d57c8c3[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at java.base/java.lang.reflect.Method.invoke(Method.java:558)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.internal.PlatformDependent0$6.run(PlatformDependent0.java:353)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at java.base/java.security.AccessController.doPrivileged(Native Method)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:344)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:294)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:93)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:279)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:150)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:52)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:96)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:91)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:72)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:52)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:44)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection$suspendImpl(NettyNetworkHandler.kt:138)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler.createConnection(NettyNetworkHandler.kt)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$StateConnecting$startState$1.invokeSuspend(NettyNetworkHandler.kt:269)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:749)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.458 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): unavailable[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.458 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.460 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - maxDirectMemory: 8573157376 bytes (maybe)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.461 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\Faker\AppData\Local\Temp (java.io.tmpdir)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.462 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.463 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: -1 bytes[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.464 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.466 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.CleanerJava9 - java.nio.ByteBuffer.cleaner(): available[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.466 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:50 I/stdout: 11:21:50.477 [DefaultDispatcher-worker-1] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available[0m[m
+[92m2022-05-30 11:21:50 I/stdout: [0m[m
+[92m2022-05-30 11:21:51 I/stdout: 11:21:51.553 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.processId: 32832 (auto-detected)[0m[m
+[92m2022-05-30 11:21:51 I/stdout: [0m[m
+[92m2022-05-30 11:21:51 I/stdout: 11:21:51.556 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv4Stack: false[0m[m
+[92m2022-05-30 11:21:51 I/stdout: [0m[m
+[92m2022-05-30 11:21:51 I/stdout: 11:21:51.556 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv6Addresses: false[0m[m
+[92m2022-05-30 11:21:51 I/stdout: [0m[m
+[92m2022-05-30 11:21:53 I/stdout: 11:21:53.052 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtilInitializations - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)[0m[m
+[92m2022-05-30 11:21:53 I/stdout: [0m[m
+[92m2022-05-30 11:21:53 I/stdout: 11:21:53.054 [DefaultDispatcher-worker-1] DEBUG io.netty.util.NetUtil - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200[0m[m
+[92m2022-05-30 11:21:53 I/stdout: [0m[m
+[92m2022-05-30 11:21:54 I/stdout: 11:21:54.996 [DefaultDispatcher-worker-1] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.machineId: a8:7e:ea:ff:fe:be:4e:b1 (auto-detected)[0m[m
+[92m2022-05-30 11:21:54 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.012 [DefaultDispatcher-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.013 [DefaultDispatcher-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.047 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 12[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.047 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 12[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.048 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.048 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.048 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.049 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.050 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.050 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.050 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.050 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimIntervalMillis: 0[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.053 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.useCacheForAllThreads: true[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.053 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.068 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: pooled[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.068 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 0[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:55 I/stdout: 11:21:55.076 [DefaultDispatcher-worker-1] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.maxThreadLocalCharBufferSize: 16384[0m[m
+[92m2022-05-30 11:21:55 I/stdout: [0m[m
+[92m2022-05-30 11:21:56 I/Bot.1784958674: Loaded account secrets from local cache.[0m[m
+[92m2022-05-30 11:21:56 I/stdout: 11:21:56.657 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacityPerThread: 4096[0m[m
+[92m2022-05-30 11:21:56 I/stdout: [0m[m
+[92m2022-05-30 11:21:56 I/stdout: 11:21:56.657 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxSharedCapacityFactor: 2[0m[m
+[92m2022-05-30 11:21:56 I/stdout: [0m[m
+[92m2022-05-30 11:21:56 I/stdout: 11:21:56.658 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.linkCapacity: 16[0m[m
+[92m2022-05-30 11:21:56 I/stdout: [0m[m
+[92m2022-05-30 11:21:56 I/stdout: 11:21:56.658 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8[0m[m
+[92m2022-05-30 11:21:56 I/stdout: [0m[m
+[92m2022-05-30 11:21:56 I/stdout: 11:21:56.659 [DefaultDispatcher-worker-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.delayedQueue.ratio: 8[0m[m
+[92m2022-05-30 11:21:56 I/stdout: [0m[m
+[92m2022-05-30 11:21:56 I/stdout: 11:21:56.673 [nioEventLoopGroup-2-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true[0m[m
+[92m2022-05-30 11:21:56 I/stdout: [0m[m
+[92m2022-05-30 11:21:56 I/stdout: 11:21:56.674 [nioEventLoopGroup-2-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true[0m[m
+[92m2022-05-30 11:21:56 I/stdout: [0m[m
+[92m2022-05-30 11:21:56 I/stdout: 11:21:56.676 [nioEventLoopGroup-2-1] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@4c755c65[0m[m
+[92m2022-05-30 11:21:56 I/stdout: [0m[m
+[92m2022-05-30 11:21:56 I/Bot.1784958674: Saved account secrets to local cache for fast login.[0m[m
+[92m2022-05-30 11:21:57 I/Bot.1784958674: Login successful.[0m[m
+[0m2022-05-30 11:21:57 V/Bot.1784958674: Event: BotOnlineEvent(bot=Bot(1784958674))[0m[m
+[92m2022-05-30 11:21:57 I/Bot.1784958674: Bot login successful.[0m[m
+[0m2022-05-30 11:22:06 V/Bot.1784958674: Hide on bush(75046675) -> 天气[0m[m
+[0m2022-05-30 11:22:07 V/Bot.1784958674: Friend(75046675) <- [mirai:quote:[5949],[234202242]]请在30秒内发送定位![0m[m
+[0m2022-05-30 11:22:13 V/Bot.1784958674: Hide on bush(75046675) -> [mirai:service:32,<?xml version="1.0" encoding="utf-8"?>    <msg action="plugin"     actionData="mqqapi://app/action?type=sharedmap&amp;pkg=com.tencent.mobileqq&amp;cmp=com.tencent.biz.PoiMapActivity&amp;lat=43.877912&amp;lon=125.300423&amp;title=位置分享&amp;loc=吉林省长春市朝阳区解放大路&amp;dpid="     brief="[位置] 吉林省长春市朝阳区解放大路"     serviceID="32"     templateID="12345">    <item layout="2">    <picture cover="http://pub.idqqimg.com/pc/misc/lbsshare_icon.jpg"/>    <title>位置分享</title>    <summary>吉林省长春市朝阳区解放大路</summary>    </item>    </msg>][0m[m
+[0m2022-05-30 11:22:14 V/Bot.1784958674: Friend(75046675) <- 现在多云，气温17°C，体感温度12°C，风向270°，西风5级，风速29km/h，相对湿度58%，当前小时累计降水量0.0毫米，大气压974hPa，能见度21km，云量91%，露点3°C[0m[m
+[0m2022-05-30 11:24:22 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2127 辣椒(1835365422) -> 我一想15年去美国的时候坐了13个小时的两桶一棍就感叹那会身体真好[0m[m
+[0m2022-05-30 11:24:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2127 辣椒(1835365422) -> 屁股坐裂[0m[m
+[0m2022-05-30 11:25:02 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> 两桶一棍坐着还算舒服啊[0m[m
+[0m2022-05-30 11:25:02 V/Bot.1784958674: Hide on bush(75046675) -> 来点[0m[m
+[0m2022-05-30 11:25:04 V/Bot.1784958674: Friend(75046675) <- [mirai:image:{0259D245-E56F-FB96-D8A2-7E3D12DDDF00}.jpg][0m[m
+[0m2022-05-30 11:25:05 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> 比330强[0m[m
+[0m2022-05-30 11:25:08 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> [mirai:image:{F9A58AB8-813C-C9EA-62DF-94BDB6321B8D}.jpg][0m[m
+[0m2022-05-30 11:26:07 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2127 辣椒(1835365422) -> 我到感觉330舒服[0m[m
+[0m2022-05-30 11:26:14 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kggmetarrptc[0m[m
+[0m2022-05-30 11:26:14 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3903],[1895486114]]No METAR found[0m[m
+[0m2022-05-30 11:26:14 V/Bot.1784958674: Hide on bush(75046675) -> 来点[0m[m
+[0m2022-05-30 11:26:14 V/Bot.1784958674: Friend(75046675) <- [mirai:image:{3C601DF7-A110-86C8-216B-566E736348B8}.jpg][0m[m
+[0m2022-05-30 11:26:25 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kggmetarrctp[0m[m
+[0m2022-05-30 11:26:25 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3905],[1439838869]]RCTP 300315Z 24020KT 9999 SCT015 BKN018 31/27 Q1006 WS R23R NOSIG RMK A2972\nTAF RCTP 292300Z 3000/3106 24015KT 9999 FEW020 SCT180 TEMPO 3000/3002 22008KT TEMPO 3003/3009 25020G30KT BECMG 3012/3014 18005KT FEW015 BKN032 BECMG 3100/3102 33005KT\n[0m[m
+[0m2022-05-30 11:26:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 我到感觉330舒服[0m[m
+[0m2022-05-30 11:26:33 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> 这是桃园机场应该[0m[m
+[0m2022-05-30 11:26:38 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 丑是丑太多了[0m[m
+[0m2022-05-30 11:26:43 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 330确实舒服[0m[m
+[0m2022-05-30 11:26:49 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{4B17F0D5-1C18-B627-763A-0FEECFBFE1F2}.jpg][0m[m
+[0m2022-05-30 11:26:51 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 这还有架华航[0m[m
+[0m2022-05-30 11:26:52 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2127 辣椒(1835365422) -> 333也不丑（）[0m[m
+[0m2022-05-30 11:27:04 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 觉得330颜值还行[0m[m
+[0m2022-05-30 11:27:06 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> 那可能是国航选的座位比俄航逆天罢[0m[m
+[0m2022-05-30 11:27:12 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 可以[0m[m
+[0m2022-05-30 11:27:14 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> [mirai:image:{F9A58AB8-813C-C9EA-62DF-94BDB6321B8D}.jpg][0m[m
+[0m2022-05-30 11:27:19 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 好久没去了[0m[m
+[0m2022-05-30 11:27:22 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> 330中间那座位真的杀人[0m[m
+[0m2022-05-30 11:27:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2127 辣椒(1835365422) -> 川农的333相当爽[0m[m
+[0m2022-05-30 11:27:46 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kggmetarzsnj[0m[m
+[0m2022-05-30 11:27:46 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3910],[2109056693]]ZSNJ 300300Z 06004MPS 350V080 7000 BKN027 30/23 Q1005 BECMG TL0330 03009MPS TSRA SCT007 BKN020 FEW030CB\nTAF ZSNJ 292110Z 3000/3024 01004MPS 3000 BR NSC TX29/3006Z TN17/3021Z TEMPO 3002/3006 SHRA BKN030 FEW030CB\n[0m[m
+[0m2022-05-30 11:27:53 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> 南京[0m[m
+[0m2022-05-30 11:28:08 V/Bot.1784958674: Hide on bush(75046675) -> 来点[0m[m
+[0m2022-05-30 11:28:08 V/Bot.1784958674: Friend(75046675) <- [mirai:image:{AA99ABFE-A3FA-A7B6-68E0-48727F7A9251}.png][0m[m
+[0m2022-05-30 11:28:33 V/Bot.1784958674: Hide on bush(75046675) -> 来点[0m[m
+[0m2022-05-30 11:28:35 V/Bot.1784958674: Friend(75046675) <- [mirai:image:{685B66A2-614F-415F-F8DB-C89C4471B5AF}.jpg][0m[m
+[0m2022-05-30 11:29:21 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 川农不错[0m[m
+[0m2022-05-30 11:29:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 大运彩绘那个[0m[m
+[0m2022-05-30 11:29:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 33d的座位[0m[m
+[0m2022-05-30 11:30:00 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 并列交错[0m[m
+[0m2022-05-30 11:30:40 V/Bot.1784958674: Friend(75046675) <- [mirai:quote:[5956],[645105890]]吉林油价：\n92号汽油：8.65元/升\n95号汽油：9.33元/升\n98号汽油：10.17元/升\n0号柴油：8.29元/升\n更新日期：2022-5-29 10:08:10\n[0m[m
+[0m2022-05-30 11:30:45 V/Bot.1784958674: Hide on bush(75046675) -> 吉林油价[0m[m
+[0m2022-05-30 11:30:50 V/Bot.1784958674: Hide on bush(75046675) -> 来点[0m[m
+[0m2022-05-30 11:30:51 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 国航33a的那个也很好[0m[m
+[0m2022-05-30 11:30:52 V/Bot.1784958674: Friend(75046675) <- [mirai:image:{C376A408-1B9B-A54B-01D6-DC6E0F1FB4E1}.jpg][0m[m
+[0m2022-05-30 11:31:12 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 就是大通铺[0m[m
+[0m2022-05-30 11:31:21 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 目前最好的体验是东航332[0m[m
+[0m2022-05-30 11:31:21 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 间距有2m[0m[m
+[0m2022-05-30 11:31:29 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2127 辣椒(1835365422) -> 我这种穷逼坐不起两舱捏[0m[m
+[0m2022-05-30 11:31:31 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> [mirai:quote:[287441],[507308759]]东航不参与比赛哈[0m[m
+[0m2022-05-30 11:31:33 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> [惊恐][0m[m
+[0m2022-05-30 11:31:43 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 东航来的话杀死比赛了[0m[m
+[0m2022-05-30 11:31:49 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2127 辣椒(1835365422) -> 唯一一次还是跟团去巴厘岛耍，回程被印尼鹰航升舱了[0m[m
+[0m2022-05-30 11:32:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> [赞][赞][赞][0m[m
+[0m2022-05-30 11:32:23 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2127 辣椒(1835365422) -> 他们家最老的332，公务舱之老旧可想而知[0m[m
+[0m2022-05-30 11:32:23 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 巴厘岛[0m[m
+[0m2022-05-30 11:32:33 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> 什么xc游[0m[m
+[0m2022-05-30 11:32:46 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2127 辣椒(1835365422) -> 跟家里人去的哈[0m[m
+[0m2022-05-30 11:33:29 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 什么xc游[0m[m
+[0m2022-05-30 11:33:47 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 囍[0m[m
+[0m2022-05-30 11:34:04 V/Bot.1784958674: [OOP、zing、金栗(947121973)] Dcoc(1284994403) -> kgg[0m[m
+[0m2022-05-30 11:34:04 V/Bot.1784958674: Group(947121973) <- 嗷呜[0m[m
+[0m2022-05-30 11:34:05 V/Bot.1784958674: NormalMember(1284994403) <- 签到成功!\n连续签到天数: 1\n今日获得能量值: 4\n当前能量值是: 4[0m[m
+[0m2022-05-30 11:38:37 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 看着雀食新[0m[m
+[0m2022-05-30 11:38:43 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{9D71E9EB-2B2C-5D4E-82F3-6FDF4360A3AB}.jpg][0m[m
+[0m2022-05-30 11:39:32 V/Bot.1784958674: Event: MemberCardChangeEvent(origin=1901 TNX/ZGTX 鱼头bot#群机性恋, new=1901 TNX/ZGTX 鱼头bot#换机就踢了gxl, member=NormalMember(963425360))[0m[m
+[31m2022-05-30 11:39:32 E/kggbot: Exception in coroutine Plugin org.OOP.mirai of kggbot
+net.mamoe.mirai.contact.PermissionDeniedException: Permission denied: required ADMINISTRATOR, got actual MEMBER for Bot(1784958674) in group 1001093960
+	at net.mamoe.mirai.internal.contact.NormalMemberImpl.setNameCard(NormalMemberImpl.kt:259)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$7.invokeSuspend(PluginMain.kt:542)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$7.invoke(PluginMain.kt)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$7.invoke(PluginMain.kt)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invokeSuspend(EventChannel.kt:455)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invoke(EventChannel.kt)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invoke(EventChannel.kt)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invokeSuspend(InternalEventListeners.kt:50)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invoke(InternalEventListeners.kt)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invoke(InternalEventListeners.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at net.mamoe.mirai.internal.event.Handler.onEvent(InternalEventListeners.kt:50)
+	at net.mamoe.mirai.internal.event.InternalEventListenersKt.process(InternalEventListeners.kt:166)
+	at net.mamoe.mirai.internal.event.InternalEventListenersKt.callAndRemoveIfRequired(InternalEventListeners.kt:115)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastImpl(Event.kt:174)
+	at net.mamoe.mirai.IMirai.broadcastEvent$suspendImpl(IMirai.kt:319)
+	at net.mamoe.mirai.IMirai.broadcastEvent(IMirai.kt)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent$suspendImpl(MiraiImpl.kt:303)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent(MiraiImpl.kt)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic$suspendImpl(Event.kt:161)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic(Event.kt)
+	at net.mamoe.mirai.event.EventKt.broadcast(Event.kt:146)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invokeSuspend(EventDispatcher.kt:90)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invoke(EventDispatcher.kt)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invoke(EventDispatcher.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl.broadcast$suspendImpl(EventDispatcher.kt:89)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl.broadcast(EventDispatcher.kt)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent$suspendImpl(MiraiImpl.kt:308)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent(MiraiImpl.kt)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic$suspendImpl(Event.kt:161)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic(Event.kt)
+	at net.mamoe.mirai.event.EventKt.broadcast(Event.kt:146)
+	at net.mamoe.mirai.internal.network.notice.group.GroupMessageProcessor.processImpl(GroupMessageProcessor.kt:227)
+	at net.mamoe.mirai.internal.network.notice.group.GroupMessageProcessor.processImpl(GroupMessageProcessor.kt:44)
+	at net.mamoe.mirai.internal.network.components.SimpleNoticeProcessor.process(NoticeProcessorPipeline.kt:300)
+	at net.mamoe.mirai.internal.network.components.NoticeProcessorPipelineImpl.process$suspendImpl(NoticeProcessorPipeline.kt:236)
+	at net.mamoe.mirai.internal.network.components.NoticeProcessorPipelineImpl.process(NoticeProcessorPipeline.kt)
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.OnlinePushPbPushGroupMsg.decode(OnlinePush.PbPushGroupMsg.kt:37)
+	at net.mamoe.mirai.internal.network.components.PacketCodecImpl.processBody(PacketCodec.kt:419)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$PacketDecodePipeline$send$1.invokeSuspend(NettyNetworkHandler.kt:190)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[0m[m
+[0m2022-05-30 11:39:32 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 这是gxl的？[0m[m
+[0m2022-05-30 11:40:13 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 事[0m[m
+[0m2022-05-30 11:40:21 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{005A2760-C9C3-A418-2E7F-5A1252F61B52}.jpg][0m[m
+[0m2022-05-30 11:40:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 320NEO[0m[m
+[0m2022-05-30 11:46:16 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> [mirai:image:{1E25FC84-8333-8003-69B5-1D90938F30A7}.jpg][0m[m
+[0m2022-05-30 11:46:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 太香了[0m[m
+[0m2022-05-30 11:47:06 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 今天跟乳白日本是有啥活动吗？[0m[m
+[0m2022-05-30 11:47:16 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 刚刚又看见架ANA的787落地[0m[m
+[0m2022-05-30 11:47:21 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 你看看航班号是不是jl32[0m[m
+[0m2022-05-30 11:47:21 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 但是机场大屏没有[0m[m
+[0m2022-05-30 11:47:24 V/Bot.1784958674: Event: GroupRecall(bot=Bot(1784958674), authorId=384419125, messageIds=[287465], messageInternalIds=[331163427], messageTime=1653882443, operator=NormalMember(384419125), group=Group(1001093960), author=NormalMember(384419125))[0m[m
+[0m2022-05-30 11:47:27 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 你看看航班号是不是jl21[0m[m
+[0m2022-05-30 11:47:39 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 那俩是定班[0m[m
+[0m2022-05-30 11:47:46 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 一定会有[0m[m
+[0m2022-05-30 11:48:06 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 是拉货的？[0m[m
+[0m2022-05-30 11:48:09 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> ana是jl吗[0m[m
+[0m2022-05-30 11:48:11 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> [mirai:image:{2BB09C15-E0EB-F91D-5735-AB5230D56C97}.jpg][0m[m
+[0m2022-05-30 11:48:16 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> ana是nh[0m[m
+[0m2022-05-30 11:48:27 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 1040那班应该是JL21[0m[m
+[0m2022-05-30 11:48:39 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> nh897？[0m[m
+[0m2022-05-30 11:48:39 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 拿日航的航班号飞？[0m[m
+[0m2022-05-30 11:48:42 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 刚刚这架ANA也是来拉货的？[0m[m
+[0m2022-05-30 11:48:42 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 不确定[0m[m
+[0m2022-05-30 11:48:52 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 不不不nh和jl分开的[0m[m
+[0m2022-05-30 11:49:45 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{EEC7166D-B8B7-A31D-79D1-8B0398B23D48}.jpg][0m[m
+[0m2022-05-30 11:50:01 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 飞不准显示货机，意思是787拉货？[0m[m
+[0m2022-05-30 11:51:08 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> [mirai:quote:[287461],[1253734371]][mirai:at:384419125] 400比？[0m[m
+[0m2022-05-30 11:51:14 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> [mirai:image:{DCC827E3-C001-8382-2FEB-DD5705F15745}.gif][0m[m
+[0m2022-05-30 11:53:44 V/Bot.1784958674: Event: MemberCardChangeEvent(origin=, new=123456789, member=NormalMember(1284994403))[0m[m
+[0m2022-05-30 11:53:44 V/Bot.1784958674: [OOP、zing、金栗(947121973)] 123456789(1284994403) -> 1[0m[m
+[0m2022-05-30 11:55:05 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> [mirai:quote:[287482],[72707675]]就ph这月新品[0m[m
+[0m2022-05-30 11:55:13 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> 前起全部装反了[0m[m
+[0m2022-05-30 11:55:41 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 草[0m[m
+[0m2022-05-30 11:55:58 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 草[0m[m
+[0m2022-05-30 11:56:22 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> [mirai:quote:[287481],[1840207454]]都是拉货[0m[m
+[0m2022-05-30 11:57:16 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> 154这个前起搞反情况比较多[0m[m
+[0m2022-05-30 11:57:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> 之前JC那个200比的川航154[0m[m
+[0m2022-05-30 11:57:30 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> 也都装反了[0m[m
+[0m2022-05-30 11:57:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> 可能即使反了看着也不太违和[0m[m
+[0m2022-05-30 12:00:34 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 依琳免费寄回厂家[0m[m
+[0m2022-05-30 12:00:42 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 重新正回来了[0m[m
+[0m2022-05-30 12:00:52 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 我的是正的[0m[m
+[0m2022-05-30 12:01:13 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 苏星瑶(2578321762) -> [mirai:origin:FORWARD,yK2zeHNXjue/Lirs5vd67f65nH/3uUtKjDt5og5fMLy6z4ciOvgcfvWRbOb8dUcx]ForwardMessage(preview=[这里是星瑶酱: [图片]&#xA;&#xA;FREE now :: BioShock: The Collection (0)&#xA;BioShock: The Collection&#xA;此游戏由 Epic Dev Test Account 开发、Epic Dev Test Account 发行，将在 UTC 时间 Jun.02 15:00 结束免费游玩，戳链接速度加入你的游戏库吧~&#xA;https://www.epicgames.com/store/zh-CN/p/bioshock-the-collection&#xA;, 这里是星瑶酱: &#xA;由 Epic Dev Test Account 公司发行的游戏 Mystery Game (0) 在 UTC 时间 Jun.02 15:00 即将推出免费游玩，预计截至 Jun.09 15:00。], title=群聊的聊天记录, brief=[聊天记录], source=聊天记录, summary=查看 2 条转发消息, nodeList=[Node(senderId=2578321762, time=1653882974, senderName=这里是星瑶酱, messageChain=[mirai:image:{E9E66F88-82E2-FAF5-6FD8-1EDDAB41DC55}.png]\n\nFREE now :: BioShock: The Collection (0)\nBioShock: The Collection\n此游戏由 Epic Dev Test Account 开发、Epic Dev Test Account 发行，将在 UTC 时间 Jun.02 15:00 结束免费游玩，戳链接速度加入你的游戏库吧~\nhttps://www.epicgames.com/store/zh-CN/p/bioshock-the-collection\n), Node(senderId=2578321762, time=1653882974, senderName=这里是星瑶酱, messageChain=\n由 Epic Dev Test Account 公司发行的游戏 Mystery Game (0) 在 UTC 时间 Jun.02 15:00 即将推出免费游玩，预计截至 Jun.09 15:00。)])[0m[m
+[0m2022-05-30 12:01:19 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> ？[0m[m
+[0m2022-05-30 12:01:21 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> ？[0m[m
+[0m2022-05-30 12:01:25 V/Bot.1784958674: Event: GroupRecall(bot=Bot(1784958674), authorId=2578321762, messageIds=[287497], messageInternalIds=[-944458493], messageTime=1653883274, operator=NormalMember(729233736), group=Group(1001093960), author=NormalMember(2578321762))[0m[m
+[0m2022-05-30 12:01:27 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 怎么又发了一遍这个[0m[m
+[0m2022-05-30 12:01:30 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> [mirai:image:{2DEE9B7C-5A7D-93D0-E3DF-89B674586E7E}.jpg][0m[m
+[0m2022-05-30 12:01:47 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> [mirai:at:1076079235] 管管你家瑶瑶[0m[m
+[0m2022-05-30 12:02:01 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> （[0m[m
+[0m2022-05-30 12:02:40 V/Bot.1784958674: [OOP、zing、金栗(947121973)] 卢嘉美-20373814(2287941423) -> 禁言群成员 \d{9}[0m[m
+[0m2022-05-30 12:03:18 V/Bot.1784958674: Event: MemberUnmuteEvent(member=NormalMember(2485664840), operator=NormalMember(2287941423))[0m[m
+[0m2022-05-30 12:03:21 V/Bot.1784958674: Event: MemberUnmuteEvent(member=NormalMember(1284994403), operator=NormalMember(2287941423))[0m[m
+[0m2022-05-30 12:03:31 V/Bot.1784958674: Event: MemberCardChangeEvent(origin=123456789, new=12345678, member=NormalMember(1284994403))[0m[m
+[0m2022-05-30 12:03:31 V/Bot.1784958674: [OOP、zing、金栗(947121973)] 12345678(1284994403) -> kgg[0m[m
+[0m2022-05-30 12:03:31 V/Bot.1784958674: Group(947121973) <- 你好呀[0m[m
+[0m2022-05-30 12:03:40 V/Bot.1784958674: [OOP、zing、金栗(947121973)] 12345678(1284994403) -> 艹[0m[m
+[0m2022-05-30 12:04:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 10怎么还在录像[0m[m
+[0m2022-05-30 12:05:14 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> [mirai:image:{6378A1DC-9CE2-72F2-219C-63C154D682F4}.jpg][0m[m
+[0m2022-05-30 12:05:16 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> [mirai:image:{A99F10AB-8273-00E4-13DE-BD9FAAD596D4}.jpg][0m[m
+[0m2022-05-30 12:05:32 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> 广州最近上了不少文旅主题彩绘巴士[0m[m
+[0m2022-05-30 12:12:37 V/Bot.1784958674: Hide on bush(75046675) -> 来点[0m[m
+[0m2022-05-30 12:12:37 V/Bot.1784958674: Friend(75046675) <- [mirai:image:{49631BEC-4F93-F3DB-3D64-6BFE83D4B860}.jpg][0m[m
+[0m2022-05-30 12:12:59 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 有空去看看[汪汪][0m[m
+[0m2022-05-30 12:13:07 V/Bot.1784958674: Hide on bush(75046675) -> 来点[0m[m
+[0m2022-05-30 12:13:08 V/Bot.1784958674: Friend(75046675) <- [mirai:image:{F156D495-30B3-2861-9B44-7E92CE4CA76A}.png][0m[m
+[0m2022-05-30 12:16:19 V/Bot.1784958674: Event: MemberCardChangeEvent(origin=12345678, new=1234567, member=NormalMember(1284994403))[0m[m
+[0m2022-05-30 12:16:19 V/Bot.1784958674: [OOP、zing、金栗(947121973)] 1234567(1284994403) -> 1[0m[m
+[0m2022-05-30 12:16:23 V/Bot.1784958674: [OOP、zing、金栗(947121973)] 卢嘉美-20373814(2287941423) -> 禁言群成员 \d{7}[0m[m
+[0m2022-05-30 12:20:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 诶，话说为什么好多飞机停着的时候，方向舵都右偏[0m[m
+[0m2022-05-30 12:20:29 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 有什么说法吗[0m[m
+[0m2022-05-30 12:25:13 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 风吹的[0m[m
+[0m2022-05-30 12:25:19 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 草[0m[m
+[0m2022-05-30 12:25:40 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 没开机，徒手也能掰动？[0m[m
+[0m2022-05-30 12:25:47 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1314 汤圆 CDG/ZSJN(517943247) -> 能[0m[m
+[0m2022-05-30 12:26:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1314 汤圆 CDG/ZSJN(517943247) -> 在飞机里坐着的时候离杆远一点[0m[m
+[0m2022-05-30 12:26:20 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1314 汤圆 CDG/ZSJN(517943247) -> 有可能被打[0m[m
+[0m2022-05-30 12:27:27 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> JAL走了[0m[m
+[0m2022-05-30 12:27:29 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{C45BB8D1-F18A-E109-8111-01B49AD15CE3}.jpg][0m[m
+[0m2022-05-30 12:27:42 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 也就是说今早光是JAL的787就走了两家[0m[m
+[0m2022-05-30 12:27:46 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{D892F452-D1DC-95D2-037A-60442980C58D}.gif][0m[m
+[0m2022-05-30 12:27:52 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 我那天也是[0m[m
+[0m2022-05-30 12:28:02 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1905（←这位白给上瘾(384419125) -> 来了一架788，一架789[0m[m
+[0m2022-05-30 12:30:56 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 747卡勾和鱼翅航[0m[m
+[0m2022-05-30 12:31:04 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{9F481629-E7B1-E49E-E286-23507A68D025}.jpg][0m[m
+[0m2022-05-30 12:32:23 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> 能不能写个返回目的地防疫政策的功能[0m[m
+[0m2022-05-30 12:32:29 V/Bot.1784958674: Event: NudgeEvent(from=NormalMember(1412660661), target=NormalMember(75046675), subject=Group(883989823), action=, suffix=的脸)[0m[m
+[0m2022-05-30 12:35:55 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 吸溜吸溜[0m[m
+[0m2022-05-30 12:37:04 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 日，感觉跟好多1815都还没合照[0m[m
+[0m2022-05-30 12:37:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 但是总不可能一个个把人call下来吧[0m[m
+[0m2022-05-30 12:37:19 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> [mirai:quote:[287525],[262525844]][mirai:at:1181390241] 想丿机了[0m[m
+[0m2022-05-30 12:37:23 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 啊哈哈哈鸡汤来咯[0m[m
+[0m2022-05-30 12:37:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> [mirai:image:{0FAD68E1-4548-3261-4B2C-18C891285211}.jpg][0m[m
+[0m2022-05-30 12:37:34 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 今天也是顶级好天[0m[m
+[0m2022-05-30 12:37:50 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> [mirai:image:{02F6F76F-16AD-0875-6EC6-4C2F08A77B2A}.jpg][0m[m
+[0m2022-05-30 12:37:59 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 一万年没去过机场了[0m[m
+[0m2022-05-30 12:38:04 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> sb疫情啊啊啊啊啊[0m[m
+[0m2022-05-30 12:38:06 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 今天也是顶级好天[0m[m
+[0m2022-05-30 12:38:16 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 一万年没拍过机了[0m[m
+[0m2022-05-30 12:39:10 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 就没拍过机[0m[m
+[0m2022-05-30 12:39:14 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 今天真的好天[0m[m
+[0m2022-05-30 12:39:21 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 捏妈的等解封了俺就往机场冲[0m[m
+[0m2022-05-30 12:39:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 等下来一个空射沙航[0m[m
+[0m2022-05-30 12:39:39 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 昨天首都离港能看见大兴[0m[m
+[0m2022-05-30 12:39:42 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> [mirai:image:{6DB8D47D-6D88-2BA8-3315-3C91BE0598DE}.jpg][0m[m
+[0m2022-05-30 12:40:06 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{6DB8D47D-6D88-2BA8-3315-3C91BE0598DE}.gif][0m[m
+[0m2022-05-30 12:40:55 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> [mirai:quote:[287541],[18677842]]戳啦[0m[m
+[0m2022-05-30 12:41:31 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 直飞BOTPU[0m[m
+[0m2022-05-30 12:41:40 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 沙航在你脚下[0m[m
+[0m2022-05-30 12:42:50 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 但是330有机腹相机捏[0m[m
+[0m2022-05-30 12:43:00 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> ？[0m[m
+[0m2022-05-30 12:43:03 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 有吗？[0m[m
+[0m2022-05-30 12:43:32 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 我昨天那架有[0m[m
+[0m2022-05-30 12:44:34 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> B-6093[0m[m
+[0m2022-05-30 12:48:50 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 沃日，好文明[0m[m
+[0m2022-05-30 12:52:56 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 虽然我旁边没人很宽敞，但还是希望有个xjj[0m[m
+[0m2022-05-30 12:52:58 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{DCC827E3-C001-8382-2FEB-DD5705F15745}.gif][0m[m
+[0m2022-05-30 12:54:27 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> ？[0m[m
+[0m2022-05-30 12:55:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> [mirai:quote:[287551],[1272606215]][mirai:at:1070532023] xm[0m[m
+[0m2022-05-30 12:55:41 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 我坐好几次330都无[0m[m
+[0m2022-05-30 13:04:24 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> 给我个api[0m[m
+[0m2022-05-30 13:04:54 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> kgg聊天[0m[m
+[0m2022-05-30 13:04:55 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3916],[1225671006]]不知道要做什么的话请说"kgghelp"![0m[m
+[0m2022-05-30 13:04:55 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kgg[0m[m
+[0m2022-05-30 13:04:56 V/Bot.1784958674: Group(883989823) <- 嗷嗷[0m[m
+[0m2022-05-30 13:05:08 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kgg来点[0m[m
+[0m2022-05-30 13:05:08 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 王晨宇是谁[0m[m
+[0m2022-05-30 13:05:08 V/Bot.1784958674: Group(883989823) <- [mirai:image:{7E4BF4CF-AFE4-5DCD-203B-FE6E19D15B7C}.png][0m[m
+[0m2022-05-30 13:05:22 V/Bot.1784958674: Hide on bush(75046675) -> 来点[0m[m
+[0m2022-05-30 13:05:23 V/Bot.1784958674: Friend(75046675) <- [mirai:image:{D389D9C5-6BDB-AAE0-6057-0E13313C4647}.jpg][0m[m
+[0m2022-05-30 13:05:31 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> kgg？[0m[m
+[0m2022-05-30 13:05:32 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3922],[1000312021]]不知道要做什么的话请说"kgghelp"![0m[m
+[0m2022-05-30 13:05:53 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> kgg陪我聊天[0m[m
+[0m2022-05-30 13:05:53 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3924],[298192183]]好的哦！当你不想跟我聊天的时候跟我说“不聊了”就可以了！[0m[m
+[0m2022-05-30 13:06:01 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 王晨宇是谁[0m[m
+[0m2022-05-30 13:06:05 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3926],[1937294466]]是个傻逼＋大丸子＋吃货！[0m[m
+[0m2022-05-30 13:06:36 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> [汪汪][0m[m
+[0m2022-05-30 13:06:37 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3928],[1725799397]]哥哥你说句话呀！[0m[m
+[0m2022-05-30 13:06:42 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 我不好说[0m[m
+[0m2022-05-30 13:06:45 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3930],[1193044216]]不好就不好啦，说这么大声是要全世界的人都听到吗[0m[m
+[0m2022-05-30 13:06:54 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 太恐怖了[0m[m
+[0m2022-05-30 13:06:57 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3932],[1021068232]]这么恐怖，怕怕[0m[m
+[0m2022-05-30 13:07:19 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 溜了溜了[0m[m
+[0m2022-05-30 13:07:22 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3934],[2145836480]]感天动地大孝女！[0m[m
+[0m2022-05-30 13:07:23 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 不聊了[0m[m
+[0m2022-05-30 13:07:23 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3936],[477014307]]好~下次再说！[0m[m
+[0m2022-05-30 13:09:48 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> ？[0m[m
+[0m2022-05-30 13:17:14 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 安全须知还在播放就起飞了[0m[m
+[0m2022-05-30 13:17:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 草[0m[m
+[0m2022-05-30 13:17:49 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice21(3029845390) -> 我记得去年有一次坐飞机[0m[m
+[0m2022-05-30 13:17:55 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice21(3029845390) -> 安全须知只有当地语言没有英语[0m[m
+[0m2022-05-30 13:57:58 V/Bot.1784958674: Hide on bush(75046675) -> 来点[0m[m
+[0m2022-05-30 13:57:58 V/Bot.1784958674: Friend(75046675) <- [mirai:image:{2FFA3F39-3A5B-600E-4C06-6BFAA2A3687D}.jpg][0m[m
+[0m2022-05-30 14:47:32 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 学校送站车满了[0m[m
+[0m2022-05-30 14:47:33 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 乐[0m[m
+[0m2022-05-30 14:54:09 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 草[0m[m
+[0m2022-05-30 15:04:41 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 viper 9326(1561891523) -> [mirai:image:{A2A5821C-9B73-CC2E-51DB-ECA3CEABBE8D}.jpg][0m[m
+[0m2022-05-30 15:04:50 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 viper 9326(1561891523) -> 正要去机场的我感到一丝不祥（[0m[m
+[0m2022-05-30 15:05:19 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 旁边黑色高级车[0m[m
+[0m2022-05-30 15:06:34 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 viper 9326(1561891523) -> 中间7700（[0m[m
+[0m2022-05-30 15:07:07 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2127 辣椒(1835365422) -> [mirai:image:{6F2D3334-1F36-5AAD-709B-CC994463F37F}.jpg][0m[m
+[0m2022-05-30 15:08:06 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> [mirai:quote:[287569],[1023918101]][mirai:at:1561891523] 艹[0m[m
+[0m2022-05-30 15:09:44 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 看开点，起码不是7500[0m[m
+[0m2022-05-30 15:43:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 1453[0m[m
+[0m2022-05-30 15:43:33 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2115-鱼头人，但是是海狼鱼(1062597472) -> ceddin[0m[m
+[0m2022-05-30 15:43:42 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> deden[0m[m
+[0m2022-05-30 15:43:48 V/Bot.1784958674: Event: GroupRecall(bot=Bot(1784958674), authorId=2680678616, messageIds=[287573], messageInternalIds=[90526584], messageTime=1653896600, operator=NormalMember(2680678616), group=Group(1001093960), author=NormalMember(2680678616))[0m[m
+[0m2022-05-30 15:43:50 V/Bot.1784958674: Event: GroupRecall(bot=Bot(1784958674), authorId=2680678616, messageIds=[287575], messageInternalIds=[1288343183], messageTime=1653896625, operator=NormalMember(2680678616), group=Group(1001093960), author=NormalMember(2680678616))[0m[m
+[0m2022-05-30 15:44:09 V/Bot.1784958674: Event: GroupRecall(bot=Bot(1784958674), authorId=1062597472, messageIds=[287574], messageInternalIds=[824148496], messageTime=1653896615, operator=NormalMember(1062597472), group=Group(1001093960), author=NormalMember(1062597472))[0m[m
+[0m2022-05-30 15:44:14 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2115-鱼头人，但是是海狼鱼(1062597472) -> 俩瞎子[0m[m
+[0m2022-05-30 15:44:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 乘错[0m[m
+[0m2022-05-30 15:45:17 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 中文顺序不影响读阅[0m[m
+[0m2022-05-30 15:45:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 数字也一样[0m[m
+[0m2022-05-30 15:46:28 V/Bot.1784958674: [OOP、zing、金栗(947121973)] 1234567(Temp 1284994403) -> kgg[0m[m
+[0m2022-05-30 15:46:34 V/Bot.1784958674: [OOP、zing、金栗(947121973)] 1234567(Temp 1284994403) -> kgghelp[0m[m
+[0m2022-05-30 15:50:35 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> [mirai:image:{838EA8AB-8B8B-792B-C0EE-D8FF91855CCD}.jpg][0m[m
+[0m2022-05-30 15:52:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> [mirai:quote:[287227],[2037441784]][mirai:at:850539835] （）[0m[m
+[0m2022-05-30 15:53:13 V/Bot.1784958674: Event: MemberCardChangeEvent(origin=1916 HHY ZUCK 绿人鱼备频 膜权&岑&徐&柱&嵘&扬&昊, new=1916 HHY FBO：CKG/ZUCK, member=NormalMember(850539835))[0m[m
+[31m2022-05-30 15:53:13 E/kggbot: Exception in coroutine Plugin org.OOP.mirai of kggbot
+net.mamoe.mirai.contact.PermissionDeniedException: Permission denied: required ADMINISTRATOR, got actual MEMBER for Bot(1784958674) in group 1001093960
+	at net.mamoe.mirai.internal.contact.NormalMemberImpl.setNameCard(NormalMemberImpl.kt:259)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$7.invokeSuspend(PluginMain.kt:542)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$7.invoke(PluginMain.kt)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$7.invoke(PluginMain.kt)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invokeSuspend(EventChannel.kt:455)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invoke(EventChannel.kt)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invoke(EventChannel.kt)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invokeSuspend(InternalEventListeners.kt:50)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invoke(InternalEventListeners.kt)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invoke(InternalEventListeners.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at net.mamoe.mirai.internal.event.Handler.onEvent(InternalEventListeners.kt:50)
+	at net.mamoe.mirai.internal.event.InternalEventListenersKt.process(InternalEventListeners.kt:166)
+	at net.mamoe.mirai.internal.event.InternalEventListenersKt.callAndRemoveIfRequired(InternalEventListeners.kt:115)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastImpl(Event.kt:174)
+	at net.mamoe.mirai.IMirai.broadcastEvent$suspendImpl(IMirai.kt:319)
+	at net.mamoe.mirai.IMirai.broadcastEvent(IMirai.kt)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent$suspendImpl(MiraiImpl.kt:303)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent(MiraiImpl.kt)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic$suspendImpl(Event.kt:161)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic(Event.kt)
+	at net.mamoe.mirai.event.EventKt.broadcast(Event.kt:146)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invokeSuspend(EventDispatcher.kt:90)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invoke(EventDispatcher.kt)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invoke(EventDispatcher.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl.broadcast$suspendImpl(EventDispatcher.kt:89)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl.broadcast(EventDispatcher.kt)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent$suspendImpl(MiraiImpl.kt:308)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent(MiraiImpl.kt)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic$suspendImpl(Event.kt:161)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic(Event.kt)
+	at net.mamoe.mirai.event.EventKt.broadcast(Event.kt:146)
+	at net.mamoe.mirai.internal.network.notice.group.GroupMessageProcessor.processImpl(GroupMessageProcessor.kt:227)
+	at net.mamoe.mirai.internal.network.notice.group.GroupMessageProcessor.processImpl(GroupMessageProcessor.kt:44)
+	at net.mamoe.mirai.internal.network.components.SimpleNoticeProcessor.process(NoticeProcessorPipeline.kt:300)
+	at net.mamoe.mirai.internal.network.components.NoticeProcessorPipelineImpl.process$suspendImpl(NoticeProcessorPipeline.kt:236)
+	at net.mamoe.mirai.internal.network.components.NoticeProcessorPipelineImpl.process(NoticeProcessorPipeline.kt)
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.OnlinePushPbPushGroupMsg.decode(OnlinePush.PbPushGroupMsg.kt:37)
+	at net.mamoe.mirai.internal.network.components.PacketCodecImpl.processBody(PacketCodec.kt:419)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$PacketDecodePipeline$send$1.invokeSuspend(NettyNetworkHandler.kt:190)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[0m[m
+[0m2022-05-30 15:53:13 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1916 HHY FBO：CKG/ZUCK(850539835) -> [mirai:app:{"app":"com.tencent.structmsg","config":{"ctime":1653897195,"forward":true,"token":"abc2b0655a007e0205a67388020caaf6","type":"normal"},"desc":"新闻","extra":{"app_type":1,"appid":1103188687,"msg_seq":7103434361082921384,"uin":850539835},"meta":{"news":{"action":"","android_pkg_name":"","app_type":1,"appid":1103188687,"ctime":1653897195,"desc":"补贴暂停后，会出现哪些变化？","jumpUrl":"http://mp.weixin.qq.com/s?__biz=MzI5NDc5MDc1Mw==&mid=2247536931&idx=1&sn=ea1be7d8ddd342823b4ff037a83f2f52&chksm=ec5f622ddb28eb3b6d6fe1ebf08f925d0cee961769c9acf5eac1ae47687c110e11c5e4f71c12&mpshare=1&scene=23&srcid=0530LPLbUBjW6111v61vyUDS&sharer_sharetime=1653897186594&sharer_shareid=d654cef1bbfac6d017409edc8e0c8499#rd","preview":"https://mmbiz.qlogo.cn/mmbiz_jpg/rVO5Dgy4RnopvUQ7fVYjuvZC4lKXSZSa1eR8j6ysRV1GdBYjPpwIbCJiauAcnZxicicW72oqksZNzwcuiaTiaNZQozQ/300?wx_fmt=jpeg&wxfrom=7","source_icon":"https://i.gtimg.cn/open/app_icon/03/18/86/87/1103188687_100_m.png","source_url":"","tag":"微信","title":"补贴要暂停了","uin":850539835}},"prompt":"[分享]补贴要暂停了","ver":"0.0.0.1","view":"news"}][0m[m
+[0m2022-05-30 15:53:43 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1916 HHY FBO：CKG/ZUCK(850539835) -> 估计票务已经在加班了[0m[m
+[0m2022-05-30 15:54:08 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1916 HHY FBO：CKG/ZUCK(850539835) -> [mirai:quote:[287581],[2033067446]]属于是被我毒奶没了（）[0m[m
+[0m2022-05-30 15:55:35 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> [mirai:app:{"app":"com.tencent.structmsg","config":{"ctime":1653897337,"forward":true,"token":"ccb058cb296d7da704e4560fb2e48968","type":"normal"},"desc":"新闻","extra":{"app_type":1,"appid":100495085,"msg_seq":7103434973431706341,"uin":1015205954},"meta":{"news":{"action":"","android_pkg_name":"","app_type":1,"appid":100495085,"ctime":1653897337,"desc":"Artist：北航学生合唱团","jumpUrl":"http://music.163.com/album/75251989/?userid=1682156097","preview":"http://p2.music.126.net/MhYyFAqaBTbsxTpnqR7MBQ==/109951163804163537.jpg","source_icon":"https://i.gtimg.cn/open/app_icon/00/49/50/85/100495085_100_m.png","source_url":"","tag":"网易云音乐","title":"Album：星空组歌","uin":1015205954}},"prompt":"[分享]Album：星空组歌","ver":"0.0.0.1","view":"news"}][0m[m
+[0m2022-05-30 15:55:50 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> [mirai:app:{"app":"com.tencent.miniapp_01","config":{"autoSize":0,"ctime":1653897353,"forward":1,"height":0,"token":"bc1ffa6d8f4b281004b66d9a9e83b180","type":"normal","width":0},"desc":"哔哩哔哩","extra":{"app_type":1,"appid":100951776,"uin":1015205954},"meta":{"detail_1":{"appType":0,"appid":"1109937557","desc":"北航大型原创交响合唱《星空组歌》首场演出丨北航学生交响团、合唱团","gamePoints":"","gamePointsUrl":"","host":{"nick":"权心","uin":1015205954},"icon":"http://miniapp.gtimg.cn/public/appicon/432b76be3a548fc128acaa6c1ec90131_200.jpg","preview":"pubminishare-30161.picsz.qpic.cn/4e74405f-1123-4943-8cf2-211d0d1b0eb8","qqdocurl":"https://b23.tv/BMiEgpm?share_medium=android&share_source=qq&bbid=XYA2D43AF0A01C44A2D17C52592DA06E8BBA4&ts=1653897347465","scene":1036,"shareTemplateData":{},"shareTemplateId":"8C8E89B49BE609866298ADDFF2DBABA4","showLittleTail":"","title":"哔哩哔哩","url":"m.q.qq.com/a/s/e774adcafdd78d0a38b819819a4a6413"}},"needShareCallBack":false,"prompt":"[QQ小程序]哔哩哔哩","ver":"1.0.0.19","view":"view_8C8E89B49BE609866298ADDFF2DBABA4"}][0m[m
+[0m2022-05-30 15:55:58 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 好听[0m[m
+[0m2022-05-30 15:57:38 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 本人参与演出（……）[0m[m
+[0m2022-05-30 16:00:45 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> [mirai:image:{462BEFC2-0FDB-060C-115E-59AF5BD1F6B6}.jpg][0m[m
+[0m2022-05-30 16:00:45 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> [mirai:image:{00F2CED6-B1B8-6D1C-CCB2-13A868632EA2}.gif][0m[m
+[0m2022-05-30 16:01:22 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> ng六月新品[mirai:image:{D72B964F-188F-AF27-EAC1-168EEDBAC21A}.jpg][mirai:image:{38D9B6AB-48F6-D847-502F-4DF94785412F}.jpg][mirai:image:{AB5862A3-F209-083F-CB1A-74426BE1958C}.jpg][mirai:image:{CE2C1C7B-F36B-8B2A-A502-3CF8C3FA7A87}.jpg][mirai:image:{9BD62BCF-A669-7672-5189-A231E4300F17}.jpg][mirai:image:{C3A8CC4A-F9FE-8F62-3BF8-5F3A3456136F}.jpg][mirai:image:{A4638F4F-9429-2012-5DF8-C02EE788C668}.jpg][mirai:image:{460B9A72-200A-3983-68C7-3F8B2575174F}.jpg][mirai:image:{7B99BF8A-4D77-07C6-3035-122DDE681B80}.jpg][mirai:image:{D7A8236B-A2E6-C0C4-2CCE-D8865D074D52}.jpg][mirai:image:{9DFE8B9B-ED80-9DA8-8D9C-6EF3008265BF}.jpg][mirai:image:{73361053-AD76-9686-96D7-B68DAC4B968F}.jpg][mirai:image:{F2B0B6E7-0E08-5766-B3F3-0B23CD280F0F}.jpg][mirai:image:{3334FC68-C68C-86C0-4B4F-FFA1D41A5C58}.jpg][mirai:image:{9214368E-4246-4733-A115-8D6846508F99}.jpg][mirai:image:{37A2AF77-3DD4-39FF-1F6E-33FD4F91267C}.jpg][mirai:image:{F2637AAC-F8F1-7449-4648-AEC5105349AD}.jpg][mirai:image:{C450ECC3-8D98-5C8D-0CFD-C8C264F1740A}.jpg][mirai:image:{9281B812-C4FD-6F3B-5547-EB6DE6799243}.jpg][mirai:image:{3CE89170-80C8-7BBE-21E7-6856787C3717}.jpg][0m[m
+[0m2022-05-30 16:04:32 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> 有俩1/400 华夏ARJ21[0m[m
+[0m2022-05-30 16:04:44 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 常驻ZGGG/ZBYN，时不时ZBAA(2287149381) -> 还有中美首航747SP[0m[m
+[0m2022-05-30 16:05:06 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 西安一口气上4跑？[0m[m
+[0m2022-05-30 16:06:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2027 Plus 319小牛(1291707203) -> [mirai:quote:[287592],[0]][mirai:at:2287149381] 这个🉑️[0m[m
+[0m2022-05-30 16:07:07 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{8F323FC0-83C0-A8EF-62EB-2097AF1532A0}.jpg][0m[m
+[0m2022-05-30 16:07:08 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{5F98156C-643E-C584-8382-78C51197D201}.jpg][0m[m
+[0m2022-05-30 16:08:37 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2027 Plus 319小牛(1291707203) -> XIY三跑一半了哦[0m[m
+[0m2022-05-30 16:10:08 V/Bot.1784958674: zing(2287941423) -> help[0m[m
+[0m2022-05-30 16:10:08 V/Bot.1784958674: Friend(2287941423) <- 签到成功!\n连续签到天数: 1\n今日获得能量值: 4\n当前能量值是: 4[0m[m
+[0m2022-05-30 16:10:08 V/Bot.1784958674: Friend(2287941423) <- Usage -> {\n	help\n	查询状态\n	dice[<大于1的整数>]\n	cos\n	cat\n	陪我聊天\n	news\n	来点\n	[<中国内地省级行政区>]油价\n	metar[<机场ICAO代码>]\n	天气[<定位>]\n}\n使用方式 -> {\n	群聊 -> {\n		kgg[Usage]\n		也可以直接@kgg与他聊天\n	}\n	私聊 -> [Usage]\n}\nTips -> {\n	[] 块内必须替换为相应语句\n	<> 块内是变量描述\n	? 代表可选参数\n	() 代表块内是一个整体或可选位置\n}\n签到方式 -> {\n	kgg抽卡(倍率1.0 + 幸运值)\n	kgg(倍率1.0)\n	跟bot私聊任何消息(倍率1.0)\n}\n能量值的获取量除了会乘上倍率还会和连续签到的天数相关哦!\n更多新功能待开发, 欢迎提出宝贵建议uwu[0m[m
+[0m2022-05-30 16:11:30 V/Bot.1784958674: zing(2287941423) -> help[0m[m
+[0m2022-05-30 16:11:31 V/Bot.1784958674: Friend(2287941423) <- Usage -> {\n	help\n	查询状态\n	dice[<大于1的整数>]\n	cos\n	cat\n	陪我聊天\n	news\n	来点\n	[<中国内地省级行政区>]油价\n	metar[<机场ICAO代码>]\n	天气[<定位>]\n}\n使用方式 -> {\n	群聊 -> {\n		kgg[Usage]\n		也可以直接@kgg与他聊天\n	}\n	私聊 -> [Usage]\n}\nTips -> {\n	[] 块内必须替换为相应语句\n	<> 块内是变量描述\n	? 代表可选参数\n	() 代表块内是一个整体或可选位置\n}\n签到方式 -> {\n	kgg抽卡(倍率1.0 + 幸运值)\n	kgg(倍率1.0)\n	跟bot私聊任何消息(倍率1.0)\n}\n能量值的获取量除了会乘上倍率还会和连续签到的天数相关哦!\n更多新功能待开发, 欢迎提出宝贵建议uwu[0m[m
+[0m2022-05-30 16:14:59 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{22C8A655-1DC7-2DFB-B578-7D001C29E5D6}.jpg][0m[m
+[0m2022-05-30 16:15:08 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 经典没太阳[0m[m
+[0m2022-05-30 16:15:35 V/Bot.1784958674: [OOP、zing、金栗(947121973)] 1234567(Temp 1284994403) -> help[0m[m
+[0m2022-05-30 16:17:37 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 居然靠廊桥了，没想到啊[0m[m
+[0m2022-05-30 16:18:02 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 好像感觉第一次见昆明航空[捂脸][0m[m
+[0m2022-05-30 16:18:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{447AD6EB-E756-323D-AB1A-19BEB3DD1989}.jpg][0m[m
+[0m2022-05-30 16:27:47 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 靠廊桥，然后坐摆渡车[0m[m
+[0m2022-05-30 16:27:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{6DB8D47D-6D88-2BA8-3315-3C91BE0598DE}.gif][0m[m
+[0m2022-05-30 16:28:58 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2077幻梦 ZSQZ(652758705) -> 比大巴直接拉出去好点（ZSQZ最新骚操作）[0m[m
+[0m2022-05-30 16:29:14 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2077幻梦 ZSQZ(652758705) -> 直接连人带行李拉分流中心[0m[m
+[0m2022-05-30 16:29:17 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2077幻梦 ZSQZ(652758705) -> [mirai:image:{39FE50BC-AE39-A1BE-F133-E68952810F17}.png][0m[m
+[0m2022-05-30 16:29:47 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> kgg陪我聊天[0m[m
+[0m2022-05-30 16:29:47 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3939],[1154602691]]好的哦！当你不想跟我聊天的时候跟我说“不聊了”就可以了！[0m[m
+[0m2022-05-30 16:30:04 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> 你会写Python吗？[0m[m
+[0m2022-05-30 16:30:07 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3941],[183214945]]最近总是失眠，16小时就醒一次[0m[m
+[0m2022-05-30 16:30:11 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> ？[0m[m
+[0m2022-05-30 16:30:14 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3943],[1006679299]]坑爹扬[0m[m
+[0m2022-05-30 16:30:22 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> 什么理解？[0m[m
+[0m2022-05-30 16:30:25 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3945],[1566221771]]没完没了各有需要把青春贱卖[0m[m
+[0m2022-05-30 16:30:29 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> ？？？[0m[m
+[0m2022-05-30 16:30:32 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3947],[952329617]]坑爹扬[0m[m
+[0m2022-05-30 16:30:39 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 胡言乱语了开始[0m[m
+[0m2022-05-30 16:30:41 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> 你是什么说话逻辑[0m[m
+[0m2022-05-30 16:30:44 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3950],[2064953415]]咁輸咩先？[0m[m
+[0m2022-05-30 16:30:47 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BFSU Justin Cheng(2096784909) -> ZSFZ跟其他地方来的完全一样([0m[m
+[0m2022-05-30 16:30:49 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> 经典胡言乱语。。[0m[m
+[0m2022-05-30 16:30:53 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3952],[1515506940]]你啊[0m[m
+[0m2022-05-30 16:30:53 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> [mirai:quote:[287594],[0]]有些二流机场还只有两条跑道[0m[m
+[0m2022-05-30 16:30:58 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> 夸夸王晨宇[0m[m
+[0m2022-05-30 16:30:59 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 神志不清了[0m[m
+[0m2022-05-30 16:31:02 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3954],[162196688]]你又咁早既？[0m[m
+[0m2022-05-30 16:31:07 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> 不聊了[0m[m
+[0m2022-05-30 16:31:08 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3957],[1337283296]]好~下次再说！[0m[m
+[0m2022-05-30 16:31:14 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> 太恐怖了[0m[m
+[0m2022-05-30 16:31:22 V/Bot.1784958674: [智障机器人试验场(883989823)] 云之彼端(1412660661) -> 经典胡言乱语[0m[m
+[0m2022-05-30 16:31:28 V/Bot.1784958674: [智障机器人试验场(883989823)] 👻(895069386) -> 不聊了回得最快[汪汪][0m[m
+[0m2022-05-30 16:33:35 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 好天，适合毕业照[0m[m
+[0m2022-05-30 16:33:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> [mirai:image:{978D6302-40F0-5BA7-9B0C-96530B2582FD}.jpg][0m[m
+[0m2022-05-30 16:34:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 好天[0m[m
+[0m2022-05-30 16:34:29 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 开会了[0m[m
+[0m2022-05-30 16:34:38 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 一片黄[0m[m
+[0m2022-05-30 16:34:44 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 不愧是北航（）[0m[m
+[0m2022-05-30 16:34:45 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 病例连续8天明显下降[0m[m
+[0m2022-05-30 16:34:46 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2021一般通过白给教徒#通辽选帝侯(1076079235) -> 一片黄[0m[m
+[0m2022-05-30 16:34:55 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 三天无社会面[0m[m
+[0m2022-05-30 16:34:58 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 全是工学[0m[m
+[0m2022-05-30 16:34:59 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 但是今天有突发疫情[0m[m
+[0m2022-05-30 16:34:59 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2077幻梦 ZSQZ(652758705) -> [mirai:quote:[287607],[1057964632]]甚至不是北京去的航班，是杭州（北京早停航了）[0m[m
+[0m2022-05-30 16:38:29 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> [mirai:quote:[287621],[1474231935]]？[0m[m
+[0m2022-05-30 16:39:21 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 徐和建开场说的[0m[m
+[0m2022-05-30 16:39:23 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 还没细说[0m[m
+[0m2022-05-30 16:39:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 现在到晓峰了[0m[m
+[0m2022-05-30 16:40:03 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 昨天一整天新增11，0野怪[0m[m
+[0m2022-05-30 16:40:35 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 今天+18，丰台9海淀8，1野怪，在丰田[0m[m
+[0m2022-05-30 16:40:39 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 台[0m[m
+[0m2022-05-30 16:43:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 寄[0m[m
+[0m2022-05-30 16:46:30 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> ？[0m[m
+[0m2022-05-30 16:46:32 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 这哪[0m[m
+[0m2022-05-30 16:46:41 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> [mirai:image:{13B54798-D19E-EB62-0FFF-4BFC64863821}.jpg][0m[m
+[0m2022-05-30 16:47:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 朝阳区7日无社会面新增[0m[m
+[0m2022-05-30 16:47:55 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> [mirai:quote:[287628],[868879868]][mirai:at:2716630985][0m[m
+[0m2022-05-30 16:48:11 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 啊这[0m[m
+[0m2022-05-30 16:48:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 焯[0m[m
+[0m2022-05-30 16:49:47 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 寄[0m[m
+[0m2022-05-30 16:50:03 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 寄[0m[m
+[0m2022-05-30 16:50:12 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 朝阳区在恢复[0m[m
+[0m2022-05-30 16:51:16 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> [mirai:image:{928DC006-40B3-2E15-A4DD-9154E50C0EA3}.jpg][0m[m
+[0m2022-05-30 16:51:19 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 你妈[0m[m
+[0m2022-05-30 16:51:24 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 换机了[0m[m
+[0m2022-05-30 16:51:51 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 换成了啥[0m[m
+[0m2022-05-30 16:51:58 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 77W[0m[m
+[0m2022-05-30 16:52:08 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 都怪gxl[0m[m
+[0m2022-05-30 16:52:10 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> [mirai:image:{33F6646A-F6EB-F267-3E5D-1C93788A475B}.jpg][0m[m
+[0m2022-05-30 16:52:13 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 😡😡😡[0m[m
+[0m2022-05-30 16:54:43 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> [mirai:at:1784958674] 你是什么几把[0m[m
+[0m2022-05-30 16:54:43 V/Bot.1784958674: Group(883989823) <- [mirai:quote:[3962],[234612393]]啊尼~[0m[m
+[0m2022-05-30 16:55:11 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kggcos[0m[m
+[0m2022-05-30 16:55:12 V/Bot.1784958674: Group(883989823) <- [mirai:image:{849D3014-38BB-A2CF-C4D6-C7B8D3E2C066}.jpg][0m[m
+[0m2022-05-30 16:55:25 V/Bot.1784958674: Event: BotOfflineEvent.Dropped(bot=Bot(1784958674), cause=HeartbeatFailedException: 1784958674.AliveHeartbeat, recoverable=true, cause=PacketTimeoutException(message=1784958674.AliveHeartbeat Scheduler: Timeout receiving action response, cause=kotlinx.coroutines.TimeoutCancellationException: Timed out waiting for 5000 ms), reconnect=true)[0m[m
+[91m2022-05-30 16:55:25 W/Bot.1784958674: Connection lost, reconnecting... (HeartbeatFailedException: 1784958674.AliveHeartbeat, recoverable=true, cause=PacketTimeoutException(message=1784958674.AliveHeartbeat Scheduler: Timeout receiving action response, cause=kotlinx.coroutines.TimeoutCancellationException: Timed out waiting for 5000 ms))[0m[m
+[92m2022-05-30 16:55:25 I/Bot.1784958674: Saved account secrets to local cache for fast login.[0m[m
+[92m2022-05-30 16:55:25 I/Bot.1784958674: Login successful.[0m[m
+[0m2022-05-30 16:55:25 V/Bot.1784958674: Event: BotOnlineEvent(bot=Bot(1784958674))[0m[m
+[0m2022-05-30 16:55:25 V/Bot.1784958674: Event: BotReloginEvent(bot=Bot(1784958674), cause=null)[0m[m
+[92m2022-05-30 16:55:25 I/Bot.1784958674: Reconnected successfully in 0.279s.[0m[m
+[0m2022-05-30 16:55:57 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> khg来点[0m[m
+[0m2022-05-30 16:56:16 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kgg来点[0m[m
+[0m2022-05-30 16:56:16 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kggcat[0m[m
+[0m2022-05-30 16:56:16 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kgg来点[0m[m
+[0m2022-05-30 16:56:17 V/Bot.1784958674: Group(883989823) <- [mirai:image:{F489286E-AD5A-7B90-F859-3B5DBD377AD6}.jpg][0m[m
+[92m2022-05-30 16:56:18 I/stdout: 16:56:18.795 [nioEventLoopGroup-2-1] DEBUG io.netty.buffer.PoolThreadCache - Freed 17 thread-local buffer(s) from thread: nioEventLoopGroup-2-1[0m[m
+[92m2022-05-30 16:56:18 I/stdout: [0m[m
+[0m2022-05-30 16:56:19 V/Bot.1784958674: Group(883989823) <- [mirai:image:{92F3FBF7-5A5F-3858-CB5B-72F699279859}.jpg][0m[m
+[0m2022-05-30 16:56:21 V/Bot.1784958674: Group(883989823) <- [mirai:image:{802EBF61-B756-6C37-80B6-D80A94FD8752}.gif][0m[m
+[0m2022-05-30 16:56:25 V/Bot.1784958674: [智障机器人试验场(883989823)] Hide on bush(75046675) -> kggcat[0m[m
+[0m2022-05-30 16:56:30 V/Bot.1784958674: Group(883989823) <- [mirai:image:{2948D346-ADD3-7B77-8466-26B56B66FDF3}.gif][0m[m
+[0m2022-05-30 16:57:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> [睁眼][0m[m
+[0m2022-05-30 16:57:24 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 换桶了[0m[m
+[0m2022-05-30 16:57:27 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 坏[0m[m
+[0m2022-05-30 16:59:07 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 还给我分一个靠过道的13J[0m[m
+[0m2022-05-30 16:59:17 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 紧急换了个15A[0m[m
+[0m2022-05-30 16:59:24 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> [mirai:image:{09623FD6-3C2B-3059-9691-C01A8A70B329}.jpg][0m[m
+[0m2022-05-30 17:00:19 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 坏了[0m[m
+[0m2022-05-30 17:00:33 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 真换机了啊[0m[m
+[0m2022-05-30 17:00:38 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{6DB8D47D-6D88-2BA8-3315-3C91BE0598DE}.gif][0m[m
+[0m2022-05-30 17:01:16 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> B-2036[0m[m
+[0m2022-05-30 17:01:23 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> [mirai:image:{32697FD1-908B-1CE9-2330-A910531FBB17}.gif][0m[m
+[0m2022-05-30 17:04:25 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> [暗中观察][0m[m
+[0m2022-05-30 17:05:35 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> tmd[0m[m
+[0m2022-05-30 17:05:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 踢了[0m[m
+[0m2022-05-30 17:05:42 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 😡[0m[m
+[0m2022-05-30 17:05:51 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 😡[0m[m
+[0m2022-05-30 17:06:11 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 😡[0m[m
+[0m2022-05-30 17:06:12 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 苏星瑶(2578321762) -> 😡[0m[m
+[0m2022-05-30 17:06:34 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 往好了想[0m[m
+[0m2022-05-30 17:06:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 至少第二个数是7不是3[0m[m
+[0m2022-05-30 17:12:40 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 那确实[0m[m
+[0m2022-05-30 17:12:52 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 换738真要杀人了[0m[m
+[0m2022-05-30 17:15:11 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] ZY21Ф5(895817050) -> 有钱人挑机型[0m[m
+[0m2022-05-30 17:15:24 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1916 HHY FBO：CKG/ZUCK(850539835) -> 有钱人坐飞机[0m[m
+[0m2022-05-30 17:15:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] ZY21Ф5(895817050) -> 像我这种穷人都是挑最便宜的机票[0m[m
+[0m2022-05-30 17:15:39 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] ZY21Ф5(895817050) -> [mirai:image:{BE9D5985-9E7C-31BB-DFFC-9E3330C19824}.jpg][0m[m
+[0m2022-05-30 17:15:50 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1916 HHY FBO：CKG/ZUCK(850539835) -> 像我这种穷人都是走路（）[0m[m
+[0m2022-05-30 17:16:16 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 因为平时南航比国航便宜50块（[0m[m
+[0m2022-05-30 17:16:30 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 然后就从来没坐过国航[0m[m
+[0m2022-05-30 17:16:34 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice(1091197848) -> 坐过好几次77W[0m[m
+[0m2022-05-30 17:16:40 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 更不用说748744了[0m[m
+[0m2022-05-30 17:16:45 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> [mirai:image:{6DB8D47D-6D88-2BA8-3315-3C91BE0598DE}.gif][0m[m
+[0m2022-05-30 17:16:49 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice(1091197848) -> 东海岸飞欧洲[0m[m
+[0m2022-05-30 17:16:49 V/Bot.1784958674: Event: GroupRecall(bot=Bot(1784958674), authorId=463945807, messageIds=[287680], messageInternalIds=[2112517096], messageTime=1653902208, operator=NormalMember(463945807), group=Group(1001093960), author=NormalMember(463945807))[0m[m
+[0m2022-05-30 17:16:52 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> [mirai:image:{196ACC52-AD85-A06F-9D61-05910E5163F3}.jpg][0m[m
+[0m2022-05-30 17:17:06 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice(1091197848) -> 也不对，很多可能是787，有一次EWR-FRA应该是77W[0m[m
+[0m2022-05-30 17:17:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] ZY21Ф5(895817050) -> 笑死，都没坐过几次南航[0m[m
+[0m2022-05-30 17:17:17 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 这次是国航公务和两家的经济都同价[0m[m
+[0m2022-05-30 17:17:27 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] ZY21Ф5(895817050) -> 都是东航海航甚至首航[0m[m
+[0m2022-05-30 17:17:42 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换机就踢了gxl(963425360) -> 谁让你南航贵150还晚[0m[m
+[0m2022-05-30 17:17:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 俺从来没坐过CZ[0m[m
+[0m2022-05-30 17:18:02 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] BY2102 SplayXu #群YM/YPM bot(694495325) -> 都是CA，MU，HU[0m[m
+[0m2022-05-30 17:19:13 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice(1091197848) -> 其实我有里程可以出CA的票[0m[m
+[0m2022-05-30 17:19:23 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice(1091197848) -> [mirai:image:{3973BF57-4229-0EEE-5489-4A685B25611A}.jpg][0m[m
+[0m2022-05-30 17:19:24 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice(1091197848) -> 不过18k里程也不便宜[0m[m
+[0m2022-05-30 17:19:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice(1091197848) -> 如果你3000块钱以下能买到的话[0m[m
+[0m2022-05-30 17:19:50 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice(1091197848) -> 哦，不对，当我没说[0m[m
+[0m2022-05-30 17:19:52 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] Apprentice(1091197848) -> 这是经济舱[0m[m
+[0m2022-05-30 17:36:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1917+85 梁秋月(953965908) -> [mirai:image:{668300F9-B86E-F4AA-2C57-696229E64B3E}.jpg][0m[m
+[0m2022-05-30 17:37:03 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1917+85 梁秋月(953965908) -> [mirai:image:{3D161229-282F-AFCF-CF67-98BDFF35F073}.gif][0m[m
+[0m2022-05-30 17:37:14 V/Bot.1784958674: Event: MemberCardChangeEvent(origin=1901 TNX/ZGTX 鱼头bot#换机就踢了gxl, new=1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl, member=NormalMember(963425360))[0m[m
+[31m2022-05-30 17:37:14 E/kggbot: Exception in coroutine Plugin org.OOP.mirai of kggbot
+net.mamoe.mirai.contact.PermissionDeniedException: Permission denied: required ADMINISTRATOR, got actual MEMBER for Bot(1784958674) in group 1001093960
+	at net.mamoe.mirai.internal.contact.NormalMemberImpl.setNameCard(NormalMemberImpl.kt:259)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$7.invokeSuspend(PluginMain.kt:542)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$7.invoke(PluginMain.kt)
+	at org.ritsu.mirai.plugin.PluginMain$onEnable$7.invoke(PluginMain.kt)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invokeSuspend(EventChannel.kt:455)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invoke(EventChannel.kt)
+	at net.mamoe.mirai.event.EventChannel$subscribeAlways$1.invoke(EventChannel.kt)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invokeSuspend(InternalEventListeners.kt:50)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invoke(InternalEventListeners.kt)
+	at net.mamoe.mirai.internal.event.Handler$onEvent$2.invoke(InternalEventListeners.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at net.mamoe.mirai.internal.event.Handler.onEvent(InternalEventListeners.kt:50)
+	at net.mamoe.mirai.internal.event.InternalEventListenersKt.process(InternalEventListeners.kt:166)
+	at net.mamoe.mirai.internal.event.InternalEventListenersKt.callAndRemoveIfRequired(InternalEventListeners.kt:115)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastImpl(Event.kt:174)
+	at net.mamoe.mirai.IMirai.broadcastEvent$suspendImpl(IMirai.kt:319)
+	at net.mamoe.mirai.IMirai.broadcastEvent(IMirai.kt)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent$suspendImpl(MiraiImpl.kt:303)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent(MiraiImpl.kt)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic$suspendImpl(Event.kt:161)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic(Event.kt)
+	at net.mamoe.mirai.event.EventKt.broadcast(Event.kt:146)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invokeSuspend(EventDispatcher.kt:90)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invoke(EventDispatcher.kt)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl$broadcast$2.invoke(EventDispatcher.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl.broadcast$suspendImpl(EventDispatcher.kt:89)
+	at net.mamoe.mirai.internal.network.components.EventDispatcherImpl.broadcast(EventDispatcher.kt)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent$suspendImpl(MiraiImpl.kt:308)
+	at net.mamoe.mirai.internal.MiraiImpl.broadcastEvent(MiraiImpl.kt)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic$suspendImpl(Event.kt:161)
+	at net.mamoe.mirai.event._EventBroadcast.broadcastPublic(Event.kt)
+	at net.mamoe.mirai.event.EventKt.broadcast(Event.kt:146)
+	at net.mamoe.mirai.internal.network.notice.group.GroupMessageProcessor.processImpl(GroupMessageProcessor.kt:227)
+	at net.mamoe.mirai.internal.network.notice.group.GroupMessageProcessor.processImpl(GroupMessageProcessor.kt:44)
+	at net.mamoe.mirai.internal.network.components.SimpleNoticeProcessor.process(NoticeProcessorPipeline.kt:300)
+	at net.mamoe.mirai.internal.network.components.NoticeProcessorPipelineImpl.process$suspendImpl(NoticeProcessorPipeline.kt:236)
+	at net.mamoe.mirai.internal.network.components.NoticeProcessorPipelineImpl.process(NoticeProcessorPipeline.kt)
+	at net.mamoe.mirai.internal.network.protocol.packet.chat.receive.OnlinePushPbPushGroupMsg.decode(OnlinePush.PbPushGroupMsg.kt:37)
+	at net.mamoe.mirai.internal.network.components.PacketCodecImpl.processBody(PacketCodec.kt:419)
+	at net.mamoe.mirai.internal.network.impl.netty.NettyNetworkHandler$PacketDecodePipeline$send$1.invokeSuspend(NettyNetworkHandler.kt:190)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[0m[m
+[0m2022-05-30 17:37:14 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> [mirai:image:{A9113B90-DAB3-6CAB-816E-9084785445FE}.gif][0m[m
+[0m2022-05-30 17:37:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> 8633[0m[m
+[0m2022-05-30 17:37:25 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> ？[0m[m
+[0m2022-05-30 17:39:05 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 应该是（？[0m[m
+[0m2022-05-30 17:39:10 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> [mirai:image:{F5445838-B0D4-05B6-883A-3A590147191A}.jpg][0m[m
+[0m2022-05-30 17:39:45 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1917+85 梁秋月(953965908) -> CKG-LXA[0m[m
+[0m2022-05-30 17:39:50 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1917+85 梁秋月(953965908) -> 应该是（[0m[m
+[0m2022-05-30 17:39:57 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> [mirai:image:{902BBC5A-9406-15EA-30FC-2CA4C89F8030}.jpg][0m[m
+[0m2022-05-30 17:40:08 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 草 点错表情包了[0m[m
+[0m2022-05-30 17:40:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> 😡[0m[m
+[0m2022-05-30 17:40:25 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1917+85 梁秋月(953965908) -> 😈[0m[m
+[0m2022-05-30 17:40:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> [mirai:image:{CB0C3529-8134-1899-8059-32EC8F34FD32}.gif][0m[m
+[0m2022-05-30 17:40:29 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2021一般通过白给教徒#通辽选帝侯(1076079235) -> [mirai:image:{C8900B74-C65D-61F9-C895-4FCB34340A23}.jpg][0m[m
+[0m2022-05-30 17:41:39 V/Bot.1784958674: Hide on bush(75046675) -> 来点[0m[m
+[0m2022-05-30 17:41:39 V/Bot.1784958674: Friend(75046675) <- [mirai:image:{EB310250-B333-073F-6343-E99A559D31A0}.jpg][0m[m
+[0m2022-05-30 17:48:33 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> [mirai:flash:{3BD04CAA-38DC-84BF-D039-456C74D11630}.jpg][0m[m
+[0m2022-05-30 17:48:34 V/Bot.1784958674: Group(1001093960) <- [mirai:image:{3BD04CAA-38DC-84BF-D039-456C74D11630}.jpg]\n下载地址: http://gchat.qpic.cn/gchatpic_new/0/0-0-3BD04CAA38DC84BFD039456C74D11630/0?term=2[0m[m
+[0m2022-05-30 17:48:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 机性恋真恶心[0m[m
+[0m2022-05-30 17:48:43 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 机性恋蒸鹅心[0m[m
+[0m2022-05-30 17:48:54 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 草[0m[m
+[0m2022-05-30 17:48:55 V/Bot.1784958674: Event: GroupRecall(bot=Bot(1784958674), authorId=1784958674, messageIds=[287712], messageInternalIds=[1506653675], messageTime=1653904116, operator=NormalMember(2680678616), group=Group(1001093960), author=NormalMember(1784958674))[0m[m
+[0m2022-05-30 17:48:56 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> ？[0m[m
+[0m2022-05-30 17:49:04 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1823 ZGGG/ZBAA/ZLXY xzc(1015205954) -> 怎么bot还有这功能[0m[m
+[0m2022-05-30 17:49:05 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 什么缺德功能[0m[m
+[0m2022-05-30 17:49:16 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 有这功能建议把bot飞了[0m[m
+[0m2022-05-30 17:49:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 啥功能[0m[m
+[0m2022-05-30 17:49:35 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> 啥功能[0m[m
+[0m2022-05-30 17:49:53 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> [mirai:quote:[287696],[0]]我超[0m[m
+[0m2022-05-30 17:50:09 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> 难不成是破闪照[0m[m
+[0m2022-05-30 17:50:10 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 但是感觉不是8633吧[0m[m
+[0m2022-05-30 17:50:12 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> 我试试[0m[m
+[0m2022-05-30 17:50:29 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> [mirai:flash:{EA383BEA-06A7-AA3A-DB3A-3C96F13094AE}.jpg][0m[m
+[0m2022-05-30 17:50:29 V/Bot.1784958674: Group(1001093960) <- [mirai:image:{EA383BEA-06A7-AA3A-DB3A-3C96F13094AE}.jpg]\n下载地址: http://gchat.qpic.cn/gchatpic_new/0/0-0-EA383BEA06A7AA3ADB3A3C96F13094AE/0?term=2[0m[m
+[0m2022-05-30 17:50:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> 我草？[0m[m
+[0m2022-05-30 17:50:45 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 我草？[0m[m
+[0m2022-05-30 17:50:51 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> 逆天[0m[m
+[0m2022-05-30 17:50:59 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> 这可不敢留在群里[0m[m
+[0m2022-05-30 17:51:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1901 TNX/ZGTX 鱼头bot#换窄体就踢了gxl(963425360) -> [mirai:at:463945807] [0m[m
+[0m2022-05-30 17:51:19 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 8633是从风挡中间裂的吗？[0m[m
+[0m2022-05-30 17:52:42 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 建议飞了（[0m[m
+[0m2022-05-30 17:53:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 权少经典复刻[0m[m
+[0m2022-05-30 17:53:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 建议对bot进行代码审查（）[0m[m
+[0m2022-05-30 18:12:23 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2009-Asada Shionon(2218155073) -> [mirai:image:{499DF58A-FBDC-00F1-A6F5-688CBE419197}.jpg][0m[m
+[0m2022-05-30 18:12:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2009-Asada Shionon(2218155073) -> 草，wtd[0m[m
+[0m2022-05-30 18:13:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 草，我一直在想重庆飞洛杉矶为什么是8633[0m[m
+[0m2022-05-30 18:13:19 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [惊恐][惊恐][惊恐][0m[m
+[0m2022-05-30 18:13:40 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2009-Asada Shionon(2218155073) -> 不过我怎么觉得国内的相关机构不会给剧组资料呢[0m[m
+[0m2022-05-30 18:14:55 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1314 汤圆 CDG/ZSJN(517943247) -> 能比釜山拍得好就是胜利（[0m[m
+[0m2022-05-30 18:15:44 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 1815[0m[m
+[0m2022-05-30 18:16:13 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> [mirai:quote:[287741],[0]]8633报告是公开的[0m[m
+[0m2022-05-30 18:25:06 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1314 汤圆 CDG/ZSJN(517943247) -> https://safety.caac.gov.cn/index/download.act?checkSum=476b398b25\n66a79925725841d65c2b70&fileName=SWCAAC-SIR-2018-1_最终报告_正文.pdf[0m[m
+[0m2022-05-30 18:26:19 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1314 汤圆 CDG/ZSJN(517943247) -> （好像是这个地址[0m[m
+[0m2022-05-30 18:27:20 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1923 ZBSH ATIS 114.51(1070532023) -> 现在好像打不开了[0m[m
+[0m2022-05-30 18:28:01 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1314 汤圆 CDG/ZSJN(517943247) -> 那就是地址不对[0m[m
+[0m2022-05-30 18:31:00 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1314 汤圆 CDG/ZSJN(517943247) -> 两个月前刚通读过[0m[m
+[0m2022-05-30 18:43:30 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 回家直接开炫杨梅[0m[m
+[0m2022-05-30 18:43:40 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{B812F72B-90AE-DE33-BC3B-C3290B1D68FF}.jpg][0m[m
+[0m2022-05-30 18:43:46 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 这下真能吃乌江江团了[0m[m
+[0m2022-05-30 18:48:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1715 hzz←求带找他(1625585242) -> 好天[0m[m
+[0m2022-05-30 18:49:22 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 好天[0m[m
+[0m2022-05-30 18:49:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> hzz不会还要去吧[0m[m
+[0m2022-05-30 18:49:28 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> [mirai:image:{3EC2D5B6-2D47-CC34-5A44-C13C9E3E2FAC}.jpg][0m[m
+[0m2022-05-30 18:49:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 我今天可能9点就睡了[0m[m
+[0m2022-05-30 18:49:39 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> [mirai:image:{DCC827E3-C001-8382-2FEB-DD5705F15745}.gif][0m[m
+[0m2022-05-30 18:49:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 柱哥太肝了[0m[m
+[0m2022-05-30 18:49:55 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1815 Istmiregal ZUUU(2680678616) -> 天天熬[0m[m
+[0m2022-05-30 18:50:24 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 草 给导师发“收到” 输入法给我打成了“收收味”[0m[m
+[0m2022-05-30 18:50:30 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 还好撤回的快[0m[m
+[0m2022-05-30 18:51:05 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1839 KandaS #CAN-SZX-HKG #本群不讨论改放军哈(463945807) -> 都怪你群平时不收收味儿[0m[m
+[0m2022-05-30 18:51:05 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 草[0m[m
+[0m2022-05-30 18:51:08 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 导师收收味[0m[m
+[0m2022-05-30 18:52:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> [mirai:image:{9FC0E56D-CCB4-FC6E-93B9-C3F9C9960C81}.gif][0m[m
+[0m2022-05-30 18:53:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2174 dy 群潜水教练(2083472411) -> 好！[0m[m
+[0m2022-05-30 18:53:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2174 dy 群潜水教练(2083472411) -> [mirai:image:{4FC942C5-A4F3-8AFB-4C25-327BBEBC2EEF}.jpg][0m[m
+[0m2022-05-30 18:54:26 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> 好耶[0m[m
+[0m2022-05-30 18:55:00 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2015 wyke ZSOF 群鱼头人懒狗(729233736) -> 话说上海6.1好像要解封了来着[0m[m
+[0m2022-05-30 18:55:11 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2077幻梦 ZSQZ(652758705) -> 是[0m[m
+[0m2022-05-30 18:56:01 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2174 dy 群潜水教练(2083472411) -> [沧桑]白山疫情啥时候能好一好[0m[m
+[0m2022-05-30 18:56:22 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2174 dy 群潜水教练(2083472411) -> 沿着鸭绿江这几个县没一个守住的[辣眼睛][0m[m
+[0m2022-05-30 18:56:36 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{88BEB770-E992-5238-2FEB-DC74EB74806D}.jpg][0m[m
+[0m2022-05-30 18:57:15 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 小桶，带两个整流片[0m[m
+[0m2022-05-30 18:57:31 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 像不像这个👿👿[0m[m
+[0m2022-05-30 18:57:37 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 好可爱[0m[m
+[0m2022-05-30 18:57:43 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2174 dy 群潜水教练(2083472411) -> 擦[0m[m
+[0m2022-05-30 18:57:51 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2174 dy 群潜水教练(2083472411) -> 这么一说还真像[0m[m
+[0m2022-05-30 18:57:53 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2174 dy 群潜水教练(2083472411) -> [托腮][0m[m
+[0m2022-05-30 18:59:48 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> [mirai:quote:[287775],[1186091866]]虽然但是，那玩意不是涡流发生器来着?[0m[m
+[0m2022-05-30 18:59:57 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 1805-鱼头人二号(244553015) -> [mirai:image:{F9A58AB8-813C-C9EA-62DF-94BDB6321B8D}.jpg][0m[m
+[0m2022-05-30 19:00:02 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2105 zjy戒涩小助手，提醒抓给#群菜菜二胡卵子(2716630985) -> 绿条条[0m[m
+[0m2022-05-30 19:00:04 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 事[0m[m
+[0m2022-05-30 19:00:13 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 我不知道学名叫啥[0m[m
+[0m2022-05-30 19:00:18 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> [mirai:image:{33F6646A-F6EB-F267-3E5D-1C93788A475B}.jpg][0m[m
+[0m2022-05-30 19:00:46 V/Bot.1784958674: [BUAA-民航飞友联合(1001093960)] 2023 KWE 鱼头人，但是是乌江江团(1181390241) -> 只晓得是这个用处[0m[m
+[0m2022-05-30 19:01:50 V/Bot.1784958674: Event: BotOfflineEvent.Active(bot=Bot(1784958674), cause=kotlinx.coroutines.JobCancellationException: Job was cancelled; job=SupervisorJobImpl{Cancelling}@5a475624, reconnect=false)[0m[m
+[92m2022-05-30 19:01:50 I/Bot.1784958674: Bot cancelled: Job was cancelled[0m[m

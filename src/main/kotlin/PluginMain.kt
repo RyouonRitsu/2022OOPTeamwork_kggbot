@@ -380,9 +380,9 @@ object PluginMain : KotlinPlugin(
                 }
             }
             //处理闪照
-            message.filterIsInstance<FlashImage>().forEach {
-                group.sendMessage(it.image + PlainText("\n下载地址: ${it.image.queryUrl()}"))
-            }
+//            message.filterIsInstance<FlashImage>().forEach {
+//                group.sendMessage(it.image + PlainText("\n下载地址: ${it.image.queryUrl()}"))
+//            }
             /*
             if (message.contentToString() == "hi") {
                 //群内发送
