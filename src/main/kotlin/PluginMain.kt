@@ -287,9 +287,9 @@ object PluginMain : KotlinPlugin(
                         group.sendMessage(message.quote() + "你要查询哪个机场呢，在后面加上它的ICAO代码吧~")
                     else
                         group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
-                } else if (cmd == "来点") {
+                } else if (cmd.startsWith("来点")) {
                     val id: String
-                    val (msg, result) = getRandomPixivPic(sender.id)
+                    val (msg, result) = getRandomPixivPic(sender.id, cmd.replaceFirst("来点", ""))
                     if (result == "./data/Image/temp_pixiv.jpg" || result == "./data/Image/temp_pixiv.png") {
                         val inputStream = File(result).toExternalResource()
                         id = group.uploadImage(inputStream).imageId
@@ -481,9 +481,9 @@ object PluginMain : KotlinPlugin(
                         }
                         sender.sendMessage(Image(id))
                     }
-                } else if (message.contentToString() == "来点") {
+                } else if (message.contentToString().startsWith("来点")) {
                     val id: String
-                    val (msg, r) = getRandomPixivPic(75046675)
+                    val (msg, r) = getRandomPixivPic(75046675, message.contentToString().replaceFirst("来点", ""))
                     if (r == "./data/Image/temp_pixiv.jpg" || r == "./data/Image/temp_pixiv.png") {
                         val inputStream = File(r).toExternalResource()
                         id = sender.uploadImage(inputStream).imageId

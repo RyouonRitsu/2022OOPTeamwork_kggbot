@@ -26,7 +26,7 @@ fun getMetar(loc: String): String {
                     var taf = body.substring(body.indexOf("<code>") + 6, body.indexOf("</code>"))
                         .replace("<br/>&nbsp;&nbsp;", "")
                     if (!taf.contains("TAF")) taf = "TAF $taf"
-                    metar + "\n" + taf + "\n"
+                    metar + "\n\n" + taf + "\n"
                 } catch (e: Exception) {
                     "解析错误: ${e.message}\n"
                 }
