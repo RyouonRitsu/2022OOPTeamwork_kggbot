@@ -4,7 +4,11 @@ import com.alibaba.fastjson2.JSON
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.ritsu.mirai.plugin.entity.Administrator
+import org.ritsu.mirai.plugin.entity.loadImage
+import org.ritsu.mirai.plugin.entity.save
+import java.io.File
 import java.net.Proxy
+
 
 fun getRandomPixivPic(id: Long, info: String? = null): Pair<String, String?> {
     if (id !in Administrator.administrators) return Pair("你不是管理员, 无法使用此命令", null)
@@ -25,14 +29,11 @@ fun getRandomPixivPic(id: Long, info: String? = null): Pair<String, String?> {
                 val jsonObject = JSON.parseObject(body)
                 val data = jsonObject.getJSONArray("data").getJSONObject(0)
                 val original = data.getJSONObject("urls").getString("original")
-                val (code, msg) = download(
-                    original,
+                val path =
                     if (original.endsWith("jpg")) "./data/Image/temp_pixiv.jpg" else "./data/Image/temp_pixiv.png"
-                )
-                if (code == 200 && msg == null) Pair(
-                    "Success!",
-                    if (original.endsWith("jpg")) "./data/Image/temp_pixiv.jpg" else "./data/Image/temp_pixiv.png"
-                )
+                val (code, msg) = download(original, path)
+                loadImage(File(path)).save(File(path))
+                if (code == 200 && msg == null) Pair("Success!", path)
                 else Pair("Error: $code, $msg", original)
             }
             else -> Pair("Error: ${response.code}\n", null)
