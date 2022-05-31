@@ -4,8 +4,6 @@ import com.alibaba.fastjson2.JSON
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.ritsu.mirai.plugin.entity.Administrator
-import java.net.InetAddress
-import java.net.InetSocketAddress
 import java.net.Proxy
 
 fun getRandomPixivPic(id: Long): Pair<String, String?> {
@@ -20,8 +18,14 @@ fun getRandomPixivPic(id: Long): Pair<String, String?> {
             val jsonObject = JSON.parseObject(body)
             val data = jsonObject.getJSONArray("data").getJSONObject(0)
             val original = data.getJSONObject("urls").getString("original")
-            val (code, msg) = download(original, "./data/Image/temp_pixiv.jpg")
-            if (code == 200 && msg == null) Pair("Success!", "./data/Image/temp_pixiv.jpg")
+            val (code, msg) = download(
+                original,
+                if (original.endsWith("jpg")) "./data/Image/temp_pixiv.jpg" else "./data/Image/temp_pixiv.png"
+            )
+            if (code == 200 && msg == null) Pair(
+                "Success!",
+                if (original.endsWith("jpg")) "./data/Image/temp_pixiv.jpg" else "./data/Image/temp_pixiv.png"
+            )
             else Pair("Error: $code, $msg", original)
         }
         else -> Pair("Error: ${response.code}\n", null)

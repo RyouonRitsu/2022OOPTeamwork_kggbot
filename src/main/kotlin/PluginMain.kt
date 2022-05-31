@@ -290,7 +290,7 @@ object PluginMain : KotlinPlugin(
                 } else if (cmd == "来点") {
                     val id: String
                     val (msg, result) = getRandomPixivPic(sender.id)
-                    if (result == "./data/Image/temp_pixiv.jpg") {
+                    if (result == "./data/Image/temp_pixiv.jpg" || result == "./data/Image/temp_pixiv.png") {
                         val inputStream = File(result).toExternalResource()
                         id = group.uploadImage(inputStream).imageId
                         withContext(Dispatchers.IO) {
@@ -484,7 +484,7 @@ object PluginMain : KotlinPlugin(
                 } else if (message.contentToString() == "来点") {
                     val id: String
                     val (msg, r) = getRandomPixivPic(75046675)
-                    if (r == "./data/Image/temp_pixiv.jpg") {
+                    if (r == "./data/Image/temp_pixiv.jpg" || r == "./data/Image/temp_pixiv.png") {
                         val inputStream = File(r).toExternalResource()
                         id = sender.uploadImage(inputStream).imageId
                         withContext(Dispatchers.IO) {
