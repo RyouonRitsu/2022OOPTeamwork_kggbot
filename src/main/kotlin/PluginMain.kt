@@ -283,10 +283,7 @@ object PluginMain : KotlinPlugin(
                         group.sendMessage(At(sender).followedBy(PlainText(getWeather(loc))))
                     }
                 } else if (cmd.startsWith("metar")) {
-                    if (cmd == "metar")
-                        group.sendMessage(message.quote() + "你要查询哪个机场呢，在后面加上它的ICAO代码吧~")
-                    else
-                        group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
+                    group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
                 } else if (cmd.startsWith("来点")) {
                     val id: String
                     val (msg, result) = getRandomPixivPic(sender.id, cmd.replaceFirst("来点", ""))
@@ -301,8 +298,7 @@ object PluginMain : KotlinPlugin(
                     else group.sendMessage(message.quote() + msg)
                 } else if (cmd.contains("油价")) {
                     val (msg, result) = getOil(cmd.replaceFirst("油价", ""))
-                    if (result != null) group.sendMessage(message.quote() + result)
-                    else group.sendMessage(message.quote() + msg)
+                    group.sendMessage(message.quote() + (result ?: msg))
                 } else if (cmd.startsWith("舔")) {
                     val user = searchFirstUserByAt(message)
                     if (user == null) group.sendMessage(message.quote() + "要我舔谁呢？")
@@ -375,6 +371,8 @@ object PluginMain : KotlinPlugin(
                         }
                         group.sendMessage(Image(id))
                     }
+                } else if (cmd.startsWith("文章")) {
+                    group.sendMessage(message.quote() + getArticle(cmd.replaceFirst("文章", "")))
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -522,8 +520,9 @@ object PluginMain : KotlinPlugin(
                     }
                 } else if (message.contentToString().contains("油价")) {
                     val (msg, r) = getOil(message.contentToString().replaceFirst("油价", ""))
-                    if (r != null) sender.sendMessage(message.quote() + r)
-                    else sender.sendMessage(message.quote() + msg)
+                    sender.sendMessage(message.quote() + (r ?: msg))
+                } else if (message.contentToString().startsWith("文章")) {
+                    sender.sendMessage(message.quote() + getArticle(message.contentToString().replaceFirst("文章", "")))
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
