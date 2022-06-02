@@ -377,6 +377,8 @@ object PluginMain : KotlinPlugin(
                     group.sendMessage(message.quote() + encode(cmd.replaceFirst("en", "")))
                 } else if (cmd.startsWith("de")) {
                     group.sendMessage(message.quote() + decode(cmd.replaceFirst("de", "")))
+                } else if ("是什么垃圾" in cmd) {
+                    group.sendMessage(message.quote() + trash(cmd.replace("是什么垃圾", "")))
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -531,6 +533,8 @@ object PluginMain : KotlinPlugin(
                     sender.sendMessage(message.quote() + encode(message.contentToString().replaceFirst("en", "")))
                 } else if (message.contentToString().startsWith("de")) {
                     sender.sendMessage(message.quote() + decode(message.contentToString().replaceFirst("de", "")))
+                } else if ("是什么垃圾" in message.contentToString()) {
+                    sender.sendMessage(message.quote() + trash(message.contentToString().replace("是什么垃圾", "")))
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
