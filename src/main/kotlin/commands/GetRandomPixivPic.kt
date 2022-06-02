@@ -10,15 +10,19 @@ import java.io.File
 import java.net.Proxy
 
 
-fun getRandomPixivPic(id: Long, info: String? = null): Pair<String, String?> {
+fun getRandomPixivPic(id: Long, info: String): Pair<String, String?> {
     if (id !in Administrator.administrators) return Pair("你不是管理员, 无法使用此命令", null)
     var url = "https://api.lolicon.app/setu/v2?"
-    if (info != null) {
-        if (info.startsWith("r18") || info.startsWith("R18")) url += "r18=1&"
-        val tag = info.replace("r18", "").replace("R18", "")
-        val list = tag.split("&")
-        list.forEach { s -> url += "tag=$s&" }
-    }
+    val tag: String
+    if (info.startsWith("mix")) {
+        url += "r18=2&"
+        tag = info.replaceFirst("mix", "")
+    } else if (info.startsWith("r18") || info.startsWith("R18")) {
+        url += "r18=1&"
+        tag = info.replace("r18", "").replace("R18", "")
+    } else tag = info
+    val list = tag.split("&")
+    list.forEach { s -> url += "tag=$s&" }
     try {
         val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
         val request = Request.Builder().get().url(url).build()
