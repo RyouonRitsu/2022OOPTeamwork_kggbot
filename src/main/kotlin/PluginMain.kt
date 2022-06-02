@@ -385,6 +385,17 @@ object PluginMain : KotlinPlugin(
                     group.sendMessage(message.quote() + decode(cmd.replaceFirst("de", "")))
                 } else if ("是什么垃圾" in cmd) {
                     group.sendMessage(message.quote() + trash(cmd.replace("是什么垃圾", "")))
+                } else if (cmd == "摸鱼") {
+                    val (msg, result) = getCalendar()
+                    if (result == null) group.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(result).toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        group.sendMessage(Image(id))
+                    }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -544,6 +555,17 @@ object PluginMain : KotlinPlugin(
                     sender.sendMessage(message.quote() + decode(message.contentToString().replaceFirst("de", "")))
                 } else if ("是什么垃圾" in message.contentToString()) {
                     sender.sendMessage(message.quote() + trash(message.contentToString().replace("是什么垃圾", "")))
+                } else if (message.contentToString() == "摸鱼") {
+                    val (msg, r) = getCalendar()
+                    if (r == null) sender.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(r).toExternalResource()
+                        val id = sender.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        sender.sendMessage(Image(id))
+                    }
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
