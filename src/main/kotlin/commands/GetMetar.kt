@@ -21,9 +21,9 @@ fun getMetar(loc: String): String {
             -1 -> {
                 try {
                     if (body.indexOf(">$airport") == -1) return "No METAR found"
-                    body = body.substring(body.indexOf(">$airport") + 1, body.length)
+                    body = body.substring(body.indexOf(">$airport") + 1)
                     val metar = body.substring(0, body.indexOf("</code>"))
-                    body = body.substring(body.indexOf("<br/>"), body.length)
+                    body = body.substring(body.indexOf("<br/>"))
                     var taf = body.substring(body.indexOf("<code>") + 6, body.indexOf("</code>"))
                         .replace("<br/>&nbsp;&nbsp;", "")
                     if (!taf.contains("TAF")) taf = "TAF $taf"

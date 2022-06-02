@@ -1,6 +1,6 @@
 {
-    "friendListSeq": 31,
-    "timeStamp": 17,
+    "friendListSeq": 37,
+    "timeStamp": 19,
     "list": [
         {
             "uin": 66600000,
@@ -11,6 +11,16 @@
             "uin": 75046675,
             "nick": "Hide on bush",
             "remark": "Hide on bush"
+        },
+        {
+            "uin": 895069386,
+            "nick": "👻",
+            "remark": "👻"
+        },
+        {
+            "uin": 1412660661,
+            "nick": "云之彼端",
+            "remark": "云之彼端"
         },
         {
             "uin": 1780645196,

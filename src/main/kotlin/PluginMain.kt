@@ -93,14 +93,14 @@ object PluginMain : KotlinPlugin(
             //群消息
             //管理员命令
             if (sender.id in Administrator.administrators && message.contentToString().startsWith("**")) {
-                if (message.contentToString().contains("能量值")) {
+                if ("能量值" in message.contentToString()) {
                     group.sendMessage(
                         adjustUserEnergy(
                             searchFirstUserByAt(message),
                             message.contentToString().replaceBefore("能量值", "").replace("能量值", "").toIntOrNull()
                         )
                     )
-                } else if (message.contentToString().contains("查询")) {
+                } else if ("查询" in message.contentToString()) {
                     group.sendMessage(queryUserEnergy(searchFirstUserByAt(message)))
                 } else if ("小黑屋" in message.content) {
                     val userId = searchFirstUserByAt(message)
@@ -151,12 +151,12 @@ object PluginMain : KotlinPlugin(
                     if (result != "") sender.sendMessage(result)
                 } else if (cmd == "help") {
                     sender.sendMessage(Help.toString(Help.funcGroup).trim())
-                } else if (cmd.startsWith("我今天") && cmd.contains("吃什么")) {
+                } else if (cmd.startsWith("我今天") && "吃什么" in cmd) {
                     var type = cmd.replace("我今天", "")
                         .replaceAfter("吃什么", "").replace("吃什么", "")
                     var n: Int? = 1
                     var temp = cmd.replaceBefore("吃什么", "").replaceFirst("吃什么", "")
-                    if (cmd.contains("x")) {
+                    if ("x" in cmd) {
                         n = cmd.replaceBefore("x", "").replace("x", "").toIntOrNull()
                         temp = temp.replaceAfterLast("x", "").substringBeforeLast("x")
                     }
@@ -296,7 +296,7 @@ object PluginMain : KotlinPlugin(
                         group.sendMessage(Image(id))
                     } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
                     else group.sendMessage(message.quote() + msg)
-                } else if (cmd.contains("油价")) {
+                } else if ("油价" in cmd) {
                     val (msg, result) = getOil(cmd.replaceFirst("油价", ""))
                     group.sendMessage(message.quote() + (result ?: msg))
                 } else if (cmd.startsWith("舔")) {
@@ -373,6 +373,10 @@ object PluginMain : KotlinPlugin(
                     }
                 } else if (cmd.startsWith("文章")) {
                     group.sendMessage(message.quote() + getArticle(cmd.replaceFirst("文章", "")))
+                } else if (cmd.startsWith("en")) {
+                    group.sendMessage(message.quote() + encode(cmd.replaceFirst("en", "")))
+                } else if (cmd.startsWith("de")) {
+                    group.sendMessage(message.quote() + decode(cmd.replaceFirst("de", "")))
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -518,11 +522,15 @@ object PluginMain : KotlinPlugin(
                         val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
                         sender.sendMessage(getWeather(loc))
                     }
-                } else if (message.contentToString().contains("油价")) {
+                } else if ("油价" in message.contentToString()) {
                     val (msg, r) = getOil(message.contentToString().replaceFirst("油价", ""))
                     sender.sendMessage(message.quote() + (r ?: msg))
                 } else if (message.contentToString().startsWith("文章")) {
                     sender.sendMessage(message.quote() + getArticle(message.contentToString().replaceFirst("文章", "")))
+                } else if (message.contentToString().startsWith("en")) {
+                    sender.sendMessage(message.quote() + encode(message.contentToString().replaceFirst("en", "")))
+                } else if (message.contentToString().startsWith("de")) {
+                    sender.sendMessage(message.quote() + decode(message.contentToString().replaceFirst("de", "")))
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
