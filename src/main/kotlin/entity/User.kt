@@ -9,6 +9,7 @@ class User(val account: net.mamoe.mirai.contact.User) {
     companion object {
         val users = HashMap<Long, User>()
         val conversationLock = HashMap<Long, Boolean>()
+        val weatherLock = HashMap<Long, Boolean>()
 
         fun getUser(account: net.mamoe.mirai.contact.User): User {
             return users.getOrPut(account.id) { User(account) }

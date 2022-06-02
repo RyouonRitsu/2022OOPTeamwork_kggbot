@@ -10,9 +10,12 @@ import net.mamoe.mirai.event.GlobalEventChannel
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.selectMessages
 import net.mamoe.mirai.event.whileSelectMessages
-import net.mamoe.mirai.message.data.*
+import net.mamoe.mirai.message.data.At
+import net.mamoe.mirai.message.data.Image
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.MessageSource.Key.quote
+import net.mamoe.mirai.message.data.PlainText
+import net.mamoe.mirai.message.data.content
 import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
 import net.mamoe.mirai.utils.MiraiExperimentalApi
 import net.mamoe.mirai.utils.info
@@ -90,6 +93,24 @@ object PluginMain : KotlinPlugin(
                 Charsets.UTF_8
             )
             if (sender.id in Administrator.blacklist || User.conversationLock[sender.id] == true) return@subscribeAlways
+            if (User.weatherLock[sender.id] == true) {
+                User.weatherLock[sender.id] = false
+                val location = message.contentToString()
+                if ("lon=" in location && "lat=" in location) {
+                    val lon = location.indexOf("lon=") + 4
+                    val lat = location.indexOf("lat=") + 4
+                    val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
+                    group.sendMessage(getWeather(loc))
+                } else if ("lng\":" in location && "lat\":" in location) {
+                    val lon = location.indexOf("lng\":") + 6
+                    val lat = location.indexOf("lat\":") + 6
+                    val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
+                    group.sendMessage(getWeather(loc))
+                } else {
+                    group.sendMessage("这不是一个定位，请重试！\n")
+                }
+                return@subscribeAlways
+            }
             //群消息
             //管理员命令
             if (sender.id in Administrator.administrators && message.contentToString().startsWith("**")) {
@@ -265,23 +286,8 @@ object PluginMain : KotlinPlugin(
                     }
                     if (error != null) group.sendMessage(At(User.users[1780645196L]!!.account).followedBy(PlainText("主人! ${sender.nameCardOrNick}玩弄我!\n${error}")))
                 } else if (cmd == "天气") {
-                    User.conversationLock[sender.id] = true
-                    group.sendMessage(message.quote() + "请在30秒内发送定位!")
-                    val location = selectMessages {
-                        has<Image> { it.queryUrl() }
-                        has<SimpleServiceMessage> { it.content }
-                        default { "default" }
-                        timeout(30_000) { "timeout" }
-                    }
-                    if (location == "timeout") group.sendMessage(At(sender).followedBy(PlainText("超时了, 或者没有收到你的定位, 请重试!")))
-                    else if (location.indexOf("lon=") == -1 || location.indexOf("lat=") == -1)
-                        group.sendMessage(At(sender).followedBy(PlainText("这不是一个定位, 请重试!")))
-                    else {
-                        val lon = location.indexOf("lon=") + 4
-                        val lat = location.indexOf("lat=") + 4
-                        val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
-                        group.sendMessage(At(sender).followedBy(PlainText(getWeather(loc))))
-                    }
+                    User.weatherLock[sender.id] = true
+                    group.sendMessage(message.quote() + "请发送定位!")
                 } else if (cmd.startsWith("metar")) {
                     group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
                 } else if (cmd.startsWith("来点")) {
@@ -414,6 +420,24 @@ object PluginMain : KotlinPlugin(
         }
         eventChannel.subscribeAlways<FriendMessageEvent> {
             if (sender.id in Administrator.blacklist || User.conversationLock[sender.id] == true) return@subscribeAlways
+            if (User.weatherLock[sender.id] == true) {
+                User.weatherLock[sender.id] = false
+                val location = message.contentToString()
+                if ("lon=" in location && "lat=" in location) {
+                    val lon = location.indexOf("lon=") + 4
+                    val lat = location.indexOf("lat=") + 4
+                    val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
+                    sender.sendMessage(getWeather(loc))
+                } else if ("lng\":" in location && "lat\":" in location) {
+                    val lon = location.indexOf("lng\":") + 6
+                    val lat = location.indexOf("lat\":") + 6
+                    val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
+                    sender.sendMessage(getWeather(loc))
+                } else {
+                    sender.sendMessage("这不是一个定位，请重试！\n")
+                }
+                return@subscribeAlways
+            }
             //屏蔽机器人本人消息无限循环
             if (sender.id != bot.id) {
                 //好友信息
@@ -507,23 +531,8 @@ object PluginMain : KotlinPlugin(
                             )
                         )
                 } else if (message.contentToString() == "天气") {
-                    User.conversationLock[sender.id] = true
-                    sender.sendMessage(message.quote() + "请在30秒内发送定位!")
-                    val location = selectMessages {
-                        has<Image> { it.queryUrl() }
-                        has<SimpleServiceMessage> { it.content }
-                        default { "default" }
-                        timeout(30_000) { "timeout" }
-                    }
-                    if (location == "timeout") sender.sendMessage("超时了, 或者没有收到你的定位, 请重试!")
-                    else if (location.indexOf("lon=") == -1 || location.indexOf("lat=") == -1)
-                        sender.sendMessage("这不是一个定位, 请重试!")
-                    else {
-                        val lon = location.indexOf("lon=") + 4
-                        val lat = location.indexOf("lat=") + 4
-                        val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
-                        sender.sendMessage(getWeather(loc))
-                    }
+                    User.weatherLock[sender.id] = true
+                    sender.sendMessage(message.quote() + "请发送定位!")
                 } else if ("油价" in message.contentToString()) {
                     val (msg, r) = getOil(message.contentToString().replaceFirst("油价", ""))
                     sender.sendMessage(message.quote() + (r ?: msg))
