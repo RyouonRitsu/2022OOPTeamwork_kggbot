@@ -280,7 +280,7 @@ object PluginMain : KotlinPlugin(
                     group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
                 } else if (cmd.startsWith("来点")) {
                     val id: String
-                    val (msg, result) = getRandomPixivPic(sender.id, cmd.replaceFirst("来点", ""))
+                    val (msg, result) = getRandomPixivPic(cmd.replaceFirst("来点", ""))
                     if (result == "./data/Image/temp_pixiv.jpg" || result == "./data/Image/temp_pixiv.png") {
                         val inputStream = File(result).toExternalResource()
                         id = group.uploadImage(inputStream).imageId
@@ -446,6 +446,17 @@ object PluginMain : KotlinPlugin(
                             group.sendMessage(Image(id))
                         }
                     }
+                } else if (cmd == "买家秀") {
+                    val (msg, result) = getBuyerShow()
+                    if (result == null) group.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(result).toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        group.sendMessage(Image(id))
+                    }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -577,7 +588,7 @@ object PluginMain : KotlinPlugin(
                     }
                 } else if (message.contentToString().startsWith("来点")) {
                     val id: String
-                    val (msg, r) = getRandomPixivPic(75046675, message.contentToString().replaceFirst("来点", ""))
+                    val (msg, r) = getRandomPixivPic(message.contentToString().replaceFirst("来点", ""))
                     if (r == "./data/Image/temp_pixiv.jpg" || r == "./data/Image/temp_pixiv.png") {
                         val inputStream = File(r).toExternalResource()
                         id = sender.uploadImage(inputStream).imageId
@@ -638,6 +649,17 @@ object PluginMain : KotlinPlugin(
                     else sender.sendMessage(
                         message.quote() + getNowWeather(r, city) + "\n" + getDailyWeather(r, city, 0)
                     )
+                } else if (message.contentToString() == "买家秀") {
+                    val (msg, r) = getBuyerShow()
+                    if (r == null) sender.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(r).toExternalResource()
+                        val id = sender.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        sender.sendMessage(Image(id))
+                    }
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }

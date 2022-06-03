@@ -3,15 +3,13 @@ package org.ritsu.mirai.plugin.commands
 import com.alibaba.fastjson2.JSON
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import org.ritsu.mirai.plugin.entity.Administrator
 import org.ritsu.mirai.plugin.entity.loadImage
 import org.ritsu.mirai.plugin.entity.save
 import java.io.File
 import java.net.Proxy
 
 
-fun getRandomPixivPic(id: Long, info: String): Pair<String, String?> {
-    if (id !in Administrator.administrators) return Pair("你不是管理员, 无法使用此命令", null)
+fun getRandomPixivPic(info: String): Pair<String, String?> {
     var url = "https://api.lolicon.app/setu/v2?"
     val tag: String
     if (info.startsWith("mix")) {
