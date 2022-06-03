@@ -408,6 +408,21 @@ object PluginMain : KotlinPlugin(
                     else group.sendMessage(
                         message.quote() + getNowWeather(result, city) + "\n" + getDailyWeather(result, city, 0)
                     )
+                } else if (cmd.startsWith("爬")) {
+                    val user = searchFirstUserByAt(message)
+                    if (user == null) group.sendMessage(message.quote() + "你想让谁爬，@ta吧！")
+                    else {
+                        val (msg, result) = crawl(user)
+                        if (result == null) group.sendMessage(message.quote() + msg)
+                        else {
+                            val inputStream = File(result).toExternalResource()
+                            val id = group.uploadImage(inputStream).imageId
+                            withContext(Dispatchers.IO) {
+                                inputStream.close()
+                            }
+                            group.sendMessage(Image(id))
+                        }
+                    }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
