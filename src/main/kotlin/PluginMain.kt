@@ -10,12 +10,9 @@ import net.mamoe.mirai.event.GlobalEventChannel
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.selectMessages
 import net.mamoe.mirai.event.whileSelectMessages
-import net.mamoe.mirai.message.data.At
-import net.mamoe.mirai.message.data.Image
+import net.mamoe.mirai.message.data.*
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.MessageSource.Key.quote
-import net.mamoe.mirai.message.data.PlainText
-import net.mamoe.mirai.message.data.content
 import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
 import net.mamoe.mirai.utils.MiraiExperimentalApi
 import net.mamoe.mirai.utils.info
@@ -100,15 +97,13 @@ object PluginMain : KotlinPlugin(
                     val lon = location.indexOf("lon=") + 4
                     val lat = location.indexOf("lat=") + 4
                     val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
-                    group.sendMessage(getWeather(loc))
+                    group.sendMessage(message.quote() + getNowWeather(loc))
                 } else if ("lng\":" in location && "lat\":" in location) {
                     val lon = location.indexOf("lng\":") + 6
                     val lat = location.indexOf("lat\":") + 6
                     val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
-                    group.sendMessage(getWeather(loc))
-                } else {
-                    group.sendMessage("这不是一个定位，请重试！\n")
-                }
+                    group.sendMessage(message.quote() + getNowWeather(loc))
+                } else group.sendMessage(message.quote() + "这不是一个定位，请重试！\n")
                 return@subscribeAlways
             }
             //群消息
@@ -396,6 +391,23 @@ object PluginMain : KotlinPlugin(
                         }
                         group.sendMessage(Image(id))
                     }
+                } else if ("明天天气" in cmd) {
+                    val city = cmd.replace("明天天气", "")
+                    val (msg, result) = getLocation(city)
+                    if (result == null) group.sendMessage(message.quote() + msg)
+                    else group.sendMessage(message.quote() + getDailyWeather(result, city, 1))
+                } else if ("后天天气" in cmd) {
+                    val city = cmd.replace("后天天气", "")
+                    val (msg, result) = getLocation(city)
+                    if (result == null) group.sendMessage(message.quote() + msg)
+                    else group.sendMessage(message.quote() + getDailyWeather(result, city, 2))
+                } else if ("天气" in cmd) {
+                    val city = cmd.replace("天气", "")
+                    val (msg, result) = getLocation(city)
+                    if (result == null) group.sendMessage(message.quote() + msg)
+                    else group.sendMessage(
+                        message.quote() + getNowWeather(result, city) + "\n" + getDailyWeather(result, city, 0)
+                    )
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -438,15 +450,13 @@ object PluginMain : KotlinPlugin(
                     val lon = location.indexOf("lon=") + 4
                     val lat = location.indexOf("lat=") + 4
                     val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
-                    sender.sendMessage(getWeather(loc))
+                    sender.sendMessage(message.quote() + getNowWeather(loc))
                 } else if ("lng\":" in location && "lat\":" in location) {
                     val lon = location.indexOf("lng\":") + 6
                     val lat = location.indexOf("lat\":") + 6
                     val loc = location.substring(lon, lon + 6) + "," + location.substring(lat, lat + 5)
-                    sender.sendMessage(getWeather(loc))
-                } else {
-                    sender.sendMessage("这不是一个定位，请重试！\n")
-                }
+                    sender.sendMessage(message.quote() + getNowWeather(loc))
+                } else sender.sendMessage(message.quote() + "这不是一个定位，请重试！\n")
                 return@subscribeAlways
             }
             //屏蔽机器人本人消息无限循环
@@ -566,6 +576,23 @@ object PluginMain : KotlinPlugin(
                         }
                         sender.sendMessage(Image(id))
                     }
+                } else if ("明天天气" in message.contentToString()) {
+                    val city = message.contentToString().replace("明天天气", "")
+                    val (msg, r) = getLocation(city)
+                    if (r == null) sender.sendMessage(message.quote() + msg)
+                    else sender.sendMessage(message.quote() + getDailyWeather(r, city, 1))
+                } else if ("后天天气" in message.contentToString()) {
+                    val city = message.contentToString().replace("后天天气", "")
+                    val (msg, r) = getLocation(city)
+                    if (r == null) sender.sendMessage(message.quote() + msg)
+                    else sender.sendMessage(message.quote() + getDailyWeather(r, city, 2))
+                } else if ("天气" in message.contentToString()) {
+                    val city = message.contentToString().replace("天气", "")
+                    val (msg, r) = getLocation(city)
+                    if (r == null) sender.sendMessage(message.quote() + msg)
+                    else sender.sendMessage(
+                        message.quote() + getNowWeather(r, city) + "\n" + getDailyWeather(r, city, 0)
+                    )
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
