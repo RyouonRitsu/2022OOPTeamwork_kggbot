@@ -431,6 +431,21 @@ object PluginMain : KotlinPlugin(
                             group.sendMessage(Image(id))
                         }
                     }
+                } else if (cmd.startsWith("丢")) {
+                    val user = searchFirstUserByAt(message)
+                    if (user == null) group.sendMessage(message.quote() + "@你想丢的人吧！")
+                    else {
+                        val (msg, result) = diu(user)
+                        if (result == null) group.sendMessage(message.quote() + msg)
+                        else {
+                            val inputStream = File(result).toExternalResource()
+                            val id = group.uploadImage(inputStream).imageId
+                            withContext(Dispatchers.IO) {
+                                inputStream.close()
+                            }
+                            group.sendMessage(Image(id))
+                        }
+                    }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
