@@ -11,11 +11,7 @@ fun trash(name: String): String {
     if (name == "zhy") return "鉴定为春春的桂梧\n"
     if (name == "zzk") return "鉴定为猪\n"
     val url = "https://api.vvhan.com/api/la.ji?lj=$name"
-    val client = OkHttpClient().also {
-        it.newBuilder().apply {
-            proxy(Proxy.NO_PROXY)
-        }
-    }
+    val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
     try {
         val response = client.newCall(request).execute()

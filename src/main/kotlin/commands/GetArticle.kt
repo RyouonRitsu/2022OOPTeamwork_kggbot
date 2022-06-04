@@ -17,11 +17,7 @@ fun getArticle(str: String): String {
         num = ""
     }
     val url = "https://api.iyk0.com/gpbt/?msg=$content&num=$num"
-    val client = OkHttpClient().also {
-        it.newBuilder().apply {
-            proxy(Proxy.NO_PROXY)
-        }
-    }
+    val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
     try {
         val response = client.newCall(request).execute()

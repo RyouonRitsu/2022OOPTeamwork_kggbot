@@ -10,11 +10,13 @@ import net.mamoe.mirai.event.GlobalEventChannel
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.selectMessages
 import net.mamoe.mirai.event.whileSelectMessages
-import net.mamoe.mirai.message.data.*
+import net.mamoe.mirai.message.data.At
+import net.mamoe.mirai.message.data.Image
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
 import net.mamoe.mirai.message.data.MessageSource.Key.quote
+import net.mamoe.mirai.message.data.PlainText
+import net.mamoe.mirai.message.data.content
 import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
-import net.mamoe.mirai.utils.MiraiExperimentalApi
 import net.mamoe.mirai.utils.info
 import org.ritsu.mirai.plugin.commands.*
 import org.ritsu.mirai.plugin.commands.translate.NotAvailable
@@ -60,7 +62,6 @@ object PluginMain : KotlinPlugin(
         // author 和 info 可以删除.
     }
 ) {
-    @OptIn(MiraiExperimentalApi::class)
     override fun onEnable() {
         logger.info { "Plugin loaded" }
         //配置文件目录 "${dataFolder.absolutePath}/"
@@ -169,14 +170,10 @@ object PluginMain : KotlinPlugin(
                         n = cmd.replaceBefore("x", "").replace("x", "").toIntOrNull()
                         temp = temp.replaceAfterLast("x", "").substringBeforeLast("x")
                     }
-                    if (type == "" || temp != "") {
-                        type = temp
-                    }
-                    if (n == 1) {
-                        group.sendMessage(message.quote() + randomEat(type))
-                    } else if (n != null && n in 2..10) {
-                        group.sendMessage(message.quote() + randomEat(type, n))
-                    } else group.sendMessage(message.quote() + "重复抽取命令格式错误! 请尝试2-10的整数!")
+                    if (type == "" || temp != "") type = temp
+                    if (n == 1) group.sendMessage(message.quote() + randomEat(type))
+                    else if (n != null && n in 2..10) group.sendMessage(message.quote() + randomEat(type, n))
+                    else group.sendMessage(message.quote() + "重复抽取命令格式错误! 请尝试2-10的整数!")
                 } else if (cmd == "吃的类型") {
                     group.sendMessage(dishLs())
                 } else if (cmd.startsWith("mix")) {
@@ -185,9 +182,7 @@ object PluginMain : KotlinPlugin(
                         val inputStream = File(result).toExternalResource()
                         val id = group.uploadImage(inputStream).imageId
                         group.sendMessage(Image(id))
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                     } else group.sendMessage(result)
                 } else if (cmd.startsWith("dice")) {
                     val n = cmd.replace("dice", "").toIntOrNull()
@@ -221,9 +216,7 @@ object PluginMain : KotlinPlugin(
                             if (msg == "./data/Image/temp_thumbnail.png") {
                                 val inputStream = File(msg).toExternalResource()
                                 id = group.uploadImage(inputStream).imageId
-                                withContext(Dispatchers.IO) {
-                                    inputStream.close()
-                                }
+                                withContext(Dispatchers.IO) { inputStream.close() }
                             }
                             addEnergy(user, -120)
                             if (id != null) group.sendMessage(message.quote() + Image(id!!) + "\n${result}*你还剩余${user.energyValue}点能量值!")
@@ -246,9 +239,7 @@ object PluginMain : KotlinPlugin(
                                 if (msg == "./data/Image/temp_thumbnail.png") {
                                     val inputStream = File(msg).toExternalResource()
                                     id = group.uploadImage(inputStream).imageId
-                                    withContext(Dispatchers.IO) {
-                                        inputStream.close()
-                                    }
+                                    withContext(Dispatchers.IO) { inputStream.close() }
                                 }
                                 addEnergy(user, -120)
                                 if (id != null) group.sendMessage(At(sender).followedBy(Image(id!!) + PlainText("\n${result}*你还剩余${user.energyValue}点能量值!")))
@@ -284,9 +275,7 @@ object PluginMain : KotlinPlugin(
                     if (result == "./data/Image/temp_pixiv.jpg" || result == "./data/Image/temp_pixiv.png") {
                         val inputStream = File(result).toExternalResource()
                         id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         group.sendMessage(Image(id))
                     } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
                     else group.sendMessage(message.quote() + msg)
@@ -307,9 +296,7 @@ object PluginMain : KotlinPlugin(
                         val inputStream = File("./data/${group.id}.png").toExternalResource()
                         val id = group.uploadImage(inputStream).imageId
                         group.sendMessage(Image(id))
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                     } else group.sendMessage(
                         message.quote() + result.replace(
                             Regex(".:\\\\.*\\..."),
@@ -322,9 +309,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(result).toExternalResource()
                         val id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         group.sendMessage(Image(id))
                     }
                 } else if (cmd == "cat") {
@@ -333,9 +318,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(result).toExternalResource()
                         val id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         group.sendMessage(Image(id))
                     }
                 } else if (cmd == "陪我聊天") {
@@ -360,9 +343,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(result).toExternalResource()
                         val id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         group.sendMessage(Image(id))
                     }
                 } else if (cmd.startsWith("文章")) {
@@ -379,9 +360,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(result).toExternalResource()
                         val id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         group.sendMessage(Image(id))
                     }
                 } else if ("明天天气" in cmd) {
@@ -410,9 +389,7 @@ object PluginMain : KotlinPlugin(
                         else {
                             val inputStream = File(result).toExternalResource()
                             val id = group.uploadImage(inputStream).imageId
-                            withContext(Dispatchers.IO) {
-                                inputStream.close()
-                            }
+                            withContext(Dispatchers.IO) { inputStream.close() }
                             group.sendMessage(Image(id))
                         }
                     }
@@ -425,9 +402,7 @@ object PluginMain : KotlinPlugin(
                         else {
                             val inputStream = File(result).toExternalResource()
                             val id = group.uploadImage(inputStream).imageId
-                            withContext(Dispatchers.IO) {
-                                inputStream.close()
-                            }
+                            withContext(Dispatchers.IO) { inputStream.close() }
                             group.sendMessage(Image(id))
                         }
                     }
@@ -440,9 +415,7 @@ object PluginMain : KotlinPlugin(
                         else {
                             val inputStream = File(result).toExternalResource()
                             val id = group.uploadImage(inputStream).imageId
-                            withContext(Dispatchers.IO) {
-                                inputStream.close()
-                            }
+                            withContext(Dispatchers.IO) { inputStream.close() }
                             group.sendMessage(Image(id))
                         }
                     }
@@ -452,9 +425,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(result).toExternalResource()
                         val id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         group.sendMessage(Image(id))
                     }
                 } else if (cmd == "美女") {
@@ -463,9 +434,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(result).toExternalResource()
                         val id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         group.sendMessage(Image(id))
                     }
                 } else {
@@ -554,9 +523,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(r).toExternalResource()
                         val id = sender.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(Image(id))
                     }
                 } else if (message.contentToString() == "cat") {
@@ -565,9 +532,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(r).toExternalResource()
                         val id = sender.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(Image(id))
                     }
                 } else if (message.contentToString() == "陪我聊天") {
@@ -592,9 +557,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(r).toExternalResource()
                         val id = sender.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(Image(id))
                     }
                 } else if (message.contentToString().startsWith("来点")) {
@@ -603,9 +566,7 @@ object PluginMain : KotlinPlugin(
                     if (r == "./data/Image/temp_pixiv.jpg" || r == "./data/Image/temp_pixiv.png") {
                         val inputStream = File(r).toExternalResource()
                         id = sender.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(Image(id))
                     } else if (r != null) sender.sendMessage(message.quote() + "$msg\n$r")
                     else sender.sendMessage(message.quote() + msg)
@@ -638,9 +599,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(r).toExternalResource()
                         val id = sender.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(Image(id))
                     }
                 } else if ("明天天气" in message.contentToString()) {
@@ -666,9 +625,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(r).toExternalResource()
                         val id = sender.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(Image(id))
                     }
                 } else if (message.contentToString() == "美女") {
@@ -677,9 +634,7 @@ object PluginMain : KotlinPlugin(
                     else {
                         val inputStream = File(r).toExternalResource()
                         val id = sender.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) {
-                            inputStream.close()
-                        }
+                        withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(Image(id))
                     }
                 } else {

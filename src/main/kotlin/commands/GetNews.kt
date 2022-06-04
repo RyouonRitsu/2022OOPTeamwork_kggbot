@@ -7,11 +7,7 @@ import java.net.Proxy
 
 fun getNews(): Pair<String, String?> {
     val url = "https://api.iyk0.com/60s"
-    val client = OkHttpClient().also {
-        it.newBuilder().apply {
-            proxy(Proxy.NO_PROXY)
-        }
-    }
+    val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
     try {
         val response = client.newCall(request).execute()

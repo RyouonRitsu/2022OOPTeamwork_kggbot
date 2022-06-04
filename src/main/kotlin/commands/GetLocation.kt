@@ -8,11 +8,7 @@ import java.net.Proxy
 fun getLocation(loc: String): Pair<String, String?> {
     val key = "ygGTTqIeORCmnFueBPEDogVuzAfXOMqO"
     val url = "https://api.map.baidu.com/place/v2/search?query=$loc&region=$loc&output=json&ak=$key"
-    val client = OkHttpClient().also {
-        it.newBuilder().apply {
-            proxy(Proxy.NO_PROXY)
-        }
-    }
+    val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
     try {
         val response = client.newCall(request).execute()

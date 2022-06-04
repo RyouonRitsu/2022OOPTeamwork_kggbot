@@ -8,11 +8,7 @@ import java.net.Proxy
 fun getOil(loc: String): Pair<String, String?> {
     if (loc == "") return Pair("请输入中国内地省级行政区！\n", null)
     val url = "https://api.iyk0.com/youjia"
-    val client = OkHttpClient().also {
-        it.newBuilder().apply {
-            proxy(Proxy.NO_PROXY)
-        }
-    }
+    val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
     try {
         val response = client.newCall(request).execute()

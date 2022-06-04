@@ -14,11 +14,7 @@ fun encode(info: String): String {
     val key = info.substring(info.indexOf("&&") + 2)
     if (key.length > 8 || key.toIntOrNull() == null) return "key应为1~8位纯数字\n"
     val url = "https://api.vvhan.com/api/jm?key=$key&string=$content&type=en"
-    val client = OkHttpClient().also {
-        it.newBuilder().apply {
-            proxy(Proxy.NO_PROXY)
-        }
-    }
+    val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
     try {
         val response = client.newCall(request).execute()

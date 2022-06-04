@@ -8,11 +8,7 @@ fun getMetar(loc: String): String {
     if (loc == "") return "你要查询哪个机场呢，在后面加上它的ICAO代码吧~\n"
     val airport = loc.uppercase()
     val url = "https://aviationweather.gov/metar/data?ids=$airport&format=raw&date=&hours=0&taf=on&layout=on"
-    val client = OkHttpClient().also {
-        it.newBuilder().apply {
-            proxy(Proxy.NO_PROXY)
-        }
-    }
+    val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
     try {
         val response = client.newCall(request).execute()
