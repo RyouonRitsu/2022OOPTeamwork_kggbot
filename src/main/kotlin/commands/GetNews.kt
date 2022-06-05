@@ -16,8 +16,9 @@ fun getNews(): Pair<String, String?> {
             200 -> {
                 val jsonObject = JSON.parseObject(body)
                 if (jsonObject.getString("code") == "200") {
-                    val (code, msg) = download(jsonObject.getString("imageUrl"), "./data/Image/temp_news.jpg")
-                    if (code == 200 && msg == null) Pair("Success!", "./data/Image/temp_news.jpg")
+                    val path = "./data/Image/temp_news.jpg"
+                    val (code, msg) = download(jsonObject.getString("imageUrl"), path)
+                    if (code == 200 && msg == null) Pair("Success!", path)
                     else Pair("Error: $code, $msg", null)
                 } else Pair("Error: ${jsonObject.getString("code")}\n", null)
             }

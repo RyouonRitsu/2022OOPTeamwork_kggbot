@@ -17,9 +17,10 @@ fun getBuyerShow(): Pair<String, String?> {
         val inputStream = response.body?.byteStream() ?: return Pair("未知错误！\n", null)
         val link = inputStream.bufferedReader(Charset.forName("UTF-8")).readText()
             .replace("±", "").replaceFirst("img=", "")
-        val (code, msg) = download(link, "./data/Image/temp_buyershow.jpg")
-        loadImage(File("./data/Image/temp_buyershow.jpg")).save(File("./data/Image/temp_buyershow.jpg"))
-        if (code == 200 && msg == null) Pair("Success!", "./data/Image/temp_buyershow.jpg")
+        val path = "./data/Image/temp_buyershow.jpg"
+        val (code, msg) = download(link, path)
+        loadImage(File(path)).save(File(path))
+        if (code == 200 && msg == null) Pair("Success!", path)
         else Pair("Error: $code, $msg", null)
     } catch (e: java.net.SocketTimeoutException) {
         Pair("连接超时！\n", null)
