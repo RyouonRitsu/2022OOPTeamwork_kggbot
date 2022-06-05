@@ -61,7 +61,7 @@ fun download(url: String, path: String, sa: InetSocketAddress? = null): Pair<Int
             else proxy(Proxy.NO_PROXY)
         }
     }
-    val request = Request.Builder().get().url(url).build()
+    val request = Request.Builder().get().url(url).addHeader("Referer", "no-referrer").build()
     try {
         val response = client.newCall(request).execute()
         when (response.code) {
