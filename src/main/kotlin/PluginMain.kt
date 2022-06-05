@@ -185,7 +185,7 @@ object PluginMain : KotlinPlugin(
                         withContext(Dispatchers.IO) { inputStream.close() }
                     } else group.sendMessage(result)
                 } else if (cmd.startsWith("dice")) {
-                    val n = cmd.replace("dice", "").toIntOrNull()
+                    val n = cmd.replace("dice", "").toLongOrNull()
                     if (n != null && n > 0) group.sendMessage(message.quote() + "你roll出了${(1..n).random()}")
                     else group.sendMessage(message.quote() + "看不懂你要抽到多少哦, 请尝试大于1的整数!")
                 } else if (cmd.startsWith("占卜一下")) {
