@@ -9,6 +9,10 @@ object Administrator {
         75046675L,
         2287941423L
     )
+    val botList: List<Long> = listOf(
+        1784958674L,
+        3110526590L
+    )
     val blacklist = ArrayList<Long>()
 }
 

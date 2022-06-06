@@ -11,29 +11,28 @@ import java.io.File
  * @author 卢嘉美-20373814
  * @version jdk15.0.2
  */
-class AnonymousMessage(val num : Int) {
+class AnonymousMessage(val num: Int) {
     companion object {
         val messages = HashMap<Int, AnonymousMessage>()
-        val arrFree = mutableListOf<Int>(1,2,3,4,5,6,7,8,9,10)
+        val arrFree = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
         val arrOccupied = mutableListOf<Int>()
         fun getAnonymousMessage(num: Int): AnonymousMessage? {
-            return messages.get(num)
+            return messages[num]
         }
 
-        suspend fun getRandom(bot: Bot): Int{
-            var a : Int
-            if(arrFree.isNotEmpty()) {
+        suspend fun getRandom(bot: Bot): Int {
+            val a: Int
+            if (arrFree.isNotEmpty()) {
                 a = arrFree.first()
                 arrFree.removeFirst()
                 arrOccupied.add(a)
-            }
-            else {
+            } else {
                 a = arrOccupied.first()
-                if(getAnonymousMessage(a) != null) {
+                if (getAnonymousMessage(a) != null) {
                     val sender = getAnonymousMessage(a)?.senderid
-                    sender?.let { bot.getFriend(it)?.sendMessage(PlainText("对不起，由于长时间没有响应，您的编号为"+a+"的消息将被丢弃")) }
+                    sender?.let { bot.getFriend(it)?.sendMessage(PlainText("对不起，由于长时间没有响应，您的编号为" + a + "的消息将被丢弃")) }
                     val receicer = getAnonymousMessage(a)?.receiverid
-                    receicer?.let { bot.getFriend(it)?.sendMessage(PlainText("对不起，由于长时间没有响应，您的编号为"+a+"的消息将被丢弃")) }
+                    receicer?.let { bot.getFriend(it)?.sendMessage(PlainText("对不起，由于长时间没有响应，您的编号为" + a + "的消息将被丢弃")) }
                     messages.remove(a)
                 }
                 arrOccupied.removeFirst()
@@ -43,11 +42,11 @@ class AnonymousMessage(val num : Int) {
             return a
         }
 
-        fun release(num : Int , receiverID : Long): AnonymousMessage?{
-            var index = arrOccupied.indexOf(num)
-            var obj = getAnonymousMessage(num)
+        fun release(num: Int, receiverID: Long): AnonymousMessage? {
+            val index = arrOccupied.indexOf(num)
+            val obj = getAnonymousMessage(num)
             if (obj != null && index != -1) {
-                if(obj.receiverid == receiverID) {
+                if (obj.receiverid == receiverID) {
                     arrOccupied.removeAt(index)
                     arrFree.add(num)
                     messages.remove(num)
@@ -57,11 +56,11 @@ class AnonymousMessage(val num : Int) {
             return null
         }
 
-        suspend fun refuse(num : Long, bot: Bot){
-            var iterator = messages.entries.iterator()
-            while(iterator.hasNext()){
+        suspend fun refuse(num: Long, bot: Bot) {
+            val iterator = messages.entries.iterator()
+            while (iterator.hasNext()) {
                 val item = iterator.next()
-                if(item.value.receiverid == num) {
+                if (item.value.receiverid == num) {
                     val number = item.value.num
                     arrOccupied.remove(number)
                     arrFree.add(number)
@@ -73,8 +72,9 @@ class AnonymousMessage(val num : Int) {
             }
         }
     }
-    var senderid : Long = 0
-    var receiverid : Long = 0
+
+    var senderid: Long = 0
+    var receiverid: Long = 0
 
     fun save() {
         //读取json文件
@@ -116,7 +116,7 @@ class AnonymousMessage(val num : Int) {
         val file = File("./data/AnonymousMessage.json")
         var jsonString = file.readText()
         //转为JSONArray对象
-        var jsonArr = JSON.parseArray(jsonString)
+        val jsonArr = JSON.parseArray(jsonString)
         //如果JSONArray不为空
         if (jsonArr != null) {
             for (it in jsonArr) {

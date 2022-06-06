@@ -15,9 +15,8 @@ import org.ritsu.mirai.plugin.entity.Grp
 suspend fun mute(message: Message, group: Group) {
     val mes = message.contentToString().split(" ")
     val formatStr = mes[1]
-    val format:Regex?
-    if(formatStr.equals("空")) format = null
-    else format = mes[1].toRegex()
+    val format: Regex? = if (formatStr == "空") null
+    else mes[1].toRegex()
     var exception = 0
     var len = 0
     try {
@@ -29,19 +28,19 @@ suspend fun mute(message: Message, group: Group) {
     } catch (e: IndexOutOfBoundsException) {
         len = 10 * 24 * 60 * 60
     }
-    if(exception == 0) {
+    if (exception == 0) {
         val grp = Grp.getGroup(group)
-        if(format != null) {
+        if (format != null) {
             grp.format = format
             grp.save()
         }
-        if(grp.format == null) group.sendMessage(PlainText("请设置群名片格式"))
+        if (grp.format == null) group.sendMessage(PlainText("请设置群名片格式"))
         else {
             for (mem in group.members) {
                 if (mem.permission == MemberPermission.ADMINISTRATOR || mem.permission == MemberPermission.OWNER) continue
                 if (!mem.nameCardOrNick.matches(grp.format!!)) {
                     //group.sendMessage(PlainText(mem.nameCardOrNick))
-                    if(!mem.isMuted) grp.mutelist.add(mem.id)
+                    if (!mem.isMuted) grp.mutelist.add(mem.id)
                     mem.mute(len)
                 }
             }
@@ -50,49 +49,44 @@ suspend fun mute(message: Message, group: Group) {
     }
 }
 
-suspend fun unmute(bot : Bot , newname: String , groupstr: String , mem: Long) : String{
-    var groupid : Long
-    try{
-       groupid = groupstr.toLong()
-    }catch (e: NumberFormatException) {
+suspend fun unmute(bot: Bot, newname: String, groupstr: String, mem: Long): String {
+    val groupid: Long
+    try {
+        groupid = groupstr.toLong()
+    } catch (e: NumberFormatException) {
         return "请输入正确的群号"
     }
-    val group = bot.getGroup(groupid)
-    if(group == null) return "请输入正确的群号"
-    val member = group.get(mem)
-    if(member == null) return "请输入正确的群号"
-    if(!member.isMuted) return "你本来就可以说话啊"
+    val group = bot.getGroup(groupid) ?: return "请输入正确的群号"
+    val member = group[mem] ?: return "请输入正确的群号"
+    if (!member.isMuted) return "你本来就可以说话啊"
     val grp = Grp.getGroup(group)
-    if(grp.format == null || newname.matches(grp.format!!))  {
+    return if (grp.format == null || newname.matches(grp.format!!)) {
         val index = grp.mutelist.indexOf(mem)
-        if(index != -1) {
+        if (index != -1) {
             grp.mutelist.removeAt(index)
             grp.save()
             member.unmute()
             member.nameCard = newname
-            return "你已被解除禁言"
-        }
-        else return "抱歉，我无权解禁"
-    }
-    else return "你的群名片不正确，请修改后重新申请"
+            "你已被解除禁言"
+        } else "抱歉，我无权解禁"
+    } else "你的群名片不正确，请修改后重新申请"
 }
 
-suspend fun kick(group : Group, message: Message){
+suspend fun kick(group: Group, message: Message) {
     val mes = message.contentToString().split(" ")
     val formatStr = mes[1]
-    val format:Regex?
+    val format: Regex?
     val grp = Grp.getGroup(group)
-    if(formatStr.equals("空")) format = grp.format
+    if (formatStr == "空") format = grp.format
     else {
         format = formatStr.toRegex()
         grp.format = format
         grp.save()
     }
-    if(format == null) {
+    if (format == null) {
         group.sendMessage(PlainText("请先设置群名片格式"))
         return
-    }
-    else{
+    } else {
         //group.sendMessage(PlainText(format.toString()))
         for (mem in group.members) {
             if (mem.permission == MemberPermission.OWNER || mem.permission == MemberPermission.ADMINISTRATOR) continue

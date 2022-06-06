@@ -9,7 +9,7 @@ import java.io.File
  * @author 卢嘉美-20373814
  * @version jdk15.0.2
  */
-class Grp (val group: net.mamoe.mirai.contact.Group) {
+class Grp(val group: net.mamoe.mirai.contact.Group) {
     companion object {
         val groups = HashMap<Long, Grp>()
         fun getGroup(group: net.mamoe.mirai.contact.Group): Grp {

@@ -153,7 +153,7 @@ object PluginMain : KotlinPlugin(
             if ((sender.permission == MemberPermission.OWNER || sender.permission == MemberPermission.ADMINISTRATOR)
                 && message.contentToString().startsWith("清理群成员")
             ) {
-                kick(group , message)
+                kick(group, message)
             }
             //kgg命令
             else if (
@@ -452,7 +452,7 @@ object PluginMain : KotlinPlugin(
                 }
             }
             //与kgg聊天
-            else if (searchFirstUserByAt(message) == 1784958674L) {
+            else if (searchFirstUserByAt(message) in Administrator.botList) {
                 val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }
                     .getOrNull()
                     ?.replace(Regex("\\s"), "")
@@ -647,21 +647,19 @@ object PluginMain : KotlinPlugin(
                         withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(Image(id))
                     }
-                } else if (message.contentToString().startsWith("申请解除禁言 ")){
-                    val groupstr = message.contentToString().replace("申请解除禁言 " ,"").
-                    replaceAfter(" " , "").trim()
-                    val newname = message.contentToString().replace("申请解除禁言 ","").
-                    replaceBefore(" " , "").trim()
-                    sender.sendMessage(PlainText(unmute(bot , newname , groupstr , sender.id)))
-                }else if(message.contentToString().startsWith("匿名消息")){
-                    sendAnonymousMessage(bot , sender , message)
-                }else if(message.contentToString().startsWith("Reply")){
-                    replyAnonymousMessage(bot , sender , message)
-                }else if(message.contentToString().startsWith("td")){
-                    refuse(sender , bot)
-                }else if(message.contentToString().startsWith("xd")){
+                } else if (message.contentToString().startsWith("申请解除禁言 ")) {
+                    val groupstr = message.contentToString().replace("申请解除禁言 ", "").replaceAfter(" ", "").trim()
+                    val newname = message.contentToString().replace("申请解除禁言 ", "").replaceBefore(" ", "").trim()
+                    sender.sendMessage(PlainText(unmute(bot, newname, groupstr, sender.id)))
+                } else if (message.contentToString().startsWith("匿名消息")) {
+                    sendAnonymousMessage(bot, sender, message)
+                } else if (message.contentToString().startsWith("Reply")) {
+                    replyAnonymousMessage(bot, sender, message)
+                } else if (message.contentToString().startsWith("td")) {
+                    refuse(sender, bot)
+                } else if (message.contentToString().startsWith("xd")) {
                     accept(sender)
-                }else {
+                } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
             }
