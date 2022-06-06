@@ -655,9 +655,9 @@ object PluginMain : KotlinPlugin(
                     sendAnonymousMessage(bot, sender, message)
                 } else if (message.contentToString().startsWith("Reply")) {
                     replyAnonymousMessage(bot, sender, message)
-                } else if (message.contentToString().startsWith("td")) {
+                } else if (message.contentToString() == "td") {
                     refuse(sender, bot)
-                } else if (message.contentToString().startsWith("xd")) {
+                } else if (message.contentToString() == "xd") {
                     accept(sender)
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")

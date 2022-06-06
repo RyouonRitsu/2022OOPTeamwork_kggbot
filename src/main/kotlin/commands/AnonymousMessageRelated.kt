@@ -27,7 +27,7 @@ suspend fun sendAnonymousMessage(bot: Bot, sender: Friend, message: Message) {
     if (receiver == null) sender.sendMessage("抱歉....对方不在我的联系范围内")
     else {
         val user = User.getUser(receiver)
-        if (user.anonymousContact == 1) sender.sendMessage("抱歉....对方拒绝接收匿名消息")
+        if (user.blockAnonymousMessage) sender.sendMessage("抱歉....对方拒绝接收匿名消息")
         else {
             val number = AnonymousMessage.getRandom(bot)
             receiver.sendMessage(
@@ -68,14 +68,14 @@ suspend fun replyAnonymousMessage(bot: Bot, sender: Friend, message: Message) {
 
 suspend fun accept(sender: Friend) {
     val user = User(sender)
-    user.anonymousContact = 0
+    user.blockAnonymousMessage = false
     user.save()
     sender.sendMessage(PlainText("您已设置为允许接收匿名消息"))
 }
 
 suspend fun refuse(sender: Friend, bot: Bot) {
     val user = User(sender)
-    user.anonymousContact = 1
+    user.blockAnonymousMessage = true
     user.save()
     sender.sendMessage(PlainText("您已设置为拒绝接收匿名消息"))
     AnonymousMessage.refuse(sender.id, bot)
