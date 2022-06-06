@@ -5,6 +5,11 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
 
+/**
+ * @author 王晨宇
+ * @param name 垃圾名称
+ * @return 查询结果
+ */
 fun trash(name: String): String {
     if (name == "") return "请告诉我垃圾的名字\n"
     if (name == "fdy" || name == "srl" || name == "wy" || name == "yjy" || name == "申王") return "${name}是医疗废物！\n"

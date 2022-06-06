@@ -1,5 +1,10 @@
 package org.ritsu.mirai.plugin.commands
 
+/**
+ * @author 王晨宇
+ * @param id QQ号
+ * @return 返回信息, 图片路径
+ */
 fun crawl(id: Long): Pair<String, String?> {
     val url = "http://api.weijieyue.cn/api/tupian/pa.php?qq=$id"
     return try {

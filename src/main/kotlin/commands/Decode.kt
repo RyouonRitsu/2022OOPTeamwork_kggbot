@@ -5,6 +5,11 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
 
+/**
+ * @author 王晨宇
+ * @param info 待解密的内容
+ * @return 解密结果
+ */
 fun decode(info: String): String {
     if (info == "") return "请告诉我你要解密的内容\n"
     if ("&&" !in info) return "要解密的内容和key之间请用\"&&\"连接\n"

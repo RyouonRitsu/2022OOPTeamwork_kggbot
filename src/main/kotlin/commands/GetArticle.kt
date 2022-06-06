@@ -5,6 +5,11 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
 
+/**
+ * @author 王晨宇
+ * @param str 待生成文章的内容和字数
+ * @return 生成文章结果
+ */
 fun getArticle(str: String): String {
     if (str == "") return "你要生成什么样的文章呢？\n"
     val content: String

@@ -8,7 +8,6 @@ import org.ritsu.mirai.plugin.entity.save
 import java.io.File
 import java.net.Proxy
 
-
 fun getRandomPixivPic(info: String): Pair<String, String?> {
     var url = "https://api.lolicon.app/setu/v2?"
     val tag: String

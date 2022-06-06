@@ -5,6 +5,13 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
 
+/**
+ * @author 王晨宇
+ * @param location 经纬度
+ * @param city 城市名
+ * @param day 第几天
+ * @return 查询天气结果
+ */
 fun getDailyWeather(location: String, city: String, day: Int): String {
     val key = "a3d192c29b9e448fabec91c966658079"
     val url = "https://devapi.qweather.com/v7/weather/3d?key=$key&location=$location"

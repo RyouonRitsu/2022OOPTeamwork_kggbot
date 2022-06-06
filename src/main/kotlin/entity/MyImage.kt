@@ -5,6 +5,9 @@ import java.awt.image.BufferedImage
 import java.io.File
 import javax.imageio.ImageIO
 
+/**
+ * @author 王晨宇
+ */
 class MyImage(private val pxs: Array<Array<Color>>) {
     fun height(): Int {
         return pxs.size
@@ -19,6 +22,11 @@ class MyImage(private val pxs: Array<Array<Color>>) {
     }
 }
 
+/**
+ * @author 王晨宇
+ * @param imageFile 待加载的图片
+ * @return MyImage类
+ */
 fun loadImage(imageFile: File): MyImage =
     ImageIO.read(imageFile)
         .let {
@@ -31,6 +39,11 @@ fun loadImage(imageFile: File): MyImage =
             MyImage(it)
         }
 
+/**
+ * @author 王晨宇
+ * @param outputFile 保存的图片
+ * @return 保存图片是否成功
+ */
 fun MyImage.save(outputFile: File): Boolean {
     return try {
         val width = width()

@@ -8,6 +8,10 @@ import java.io.File
 import java.net.Proxy
 import java.nio.charset.Charset
 
+/**
+ * @author 王晨宇
+ * @return 返回信息, 图片路径
+ */
 fun getBuyerShow(): Pair<String, String?> {
     val url = "http://api.weijieyue.cn/api/mjx/api.php"
     return try {

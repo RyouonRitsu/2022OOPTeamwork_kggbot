@@ -4,6 +4,10 @@ import org.ritsu.mirai.plugin.entity.loadImage
 import org.ritsu.mirai.plugin.entity.save
 import java.io.File
 
+/**
+ * @author 王晨宇
+ * @return 返回信息, 图片路径
+ */
 fun getBeauty(): Pair<String, String?> {
 //    val url = "http://api.weijieyue.cn/api/youhuo/api.php?return=img"
     val url = "https://api.iyk0.com/mtyh"

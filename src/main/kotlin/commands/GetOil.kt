@@ -5,6 +5,11 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
 
+/**
+ * @author 王晨宇
+ * @param loc 省级行政区的名称
+ * @return 返回信息, 查询结果
+ */
 fun getOil(loc: String): Pair<String, String?> {
     if (loc == "") return Pair("请输入中国内地省级行政区！\n", null)
     val url = "https://api.iyk0.com/youjia"

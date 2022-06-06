@@ -5,6 +5,11 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
 
+/**
+ * @author 王晨宇
+ * @param info 待加密的内容
+ * @return 加密结果
+ */
 fun encode(info: String): String {
     if (info == "") return "请告诉我你要加密的内容\n"
     if ("&&" !in info) return "要加密的内容和key之间请用\"&&\"连接\n"

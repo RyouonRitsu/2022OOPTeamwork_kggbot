@@ -4,6 +4,11 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
 
+/**
+ * @author 王晨宇
+ * @param loc 机场的ICAO代码
+ * @return 查询METAR和TAF的结果
+ */
 fun getMetar(loc: String): String {
     if (loc == "") return "你要查询哪个机场呢，在后面加上它的ICAO代码吧~\n"
     val airport = loc.uppercase()

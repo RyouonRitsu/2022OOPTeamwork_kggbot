@@ -5,6 +5,10 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
 
+/**
+ * @author 王晨宇
+ * @return 返回信息, 图片路径
+ */
 fun getNews(): Pair<String, String?> {
     val url = "https://api.iyk0.com/60s"
     val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }

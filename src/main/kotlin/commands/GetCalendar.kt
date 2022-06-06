@@ -1,5 +1,9 @@
 package org.ritsu.mirai.plugin.commands
 
+/**
+ * @author 王晨宇
+ * @return 返回信息, 图片路径
+ */
 fun getCalendar(): Pair<String, String?> {
     val url = "https://api.vvhan.com/api/moyu"
     return try {

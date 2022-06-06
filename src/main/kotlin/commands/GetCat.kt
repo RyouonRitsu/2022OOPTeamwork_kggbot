@@ -1,5 +1,9 @@
 package org.ritsu.mirai.plugin.commands
 
+/**
+ * @author 王晨宇
+ * @return 返回信息, 图片路径
+ */
 fun getCat(): Pair<String, String?> {
     val url = "http://edgecats.net"
     return try {
