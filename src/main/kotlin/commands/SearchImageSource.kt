@@ -51,7 +51,7 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
     }
 }
 
-fun download(url: String, path: String, sa: InetSocketAddress? = null): Pair<Int, String?> {
+fun download(url: String, path: String, header: Boolean? = false, sa: InetSocketAddress? = null): Pair<Int, String?> {
     val client = OkHttpClient().also {
         it.newBuilder().apply {
             connectTimeout(10, TimeUnit.SECONDS)
@@ -61,7 +61,10 @@ fun download(url: String, path: String, sa: InetSocketAddress? = null): Pair<Int
             else proxy(Proxy.NO_PROXY)
         }
     }
-    val request = Request.Builder().get().url(url).addHeader("Referer", "no-referrer").build()
+    val request = if (header == true)
+        Request.Builder().get().url(url).addHeader("Referer", "no-referrer").build()
+    else
+        Request.Builder().get().url(url).build()
     try {
         val response = client.newCall(request).execute()
         when (response.code) {

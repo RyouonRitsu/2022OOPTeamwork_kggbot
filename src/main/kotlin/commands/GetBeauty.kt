@@ -9,7 +9,7 @@ fun getBeauty(): Pair<String, String?> {
     val url = "https://api.iyk0.com/mtyh"
     return try {
         val path = "./data/Image/temp_beauty.png"
-        val (code, msg) = download(url, path)
+        val (code, msg) = download(url, path, true)
         loadImage(File(path)).save(File(path))
         if (code == 200 && msg == null) Pair("Success!", path)
         else Pair("Error: $code, $msg", null)
