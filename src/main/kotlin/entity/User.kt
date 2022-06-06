@@ -4,6 +4,8 @@ import com.alibaba.fastjson2.JSON
 import com.alibaba.fastjson2.JSONArray
 import com.alibaba.fastjson2.JSONObject
 import java.io.File
+import kotlin.reflect.full.declaredMemberProperties
+import kotlin.reflect.jvm.isAccessible
 
 class User(val account: net.mamoe.mirai.contact.User) {
     companion object {
@@ -59,11 +61,13 @@ class User(val account: net.mamoe.mirai.contact.User) {
     }
 
     private fun writeJSON(jsonObject: JSONObject) {
-        jsonObject["luckyValue"] = this.luckyValue
-        jsonObject["luckyValueAcquisitionDate"] = this.luckyValueAcquisitionDate
-        jsonObject["signedCount"] = this.signedCount
-        jsonObject["signedDate"] = this.signedDate
-        jsonObject["energyValue"] = this.energyValue
-        jsonObject["anonymousContact"] = this.anonymousContact
+        //使用反射获取所有属性并写入jsonObject
+        this::class.declaredMemberProperties.filter { it.name != "account" }.forEach { property ->
+            property.isAccessible = true
+            when (property.name) {
+                //特殊处理列表, Map等需要特殊存储的属性
+                else -> jsonObject[property.name] = property.getter.call(this)
+            }
+        }
     }
 }

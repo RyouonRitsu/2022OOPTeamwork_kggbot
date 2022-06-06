@@ -10,6 +10,7 @@ group = "org.example"
 version = "0.1.0"
 
 dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.21")
     implementation("com.alibaba.fastjson2:fastjson2:2.0.4")
     implementation("ch.qos.logback:logback-core:1.2.11")
     implementation("ch.qos.logback:logback-classic:1.2.11")
