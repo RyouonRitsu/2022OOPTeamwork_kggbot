@@ -23,7 +23,7 @@ class User(val account: net.mamoe.mirai.contact.User) {
     var signedCount: Int = 0
     var signedDate: String = ""
     var energyValue: Int = 0
-    var anonymousContact: Int = 0
+    var blockAnonymousMessage: Boolean = false
 
     fun save() {
         //读取json文件
