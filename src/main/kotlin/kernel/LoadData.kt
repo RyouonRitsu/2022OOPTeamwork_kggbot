@@ -53,6 +53,10 @@ private fun load(jsonObj: JSONObject, instance: Any, exclude: List<String>) {
                         instance,
                         jsonObj.getLongValue(property.name)
                     )
+                    Boolean::class -> property.safeCast<KMutableProperty1<out User, *>>()?.setter?.call(
+                        instance,
+                        jsonObj.getBooleanValue(property.name)
+                    )
                 }
             }
         }
