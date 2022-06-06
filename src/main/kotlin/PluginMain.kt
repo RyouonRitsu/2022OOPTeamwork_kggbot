@@ -145,6 +145,16 @@ object PluginMain : KotlinPlugin(
             ) {
                 atMember(message, group)
             }
+            if ((sender.permission == MemberPermission.OWNER || sender.permission == MemberPermission.ADMINISTRATOR)
+                && message.contentToString().startsWith("禁言群成员")
+            ) {
+                mute(message, group)
+            }
+            if ((sender.permission == MemberPermission.OWNER || sender.permission == MemberPermission.ADMINISTRATOR)
+                && message.contentToString().startsWith("清理群成员")
+            ) {
+                kick(group , message)
+            }
             //kgg命令
             else if (
                 message.contentToString() == "kgg"
@@ -637,7 +647,21 @@ object PluginMain : KotlinPlugin(
                         withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(Image(id))
                     }
-                } else {
+                } else if (message.contentToString().startsWith("申请解除禁言 ")){
+                    val groupstr = message.contentToString().replace("申请解除禁言 " ,"").
+                    replaceAfter(" " , "").trim()
+                    val newname = message.contentToString().replace("申请解除禁言 ","").
+                    replaceBefore(" " , "").trim()
+                    sender.sendMessage(PlainText(unmute(bot , newname , groupstr , sender.id)))
+                }else if(message.contentToString().startsWith("匿名消息")){
+                    sendAnonymousMessage(bot , sender , message)
+                }else if(message.contentToString().startsWith("Reply")){
+                    replyAnonymousMessage(bot , sender , message)
+                }else if(message.contentToString().startsWith("td")){
+                    refuse(sender , bot)
+                }else if(message.contentToString().startsWith("xd")){
+                    accept(sender)
+                }else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
             }
@@ -654,6 +678,20 @@ object PluginMain : KotlinPlugin(
         eventChannel.subscribeAlways<MemberCardChangeEvent> {
             member.nameCard = new
             //group.sendMessage(PlainText("群成员名片变更为")+PlainText(member.nameCard))
+        }
+        eventChannel.subscribeAlways<GroupTempMessageEvent> {
+            if (message.contentToString() == "help") {
+                sender.sendMessage(Help.toString(Help.funcTemp).trim())
+            } else if (message.contentToString().startsWith("申请解除禁言 ")) {
+                val newname = message.contentToString().replace("申请解除禁言 ", "").trim()
+                sender.sendMessage(
+                    PlainText(
+                        unmute(bot, newname, group.id.toString(), sender.id)
+                    )
+                )
+            } else {
+                sender.sendMessage("不知道要做什么的话请说\"help\"!")
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ suspend fun main() {
 //    JavaPluginMain.INSTANCE.load()
 //    JavaPluginMain.INSTANCE.enable()
 
-    val bot = MiraiConsole.addBot(1784958674, "java2022OOP") {
+    val bot = MiraiConsole.addBot(1284994403, "java2022") {
         fileBasedDeviceInfo()
         heartbeatStrategy = BotConfiguration.HeartbeatStrategy.REGISTER
         // 开启所有列表缓存

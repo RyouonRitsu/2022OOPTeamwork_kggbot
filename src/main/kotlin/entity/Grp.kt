@@ -5,27 +5,24 @@ import com.alibaba.fastjson2.JSONArray
 import com.alibaba.fastjson2.JSONObject
 import java.io.File
 
-class User(val account: net.mamoe.mirai.contact.User) {
+/**
+ * @author 卢嘉美-20373814
+ * @version jdk15.0.2
+ */
+class Grp (val group: net.mamoe.mirai.contact.Group) {
     companion object {
-        val users = HashMap<Long, User>()
-        val conversationLock = HashMap<Long, Boolean>()
-        val weatherLock = HashMap<Long, Boolean>()
-
-        fun getUser(account: net.mamoe.mirai.contact.User): User {
-            return users.getOrPut(account.id) { User(account) }
+        val groups = HashMap<Long, Grp>()
+        fun getGroup(group: net.mamoe.mirai.contact.Group): Grp {
+            return groups.getOrPut(group.id) { Grp(group) }
         }
     }
 
-    var luckyValue: Double = -1.0
-    var luckyValueAcquisitionDate: String = ""
-    var signedCount: Int = 0
-    var signedDate: String = ""
-    var energyValue: Int = 0
-    var anonymousContact: Int = 0
+    var format: Regex? = null
+    var mutelist = mutableListOf<Long>()
 
     fun save() {
         //读取json文件
-        val file = File("./data/UsersData.json")
+        val file = File("./data/GroupData.json")
         var jsonString = file.readText()
         //转为JSONArray对象
         var jsonArr = JSON.parseArray(jsonString)
@@ -34,7 +31,7 @@ class User(val account: net.mamoe.mirai.contact.User) {
         if (jsonArr != null) {
             for (it in jsonArr) {
                 val jsonObj = it as JSONObject
-                if (jsonObj.getLongValue("id") == this.account.id) {
+                if (jsonObj.getLongValue("id") == this.group.id) {
                     jsonObject = jsonObj
                     break
                 }
@@ -43,7 +40,7 @@ class User(val account: net.mamoe.mirai.contact.User) {
         if (jsonObject == null) {
             //不存在JSONObject
             jsonObject = JSONObject()
-            jsonObject["id"] = this.account.id
+            jsonObject["id"] = this.group.id
             writeJSON(jsonObject)
             //JSONObject添加到JSONArray中
             if (jsonArr == null) jsonArr = JSONArray()
@@ -59,11 +56,7 @@ class User(val account: net.mamoe.mirai.contact.User) {
     }
 
     private fun writeJSON(jsonObject: JSONObject) {
-        jsonObject["luckyValue"] = this.luckyValue
-        jsonObject["luckyValueAcquisitionDate"] = this.luckyValueAcquisitionDate
-        jsonObject["signedCount"] = this.signedCount
-        jsonObject["signedDate"] = this.signedDate
-        jsonObject["energyValue"] = this.energyValue
-        jsonObject["anonymousContact"] = this.anonymousContact
+        jsonObject["format"] = this.format
+        jsonObject["mutelist"] = this.mutelist
     }
 }
