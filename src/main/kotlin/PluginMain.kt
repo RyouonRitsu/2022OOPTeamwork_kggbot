@@ -447,6 +447,8 @@ object PluginMain : KotlinPlugin(
                         withContext(Dispatchers.IO) { inputStream.close() }
                         group.sendMessage(Image(id))
                     }
+                } else if (cmd.startsWith("双色球")) {
+                    group.sendMessage(message.quote() + unionLotto(cmd.replace("双色球", "").trim()))
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -659,6 +661,12 @@ object PluginMain : KotlinPlugin(
                     refuse(sender, bot)
                 } else if (message.contentToString() == "xd") {
                     accept(sender)
+                } else if (message.contentToString().startsWith("双色球")) {
+                    sender.sendMessage(
+                        message.quote() + unionLotto(
+                            message.contentToString().replace("双色球", "").trim()
+                        )
+                    )
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
