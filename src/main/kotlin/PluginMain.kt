@@ -181,7 +181,7 @@ object PluginMain : KotlinPlugin(
                     if (result != "") sender.sendMessage(result)
                 } else if (cmd == "help") {
                     textToPicture(
-                        Help.toString(Help.funcGroup).trim(),
+                        "群聊功能：\n" + Help.toString(Help.funcGroup).trim(),
                         Font("等线", Font.PLAIN, 50),
                         File("./data/Image/temp_kgghelp.png"),
                         File("./data/Image/bg_help.png")
@@ -565,7 +565,7 @@ object PluginMain : KotlinPlugin(
                     sender.sendMessage(queryStatus(sender))
                 } else if (message.contentToString() == "help") {
                     textToPicture(
-                        Help.toString(Help.funcFriend).trim(),
+                        "私聊功能：\n" + Help.toString(Help.funcFriend).trim(),
                         Font("等线", Font.PLAIN, 50),
                         File("./data/Image/temp_help.png"),
                         File("./data/Image/bg_help.png")
@@ -753,6 +753,26 @@ object PluginMain : KotlinPlugin(
         }
         eventChannel.subscribeAlways<FriendAddEvent> {
             it.friend.sendMessage("很高兴认识你！我是kgg~")
+            textToPicture(
+                "群聊功能：\n\n" + Help.toString(Help.funcGroup).trim(),
+                Font("等线", Font.PLAIN, 50),
+                File("./data/Image/temp_kgghelp.png"),
+                File("./data/Image/bg_help.png")
+            )
+            var inputStream = File("./data/Image/temp_kgghelp.png").toExternalResource()
+            var id = it.friend.uploadImage(inputStream).imageId
+            withContext(Dispatchers.IO) { inputStream.close() }
+            it.friend.sendMessage(Image(id))
+            textToPicture(
+                "私聊功能：\n\n" + Help.toString(Help.funcFriend).trim(),
+                Font("等线", Font.PLAIN, 50),
+                File("./data/Image/temp_help.png"),
+                File("./data/Image/bg_help.png")
+            )
+            inputStream = File("./data/Image/temp_help.png").toExternalResource()
+            id = it.friend.uploadImage(inputStream).imageId
+            withContext(Dispatchers.IO) { inputStream.close() }
+            it.friend.sendMessage(Image(id))
         }
         eventChannel.subscribeAlways<MemberCardChangeEvent> {
             member.nameCard = new
