@@ -751,6 +751,9 @@ object PluginMain : KotlinPlugin(
             //自动同意加群申请
             //accept()
         }
+        eventChannel.subscribeAlways<FriendAddEvent> {
+            it.friend.sendMessage("很高兴认识你！我是kgg~")
+        }
         eventChannel.subscribeAlways<MemberCardChangeEvent> {
             member.nameCard = new
             //group.sendMessage(PlainText("群成员名片变更为")+PlainText(member.nameCard))
