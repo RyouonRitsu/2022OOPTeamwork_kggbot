@@ -27,6 +27,7 @@ import org.ritsu.mirai.plugin.entity.*
 import org.ritsu.mirai.plugin.kernel.addEnergy
 import org.ritsu.mirai.plugin.kernel.searchFirstUserByAt
 import java.io.File
+import java.text.NumberFormat
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
@@ -164,7 +165,14 @@ object PluginMain : KotlinPlugin(
                 if (result != "") sender.sendMessage(result)
             } else if (message.contentToString().startsWith("kgg")) {
                 val cmd = message.contentToString().replaceFirst("kgg", "")
-                if (cmd == "抽卡") {
+                if (cmd == "抽卡" && sender.id == 75046675L) {
+                    val instance = NumberFormat.getInstance()
+                    instance.isGroupingUsed = false
+                    instance.minimumFractionDigits = 2
+                    instance.maximumFractionDigits = 2
+                    val i = instance.format(Math.random() * 100000000000)
+                    group.sendMessage(sender.nameCardOrNick + "今天的幸运指数是$i%！")
+                } else if (cmd == "抽卡") {
                     //发送消息
                     group.sendMessage(sender.nameCardOrNick + luckyValue(sender))
                     val result = sign(sender, User.getUser(sender).luckyValue + 1)
@@ -290,8 +298,7 @@ object PluginMain : KotlinPlugin(
                     } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
                     else group.sendMessage(message.quote() + msg)
                 } else if ("油价" in cmd) {
-                    val (msg, result) = getOil(cmd.replaceFirst("油价", ""))
-                    group.sendMessage(message.quote() + (result ?: msg))
+                    group.sendMessage(getOil(cmd.replaceFirst("油价", "")))
                 } else if (cmd.startsWith("舔")) {
                     val user = searchFirstUserByAt(message)
                     if (user == null) group.sendMessage(message.quote() + "要我舔谁呢？")
@@ -449,6 +456,15 @@ object PluginMain : KotlinPlugin(
                     }
                 } else if (cmd.startsWith("双色球")) {
                     group.sendMessage(message.quote() + unionLotto(cmd.replace("双色球", "").trim()))
+                } else if (cmd.startsWith("二维码")) {
+                    val (msg, result) = qrCode(cmd.replaceFirst("二维码", ""), "temp_${sender.id}")
+                    if (result == null) group.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(result).toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) { inputStream.close() }
+                        group.sendMessage(message.quote() + Image(id))
+                    }
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
@@ -595,8 +611,7 @@ object PluginMain : KotlinPlugin(
                     User.weatherLock[sender.id] = true
                     sender.sendMessage(message.quote() + "请发送定位!")
                 } else if ("油价" in message.contentToString()) {
-                    val (msg, r) = getOil(message.contentToString().replaceFirst("油价", ""))
-                    sender.sendMessage(message.quote() + (r ?: msg))
+                    sender.sendMessage(getOil(message.contentToString().replaceFirst("油价", "")))
                 } else if (message.contentToString().startsWith("文章")) {
                     sender.sendMessage(message.quote() + getArticle(message.contentToString().replaceFirst("文章", "")))
                 } else if (message.contentToString().startsWith("en")) {
@@ -667,6 +682,15 @@ object PluginMain : KotlinPlugin(
                             message.contentToString().replace("双色球", "").trim()
                         )
                     )
+                } else if (message.contentToString().startsWith("二维码")) {
+                    val (msg, r) = qrCode(message.contentToString().replaceFirst("二维码", ""), "temp_${sender.id}")
+                    if (r == null) sender.sendMessage(message.quote() + msg)
+                    else {
+                        val inputStream = File(r).toExternalResource()
+                        val id = sender.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) { inputStream.close() }
+                        sender.sendMessage(message.quote() + Image(id))
+                    }
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
