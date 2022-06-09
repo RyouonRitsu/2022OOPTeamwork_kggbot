@@ -11,6 +11,13 @@ import java.io.InputStreamReader
 import java.nio.charset.Charset
 import javax.imageio.ImageIO
 
+/**
+ * @author 王晨宇
+ * @param str 图片内容
+ * @param font 字体
+ * @param outFile 输出文件路径
+ * @param bgImageFile 背景图片文件路径
+ */
 fun textToPicture(str: String, font: Font, outFile: File, bgImageFile: File) {
     // 读取背景图
     val bgImage = ImageIO.read(bgImageFile)
@@ -31,11 +38,12 @@ fun textToPicture(str: String, font: Font, outFile: File, bgImageFile: File) {
         )
     )
     var line = br.readLine()
-    var locY = g.fontMetrics.height
+    val locX = 60
+    var locY = 200
     while (line != null) {
         locY =
-            drawText.drawStringWithFontStyleLineFeed(g, line, 0, locY, width - g.fontMetrics.charWidth(' '))
-        locY += g.fontMetrics.height
+            drawText.drawStringWithFontStyleLineFeed(g, line, locX, locY, width - g.fontMetrics.charWidth(' ') - 2 * locX)
+        locY += g.fontMetrics.height + 15
         line = br.readLine()
     }
     g.dispose()

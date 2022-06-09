@@ -180,7 +180,16 @@ object PluginMain : KotlinPlugin(
                     val result = sign(sender, User.getUser(sender).luckyValue + 1)
                     if (result != "") sender.sendMessage(result)
                 } else if (cmd == "help") {
-                    sender.sendMessage(Help.toString(Help.funcGroup).trim())
+                    textToPicture(
+                        Help.toString(Help.funcGroup).trim(),
+                        Font("等线", Font.PLAIN, 50),
+                        File("./data/Image/temp_kgghelp.png"),
+                        File("./data/Image/bg_help.png")
+                    )
+                    val inputStream = File("./data/Image/temp_kgghelp.png").toExternalResource()
+                    val id = group.uploadImage(inputStream).imageId
+                    withContext(Dispatchers.IO) { inputStream.close() }
+                    group.sendMessage(Image(id))
                 } else if (cmd.startsWith("我今天") && "吃什么" in cmd) {
                     var type = cmd.replace("我今天", "")
                         .replaceAfter("吃什么", "").replace("吃什么", "")
@@ -555,7 +564,16 @@ object PluginMain : KotlinPlugin(
                 if (message.contentToString() == "查询状态") {
                     sender.sendMessage(queryStatus(sender))
                 } else if (message.contentToString() == "help") {
-                    sender.sendMessage(Help.toString(Help.funcFriend).trim())
+                    textToPicture(
+                        Help.toString(Help.funcFriend).trim(),
+                        Font("等线", Font.PLAIN, 50),
+                        File("./data/Image/temp_help.png"),
+                        File("./data/Image/bg_help.png")
+                    )
+                    val inputStream = File("./data/Image/temp_help.png").toExternalResource()
+                    val id = sender.uploadImage(inputStream).imageId
+                    withContext(Dispatchers.IO) { inputStream.close() }
+                    sender.sendMessage(Image(id))
                 } else if (message.contentToString().startsWith("dice")) {
                     val n = message.contentToString().replace("dice", "").toIntOrNull()
                     if (n != null && n > 0) sender.sendMessage("你roll出了${(1..n).random()}")

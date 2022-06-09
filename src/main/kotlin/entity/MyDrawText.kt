@@ -2,6 +2,9 @@ package org.ritsu.mirai.plugin.entity
 
 import java.awt.Graphics
 
+/**
+ * @author 王晨宇
+ */
 class MyDrawText {
     companion object {
         fun drawStringWithFontStyleLineFeed(
