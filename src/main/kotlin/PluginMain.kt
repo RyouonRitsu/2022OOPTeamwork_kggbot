@@ -181,7 +181,7 @@ object PluginMain : KotlinPlugin(
                     if (result != "") sender.sendMessage(result)
                 } else if (cmd == "help") {
                     textToPicture(
-                        "群聊功能：\n" + Help.toString(Help.funcGroup).trim(),
+                        "群聊功能：\n\n" + Help.toString(Help.funcGroup).trim(),
                         Font("等线", Font.PLAIN, 50),
                         File("./data/Image/temp_kgghelp.png"),
                         File("./data/Image/bg_help.png")
@@ -565,7 +565,7 @@ object PluginMain : KotlinPlugin(
                     sender.sendMessage(queryStatus(sender))
                 } else if (message.contentToString() == "help") {
                     textToPicture(
-                        "私聊功能：\n" + Help.toString(Help.funcFriend).trim(),
+                        "私聊功能：\n\n" + Help.toString(Help.funcFriend).trim(),
                         Font("等线", Font.PLAIN, 50),
                         File("./data/Image/temp_help.png"),
                         File("./data/Image/bg_help.png")
