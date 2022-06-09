@@ -1,5 +1,11 @@
 package org.ritsu.mirai.plugin.commands
 
+/**
+ * @author 王晨宇
+ * @param content 二维码的内容
+ * @param name 二维码图片的文件名称
+ * @return 返回信息
+ */
 fun qrCode(content: String, name: String? = "temp_QRCode"): Pair<String, String?> {
     if (content == "") return Pair("二维码的内容是？\n", null)
     val url = "https://api.vvhan.com/api/qr?text=$content"

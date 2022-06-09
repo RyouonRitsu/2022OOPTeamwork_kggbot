@@ -21,7 +21,7 @@ fun getOil(loc: String): String {
         if (loc == "全国") {
             val jsonObject = JSON.parseObject(body)
             var i = 0
-            var result = ""
+            var result = "\n\n"
             while (i < 31) {
                 val region = jsonObject.getJSONArray("data").getJSONObject(i).getString("地区")
                 val obj = jsonObject.getJSONArray("data").getJSONObject(i)
@@ -30,15 +30,16 @@ fun getOil(loc: String): String {
                 val o95: String? = obj.getString("95号汽油")
                 val o98: String? = obj.getString("98号汽油")
                 val o0: String? = obj.getString("0号柴油")
-                result += "${region}油价：\n"
-                if (o89 != null && !o89.startsWith("0")) result += "89号汽油：$o89\n"
-                if (o92 != null && !o92.startsWith("0")) result += "92号汽油：$o92\n"
-                if (o95 != null && !o95.startsWith("0")) result += "95号汽油：$o95\n"
-                if (o98 != null && !o98.startsWith("0")) result += "98号汽油：$o98\n"
-                if (o0 != null && !o0.startsWith("0")) result += "0号柴油：$o0\n"
+                result += "   ${region}油价：\n"
+                if (o89 != null && !o89.startsWith("0")) result += "   89号汽油：$o89\n"
+                if (o92 != null && !o92.startsWith("0")) result += "   92号汽油：$o92\n"
+                if (o95 != null && !o95.startsWith("0")) result += "   95号汽油：$o95\n"
+                if (o98 != null && !o98.startsWith("0")) result += "   98号汽油：$o98\n"
+                if (o0 != null && !o0.startsWith("0")) result += "   0号柴油：$o0\n"
+                result += "\n"
                 i++
             }
-            return result + "更新日期：" + jsonObject.getJSONArray("data").getJSONObject(0).getString("更新日期") + "\n"
+            return result + "  更新日期：" + jsonObject.getJSONArray("data").getJSONObject(0).getString("更新日期") + "\n"
         }
         return when (response.code) {
             200 -> {

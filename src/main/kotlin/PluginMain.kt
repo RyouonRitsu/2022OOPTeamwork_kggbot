@@ -26,6 +26,8 @@ import org.ritsu.mirai.plugin.commands.wordcloud.getGroupWordCloud
 import org.ritsu.mirai.plugin.entity.*
 import org.ritsu.mirai.plugin.kernel.addEnergy
 import org.ritsu.mirai.plugin.kernel.searchFirstUserByAt
+import org.ritsu.mirai.plugin.kernel.textToPicture
+import java.awt.Font
 import java.io.File
 import java.text.NumberFormat
 import java.time.Instant
@@ -297,6 +299,19 @@ object PluginMain : KotlinPlugin(
                         group.sendMessage(Image(id))
                     } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
                     else group.sendMessage(message.quote() + msg)
+                } else if (cmd == "全国油价") {
+                    textToPicture(
+                        getOil("全国"),
+                        Font("等线", Font.PLAIN, 50),
+                        File("./data/Image/temp_oil.png"),
+                        File("./data/Image/bg_oil.png")
+                    )
+                    val inputStream = File("./data/Image/temp_oil.png").toExternalResource()
+                    val id = group.uploadImage(inputStream).imageId
+                    withContext(Dispatchers.IO) { inputStream.close() }
+                    group.sendMessage(Image(id))
+                } else if (cmd == "全国油价文字") {
+                    group.sendMessage(getOil("全国"))
                 } else if ("油价" in cmd) {
                     group.sendMessage(getOil(cmd.replaceFirst("油价", "")))
                 } else if (cmd.startsWith("舔")) {
@@ -610,6 +625,19 @@ object PluginMain : KotlinPlugin(
                 } else if (message.contentToString() == "天气") {
                     User.weatherLock[sender.id] = true
                     sender.sendMessage(message.quote() + "请发送定位!")
+                } else if (message.contentToString() == "全国油价") {
+                    textToPicture(
+                        getOil("全国"),
+                        Font("等线", Font.PLAIN, 50),
+                        File("./data/Image/temp_oil.png"),
+                        File("./data/Image/bg_oil.png")
+                    )
+                    val inputStream = File("./data/Image/temp_oil.png").toExternalResource()
+                    val id = sender.uploadImage(inputStream).imageId
+                    withContext(Dispatchers.IO) { inputStream.close() }
+                    sender.sendMessage(Image(id))
+                } else if (message.contentToString() == "全国油价文字") {
+                    sender.sendMessage(getOil("全国"))
                 } else if ("油价" in message.contentToString()) {
                     sender.sendMessage(getOil(message.contentToString().replaceFirst("油价", "")))
                 } else if (message.contentToString().startsWith("文章")) {
