@@ -8,7 +8,8 @@ package org.ritsu.mirai.plugin.commands
  */
 fun qrCode(content: String, name: String? = "temp_QRCode"): Pair<String, String?> {
     if (content == "") return Pair("二维码的内容是？\n", null)
-    val url = "https://api.vvhan.com/api/qr?text=$content"
+    val text = content.replace("&", " ")
+    val url = "https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=$text"
     val path = "./data/Image/$name.jpg"
     return try {
         val (code, msg) = download(url, path)

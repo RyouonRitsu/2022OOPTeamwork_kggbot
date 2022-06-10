@@ -54,9 +54,9 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
 fun download(url: String, path: String, header: Boolean? = false, sa: InetSocketAddress? = null): Pair<Int, String?> {
     val client = OkHttpClient().also {
         it.newBuilder().apply {
-            connectTimeout(10, TimeUnit.SECONDS)
-            readTimeout(10, TimeUnit.SECONDS)
-            writeTimeout(10, TimeUnit.SECONDS)
+            connectTimeout(20, TimeUnit.SECONDS)
+            readTimeout(20, TimeUnit.SECONDS)
+            writeTimeout(20, TimeUnit.SECONDS)
             if (sa != null) proxy(Proxy(Proxy.Type.HTTP, sa))
             else proxy(Proxy.NO_PROXY)
         }
