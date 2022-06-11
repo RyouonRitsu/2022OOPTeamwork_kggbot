@@ -30,7 +30,7 @@ fun getDailyWeather(location: String, city: String, day: Int): String {
                 val sunset = daily.getString("sunset")
                 val moonrise = daily.getString("moonrise")
                 val moonset = daily.getString("moonset")
-                val moonPhase = daily.getString("moonPhase")
+                val moonPhase = daily.getString("moonPhase").replace("峨眉", "娥眉")
                 val tempMax = daily.getString("tempMax")
                 val tempMin = daily.getString("tempMin")
                 val textDay = daily.getString("textDay")
@@ -50,7 +50,7 @@ fun getDailyWeather(location: String, city: String, day: Int): String {
                 var result = "$city${fxDate}日$tempMin~$tempMax°C。\n" +
                     "白天$textDay，$windDirDay${windScaleDay}级，风速${windSpeedDay}km/h，${sunrise}日出，${sunset}日落。\n" +
                     "夜间$textNight，$windDirNight${windScaleNight}级，风速${windSpeedNight}km/h，" +
-                    "${moonrise}月升，${moonset}月落，$moonPhase。\n" +
+                    "${moonrise}月出，${moonset}月落，$moonPhase。\n" +
                     "相对湿度$humidity%，当天总降水量${precip}mm，大气压${pressure}hPa，能见度${vis}km，紫外线强度$uvIndex"
                 if (cloud != null && cloud != "") result += "，云量$cloud%"
                 "$result。\n"

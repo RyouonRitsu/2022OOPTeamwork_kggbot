@@ -374,7 +374,17 @@ object PluginMain : KotlinPlugin(
                             val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }
                                 .getOrNull()
                                 ?.replace(Regex("\\s"), "")
-                            group.sendMessage(message.quote() + if (msg == null || msg == "") "哥哥你说句话呀！" else chat(msg))
+                            if (msg == null || msg == "") group.sendMessage(message.quote() + "哥哥你说句话呀！")
+                            else {
+                                val (code, result) = chat(msg)
+                                if (!code) group.sendMessage(message.quote() + result)
+                                else {
+                                    val inputStream = File(result).toExternalResource()
+                                    val audio = group.uploadAudio(inputStream)
+                                    withContext(Dispatchers.IO) { inputStream.close() }
+                                    group.sendMessage(audio)
+                                }
+                            }
                             true
                         }
                     }
@@ -498,7 +508,17 @@ object PluginMain : KotlinPlugin(
                 val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }
                     .getOrNull()
                     ?.replace(Regex("\\s"), "")
-                group.sendMessage(message.quote() + if (msg == null || msg == "") "哥哥你说句话呀！" else chat(msg))
+                if (msg == null || msg == "") group.sendMessage(message.quote() + "哥哥你说句话呀！")
+                else {
+                    val (code, result) = chat(msg)
+                    if (!code) group.sendMessage(message.quote() + result)
+                    else {
+                        val inputStream = File(result).toExternalResource()
+                        val audio = group.uploadAudio(inputStream)
+                        withContext(Dispatchers.IO) { inputStream.close() }
+                        group.sendMessage(audio)
+                    }
+                }
             }
             //处理闪照
 //            message.filterIsInstance<FlashImage>().forEach {
@@ -608,7 +628,17 @@ object PluginMain : KotlinPlugin(
                             val msg = kotlin.runCatching { message.filterIsInstance<PlainText>().joinToString("") }
                                 .getOrNull()
                                 ?.replace(Regex("\\s"), "")
-                            sender.sendMessage(if (msg == null || msg == "") "哥哥你说句话呀！" else chat(msg))
+                            if (msg == null || msg == "") sender.sendMessage("哥哥你说句话呀！")
+                            else {
+                                val (code, r) = chat(msg)
+                                if (!code) sender.sendMessage(r)
+                                else {
+                                    val inputStream = File(r).toExternalResource()
+                                    val audio = sender.uploadAudio(inputStream)
+                                    withContext(Dispatchers.IO) { inputStream.close() }
+                                    sender.sendMessage(audio)
+                                }
+                            }
                             true
                         }
                     }
