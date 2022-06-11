@@ -22,7 +22,8 @@ fun chat(msg: String): Pair<Boolean, String> {
         val response = client.newCall(request).execute()
         val body = response.body?.string() ?: return Pair(false, "呜呜呜！不知道该说什么了！")
         val jsonObject = JSON.parseObject(body)
-        val content = jsonObject.getString("text")?.replace("小爱同学", "kgg")?.replace("小爱", "kgg")
+        val content =
+            jsonObject.getString("text")?.replace("小爱同学", "kgg")?.replace("小爱", "kgg")?.replace(",仁者爱人的＂爱＂.", "")
         if (content != null && content != "") return Pair(false, content)
         val mp3 = jsonObject.getString("mp3")
         val path = "./data/Image/temp_xiaoai.mp3"
