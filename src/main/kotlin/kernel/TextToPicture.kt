@@ -42,7 +42,13 @@ fun textToPicture(str: String, font: Font, outFile: File, bgImageFile: File) {
     var locY = 200
     while (line != null) {
         locY =
-            drawText.drawStringWithFontStyleLineFeed(g, line, locX, locY, width - g.fontMetrics.charWidth(' ') - 2 * locX)
+            drawText.drawStringWithFontStyleLineFeed(
+                g,
+                line,
+                locX,
+                locY,
+                width - g.fontMetrics.charWidth(' ') - 2 * locX
+            )
         locY += g.fontMetrics.height + 15
         line = br.readLine()
     }
