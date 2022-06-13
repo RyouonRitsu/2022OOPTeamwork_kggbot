@@ -3,7 +3,16 @@ package org.ritsu.mirai.plugin.commands
 import net.mamoe.mirai.contact.Member
 import net.mamoe.mirai.contact.nameCardOrNick
 
+/**
+ * 塔罗牌文案
+ *
+ * @author RyouonRitsu, 雷烈
+ * @since 0.1.0
+ */
 object Tarot {
+    /**
+     * 塔罗牌文案Map
+     */
     val tarot = mapOf(
         "【0】愚者 The Fool" to listOf(
             "正位：熊猫爬到竹子的细杆上，咬住了嫩叶。竹子被压得吱呀作响，几近折断。\n" +
@@ -222,6 +231,14 @@ object Tarot {
     )
 }
 
+/**
+ * 占卜功能
+ *
+ * @author RyouonRitsu
+ * @param sender 发送者
+ * @param event 事件
+ * @return 占卜结果
+ */
 fun divination(sender: Member, event: String): String {
     val key = Tarot.tarot.keys.random()
     return "正在为${sender.nameCardOrNick}占卜$event……\n" +

@@ -4,6 +4,13 @@ import java.io.File
 import java.nio.charset.Charset
 import java.util.concurrent.TimeUnit
 
+/**
+ * 执行py脚本来构建群聊词云的词云功能
+ *
+ * @author RyouonRitsu
+ * @param groupId 群号
+ * @return 执行结果
+ */
 fun getGroupWordCloud(groupId: Long): String {
     var error: String? = null
     val result = runCatching {

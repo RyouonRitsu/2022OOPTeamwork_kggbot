@@ -8,6 +8,13 @@ import org.ritsu.mirai.plugin.entity.save
 import java.io.File
 import java.net.Proxy
 
+/**
+ * 随机色图
+ *
+ * @author RyouonRitsu, 王晨宇
+ * @param info 命令信息
+ * @return Pair(错误信息, 图片地址)
+ */
 fun getRandomPixivPic(info: String): Pair<String, String?> {
     var url = "https://api.lolicon.app/setu/v2?"
     val tag: String

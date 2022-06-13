@@ -80,6 +80,7 @@ object PluginMain : KotlinPlugin(
             )
         }
         eventChannel.subscribeAlways<GroupMessageEvent> {
+            //词云功能存储聊天记录
             val groupMessagesRecord = File("./data/${group.id}")
             //如果文件上次修改时间不为今天，则覆盖写入
             if (!groupMessagesRecord.exists() || !Instant.ofEpochMilli(groupMessagesRecord.lastModified())
@@ -92,6 +93,7 @@ object PluginMain : KotlinPlugin(
                 "${message.filterIsInstance<PlainText>().joinToString("，")}，",
                 Charsets.UTF_8
             )
+            //黑名单和对话锁
             if (sender.id in Administrator.blacklist || User.conversationLock[sender.id] == true) return@subscribeAlways
             if (User.weatherLock[sender.id] == true) {
                 User.weatherLock[sender.id] = false
@@ -539,9 +541,11 @@ object PluginMain : KotlinPlugin(
                 }
             }
             */
+            //解除每一次触发的对话锁
             User.conversationLock[sender.id] = false
         }
         eventChannel.subscribeAlways<FriendMessageEvent> {
+            //黑名单和对话锁
             if (sender.id in Administrator.blacklist || User.conversationLock[sender.id] == true) return@subscribeAlways
             if (User.weatherLock[sender.id] == true) {
                 User.weatherLock[sender.id] = false
@@ -763,6 +767,7 @@ object PluginMain : KotlinPlugin(
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
             }
+            //解除每一次触发的对话锁
             User.conversationLock[sender.id] = false
         }
         eventChannel.subscribeAlways<NewFriendRequestEvent> {

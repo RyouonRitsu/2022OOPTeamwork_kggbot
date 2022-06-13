@@ -4,6 +4,14 @@ import org.ritsu.mirai.plugin.entity.User
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
+/**
+ * 签到功能，每天首次签到可以获得能量值
+ *
+ * @author RyouonRitsu
+ * @param sender 发起者
+ * @param percent 能量值获得倍率
+ * @return bot回复
+ */
 fun sign(sender: net.mamoe.mirai.contact.User, percent: Double): String {
     val user = User.getUser(sender)
     //标识是否需要更新json数据

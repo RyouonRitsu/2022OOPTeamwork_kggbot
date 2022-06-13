@@ -1,6 +1,15 @@
 package org.ritsu.mirai.plugin
 
+/**
+ * 这是一个帮助单例，用于获取kggbot的可供用户使用的帮助信息
+ *
+ * @author RyouonRitsu
+ * @since 0.1.0
+ */
 object Help {
+    /**
+     * 用户群聊可用命令列表，每次更新命令需在此添加
+     */
     val funcGroup: List<String> = listOf(
         "help", "抽卡", "我今天[<类型>?]吃什么[<类型>?][(x<2~10>)?]", "吃的类型", "mix(+)[<emoji>](+)[<emoji>](+)",
         "dice[<大于1的整数>]", "占卜一下[<事件>]", "t[<内容>][(-><语言>)?]", "支持语言", "搜图[<一张或多张图片>?]", "Python",
@@ -10,6 +19,9 @@ object Help {
         "赞[<@一位用户>]", "丢[<@一位用户>]", "双色球[<双色球号码>]", "[<中国内地省级行政区/全国>]油价[<文字>]"
     )
 
+    /**
+     * 用户私聊可用命令列表，每次更新命令需在此添加
+     */
     val funcFriend = listOf(
         "help", "查询状态", "dice[<大于1的整数>]", "cos", "cat", "陪我聊天", "news", "买家秀", "二维码[<二维码的内容>]",
         "metar[<机场ICAO代码>]", "来点[<mix>?][<r18>?][<tag，多个tag用'&'连接>?]", "文章[<内容>][<&字数>?]", "摸鱼", "美女",
@@ -22,6 +34,13 @@ object Help {
         "申请解除禁言 [新群名片]"
     )
 
+    /**
+     * 获取帮助信息
+     *
+     * @author RyouonRitsu
+     * @param list 函数列表，可选Help单例中的funcGroup或funcFriend
+     * @return 帮助信息
+     */
     fun toString(list: List<String>): String {
         var usage = "Usage -> {\n"
         for (it in list) usage += "\t$it\n"

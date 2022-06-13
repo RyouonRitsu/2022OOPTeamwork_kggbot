@@ -9,6 +9,11 @@ import net.mamoe.mirai.console.util.ConsoleExperimentalApi
 import net.mamoe.mirai.utils.BotConfiguration
 import org.ritsu.mirai.plugin.kernel.loadData
 
+/**
+ * 项目启动函数
+ *
+ * @author RyouonRitsu
+ */
 @OptIn(ConsoleExperimentalApi::class)
 suspend fun main() {
     MiraiConsoleTerminalLoader.startAsDaemon()
@@ -27,6 +32,7 @@ suspend fun main() {
         enableContactCache()
     }.alsoLogin()
 
+    //数据加载
     loadData(bot.groups)
 
     MiraiConsole.job.join()

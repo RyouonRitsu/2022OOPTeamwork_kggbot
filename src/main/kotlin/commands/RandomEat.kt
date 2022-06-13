@@ -1,7 +1,15 @@
 package org.ritsu.mirai.plugin.commands
 
+/**
+ * 可供随机的菜品单例
+ *
+ * @author RyouonRitsu
+ * @since 0.1.0
+ */
 object Dish {
-    //菜单列表
+    /**
+     * 菜单列表
+     */
     val dishMap: Map<String, List<String>> = mapOf(
         "家常菜" to listOf(
             "夫妻肺片", "糖醋排骨", "醋熘鸡", "客家小炒", "皮蛋豆腐", "鱼香豆腐", "酸辣口水鸡", "麻婆豆腐", "可乐鸡翅", "香菇豆腐饼",
@@ -136,6 +144,13 @@ object Dish {
     )
 }
 
+/**
+ * 从菜品中随机出一个菜，可指定菜系
+ *
+ * @author RyouonRitsu
+ * @param type 菜系
+ * @return bot回复
+ */
 fun randomEat(type: String): String {
     //随机食物，可选根据类型随机
     if (type != "") {
@@ -145,6 +160,14 @@ fun randomEat(type: String): String {
     return Dish.dishMap[Dish.dishMap.keys.random()]!!.random()
 }
 
+/**
+ * 从菜品中随机出一个菜，可指定菜系，可指定重复抽取次数
+ *
+ * @author RyouonRitsu
+ * @param type 菜系
+ * @param n 抽取次数
+ * @return bot回复
+ */
 fun randomEat(type: String, n: Int): String {
     var string = ""
     for (i in 1..n) {
@@ -158,6 +181,12 @@ fun randomEat(type: String, n: Int): String {
     return string
 }
 
+/**
+ * 展示可供选择的菜系
+ *
+ * @author RyouonRitsu
+ * @return 可供选择的菜系类型
+ */
 fun dishLs(): String {
     //显示所有类别
     var s = ""

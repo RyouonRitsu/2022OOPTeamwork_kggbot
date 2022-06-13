@@ -3,7 +3,16 @@ package org.ritsu.mirai.plugin.entity
 import net.mamoe.mirai.contact.nameCardOrNick
 import org.ritsu.mirai.plugin.kernel.addEnergy
 
+/**
+ * 管理员单例
+ *
+ * @author RyouonRitsu
+ * @since 0.1.0
+ */
 object Administrator {
+    /**
+     * 管理员列表
+     */
     val administrators: List<Long> = listOf(
         1780645196L,
         75046675L,
@@ -13,9 +22,21 @@ object Administrator {
         1784958674L,
         3110526590L
     )
+
+    /**
+     * bot黑名单列表
+     */
     val blacklist = ArrayList<Long>()
 }
 
+/**
+ * 调整用户能量值
+ *
+ * @author RyouonRitsu
+ * @param target 目标用户id
+ * @param amount 变化量，可为负数
+ * @return bot回复
+ */
 fun adjustUserEnergy(target: Long?, amount: Int?): String {
     val energy: Int?
     return if (target != null) {
@@ -29,6 +50,13 @@ fun adjustUserEnergy(target: Long?, amount: Int?): String {
     } else "无法识别该用户"
 }
 
+/**
+ * 查询用户能量值
+ *
+ * @author RyouonRitsu
+ * @param target 目标用户id
+ * @return bot回复
+ */
 fun queryUserEnergy(target: Long?): String {
     return if (target != null) "${User.users[target]!!.account.nameCardOrNick}的能量值是${User.users[target]!!.energyValue}"
     else "无法识别该用户"

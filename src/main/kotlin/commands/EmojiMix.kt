@@ -4,9 +4,25 @@ import com.github.binarywang.java.emoji.EmojiConverter
 import java.net.HttpURLConnection
 import java.net.URL
 
+/**
+ * 支持的Emoji数据类
+ *
+ * @author RyouonRitsu
+ * @since 0.1.0
+ * @property code emoji编码
+ * @property str emoji对应Api中的存放位置
+ * @property info emoji信息
+ */
 data class Emoji(val code: List<Int>, val str: String, val info: List<String>) {
     companion object {
+        /**
+         * 主Api网址
+         */
         const val API = "https://www.gstatic.com/android/keyboard/emojikitchen/"
+
+        /**
+         * 支持的Emoji集合
+         */
         val emojis = listOf(
             Emoji(listOf(128516), "20201001", listOf("smile", "happy")),
             Emoji(listOf(128512), "20201001", listOf("smile", "happy")),
@@ -358,6 +374,13 @@ data class Emoji(val code: List<Int>, val str: String, val info: List<String>) {
     }
 }
 
+/**
+ * EmojiMix功能
+ *
+ * @author RyouonRitsu
+ * @param emojis 包含emoji和+号的字符串
+ * @return 保存的混合emoji图片地址
+ */
 fun emojiMix(emojis: String): String {
     return if (emojis.contains("+")) {
         val emojiCollection =
@@ -373,6 +396,14 @@ fun emojiMix(emojis: String): String {
     } else "格式错误, 请检查是否包含\"+\"号"
 }
 
+/**
+ * 根据emoji的信息生成对应的图片地址
+ *
+ * @author RyouonRitsu
+ * @param emoji1 第一个emoji
+ * @param emoji2 第二个emoji
+ * @return 混合后的图片地址
+ */
 fun createUrl(emoji1: Emoji, emoji2: Emoji): String {
     fun emojiCode(emoji: Emoji): String {
         return emoji.code.joinToString("-") { String.format("u%x", it) }
@@ -383,6 +414,13 @@ fun createUrl(emoji1: Emoji, emoji2: Emoji): String {
     return "${Emoji.API}${emoji1.str}/${u1}/${u1}_${u2}.png"
 }
 
+/**
+ * 根据emoji的十进制编码在支持的Emoji集合中查找对应的Emoji
+ *
+ * @author RyouonRitsu
+ * @param emojiNum emoji的十进制编码
+ * @return 对应的Emoji实例
+ */
 fun findEmoji(emojiNum: Int): Emoji? {
     for (e in Emoji.emojis) {
         if (emojiNum in e.code) {
@@ -392,6 +430,14 @@ fun findEmoji(emojiNum: Int): Emoji? {
     return null
 }
 
+/**
+ * 尝试混合两个emoji，给出结果
+ *
+ * @author RyouonRitsu
+ * @param emojiNum1 第一个emoji的十进制编码
+ * @param emojiNum2 第二个emoji的十进制编码
+ * @return 混合结果
+ */
 fun mixEmoji(emojiNum1: Int, emojiNum2: Int): String {
     val emoji1 = findEmoji(emojiNum1)
     val emoji2 = findEmoji(emojiNum2)

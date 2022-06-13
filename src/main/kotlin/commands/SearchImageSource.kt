@@ -9,6 +9,13 @@ import java.net.InetSocketAddress
 import java.net.Proxy
 import java.util.concurrent.TimeUnit
 
+/**
+ * 利用saucenao提供的Api进行图片搜索功能
+ *
+ * @author RyouonRitsu
+ * @param imageUrl 要搜索的图片的url
+ * @return Pair(错误信息, 本地保存图片地址)
+ */
 fun searchImageSource(imageUrl: String): Pair<String, String?> {
     val apiKey = "d9c7172f1cf935901106e36af76f3c469505f225"
     val minsim = "80!"
@@ -51,6 +58,16 @@ fun searchImageSource(imageUrl: String): Pair<String, String?> {
     }
 }
 
+/**
+ * 从指定url中下载文件到指定目录
+ *
+ * @author RyouonRitsu
+ * @param url 要下载的文件的url
+ * @param path 要保存到的文件目录
+ * @param header 是否启用header
+ * @param sa 指定代理
+ * @return Pair(HTTP状态码, 错误信息)
+ */
 fun download(url: String, path: String, header: Boolean? = false, sa: InetSocketAddress? = null): Pair<Int, String?> {
     val client = OkHttpClient().also {
         it.newBuilder().apply {

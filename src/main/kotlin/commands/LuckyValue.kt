@@ -6,6 +6,13 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import kotlin.math.nextDown
 
+/**
+ * 获取一天的幸运值
+ *
+ * @author RyouonRitsu
+ * @param sender 发送者
+ * @return bot回复
+ */
 fun luckyValue(sender: Member, tag: Boolean? = false): String {
     val user = User.getUser(sender)
     //标识是否需要更新json数据

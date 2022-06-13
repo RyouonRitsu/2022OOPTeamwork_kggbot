@@ -4,6 +4,13 @@ import java.io.File
 import java.nio.charset.Charset
 import java.util.concurrent.TimeUnit
 
+/**
+ * 执行python脚本，依赖服务器本机的python环境
+ *
+ * @author RyouonRitsu
+ * @param code 脚本代码
+ * @return Pair(脚本执行结果, 错误信息)
+ */
 fun runPython(code: String): Pair<String?, String?> {
     val file = File("./data/cmd.py")
     file.writeText(
