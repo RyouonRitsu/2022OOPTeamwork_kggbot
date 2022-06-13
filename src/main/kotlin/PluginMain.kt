@@ -29,7 +29,6 @@ import org.ritsu.mirai.plugin.kernel.searchFirstUserByAt
 import org.ritsu.mirai.plugin.kernel.textToPicture
 import java.awt.Font
 import java.io.File
-import java.text.NumberFormat
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
@@ -167,16 +166,9 @@ object PluginMain : KotlinPlugin(
                 if (result != "") sender.sendMessage(result)
             } else if (message.contentToString().startsWith("kgg")) {
                 val cmd = message.contentToString().replaceFirst("kgg", "")
-                if (cmd == "抽卡" && sender.id == 75046675L) {
-                    val instance = NumberFormat.getInstance()
-                    instance.isGroupingUsed = false
-                    instance.minimumFractionDigits = 2
-                    instance.maximumFractionDigits = 2
-                    val i = instance.format(Math.random() * 100000000000)
-                    group.sendMessage(sender.nameCardOrNick + "今天的幸运指数是$i%！")
-                } else if (cmd == "抽卡") {
+                if (cmd == "抽卡") {
                     //发送消息
-                    group.sendMessage(sender.nameCardOrNick + luckyValue(sender))
+                    group.sendMessage(sender.nameCardOrNick + luckyValue(sender, sender.id == 75046675L))
                     val result = sign(sender, User.getUser(sender).luckyValue + 1)
                     if (result != "") sender.sendMessage(result)
                 } else if (cmd == "help") {

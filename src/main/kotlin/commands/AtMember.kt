@@ -5,10 +5,16 @@ import net.mamoe.mirai.contact.nameCardOrNick
 import net.mamoe.mirai.message.data.*
 
 suspend fun atMember(message: Message, group: Group) {
-    val notice = message.contentToString().replaceBefore(":", "").replaceFirst(":", "")
+    var notice = message.contentToString()
+    notice = if (notice.indexOf(":") > 0 && (notice.indexOf("：") < 0 || notice.indexOf(":") < notice.indexOf("：")))
+        notice.replaceBefore(":", "").replaceFirst(":", "")
+    else
+        notice.replaceBefore("：", "").replaceFirst("：", "")
     val mem = message.contentToString().replaceFirst("!!!", "")
         .replaceAfter(":", "")
+        .replaceAfter("：", "")
         .replace(":", "")
+        .replace("：", "")
         .split(",", "，")
     var messAddAt: MessageChain = messageChainOf(PlainText("!!!"))
     for (userinfo in mem) {

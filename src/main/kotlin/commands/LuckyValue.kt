@@ -6,7 +6,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import kotlin.math.nextDown
 
-fun luckyValue(sender: Member): String {
+fun luckyValue(sender: Member, tag: Boolean? = false): String {
     val user = User.getUser(sender)
     //标识是否需要更新json数据
     var flag = false
@@ -14,7 +14,8 @@ fun luckyValue(sender: Member): String {
 
     if (user.luckyValueAcquisitionDate != format.format(LocalDate.now())) {
         //如果还没抽过卡就抽卡
-        user.luckyValue = Math.random() / 1.0.nextDown()
+        val k = if (tag == true) 10000 else 1
+        user.luckyValue = Math.random() / 1.0.nextDown() * k
         user.luckyValueAcquisitionDate = format.format(LocalDate.now())
         flag = true
     }
