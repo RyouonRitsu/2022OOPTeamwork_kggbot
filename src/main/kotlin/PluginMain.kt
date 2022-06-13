@@ -530,7 +530,7 @@ object PluginMain : KotlinPlugin(
                                 } else {
                                     addEnergy(sender, -20)
                                     group.sendMessage(
-                                        message.quote() + "不对哦! 你已经没有机会了! 本次游戏花费能量值20! 你目前有${
+                                        message.quote() + "不对哦! 你已经没有机会了, 正确答案是: ${answer}! 本次游戏花费能量值20! 你目前有${
                                             User.getUser(
                                                 sender
                                             ).energyValue
