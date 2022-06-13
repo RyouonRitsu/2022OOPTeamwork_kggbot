@@ -493,6 +493,55 @@ object PluginMain : KotlinPlugin(
                         withContext(Dispatchers.IO) { inputStream.close() }
                         group.sendMessage(message.quote() + Image(id))
                     }
+                } else if (cmd == "猜成语") {
+                    User.conversationLock[sender.id] = true
+                    val (success, answer, path) = guessIdiom()
+                    if (success && User.getUser(sender).energyValue >= 20) {
+                        val inputStream = File(path!!).toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        group.sendMessage(message.quote() + Image(id))
+                        withContext(Dispatchers.IO) {
+                            inputStream.close()
+                        }
+                        var times = 3
+                        whileSelectMessages {
+                            "猜不出来" {
+                                addEnergy(sender, -20)
+                                group.sendMessage(
+                                    message.quote() + "答案是: ${answer}, 再接再厉哦! 本次游戏花费能量值20! 你目前有${
+                                        User.getUser(
+                                            sender
+                                        ).energyValue
+                                    }点能量值!"
+                                )
+                                false
+                            }
+                            answer {
+                                val reward = (1..100).random()
+                                addEnergy(sender, reward)
+                                group.sendMessage(message.quote() + "恭喜你答对啦! 奖励你${reward}点能量值! 你目前有${User.getUser(sender).energyValue}点能量值!")
+                                false
+                            }
+                            default {
+                                times--
+                                if (times > 0) {
+                                    group.sendMessage(message.quote() + "不对哦! 你还有${times}次机会! 你也可以说\"猜不出来\"来结束猜成语游戏!")
+                                    true
+                                } else {
+                                    addEnergy(sender, -20)
+                                    group.sendMessage(
+                                        message.quote() + "不对哦! 你已经没有机会了! 本次游戏花费能量值20! 你目前有${
+                                            User.getUser(
+                                                sender
+                                            ).energyValue
+                                        }点能量值!"
+                                    )
+                                    false
+                                }
+                            }
+                        }
+                    } else if (User.getUser(sender).energyValue < 20) group.sendMessage(message.quote() + "你的能量值不足20, 无法参与游戏!")
+                    else group.sendMessage(message.quote() + answer)
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
