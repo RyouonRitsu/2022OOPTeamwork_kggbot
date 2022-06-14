@@ -16,15 +16,19 @@ fun guessIdiom(): Triple<Boolean, String, String?> {
     val url = "http://api.weijieyue.cn/api/tupian/ktcy.php"
     val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
-    val response = client.newCall(request).execute()
-    return when (response.code) {
-        200 -> {
-            val body = response.body?.string() ?: return Triple(false, "呜呜, 我没想出题呢! 过会儿再试吧!", null)
-            val data = JSON.parseObject(body).getJSONArray("data")[0] as JSONObject
-            val (code, msg) = download(data.getString("image"), "./data/Image/idiom.jpg")
-            if (code == 200 && msg == null) Triple(true, data.getString("name"), "./data/Image/idiom.jpg")
-            else Triple(false, "呜呜, 我没想出题呢! 过会儿再试吧!", null)
+    try {
+        val response = client.newCall(request).execute()
+        return when (response.code) {
+            200 -> {
+                val body = response.body?.string() ?: return Triple(false, "呜呜, 我没想出题呢! 过会儿再试吧!", null)
+                val data = JSON.parseObject(body).getJSONArray("data")[0] as JSONObject
+                val (code, msg) = download(data.getString("image"), "./data/Image/idiom.jpg")
+                if (code == 200 && msg == null) Triple(true, data.getString("name"), "./data/Image/idiom.jpg")
+                else Triple(false, "呜呜, 我没想出题呢! 过会儿再试吧!", null)
+            }
+            else -> Triple(false, "呜呜, 我没想出题呢! 过会儿再试吧!", null)
         }
-        else -> Triple(false, "呜呜, 我没想出题呢! 过会儿再试吧!", null)
+    } catch (e: Exception) {
+        return Triple(false, "呜呜, 我没想出题呢! 过会儿再试吧!", null)
     }
 }
