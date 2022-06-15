@@ -6,20 +6,47 @@ import com.alibaba.fastjson2.JSONObject
 import net.mamoe.mirai.Bot
 import net.mamoe.mirai.message.data.PlainText
 import java.io.File
+import kotlin.reflect.full.declaredMemberProperties
+import kotlin.reflect.jvm.isAccessible
 
 /**
+ * 自定义的AnonymousMessage类，用于存放匿名消息的发送方和接收方id
+ *
  * @author 卢嘉美-20373814
- * @version jdk15.0.2
+ * @property num 匿名消息的编号
+ * @property senderid 匿名消息发送者id
+ * @property receiverid 匿名消息接收者id
+ * @constructor 创建一个AnonymousMessage类
  */
 class AnonymousMessage(val num: Int) {
     companion object {
+        /**
+         * 所有匿名消息的HashMap
+         */
         val messages = HashMap<Int, AnonymousMessage>()
-        val arrFree = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+        /**
+         * 当前空闲编号列表
+         */
+        val arrFree = mutableListOf<Int>()
+        /**
+         * 当前已被占用列表编号
+         */
         val arrOccupied = mutableListOf<Int>()
+        /**
+         * 获取对应编号的匿名消息对象
+         */
         fun getAnonymousMessage(num: Int): AnonymousMessage? {
             return messages[num]
         }
-
+        /**
+         * 放入一个匿名消息对象进入匿名消息的HashMap中
+         */
+        fun put(num: Int){
+            messages.put(num , AnonymousMessage(num))
+        }
+        /**
+         * 创建一个匿名消息时为其分配编号
+         */
         suspend fun getRandom(bot: Bot): Int {
             val a: Int
             if (arrFree.isNotEmpty()) {
@@ -42,6 +69,9 @@ class AnonymousMessage(val num: Int) {
             return a
         }
 
+        /**
+         * 匿名消息被回复后释放对应编号
+         */
         fun release(num: Int, receiverID: Long): AnonymousMessage? {
             val index = arrOccupied.indexOf(num)
             val obj = getAnonymousMessage(num)
@@ -56,6 +86,9 @@ class AnonymousMessage(val num: Int) {
             return null
         }
 
+        /**
+         * 一个用户拒绝接收匿名消息后回复之前所有该用户为接收者且还未被回复的匿名消息，并设置该用户以后不再接收匿名消息
+         */
         suspend fun refuse(num: Long, bot: Bot) {
             val iterator = messages.entries.iterator()
             while (iterator.hasNext()) {
@@ -76,6 +109,11 @@ class AnonymousMessage(val num: Int) {
     var senderid: Long = 0
     var receiverid: Long = 0
 
+    /**
+     * 保存匿名消息的相关数据到文件
+     *
+     * @author 卢嘉美-20373814
+     */
     fun save() {
         //读取json文件
         val file = File("./data/AnonymousMessage.json")
@@ -111,6 +149,11 @@ class AnonymousMessage(val num: Int) {
         file.writeText(jsonString)
     }
 
+    /**
+     * 删除文件中的匿名消息相关信息
+     *
+     * @author 卢嘉美-20373814
+     */
     fun delete() {
         //读取json文件
         val file = File("./data/AnonymousMessage.json")
@@ -133,8 +176,20 @@ class AnonymousMessage(val num: Int) {
         file.writeText(jsonString)
     }
 
+    /**
+     * 通过反射自动写入基础数据类型进JSONObject，对于List、Map等复杂数据类型需要特别指定写入方式
+     *
+     * @author 卢嘉美-20373814
+     * @param jsonObject 要写入的JSONObject文件
+     */
     private fun writeJSON(jsonObject: JSONObject) {
-        jsonObject["senderid"] = this.senderid
-        jsonObject["receiverid"] = this.receiverid
+        //使用反射获取所有属性并写入jsonObject
+        this::class.declaredMemberProperties.filter { it.name != "num" }.forEach { property ->
+            property.isAccessible = true
+            when (property.name) {
+                //特殊处理列表, Map等需要特殊存储的属性
+                else -> jsonObject[property.name] = property.getter.call(this)
+            }
+        }
     }
 }

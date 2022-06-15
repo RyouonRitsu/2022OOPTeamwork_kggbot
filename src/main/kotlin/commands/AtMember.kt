@@ -4,6 +4,13 @@ import net.mamoe.mirai.contact.Group
 import net.mamoe.mirai.contact.nameCardOrNick
 import net.mamoe.mirai.message.data.*
 
+/**
+ * 使用@通知群成员
+ *
+ * @author 卢嘉美-20373814
+ * @param message 通知消息的内容
+ * @param group 需要进行通知的群
+ */
 suspend fun atMember(message: Message, group: Group) {
     var notice = message.contentToString()
     notice = if (notice.indexOf(":") > 0 && (notice.indexOf("：") < 0 || notice.indexOf(":") < notice.indexOf("：")))

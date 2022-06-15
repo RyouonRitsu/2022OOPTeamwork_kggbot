@@ -5,6 +5,8 @@ import com.alibaba.fastjson2.JSONObject
 import net.mamoe.mirai.console.util.safeCast
 import net.mamoe.mirai.contact.ContactList
 import net.mamoe.mirai.contact.Group
+import org.ritsu.mirai.plugin.entity.AnonymousMessage
+import org.ritsu.mirai.plugin.entity.Grp
 import org.ritsu.mirai.plugin.entity.User
 import java.io.File
 import kotlin.reflect.KMutableProperty1
@@ -34,6 +36,54 @@ fun loadData(groups: ContactList<Group>) {
         val jsonObj = it as JSONObject
         val user = User.users[jsonObj.getLongValue("id")]
         user?.let { load(jsonObj, it, listOf("account")) }
+    }
+}
+
+/**
+ * 此函数的作用是在bot开机时将本地保存的有关匿名消息的json数据加载进bot中自定义的类中，此函数在启动函数中调用
+ *
+ * @author 卢嘉美-20373814
+ */
+fun loadMessage() {
+    val file = File("./data/AnonymousMessage.json")
+    val jsonString = file.readText()
+    val jsonArr = JSON.parseArray(jsonString) ?: return
+    //遍历JSONArray
+    for (it in jsonArr) {
+        val jsonObj = it as JSONObject
+        AnonymousMessage.put(jsonObj.getIntValue("id"))
+        AnonymousMessage.arrOccupied.add(jsonObj.getIntValue("id"))
+        val messageInfo = AnonymousMessage.messages[jsonObj.getIntValue("id")]
+        messageInfo?.let { load(jsonObj, it, listOf("num")) }
+    }
+    for(i in 1..10){
+        if(AnonymousMessage.arrOccupied.indexOf(i) == -1) AnonymousMessage.arrFree.add(i)
+    }
+}
+
+/**
+ * 此函数的作用是在bot开机时将本地保存的有关群聊成员管理信息的json数据加载进bot中自定义的类中，此函数在启动函数中调用
+ *
+ * @author 卢嘉美-20373814
+ * @param groups 当前bot的群列表
+ */
+fun loadGrp(groups: ContactList<Group>) {
+    groups.forEach {
+        Grp.getGroup(it)
+    }
+    val file = File("./data/GroupData.json")
+    val jsonString = file.readText()
+    val jsonArr = JSON.parseArray(jsonString) ?: return
+    //遍历JSONArray
+    for (it in jsonArr) {
+        val jsonObj = it as JSONObject
+        val grp = Grp.groups[jsonObj.getLongValue("id")]
+        grp?.let { load(jsonObj, it, listOf("group" , "mutelist")) }
+        val list = jsonObj.getString("mutelist").split(",")
+        for( item in list){
+            grp?.mutelist?.add(item.toLong())
+        }
+
     }
 }
 
