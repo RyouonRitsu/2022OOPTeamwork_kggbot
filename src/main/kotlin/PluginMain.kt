@@ -140,10 +140,6 @@ object PluginMain : KotlinPlugin(
                 }
             }
             //普通命令
-            //复读示例
-            if (message.contentToString().startsWith("复读")) {
-                group.sendMessage(message.contentToString().replace("复读", ""))
-            }
             if ((sender.permission == MemberPermission.OWNER || sender.permission == MemberPermission.ADMINISTRATOR)
                 && message.contentToString().startsWith("!!!")
             ) {
@@ -158,6 +154,31 @@ object PluginMain : KotlinPlugin(
                 && message.contentToString().startsWith("清理群成员")
             ) {
                 kick(group, message)
+            }
+            //复读示例
+            else if (message.contentToString().startsWith("复读")) {
+                group.sendMessage(message.contentToString().replace("复读", ""))
+            }
+            //成语接龙模式
+            else if (IdiomSolitaire.gameMap[group.id] == true) {
+                if (message.content == "不玩了") {
+                    group.sendMessage("游戏已结束!")
+                    IdiomSolitaire.gameMap[group.id] = false
+                } else if (message.content.length >= 4) {
+                    val (reply, key) = idiomSolitaire(message.content, IdiomSolitaire.keyMap[group.id]!!)
+                    if (key != null) {
+                        IdiomSolitaire.keyMap[group.id] = key
+                        val reward = (1..10).random()
+                        addEnergy(sender, reward)
+                        group.sendMessage(
+                            reply + "\n${sender.nameCardOrNick}已获得${reward}点能量值奖励, 当前有${
+                                User.getUser(
+                                    sender
+                                ).energyValue
+                            }点能量值!"
+                        )
+                    } else group.sendMessage("$reply 当前接龙的字是${IdiomSolitaire.keyMap[group.id]!![IdiomSolitaire.keyMap[group.id]!!.length - 1]}")
+                } else group.sendMessage("这个不可以哦! 请换一个吧~ 当前接龙的字是${IdiomSolitaire.keyMap[group.id]!![IdiomSolitaire.keyMap[group.id]!!.length - 1]}")
             }
             //kgg命令
             else if (
@@ -542,6 +563,16 @@ object PluginMain : KotlinPlugin(
                         }
                     } else if (User.getUser(sender).energyValue < 20) group.sendMessage(message.quote() + "你的能量值不足20, 无法参与游戏!")
                     else group.sendMessage(message.quote() + answer)
+                } else if (cmd == "成语接龙") {
+                    val (success, idiom, _) = guessIdiom(justIdiom = true)
+                    if (success) {
+                        group.sendMessage(
+                            "成语接龙游戏开始! 本次游戏以\"${idiom}\"开始! 请说出以\"${idiom[idiom.length - 1]}\"开头的成语以继续游戏! " +
+                                "我会对你所说的话进行简单的判断来确认是否可以继续游戏! 随时可以通过\"不玩了\"来结束游戏哦~"
+                        )
+                        IdiomSolitaire.gameMap[group.id] = true
+                        IdiomSolitaire.keyMap[group.id] = idiom
+                    } else group.sendMessage("游戏开始失败! 请稍后再试~")
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
