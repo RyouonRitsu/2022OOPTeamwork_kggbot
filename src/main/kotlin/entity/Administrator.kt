@@ -20,7 +20,8 @@ object Administrator {
     )
     val botList: List<Long> = listOf(
         1784958674L,
-        3110526590L
+        3110526590L,
+        2184442329L
     )
 
     /**
