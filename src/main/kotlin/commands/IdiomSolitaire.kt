@@ -48,7 +48,11 @@ fun idiomSolitaire(idiom: String, key: String): Pair<String, String?> {
             200 -> {
                 val body = response.body?.string() ?: return Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是\"$keyword\"!", null)
                 val msg = JSON.parseObject(body).getString("msg")
-                if (msg == null && getPinYin(idiom, head = true) == keyword) Pair("接龙成功! 下次一个成语请以\"${getPinYin(idiom)}\"开头~", idiom)
+                if (msg == null && getPinYin(
+                        idiom,
+                        head = true
+                    ) == keyword
+                ) Pair("接龙成功! 下次一个成语请以\"${getPinYin(idiom)}\"开头~", idiom)
                 else Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是\"$keyword\"!", null)
             }
             else -> Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是\"$keyword\"!", null)
