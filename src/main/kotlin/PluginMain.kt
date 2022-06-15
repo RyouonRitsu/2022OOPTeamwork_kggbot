@@ -32,6 +32,7 @@ import java.io.File
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
+import java.util.*
 
 /**
  * 使用 kotlin 版请把
@@ -164,21 +165,25 @@ object PluginMain : KotlinPlugin(
                 if (message.content == "不玩了") {
                     group.sendMessage("游戏已结束!")
                     IdiomSolitaire.gameMap[group.id] = false
-                } else if (message.content.length >= 4) {
-                    val (reply, key) = idiomSolitaire(message.content, IdiomSolitaire.keyMap[group.id]!!)
+                } else if (message.content.length == 4) {
+                    val (reply, key) = idiomSolitaire(message.content, IdiomSolitaire.keyMap[group.id]!!.first)
                     if (key != null) {
-                        IdiomSolitaire.keyMap[group.id] = key
-                        val reward = (10..20).random()
-                        addEnergy(sender, reward)
-                        group.sendMessage(
-                            reply + "\n${sender.nameCardOrNick}已获得${reward}点能量值奖励, 当前有${
-                                User.getUser(
-                                    sender
-                                ).energyValue
-                            }点能量值!"
-                        )
+                        if (message.content in IdiomSolitaire.keyMap[group.id]!!)
+                            group.sendMessage("这个重复了哦! 请换一个吧~ 当前接龙的字是\"${getPinYin(IdiomSolitaire.keyMap[group.id]!!.first)}\"!")
+                        else {
+                            IdiomSolitaire.keyMap[group.id]!!.addFirst(key)
+                            val reward = (10..20).random()
+                            addEnergy(sender, reward)
+                            group.sendMessage(
+                                reply + "\n${sender.nameCardOrNick}已获得${reward}点能量值奖励, 当前有${
+                                    User.getUser(
+                                        sender
+                                    ).energyValue
+                                }点能量值!"
+                            )
+                        }
                     } else group.sendMessage(reply)
-                } else group.sendMessage("这个不可以哦! 请换一个吧~ 当前接龙的字是\"${getPinYin(IdiomSolitaire.keyMap[group.id]!!)}\"!")
+                } else group.sendMessage("这个不可以哦! 请换一个吧~ 当前接龙的字是\"${getPinYin(IdiomSolitaire.keyMap[group.id]!!.first)}\"!")
             }
             //kgg命令
             else if (
@@ -583,7 +588,7 @@ object PluginMain : KotlinPlugin(
                                 "我会对你所说的话进行简单的判断来确认是否可以继续游戏! 随时可以通过\"不玩了\"来结束游戏哦~"
                         )
                         IdiomSolitaire.gameMap[group.id] = true
-                        IdiomSolitaire.keyMap[group.id] = idiom
+                        IdiomSolitaire.keyMap[group.id] = LinkedList<String>().apply { addFirst(idiom) }
                     } else group.sendMessage("游戏开始失败! 请稍后再试~")
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
