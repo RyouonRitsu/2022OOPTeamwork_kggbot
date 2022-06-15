@@ -178,7 +178,7 @@ object PluginMain : KotlinPlugin(
                             }点能量值!"
                         )
                     } else group.sendMessage(reply)
-                } else group.sendMessage("这个不可以哦! 请换一个吧~ 当前接龙的字是${IdiomSolitaire.keyMap[group.id]!![IdiomSolitaire.keyMap[group.id]!!.length - 1]}")
+                } else group.sendMessage("这个不可以哦! 请换一个吧~ 当前接龙的字是\"${getPinYin(IdiomSolitaire.keyMap[group.id]!!)}\"!")
             }
             //kgg命令
             else if (
@@ -567,7 +567,7 @@ object PluginMain : KotlinPlugin(
                     val (success, idiom, _) = guessIdiom(justIdiom = true)
                     if (success) {
                         group.sendMessage(
-                            "成语接龙游戏开始! 本次游戏以\"${idiom}\"开始! 请说出以\"${idiom[idiom.length - 1]}\"开头的成语以继续游戏! " +
+                            "成语接龙游戏开始! 本次游戏以\"${idiom}\"开始! 请说出以\"${getPinYin(idiom)}\"开头的成语以继续游戏! " +
                                 "我会对你所说的话进行简单的判断来确认是否可以继续游戏! 随时可以通过\"不玩了\"来结束游戏哦~"
                         )
                         IdiomSolitaire.gameMap[group.id] = true
