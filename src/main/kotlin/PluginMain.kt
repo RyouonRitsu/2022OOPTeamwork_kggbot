@@ -140,10 +140,6 @@ object PluginMain : KotlinPlugin(
                 }
             }
             //普通命令
-            //复读示例
-            if (message.contentToString().startsWith("复读")) {
-                group.sendMessage(message.contentToString().replace("复读", ""))
-            }
             if ((sender.permission == MemberPermission.OWNER || sender.permission == MemberPermission.ADMINISTRATOR)
                 && message.contentToString().startsWith("!!!")
             ) {
@@ -158,6 +154,31 @@ object PluginMain : KotlinPlugin(
                 && message.contentToString().startsWith("清理群成员")
             ) {
                 kick(group, message)
+            }
+            //复读示例
+            else if (message.contentToString().startsWith("复读")) {
+                group.sendMessage(message.contentToString().replace("复读", ""))
+            }
+            //成语接龙模式
+            else if (IdiomSolitaire.gameMap[group.id] == true) {
+                if (message.content == "不玩了") {
+                    group.sendMessage("游戏已结束!")
+                    IdiomSolitaire.gameMap[group.id] = false
+                } else if (message.content.length >= 4) {
+                    val (reply, key) = idiomSolitaire(message.content, IdiomSolitaire.keyMap[group.id]!!)
+                    if (key != null) {
+                        IdiomSolitaire.keyMap[group.id] = key
+                        val reward = (10..20).random()
+                        addEnergy(sender, reward)
+                        group.sendMessage(
+                            reply + "\n${sender.nameCardOrNick}已获得${reward}点能量值奖励, 当前有${
+                                User.getUser(
+                                    sender
+                                ).energyValue
+                            }点能量值!"
+                        )
+                    } else group.sendMessage(reply)
+                } else group.sendMessage("这个不可以哦! 请换一个吧~ 当前接龙的字是\"${getPinYin(IdiomSolitaire.keyMap[group.id]!!)}\"!")
             }
             //kgg命令
             else if (
@@ -293,15 +314,18 @@ object PluginMain : KotlinPlugin(
                 } else if (cmd.startsWith("metar")) {
                     group.sendMessage(message.quote() + getMetar(cmd.replaceFirst("metar", "")))
                 } else if (cmd.startsWith("来点")) {
-                    val id: String
-                    val (msg, result) = getRandomPixivPic(cmd.replaceFirst("来点", ""))
-                    if (result == "./data/Image/temp_pixiv.jpg" || result == "./data/Image/temp_pixiv.png") {
-                        val inputStream = File(result).toExternalResource()
-                        id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) { inputStream.close() }
-                        group.sendMessage(Image(id))
-                    } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
-                    else group.sendMessage(message.quote() + msg)
+                    if (sender.id !in Administrator.administrators) group.sendMessage(message.quote() + "对不起，您没有权限使用该功能")
+                    else {
+                        val id: String
+                        val (msg, result) = getRandomPixivPic(cmd.replaceFirst("来点", ""))
+                        if (result == "./data/Image/temp_pixiv.jpg" || result == "./data/Image/temp_pixiv.png") {
+                            val inputStream = File(result).toExternalResource()
+                            id = group.uploadImage(inputStream).imageId
+                            withContext(Dispatchers.IO) { inputStream.close() }
+                            group.sendMessage(Image(id))
+                        } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
+                        else group.sendMessage(message.quote() + msg)
+                    }
                 } else if (cmd == "全国油价") {
                     textToPicture(
                         getOil("全国"),
@@ -339,13 +363,16 @@ object PluginMain : KotlinPlugin(
                         )
                     )
                 } else if (cmd == "cos") {
-                    val (msg, result) = getCoser()
-                    if (result == null) group.sendMessage(message.quote() + msg)
+                    if (sender.id !in Administrator.administrators) group.sendMessage(message.quote() + "对不起，您没有权限使用该功能")
                     else {
-                        val inputStream = File(result).toExternalResource()
-                        val id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) { inputStream.close() }
-                        group.sendMessage(Image(id))
+                        val (msg, result) = getCoser()
+                        if (result == null) group.sendMessage(message.quote() + msg)
+                        else {
+                            val inputStream = File(result).toExternalResource()
+                            val id = group.uploadImage(inputStream).imageId
+                            withContext(Dispatchers.IO) { inputStream.close() }
+                            group.sendMessage(Image(id))
+                        }
                     }
                 } else if (cmd == "cat") {
                     val (msg, result) = getCat()
@@ -465,22 +492,28 @@ object PluginMain : KotlinPlugin(
                         }
                     }
                 } else if (cmd == "买家秀") {
-                    val (msg, result) = getBuyerShow()
-                    if (result == null) group.sendMessage(message.quote() + msg)
+                    if (sender.id !in Administrator.administrators) group.sendMessage(message.quote() + "对不起，您没有权限使用该功能")
                     else {
-                        val inputStream = File(result).toExternalResource()
-                        val id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) { inputStream.close() }
-                        group.sendMessage(Image(id))
+                        val (msg, result) = getBuyerShow()
+                        if (result == null) group.sendMessage(message.quote() + msg)
+                        else {
+                            val inputStream = File(result).toExternalResource()
+                            val id = group.uploadImage(inputStream).imageId
+                            withContext(Dispatchers.IO) { inputStream.close() }
+                            group.sendMessage(Image(id))
+                        }
                     }
                 } else if (cmd == "美女") {
-                    val (msg, result) = getBeauty()
-                    if (result == null) group.sendMessage(message.quote() + msg)
+                    if (sender.id !in Administrator.administrators) group.sendMessage(message.quote() + "对不起，您没有权限使用该功能")
                     else {
-                        val inputStream = File(result).toExternalResource()
-                        val id = group.uploadImage(inputStream).imageId
-                        withContext(Dispatchers.IO) { inputStream.close() }
-                        group.sendMessage(Image(id))
+                        val (msg, result) = getBeauty()
+                        if (result == null) group.sendMessage(message.quote() + msg)
+                        else {
+                            val inputStream = File(result).toExternalResource()
+                            val id = group.uploadImage(inputStream).imageId
+                            withContext(Dispatchers.IO) { inputStream.close() }
+                            group.sendMessage(Image(id))
+                        }
                     }
                 } else if (cmd.startsWith("双色球")) {
                     group.sendMessage(message.quote() + unionLotto(cmd.replace("双色球", "").trim()))
@@ -517,7 +550,7 @@ object PluginMain : KotlinPlugin(
                                 false
                             }
                             answer {
-                                val reward = (1..100).random()
+                                val reward = (1..50).random()
                                 addEnergy(sender, reward)
                                 group.sendMessage(message.quote() + "恭喜你答对啦! 奖励你${reward}点能量值! 你目前有${User.getUser(sender).energyValue}点能量值!")
                                 false
@@ -542,6 +575,16 @@ object PluginMain : KotlinPlugin(
                         }
                     } else if (User.getUser(sender).energyValue < 20) group.sendMessage(message.quote() + "你的能量值不足20, 无法参与游戏!")
                     else group.sendMessage(message.quote() + answer)
+                } else if (cmd == "成语接龙") {
+                    val (success, idiom, _) = guessIdiom(justIdiom = true)
+                    if (success) {
+                        group.sendMessage(
+                            "成语接龙游戏开始! 本次游戏以\"${idiom}\"开始! 请说出以\"${getPinYin(idiom)}\"开头的成语以继续游戏! " +
+                                "我会对你所说的话进行简单的判断来确认是否可以继续游戏! 随时可以通过\"不玩了\"来结束游戏哦~"
+                        )
+                        IdiomSolitaire.gameMap[group.id] = true
+                        IdiomSolitaire.keyMap[group.id] = idiom
+                    } else group.sendMessage("游戏开始失败! 请稍后再试~")
                 } else {
                     group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
