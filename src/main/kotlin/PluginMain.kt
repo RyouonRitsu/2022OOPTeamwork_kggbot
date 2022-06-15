@@ -177,8 +177,8 @@ object PluginMain : KotlinPlugin(
                                 ).energyValue
                             }点能量值!"
                         )
-                    } else group.sendMessage(reply)
-                } else group.sendMessage("这个不可以哦! 请换一个吧~")
+                    } else group.sendMessage("$reply 当前接龙的字是${IdiomSolitaire.keyMap[group.id]!![IdiomSolitaire.keyMap[group.id]!!.length - 1]}")
+                } else group.sendMessage("这个不可以哦! 请换一个吧~ 当前接龙的字是${IdiomSolitaire.keyMap[group.id]!![IdiomSolitaire.keyMap[group.id]!!.length - 1]}")
             }
             //kgg命令
             else if (
