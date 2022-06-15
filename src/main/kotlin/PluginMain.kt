@@ -168,7 +168,7 @@ object PluginMain : KotlinPlugin(
                     val (reply, key) = idiomSolitaire(message.content, IdiomSolitaire.keyMap[group.id]!!)
                     if (key != null) {
                         IdiomSolitaire.keyMap[group.id] = key
-                        val reward = (1..10).random()
+                        val reward = (10..20).random()
                         addEnergy(sender, reward)
                         group.sendMessage(
                             reply + "\n${sender.nameCardOrNick}已获得${reward}点能量值奖励, 当前有${
@@ -177,7 +177,7 @@ object PluginMain : KotlinPlugin(
                                 ).energyValue
                             }点能量值!"
                         )
-                    } else group.sendMessage("$reply 当前接龙的字是${IdiomSolitaire.keyMap[group.id]!![IdiomSolitaire.keyMap[group.id]!!.length - 1]}")
+                    } else group.sendMessage(reply)
                 } else group.sendMessage("这个不可以哦! 请换一个吧~ 当前接龙的字是${IdiomSolitaire.keyMap[group.id]!![IdiomSolitaire.keyMap[group.id]!!.length - 1]}")
             }
             //kgg命令
@@ -538,7 +538,7 @@ object PluginMain : KotlinPlugin(
                                 false
                             }
                             answer {
-                                val reward = (1..100).random()
+                                val reward = (1..50).random()
                                 addEnergy(sender, reward)
                                 group.sendMessage(message.quote() + "恭喜你答对啦! 奖励你${reward}点能量值! 你目前有${User.getUser(sender).energyValue}点能量值!")
                                 false

@@ -33,7 +33,7 @@ object IdiomSolitaire {
  */
 fun idiomSolitaire(idiom: String, key: String): Pair<String, String?> {
     val keyword = key[key.length - 1]
-    if (idiom == key) return Pair("这个重复了哦! 请换一个吧~ 当前接龙的字是$keyword", null)
+    if (idiom == key) return Pair("这个重复了哦! 请换一个吧~ 当前接龙的字是$keyword!", null)
     val url = "https://api.iyk0.com/idiom/?msg=${idiom}&b=1"
     val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
@@ -41,14 +41,14 @@ fun idiomSolitaire(idiom: String, key: String): Pair<String, String?> {
         val response = client.newCall(request).execute()
         return when (response.code) {
             200 -> {
-                val body = response.body?.string() ?: return Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是$keyword", null)
+                val body = response.body?.string() ?: return Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是$keyword!", null)
                 val msg = JSON.parseObject(body).getString("msg")
                 if (msg == null && idiom[0] == keyword) Pair("接龙成功! 下次一个成语请以\"${idiom[idiom.length - 1]}\"开头~", idiom)
-                else Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是$keyword", null)
+                else Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是$keyword!", null)
             }
-            else -> Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是$keyword", null)
+            else -> Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是$keyword!", null)
         }
     } catch (e: Exception) {
-        return Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是$keyword", null)
+        return Pair("这个不可以哦! 请换一个吧~ 当前接龙的字是$keyword!", null)
     }
 }
