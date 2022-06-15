@@ -812,6 +812,24 @@ object PluginMain : KotlinPlugin(
                         withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(message.quote() + Image(id))
                     }
+                } else if (message.contentToString().startsWith("t")) {
+                    if (message.contentToString().length > 300) sender.sendMessage(message.quote() + "你要翻译的内容太长啦, 弄少一点再来吧!")
+                    else if ("\n" in message.contentToString()) sender.sendMessage(message.quote() + "你要翻译的内容不能包含换行哦!")
+                    else if ("->" in message.contentToString()) sender.sendMessage(
+                        message.quote() +
+                            translate(
+                                message.contentToString().replaceFirst("t", "").replaceAfterLast("->", "")
+                                    .substringBeforeLast("->"),
+                                message.contentToString().substringAfterLast("->").replaceFirst("->", "")
+                            )
+                    )
+                    else sender.sendMessage(
+                        message.quote() + translate(
+                            message.contentToString().replaceFirst("t", "")
+                        )
+                    )
+                } else if (message.contentToString() == "支持语言") {
+                    sender.sendMessage(message.quote() + "目前支持的语言有: " + languageType())
                 } else {
                     sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
