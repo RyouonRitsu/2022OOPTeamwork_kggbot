@@ -8,6 +8,8 @@ import net.mamoe.mirai.console.terminal.MiraiConsoleTerminalLoader
 import net.mamoe.mirai.console.util.ConsoleExperimentalApi
 import net.mamoe.mirai.utils.BotConfiguration
 import org.ritsu.mirai.plugin.kernel.loadData
+import org.ritsu.mirai.plugin.kernel.loadGrp
+import org.ritsu.mirai.plugin.kernel.loadMessage
 
 /**
  * 项目启动函数
@@ -34,6 +36,8 @@ suspend fun main() {
 
     //数据加载
     loadData(bot.groups)
+    loadMessage()
+    loadGrp(bot.groups)
 
     MiraiConsole.job.join()
 }

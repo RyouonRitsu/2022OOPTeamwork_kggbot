@@ -8,8 +8,12 @@ import org.ritsu.mirai.plugin.entity.AnonymousMessage
 import org.ritsu.mirai.plugin.entity.User
 
 /**
+ * 申请发送匿名消息
+ *
  * @author 卢嘉美-20373814
- * @version jdk15.0.2
+ * @param bot 对应的群聊机器人
+ * @param sender 申请发送匿名消息的用户
+ * @param message 消息内容
  */
 suspend fun sendAnonymousMessage(bot: Bot, sender: Friend, message: Message) {
     val receiverstr =
@@ -46,6 +50,14 @@ suspend fun sendAnonymousMessage(bot: Bot, sender: Friend, message: Message) {
     }
 }
 
+/**
+ * 回复匿名消息
+ *
+ * @author 卢嘉美-20373814
+ * @param bot 对应的群聊机器人
+ * @param sender 申请回复匿名消息的用户
+ * @param message 消息内容
+ */
 suspend fun replyAnonymousMessage(bot: Bot, sender: Friend, message: Message) {
     val numberStr =
         message.contentToString().replaceBefore("-", "").replace("-", "").replaceAfter("：", "").replaceFirst("：", "")
@@ -66,6 +78,13 @@ suspend fun replyAnonymousMessage(bot: Bot, sender: Friend, message: Message) {
     }
 }
 
+
+/**
+ * 设置为允许接收匿名消息
+ *
+ * @author 卢嘉美-20373814
+ * @param sender 进行设置的用户
+ */
 suspend fun accept(sender: Friend) {
     val user = User(sender)
     user.blockAnonymousMessage = false
@@ -73,6 +92,13 @@ suspend fun accept(sender: Friend) {
     sender.sendMessage(PlainText("您已设置为允许接收匿名消息"))
 }
 
+/**
+ * 设置为拒绝接收匿名消息
+ *
+ * @author 卢嘉美-20373814
+ * @param sender 进行设置的用户
+ * @param bot 对应的群聊机器人
+ */
 suspend fun refuse(sender: Friend, bot: Bot) {
     val user = User(sender)
     user.blockAnonymousMessage = true
