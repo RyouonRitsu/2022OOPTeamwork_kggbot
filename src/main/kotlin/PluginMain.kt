@@ -296,7 +296,7 @@ object PluginMain : KotlinPlugin(
                             } else group.sendMessage(At(sender).followedBy(PlainText(if (imageUrl == "default") "请发送图片或图片链接!" else "识别失败, 请重试!")))
                         } else group.sendMessage(message.quote() + "你的能量值不足120, 无法搜图!")
                     }
-                } else if (cmd.startsWith("Python")) {
+                } else if (cmd.startsWith("python")) {
                     val (result, error) = runPython(cmd)
                     try {
                         if (result != null && result != "") group.sendMessage(
@@ -591,7 +591,9 @@ object PluginMain : KotlinPlugin(
                         IdiomSolitaire.keyMap[group.id] = LinkedList<String>().apply { addFirst(idiom) }
                     } else group.sendMessage("游戏开始失败! 请稍后再试~")
                 } else {
-                    group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
+                    val result = Help.searchCommand(cmd.lowercase(), Help.funcGroup)
+                    if (result != null) group.sendMessage(message.quote() + result)
+                    else group.sendMessage(message.quote() + "不知道要做什么的话请说\"kgghelp\"!")
                 }
             }
             //与kgg聊天
@@ -861,7 +863,9 @@ object PluginMain : KotlinPlugin(
                         sender.sendMessage(message.quote() + Image(id))
                     }
                 } else {
-                    sender.sendMessage("不知道要做什么的话请说\"help\"!")
+                    val r = Help.searchCommand(message.content.lowercase(), Help.funcFriend)
+                    if (r != null) sender.sendMessage(r)
+                    else sender.sendMessage("不知道要做什么的话请说\"help\"!")
                 }
             }
             //解除每一次触发的对话锁
