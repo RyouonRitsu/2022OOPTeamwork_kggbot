@@ -21,6 +21,7 @@ class Grp(val group: net.mamoe.mirai.contact.Group) {
          * 所有匿名消息的HashMap
          */
         val groups = HashMap<Long, Grp>()
+
         /**
          * 获取群聊，若群聊不存在，则创建一个新的群聊
          */

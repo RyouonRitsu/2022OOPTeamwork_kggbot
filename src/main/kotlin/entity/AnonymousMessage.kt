@@ -24,26 +24,31 @@ class AnonymousMessage(val num: Int) {
          * 所有匿名消息的HashMap
          */
         val messages = HashMap<Int, AnonymousMessage>()
+
         /**
          * 当前空闲编号列表
          */
         val arrFree = mutableListOf<Int>()
+
         /**
          * 当前已被占用列表编号
          */
         val arrOccupied = mutableListOf<Int>()
+
         /**
          * 获取对应编号的匿名消息对象
          */
         fun getAnonymousMessage(num: Int): AnonymousMessage? {
             return messages[num]
         }
+
         /**
          * 放入一个匿名消息对象进入匿名消息的HashMap中
          */
-        fun put(num: Int){
-            messages.put(num , AnonymousMessage(num))
+        fun put(num: Int) {
+            messages.put(num, AnonymousMessage(num))
         }
+
         /**
          * 创建一个匿名消息时为其分配编号
          */

@@ -9,6 +9,7 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.Proxy
+import java.util.*
 
 /**
  * 存放成语接龙的所需数据
@@ -23,9 +24,9 @@ object IdiomSolitaire {
     val gameMap = HashMap<Long, Boolean>()
 
     /**
-     * 记录当前进行游戏的群正在接龙的成语
+     * 记录当前进行游戏的群接龙的成语
      */
-    val keyMap = HashMap<Long, String>()
+    val keyMap = HashMap<Long, LinkedList<String>>()
 }
 
 /**

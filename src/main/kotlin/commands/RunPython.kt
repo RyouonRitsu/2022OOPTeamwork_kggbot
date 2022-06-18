@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
 fun runPython(code: String): Pair<String?, String?> {
     val file = File("./data/cmd.py")
     file.writeText(
-        code.replaceFirst("Python", "")
+        code.replaceFirst("python", "")
             .replace("exec", "")
             .replace("eval", "")
             .replace("__import__", "")

@@ -56,8 +56,8 @@ fun loadMessage() {
         val messageInfo = AnonymousMessage.messages[jsonObj.getIntValue("id")]
         messageInfo?.let { load(jsonObj, it, listOf("num")) }
     }
-    for(i in 1..10){
-        if(AnonymousMessage.arrOccupied.indexOf(i) == -1) AnonymousMessage.arrFree.add(i)
+    for (i in 1..10) {
+        if (AnonymousMessage.arrOccupied.indexOf(i) == -1) AnonymousMessage.arrFree.add(i)
     }
 }
 
@@ -78,9 +78,9 @@ fun loadGrp(groups: ContactList<Group>) {
     for (it in jsonArr) {
         val jsonObj = it as JSONObject
         val grp = Grp.groups[jsonObj.getLongValue("id")]
-        grp?.let { load(jsonObj, it, listOf("group" , "mutelist")) }
+        grp?.let { load(jsonObj, it, listOf("group", "mutelist")) }
         val list = jsonObj.getString("mutelist").split(",")
-        for( item in list){
+        for (item in list) {
             grp?.mutelist?.add(item.toLong())
         }
 
