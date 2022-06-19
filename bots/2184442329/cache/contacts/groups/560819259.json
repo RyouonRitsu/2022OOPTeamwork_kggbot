@@ -1,0 +1,70 @@
+{
+    "troopMemberNumSeq": 238,
+    "list": [
+        {
+            "uin": 75046675,
+            "nick": "Hide on bush",
+            "permission": "ADMINISTRATOR",
+            "remark": "Hide on bush",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655302045,
+            "lastSpeakTimestamp": 1655620273,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1780645196,
+            "nick": "橙原 凯",
+            "permission": "OWNER",
+            "remark": "周洪熙",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655302044,
+            "lastSpeakTimestamp": 1655620227,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 2184442329,
+            "nick": "kgg",
+            "permission": "ADMINISTRATOR",
+            "remark": "kgg",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655303516,
+            "lastSpeakTimestamp": 1655567476,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 2287941423,
+            "nick": "zing",
+            "permission": "ADMINISTRATOR",
+            "remark": "zing",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655302045,
+            "lastSpeakTimestamp": 1655623365,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 3190685464,
+            "nick": "咩咩子",
+            "permission": "ADMINISTRATOR",
+            "remark": "咩咩子",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655302835,
+            "lastSpeakTimestamp": 1655567332,
+            "isOfficialBot": false
+        }
+    ]
+}
