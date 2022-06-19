@@ -369,7 +369,7 @@ object PluginMain : KotlinPlugin(
                         if (result == null) group.sendMessage(message.quote() + msg)
                         else group.sendMessage(At(user).followedBy(PlainText(result)))
                     }
-                } else if (cmd == "今日词云") {
+                } else if ("词云" in cmd) {
                     val result = getGroupWordCloud(group.id)
                     if (result == "Success") {
                         val inputStream = File("./data/${group.id}.png").toExternalResource()
