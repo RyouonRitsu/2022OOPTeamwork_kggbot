@@ -1,0 +1,31 @@
+{
+    "friendListSeq": 40,
+    "timeStamp": 22,
+    "list": [
+        {
+            "uin": 66600000,
+            "nick": "babyQ",
+            "remark": "babyQ"
+        },
+        {
+            "uin": 1284994403,
+            "nick": "机器人",
+            "remark": "机器人"
+        },
+        {
+            "uin": 1784958674,
+            "nick": "kggbot",
+            "remark": "kggbot"
+        },
+        {
+            "uin": 1836741285,
+            "nick": "dddss",
+            "remark": "dddss"
+        },
+        {
+            "uin": 2287941423,
+            "nick": "zing",
+            "remark": "zing"
+        }
+    ]
+}

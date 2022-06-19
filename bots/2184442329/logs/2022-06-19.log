@@ -1,0 +1,14 @@
+[0m2022-06-19 14:39:52 V/Net 2184442329: No server list cached.[0m
+[92m2022-06-19 14:39:53 I/Net 2184442329: ECDH key is invalid, start to fetch ecdh public key from server.[0m
+[92m2022-06-19 14:39:54 I/Net 2184442329: Successfully fetched ecdh public key from server.[0m
+[0m2022-06-19 14:39:54 V/Net 2184442329: Send: wtlogin.login[0m
+[0m2022-06-19 14:39:54 V/Net 2184442329: Recv: wtlogin.login[0m
+[0m2022-06-19 14:40:03 V/Net 2184442329: Send: wtlogin.login[0m
+[0m2022-06-19 14:40:03 V/Net 2184442329: Recv: wtlogin.login[0m
+[0m2022-06-19 14:40:04 V/Net 2184442329: Send: wtlogin.login[0m
+[0m2022-06-19 14:40:04 V/Net 2184442329: Recv: wtlogin.login[0m
+[0m2022-06-19 14:40:16 V/Net 2184442329: Send: wtlogin.login[0m
+[0m2022-06-19 14:40:19 V/Net 2184442329: Recv: wtlogin.login[0m
+[0m2022-06-19 14:40:20 V/Net 2184442329: Send: wtlogin.login[0m
+[0m2022-06-19 14:40:20 V/Net 2184442329: Recv: wtlogin.login[0m
+[0m2022-06-19 14:40:22 V/Net 2184442329: Send: wtlogin.login[0m
