@@ -1,6 +1,6 @@
 {
-    "friendListSeq": 25,
-    "timeStamp": 14,
+    "friendListSeq": 31,
+    "timeStamp": 16,
     "list": [
         {
             "uin": 66600000,
@@ -18,9 +18,19 @@
             "remark": "周洪熙"
         },
         {
+            "uin": 1836741285,
+            "nick": "dddss",
+            "remark": "dddss"
+        },
+        {
             "uin": 2184442329,
             "nick": "kgg",
             "remark": "kgg"
+        },
+        {
+            "uin": 2287941423,
+            "nick": "zing",
+            "remark": "zing"
         },
         {
             "uin": 2864194418,

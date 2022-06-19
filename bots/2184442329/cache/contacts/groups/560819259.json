@@ -1,5 +1,5 @@
 {
-    "troopMemberNumSeq": 238,
+    "troopMemberNumSeq": 243,
     "list": [
         {
             "uin": 75046675,
@@ -24,7 +24,20 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1655302044,
-            "lastSpeakTimestamp": 1655620227,
+            "lastSpeakTimestamp": 1655627035,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1836741285,
+            "nick": "dddss",
+            "permission": "MEMBER",
+            "remark": "",
+            "nameCard": "Alice",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655624637,
+            "lastSpeakTimestamp": 1655626414,
             "isOfficialBot": false
         },
         {
@@ -37,7 +50,7 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1655303516,
-            "lastSpeakTimestamp": 1655567476,
+            "lastSpeakTimestamp": 1655626199,
             "isOfficialBot": false
         },
         {
@@ -50,7 +63,33 @@
             "muteTimestamp": 0,
             "anonymousId": null,
             "joinTimestamp": 1655302045,
-            "lastSpeakTimestamp": 1655623365,
+            "lastSpeakTimestamp": 1655627052,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 2376905828,
+            "nick": "张三",
+            "permission": "MEMBER",
+            "remark": "",
+            "nameCard": "张三",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655626198,
+            "lastSpeakTimestamp": 1655626236,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 2485664840,
+            "nick": "Qwerty",
+            "permission": "MEMBER",
+            "remark": "",
+            "nameCard": "123456-Bob",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655624637,
+            "lastSpeakTimestamp": 1655624789,
             "isOfficialBot": false
         },
         {

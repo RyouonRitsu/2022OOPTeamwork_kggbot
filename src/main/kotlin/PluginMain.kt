@@ -336,16 +336,22 @@ object PluginMain : KotlinPlugin(
                 } else if (cmd.startsWith("来点")) {
                     if (sender.id !in Administrator.administrators) group.sendMessage(message.quote() + "对不起，您没有权限使用该功能")
                     else {
-                        val id: String
-                        val (msg, result) = getRandomPixivPic(cmd.replaceFirst("来点", ""))
-                        if (result == "./data/Image/temp_pixiv.jpg" || result == "./data/Image/temp_pixiv.png") {
-                            val inputStream = File(result).toExternalResource()
-                            id = group.uploadImage(inputStream).imageId
-                            withContext(Dispatchers.IO) { inputStream.close() }
-                            group.sendMessage(Image(id))
-                        } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
-                        else group.sendMessage(message.quote() + msg)
+                        val inputStream = File("./data/Image/t.jpg").toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) { inputStream.close() }
+                        group.sendMessage(Image(id))
                     }
+//                    else {
+//                        val id: String
+//                        val (msg, result) = getRandomPixivPic(cmd.replaceFirst("来点", ""))
+//                        if (result == "./data/Image/temp_pixiv.jpg" || result == "./data/Image/temp_pixiv.png") {
+//                            val inputStream = File(result).toExternalResource()
+//                            id = group.uploadImage(inputStream).imageId
+//                            withContext(Dispatchers.IO) { inputStream.close() }
+//                            group.sendMessage(Image(id))
+//                        } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
+//                        else group.sendMessage(message.quote() + msg)
+//                    }
                 } else if (cmd == "全国油价") {
                     textToPicture(
                         getOil("全国"),
