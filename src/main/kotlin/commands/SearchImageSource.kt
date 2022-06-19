@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit
  * @return Pair(错误信息, 本地保存图片地址)
  */
 fun searchImageSource(imageUrl: String): Pair<String, String?> {
-    val apiKey = "d9c7172f1cf935901106e36af76f3c469505f225"
+    val apiKey = "******"
     val minsim = "80!"
     val url =
         "https://saucenao.com/search.php?output_type=2&numres=1&testmode=1&minsim=$minsim&db=999&api_key=$apiKey&url=$imageUrl"
