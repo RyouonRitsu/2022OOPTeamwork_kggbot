@@ -382,18 +382,16 @@ data class Emoji(val code: List<Int>, val str: String, val info: List<String>) {
  * @return 保存的混合emoji图片地址
  */
 fun emojiMix(emojis: String): String {
-    return if (emojis.contains("+")) {
-        val emojiCollection =
-            Regex("&#\\d+;").findAll(EmojiConverter.getInstance().toHtml(emojis)).map { it.value }.toList()
-        if (emojiCollection.size != 2) return "识别错误, 你不能mix${emojiCollection.size}个emoji, 可能不支持这个iOS版本的emoji, 亦或是你使用的是QQ的emoji, 此功能仅支持系统原生的emoji"
-        val emoji1 = emojiCollection[0].replace("&#", "").replace(";", "").toInt()
-        val emoji2 = emojiCollection[1].replace("&#", "").replace(";", "").toInt()
-        val result = mixEmoji(emoji1, emoji2)
-        if (result.startsWith("http")) {
-            val (code, msg) = download(result, "./data/Image/${emoji1 + emoji2}.png")
-            if (code == 200 && msg == null) "./data/Image/${emoji1 + emoji2}.png" else msg!!
-        } else result
-    } else "格式错误, 请检查是否包含\"+\"号"
+    val emojiCollection =
+        Regex("&#\\d+;").findAll(EmojiConverter.getInstance().toHtml(emojis)).map { it.value }.toList()
+    if (emojiCollection.size != 2) return "识别错误, 你不能mix${emojiCollection.size}个emoji, 可能不支持这个iOS版本的emoji, 亦或是你使用的是QQ的emoji, 此功能仅支持系统原生的emoji"
+    val emoji1 = emojiCollection[0].replace("&#", "").replace(";", "").toInt()
+    val emoji2 = emojiCollection[1].replace("&#", "").replace(";", "").toInt()
+    val result = mixEmoji(emoji1, emoji2)
+    return if (result.startsWith("http")) {
+        val (code, msg) = download(result, "./data/Image/${emoji1 + emoji2}.png")
+        if (code == 200 && msg == null) "./data/Image/${emoji1 + emoji2}.png" else msg!!
+    } else result
 }
 
 /**
