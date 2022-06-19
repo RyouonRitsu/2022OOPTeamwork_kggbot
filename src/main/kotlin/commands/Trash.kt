@@ -12,9 +12,6 @@ import java.net.Proxy
  */
 fun trash(name: String): String {
     if (name == "") return "请告诉我垃圾的名字\n"
-    if (name == "fdy" || name == "srl" || name == "wy" || name == "yjy" || name == "申王") return "${name}是医疗废物！\n"
-    if (name == "zhy") return "鉴定为春春的桂梧\n"
-    if (name == "zzk") return "鉴定为猪\n"
     val url = "https://api.vvhan.com/api/la.ji?lj=$name"
     val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()
