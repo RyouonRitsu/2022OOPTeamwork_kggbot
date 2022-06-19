@@ -52,7 +52,7 @@ fun MyImage.save(outputFile: File): Boolean {
         for (x in 0 until width) {
             for (y in 0 until height) {
                 if (x == 0 && (y == 0 || y == 1 || y == 2))
-                    image.setRGB(x, y, 0)
+                    image.setRGB(x, y, (0x000000..0xffffff).random())
                 else {
                     val color = getPx(y, x)
                     image.setRGB(x, y, color.rgb)
