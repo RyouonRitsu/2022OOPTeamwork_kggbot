@@ -12,11 +12,11 @@ import java.net.Proxy
  */
 fun encode(info: String): String {
     if (info == "") return "请告诉我你要加密的内容\n"
-    if ("&&" !in info) return "要加密的内容和key之间请用\"&&\"连接\n"
-    val content = info.substring(0, info.indexOf("&&"))
+    if ("&" !in info) return "要加密的内容和key之间请用\"&\"连接\n"
+    val content = info.substring(0, info.indexOf("&"))
     if (content == "") return "请告诉我你要加密的内容\n"
-    if (info.endsWith("&&")) return "请给我一个key\n"
-    val key = info.substring(info.indexOf("&&") + 2)
+    if (info.endsWith("&")) return "请给我一个key\n"
+    val key = info.substring(info.indexOf("&") + 2)
     if (key.length > 8 || key.toIntOrNull() == null) return "key应为1~8位纯数字\n"
     val url = "https://api.vvhan.com/api/jm?key=$key&string=$content&type=en"
     val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }

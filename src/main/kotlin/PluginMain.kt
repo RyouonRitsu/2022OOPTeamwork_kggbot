@@ -200,16 +200,31 @@ object PluginMain : KotlinPlugin(
                     val result = sign(sender, User.getUser(sender).luckyValue + 1)
                     if (result != "") sender.sendMessage(result)
                 } else if (cmd == "help") {
-                    textToPicture(
-                        "群聊功能：\n\n" + Help.toString(Help.funcGroup).trim(),
-                        Font("等线", Font.PLAIN, 50),
-                        File("./data/Image/temp_kgghelp.png"),
-                        File("./data/Image/bg_help.png")
-                    )
-                    val inputStream = File("./data/Image/temp_kgghelp.png").toExternalResource()
+                    val inputStream = File("./data/Image/help/help.png").toExternalResource()
                     val id = group.uploadImage(inputStream).imageId
                     withContext(Dispatchers.IO) { inputStream.close() }
                     group.sendMessage(Image(id))
+//                    textToPicture(
+//                        "群聊功能：\n\n" + Help.toString(Help.funcGroup).trim(),
+//                        Font("等线", Font.PLAIN, 50),
+//                        File("./data/Image/temp_kgghelp.png"),
+//                        File("./data/Image/bg_help.png")
+//                    )
+//                    val inputStream = File("./data/Image/temp_kgghelp.png").toExternalResource()
+//                    val id = group.uploadImage(inputStream).imageId
+//                    withContext(Dispatchers.IO) { inputStream.close() }
+//                    group.sendMessage(Image(id))
+                } else if (cmd.startsWith("h")) {
+                    var name = cmd.replace("h", "")
+                    if (name == "") name = "0"
+                    try {
+                        val inputStream = File("./data/Image/help/$name.png").toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) { inputStream.close() }
+                        group.sendMessage(Image(id))
+                    } catch (_: Exception) {
+                        group.sendMessage(message.quote() + "请输入合法的功能序号哦，不知道序号的话请说\"kgghelp\"")
+                    }
                 } else if (cmd.startsWith("我今天") && "吃什么" in cmd) {
                     var type = cmd.replace("我今天", "")
                         .replaceAfter("吃什么", "").replace("吃什么", "")
@@ -321,16 +336,22 @@ object PluginMain : KotlinPlugin(
                 } else if (cmd.startsWith("来点")) {
                     if (sender.id !in Administrator.administrators) group.sendMessage(message.quote() + "对不起，您没有权限使用该功能")
                     else {
-                        val id: String
-                        val (msg, result) = getRandomPixivPic(cmd.replaceFirst("来点", ""))
-                        if (result == "./data/Image/temp_pixiv.jpg" || result == "./data/Image/temp_pixiv.png") {
-                            val inputStream = File(result).toExternalResource()
-                            id = group.uploadImage(inputStream).imageId
-                            withContext(Dispatchers.IO) { inputStream.close() }
-                            group.sendMessage(Image(id))
-                        } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
-                        else group.sendMessage(message.quote() + msg)
+                        val inputStream = File("./data/Image/t.jpg").toExternalResource()
+                        val id = group.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) { inputStream.close() }
+                        group.sendMessage(Image(id))
                     }
+//                    else {
+//                        val id: String
+//                        val (msg, result) = getRandomPixivPic(cmd.replaceFirst("来点", ""))
+//                        if (result == "./data/Image/temp_pixiv.jpg" || result == "./data/Image/temp_pixiv.png") {
+//                            val inputStream = File(result).toExternalResource()
+//                            id = group.uploadImage(inputStream).imageId
+//                            withContext(Dispatchers.IO) { inputStream.close() }
+//                            group.sendMessage(Image(id))
+//                        } else if (result != null) group.sendMessage(message.quote() + "$msg\n$result")
+//                        else group.sendMessage(message.quote() + msg)
+//                    }
                 } else if (cmd == "全国油价") {
                     textToPicture(
                         getOil("全国"),
@@ -354,7 +375,7 @@ object PluginMain : KotlinPlugin(
                         if (result == null) group.sendMessage(message.quote() + msg)
                         else group.sendMessage(At(user).followedBy(PlainText(result)))
                     }
-                } else if (cmd == "今日词云") {
+                } else if ("词云" in cmd) {
                     val result = getGroupWordCloud(group.id)
                     if (result == "Success") {
                         val inputStream = File("./data/${group.id}.png").toExternalResource()
@@ -678,17 +699,32 @@ object PluginMain : KotlinPlugin(
                 if (result != "") sender.sendMessage(result)
                 if (message.contentToString() == "查询状态") {
                     sender.sendMessage(queryStatus(sender))
-                } else if (message.contentToString() == "help") {
-                    textToPicture(
-                        "私聊功能：\n\n" + Help.toString(Help.funcFriend).trim(),
-                        Font("等线", Font.PLAIN, 50),
-                        File("./data/Image/temp_help.png"),
-                        File("./data/Image/bg_help.png")
-                    )
-                    val inputStream = File("./data/Image/temp_help.png").toExternalResource()
+                } else if (message.contentToString() == "help" || message.contentToString() == "kgghelp") {
+                    val inputStream = File("./data/Image/help/help.png").toExternalResource()
                     val id = sender.uploadImage(inputStream).imageId
                     withContext(Dispatchers.IO) { inputStream.close() }
                     sender.sendMessage(Image(id))
+//                    textToPicture(
+//                        "私聊功能：\n\n" + Help.toString(Help.funcFriend).trim(),
+//                        Font("等线", Font.PLAIN, 50),
+//                        File("./data/Image/temp_help.png"),
+//                        File("./data/Image/bg_help.png")
+//                    )
+//                    val inputStream = File("./data/Image/temp_help.png").toExternalResource()
+//                    val id = sender.uploadImage(inputStream).imageId
+//                    withContext(Dispatchers.IO) { inputStream.close() }
+//                    sender.sendMessage(Image(id))
+                } else if (message.contentToString().startsWith("h") || message.contentToString().startsWith("kggh")) {
+                    var name = message.contentToString().replace("kggh", "").replace("h", "")
+                    if (name == "") name = "0"
+                    try {
+                        val inputStream = File("./data/Image/help/$name.png").toExternalResource()
+                        val id = sender.uploadImage(inputStream).imageId
+                        withContext(Dispatchers.IO) { inputStream.close() }
+                        sender.sendMessage(Image(id))
+                    } catch (_: Exception) {
+                        sender.sendMessage(message.quote() + "请输入合法的功能序号哦，不知道序号的话请说\"kgghelp\"")
+                    }
                 } else if (message.contentToString().startsWith("dice")) {
                     val n = message.contentToString().replace("dice", "").toIntOrNull()
                     if (n != null && n > 0) sender.sendMessage("你roll出了${(1..n).random()}")
@@ -861,6 +897,43 @@ object PluginMain : KotlinPlugin(
                         val id = sender.uploadImage(inputStream).imageId
                         withContext(Dispatchers.IO) { inputStream.close() }
                         sender.sendMessage(message.quote() + Image(id))
+                    }
+                } else if (message.contentToString().startsWith("我今天") && "吃什么" in message.contentToString()) {
+                    var type = message.contentToString().replace("我今天", "")
+                        .replaceAfter("吃什么", "").replace("吃什么", "")
+                    var n: Int? = 1
+                    var temp = message.contentToString().replaceBefore("吃什么", "").replaceFirst("吃什么", "")
+                    if ("x" in message.contentToString()) {
+                        n = message.contentToString().replaceBefore("x", "").replace("x", "").toIntOrNull()
+                        temp = temp.replaceAfterLast("x", "").substringBeforeLast("x")
+                    }
+                    if (type == "" || temp != "") type = temp
+                    if (n == 1) sender.sendMessage(message.quote() + randomEat(type))
+                    else if (n != null && n in 2..10) sender.sendMessage(message.quote() + randomEat(type, n!!))
+                    else sender.sendMessage(message.quote() + "重复抽取命令格式错误! 请尝试2-10的整数!")
+                } else if (message.contentToString().startsWith("mix")) {
+                    val r = emojiMix(message.contentToString().replace("mix", ""))
+                    if (r.startsWith("./data/Image/")) {
+                        val inputStream = File(r).toExternalResource()
+                        val id = sender.uploadImage(inputStream).imageId
+                        sender.sendMessage(Image(id))
+                        withContext(Dispatchers.IO) { inputStream.close() }
+                    } else sender.sendMessage(r)
+                } else if (message.contentToString().startsWith("python")) {
+                    val (r, _) = runPython(message.contentToString())
+                    try {
+                        if (r != null && r != "") sender.sendMessage(
+                            message.quote() + PlainText(
+                                r.replace(
+                                    Regex(".:\\\\.*\\..."),
+                                    "**此为机密领域, 妄图窥探的话是会被关小黑屋的**"
+                                )
+                            )
+                        )
+                        else if (r != null) sender.sendMessage(message.quote() + PlainText("运行结果为空!"))
+                        else sender.sendMessage(message.quote() + PlainText("Error: TLE"))
+                    } catch (e: Exception) {
+                        sender.sendMessage(message.quote() + PlainText(e.message ?: "Error: RE"))
                     }
                 } else {
                     val r = Help.searchCommand(message.content.lowercase(), Help.funcFriend)
