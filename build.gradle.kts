@@ -7,7 +7,7 @@ plugins {
     id("org.jetbrains.dokka") version "1.6.21"
 }
 
-group = "org.example"
+group = "org.ritsu"
 version = "0.1.0"
 
 dependencies {
