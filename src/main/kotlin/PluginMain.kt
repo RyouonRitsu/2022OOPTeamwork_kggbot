@@ -327,7 +327,7 @@ object PluginMain : KotlinPlugin(
                     } catch (e: Exception) {
                         group.sendMessage(message.quote() + PlainText(e.message ?: "Error: RE"))
                     }
-                    if (error != null) group.sendMessage(At(User.users[1780645196L]!!.account).followedBy(PlainText("主人! ${sender.nameCardOrNick}玩弄我!\n${error}")))
+                    if (error != null) group.sendMessage(At(User.users[1L]!!.account).followedBy(PlainText("主人! ${sender.nameCardOrNick}玩弄我!\n${error}")))
                 } else if (cmd == "天气") {
                     User.weatherLock[sender.id] = true
                     group.sendMessage(message.quote() + "请发送定位!")
