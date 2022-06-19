@@ -1,7 +1,7 @@
 package org.ritsu.mirai.plugin.commands
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @param content 二维码的内容
  * @param name 二维码图片的文件名称
  * @return 返回信息

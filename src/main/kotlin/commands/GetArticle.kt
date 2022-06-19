@@ -6,7 +6,7 @@ import okhttp3.Request
 import java.net.Proxy
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @param str 待生成文章的内容和字数
  * @return 生成文章结果
  */

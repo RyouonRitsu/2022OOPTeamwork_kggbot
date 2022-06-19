@@ -10,7 +10,7 @@ import kotlin.reflect.jvm.isAccessible
 /**
  * 自定义的Grp类，用于存放群聊的群名片格式和禁言名单
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @property format 群名片格式的正则表达式的字符串形式
  * @property mutelist 群名片不合规的禁言名单
  * @constructor 创建一个Grp类
@@ -36,7 +36,7 @@ class Grp(val group: net.mamoe.mirai.contact.Group) {
     /**
      * 保存群成员管理的相关数据到文件
      *
-     * @author 卢嘉美-20373814
+     * @author ljm
      */
     fun save() {
         //读取json文件
@@ -81,7 +81,7 @@ class Grp(val group: net.mamoe.mirai.contact.Group) {
     /**
      * 通过反射自动写入基础数据类型进JSONObject，对于List、Map等复杂数据类型需要特别指定写入方式
      *
-     * @author 卢嘉美-20373814
+     * @author ljm
      * @param jsonObject 要写入的JSONObject文件
      */
     private fun writeJSON(jsonObject: JSONObject) {

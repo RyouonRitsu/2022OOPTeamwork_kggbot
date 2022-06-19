@@ -6,7 +6,7 @@ import okhttp3.Request
 import java.net.Proxy
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @param name 垃圾名称
  * @return 查询结果
  */

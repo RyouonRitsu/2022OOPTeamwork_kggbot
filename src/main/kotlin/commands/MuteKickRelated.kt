@@ -11,7 +11,7 @@ import org.ritsu.mirai.plugin.entity.Grp
 /**
  * 禁言群名片不符合要求的群成员
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @param message 群管理员发送的进行禁言相关群成员操作的消息
  * @param group 进行管理的群
  */
@@ -55,7 +55,7 @@ suspend fun mute(message: Message, group: Group) {
 /**
  * 被禁言的群成员申请解禁
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @param bot 对应的群聊机器人
  * @param newname 申请解禁言的新群名片
  * @param groupstr 申请解禁言的群号字符串
@@ -88,7 +88,7 @@ suspend fun unmute(bot: Bot, newname: String, groupstr: String, mem: Long): Stri
 /**
  * 清除群名片不符合要求的群成员
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @param group 进行管理的群
  * @param message 群管理员发送的进行禁言相关群成员操作的消息
  */

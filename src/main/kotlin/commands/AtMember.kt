@@ -7,7 +7,7 @@ import net.mamoe.mirai.message.data.*
 /**
  * 使用@通知群成员
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @param message 通知消息的内容
  * @param group 需要进行通知的群
  */

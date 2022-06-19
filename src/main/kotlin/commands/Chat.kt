@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 /**
  * 接入了小爱同学Api的聊天功能
  *
- * @author RyouonRitsu, 王晨宇
+ * @author RyouonRitsu, wcy
  * @param msg 消息
  * @return 回复消息
  */

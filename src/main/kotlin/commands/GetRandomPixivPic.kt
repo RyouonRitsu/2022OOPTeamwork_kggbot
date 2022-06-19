@@ -11,7 +11,7 @@ import java.net.Proxy
 /**
  * 随机色图
  *
- * @author RyouonRitsu, 王晨宇
+ * @author RyouonRitsu, wcy
  * @param info 命令信息
  * @return Pair(错误信息, 图片地址)
  */

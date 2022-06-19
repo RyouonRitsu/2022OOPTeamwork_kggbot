@@ -10,7 +10,7 @@ import org.ritsu.mirai.plugin.entity.User
 /**
  * 申请发送匿名消息
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @param bot 对应的群聊机器人
  * @param sender 申请发送匿名消息的用户
  * @param message 消息内容
@@ -53,7 +53,7 @@ suspend fun sendAnonymousMessage(bot: Bot, sender: Friend, message: Message) {
 /**
  * 回复匿名消息
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @param bot 对应的群聊机器人
  * @param sender 申请回复匿名消息的用户
  * @param message 消息内容
@@ -82,7 +82,7 @@ suspend fun replyAnonymousMessage(bot: Bot, sender: Friend, message: Message) {
 /**
  * 设置为允许接收匿名消息
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @param sender 进行设置的用户
  */
 suspend fun accept(sender: Friend) {
@@ -95,7 +95,7 @@ suspend fun accept(sender: Friend) {
 /**
  * 设置为拒绝接收匿名消息
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @param sender 进行设置的用户
  * @param bot 对应的群聊机器人
  */

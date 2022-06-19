@@ -5,7 +5,7 @@ import org.ritsu.mirai.plugin.entity.save
 import java.io.File
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @return 返回信息, 图片路径
  */
 fun getCoser(): Pair<String, String?> {

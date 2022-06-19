@@ -12,7 +12,7 @@ import kotlin.reflect.jvm.isAccessible
 /**
  * 自定义的AnonymousMessage类，用于存放匿名消息的发送方和接收方id
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @property num 匿名消息的编号
  * @property senderid 匿名消息发送者id
  * @property receiverid 匿名消息接收者id
@@ -117,7 +117,7 @@ class AnonymousMessage(val num: Int) {
     /**
      * 保存匿名消息的相关数据到文件
      *
-     * @author 卢嘉美-20373814
+     * @author ljm
      */
     fun save() {
         //读取json文件
@@ -157,7 +157,7 @@ class AnonymousMessage(val num: Int) {
     /**
      * 删除文件中的匿名消息相关信息
      *
-     * @author 卢嘉美-20373814
+     * @author ljm
      */
     fun delete() {
         //读取json文件
@@ -184,7 +184,7 @@ class AnonymousMessage(val num: Int) {
     /**
      * 通过反射自动写入基础数据类型进JSONObject，对于List、Map等复杂数据类型需要特别指定写入方式
      *
-     * @author 卢嘉美-20373814
+     * @author ljm
      * @param jsonObject 要写入的JSONObject文件
      */
     private fun writeJSON(jsonObject: JSONObject) {

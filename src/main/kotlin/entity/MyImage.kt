@@ -6,7 +6,7 @@ import java.io.File
 import javax.imageio.ImageIO
 
 /**
- * @author 王晨宇
+ * @author wcy
  */
 class MyImage(private val pxs: Array<Array<Color>>) {
     fun height(): Int {
@@ -23,7 +23,7 @@ class MyImage(private val pxs: Array<Array<Color>>) {
 }
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @param imageFile 待加载的图片
  * @return MyImage类
  */
@@ -40,7 +40,7 @@ fun loadImage(imageFile: File): MyImage =
         }
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @param outputFile 保存的图片
  * @return 保存图片是否成功
  */

@@ -14,14 +14,10 @@ object Administrator {
      * 管理员列表
      */
     val administrators: List<Long> = listOf(
-        1780645196L,
-        75046675L,
-        2287941423L
+        1L,
     )
     val botList: List<Long> = listOf(
-        1784958674L,
-        3110526590L,
-        2184442329L
+        1L,
     )
 
     /**

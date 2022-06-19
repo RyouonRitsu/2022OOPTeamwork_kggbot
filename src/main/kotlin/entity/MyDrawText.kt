@@ -3,7 +3,7 @@ package org.ritsu.mirai.plugin.entity
 import java.awt.Graphics
 
 /**
- * @author 王晨宇
+ * @author wcy
  */
 class MyDrawText {
     companion object {

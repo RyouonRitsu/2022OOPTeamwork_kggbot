@@ -12,7 +12,7 @@ import java.nio.charset.Charset
 import javax.imageio.ImageIO
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @param str 图片内容
  * @param font 字体
  * @param outFile 输出文件路径

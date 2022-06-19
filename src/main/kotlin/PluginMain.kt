@@ -196,7 +196,7 @@ object PluginMain : KotlinPlugin(
                 val cmd = message.contentToString().replaceFirst("kgg", "")
                 if (cmd == "抽卡") {
                     //发送消息
-                    group.sendMessage(sender.nameCardOrNick + luckyValue(sender, sender.id == 75046675L))
+                    group.sendMessage(sender.nameCardOrNick + luckyValue(sender))
                     val result = sign(sender, User.getUser(sender).luckyValue + 1)
                     if (result != "") sender.sendMessage(result)
                 } else if (cmd == "help") {

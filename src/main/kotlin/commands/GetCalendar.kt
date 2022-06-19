@@ -1,7 +1,7 @@
 package org.ritsu.mirai.plugin.commands
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @return 返回信息, 图片路径
  */
 fun getCalendar(): Pair<String, String?> {

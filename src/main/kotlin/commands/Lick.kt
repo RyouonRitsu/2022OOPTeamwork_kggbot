@@ -6,7 +6,7 @@ import okhttp3.Request
 import java.net.Proxy
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @return 返回信息, api返回的内容
  */
 fun lick(): Pair<String, String?> {

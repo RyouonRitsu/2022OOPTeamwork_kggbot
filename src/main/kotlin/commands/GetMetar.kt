@@ -5,7 +5,7 @@ import okhttp3.Request
 import java.net.Proxy
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @param loc 机场的ICAO代码
  * @return 查询METAR和TAF的结果
  */

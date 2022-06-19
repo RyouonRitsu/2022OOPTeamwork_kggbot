@@ -42,7 +42,7 @@ fun loadData(groups: ContactList<Group>) {
 /**
  * 此函数的作用是在bot开机时将本地保存的有关匿名消息的json数据加载进bot中自定义的类中，此函数在启动函数中调用
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  */
 fun loadMessage() {
     val file = File("./data/AnonymousMessage.json")
@@ -64,7 +64,7 @@ fun loadMessage() {
 /**
  * 此函数的作用是在bot开机时将本地保存的有关群聊成员管理信息的json数据加载进bot中自定义的类中，此函数在启动函数中调用
  *
- * @author 卢嘉美-20373814
+ * @author ljm
  * @param groups 当前bot的群列表
  */
 fun loadGrp(groups: ContactList<Group>) {

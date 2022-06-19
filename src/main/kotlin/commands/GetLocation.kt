@@ -6,12 +6,12 @@ import okhttp3.Request
 import java.net.Proxy
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @param loc 查询地点名称
  * @return 返回信息, 经纬度
  */
 fun getLocation(loc: String): Pair<String, String?> {
-    val key = "ygGTTqIeORCmnFueBPEDogVuzAfXOMqO"
+    val key = "******"
     val url = "https://api.map.baidu.com/place/v2/search?query=$loc&region=$loc&output=json&ak=$key"
     val client = OkHttpClient().also { it.newBuilder().proxy(Proxy.NO_PROXY) }
     val request = Request.Builder().get().url(url).build()

@@ -9,7 +9,7 @@ import java.net.Proxy
 import java.nio.charset.Charset
 
 /**
- * @author 王晨宇
+ * @author wcy
  * @return 返回信息, 图片路径
  */
 fun getBuyerShow(): Pair<String, String?> {

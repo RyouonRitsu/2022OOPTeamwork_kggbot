@@ -54,8 +54,8 @@ fun translate(query: String, lang: String = Lang.AUTO.desc): String {
     val dstLang: String
     if (lang !in Lang.values().map { it.desc }) return "不支持的语言! 请使用\"kgg支持语言\"查看可供选择的语言列表! 可省略->的部分, 默认使用自动检测!"
     else dstLang = Lang.values().first { it.desc == lang }.code
-    val appid = "20220509001208356"
-    val securityKey = "wIeSpGbafIV9Yeh7ADSv"
+    val appid = "******"
+    val securityKey = "******"
     val api = TransApi(appid, securityKey)
     val result = api.getTransResult(query, "auto", dstLang)
     return if (result == null) "翻译失败!"
