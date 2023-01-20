@@ -1,0 +1,44 @@
+{
+    "troopMemberNumSeq": 90,
+    "list": [
+        {
+            "uin": 75046675,
+            "nick": "Hide on bush",
+            "permission": "MEMBER",
+            "remark": "Hide on bush",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653580117,
+            "lastSpeakTimestamp": 1653580309,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1780645196,
+            "nick": "橙原 凯",
+            "permission": "OWNER",
+            "remark": "橙原 凯",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653580117,
+            "lastSpeakTimestamp": 1653580265,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1784958674,
+            "nick": "OOP",
+            "permission": "MEMBER",
+            "remark": "OOP",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653580117,
+            "lastSpeakTimestamp": 1653580117,
+            "isOfficialBot": false
+        }
+    ]
+}

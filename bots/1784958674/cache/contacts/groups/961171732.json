@@ -1,0 +1,44 @@
+{
+    "troopMemberNumSeq": 124,
+    "list": [
+        {
+            "uin": 75046675,
+            "nick": "Hide on bush",
+            "permission": "OWNER",
+            "remark": "Hide on bush",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653659244,
+            "lastSpeakTimestamp": 1653668413,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1540274014,
+            "nick": "MERCY",
+            "permission": "MEMBER",
+            "remark": "MERCY",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653659245,
+            "lastSpeakTimestamp": 1653668428,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1784958674,
+            "nick": "kggbot",
+            "permission": "MEMBER",
+            "remark": "OOP",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653659245,
+            "lastSpeakTimestamp": 1653668363,
+            "isOfficialBot": false
+        }
+    ]
+}

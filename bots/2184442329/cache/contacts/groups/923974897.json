@@ -1,0 +1,31 @@
+{
+    "troopMemberNumSeq": 80,
+    "list": [
+        {
+            "uin": 1780645196,
+            "nick": "橙原 凯",
+            "permission": "OWNER",
+            "remark": "周洪熙",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655557015,
+            "lastSpeakTimestamp": 1655561632,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 2184442329,
+            "nick": "kgg",
+            "permission": "MEMBER",
+            "remark": "kgg",
+            "nameCard": "",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655557119,
+            "lastSpeakTimestamp": 1655561633,
+            "isOfficialBot": false
+        }
+    ]
+}

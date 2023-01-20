@@ -1,0 +1,57 @@
+{
+    "troopMemberNumSeq": 119,
+    "list": [
+        {
+            "uin": 1284994403,
+            "nick": "机器人",
+            "permission": "ADMINISTRATOR",
+            "remark": "",
+            "nameCard": "机器人",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1654316106,
+            "lastSpeakTimestamp": 1655570109,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 1836741285,
+            "nick": "dddss",
+            "permission": "MEMBER",
+            "remark": "",
+            "nameCard": "654321-Alice",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655303824,
+            "lastSpeakTimestamp": 1655570044,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 2287941423,
+            "nick": "zing",
+            "permission": "OWNER",
+            "remark": "",
+            "nameCard": "群主",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1653310058,
+            "lastSpeakTimestamp": 1655570342,
+            "isOfficialBot": false
+        },
+        {
+            "uin": 2485664840,
+            "nick": "Qwerty",
+            "permission": "MEMBER",
+            "remark": "",
+            "nameCard": "123456-Bob",
+            "specialTitle": "",
+            "muteTimestamp": 0,
+            "anonymousId": null,
+            "joinTimestamp": 1655562986,
+            "lastSpeakTimestamp": 1655564231,
+            "isOfficialBot": false
+        }
+    ]
+}
